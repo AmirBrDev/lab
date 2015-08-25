@@ -52,7 +52,7 @@ class Table(object):
             entry_start = int(entry_start)
             entry_end = int(entry_end)
 
-            print entry_start, entry_end, entry_strand
+            #print entry_start, entry_end, entry_strand
 
             # We only care about matches on the same strand
             if (strand != entry_strand):
@@ -79,6 +79,14 @@ class Table(object):
 
 
         return (False, closest_segment)
+
+    def findById(self, id):
+
+        for key, value in self._dctData.items():
+            if (value[Table.UNIQUE_ID_FIELD] == id):
+                return (key, value)
+
+        return (None, None)
 
 if __name__ == "__main__":
 

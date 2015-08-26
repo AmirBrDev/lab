@@ -1,5 +1,7 @@
 __author__ = 'amirbar'
 
+from Globals import TableGlobals
+
 class Table(object):
     """
     This class represents a table defined by us or other sources.
@@ -7,9 +9,25 @@ class Table(object):
     key - the loci start, end and directionality
     """
 
+    class TableIterator(object):
+        """
+        This class is used to iterate over the table rows
+        """
+
+        def __init__(self, table):
+            self._rows = table._dctData
+            self._iterator = self._rows.iteritems()
+
+        def next(self):
+            return self._iterator.next()
+
+        def __iter__(self):
+            return self._iterator
+
+    TABLE_DELIMITER = "\t"
+    ID_DELIMITER = ";"
     UNIQUE_ID_FIELD = "unique_id"
-    NAME_FIELD = "NAME"
-    OTHER_NAMES_FIELD = "other_names"
+    NAME_FIELD = "name"
     POS_STRAND = "+"
     NEG_STRAND = "-"
 
@@ -22,6 +40,54 @@ class Table(object):
 
         self._name = name
         self._dctData = {}
+
+    def __iter__(self):
+        return Table.TableIterator(self)
+
+    def dump(self, path):
+        """
+        Writes the table to a file
+        :param path: the path to write to
+        :return: None
+        """
+
+        if (len(self._dctData) == 0):
+            return
+
+        id_keys = [TableGlobals.FIRST_START_BASE_KEY,
+                   TableGlobals.FIRST_END_BASE_KEY,
+                   TableGlobals.FIRST_STRAND_KEY,
+                   TableGlobals.SECOND_START_BASE_KEY,
+                   TableGlobals.SECOND_END_BASE_KEY,
+                   TableGlobals.SECOND_STRAND_KEY]
+
+        for key in id_keys:
+            self._dctData.values()[0][key] = None
+
+        header = Table.TABLE_DELIMITER.join(key for key in self._dctData.values()[0])
+
+        fl = open(path, "wb")
+
+        fl.write("%s\n" % header)
+
+        table_as_list = []
+
+        for key, value in self._dctData.items():
+
+            id_values = key.split(Table.ID_DELIMITER)
+
+            for id_key, id_val in zip(id_keys, id_values):
+
+                value[id_key] = id_val
+
+            table_as_list.append(value)
+
+        for dct in table_as_list:
+            row = "\t".join(str(val) for val in dct.values())
+
+            fl.write("%s\n" % row)
+
+        fl.close()
 
     def insert(self, first, second, **kwargs):
         """
@@ -54,13 +120,14 @@ class Table(object):
         """
         closest_segment = None
         closest_segment_distance = None
+        distance = None
 
         matches = []
 
         for key, value in self._dctData.items():
 
             first_entry_start, first_entry_end, first_entry_strand,\
-                second_entry_start, second_entry_end, second_entry_strand = key.split(";")
+                second_entry_start, second_entry_end, second_entry_strand = key.split(Table.ID_DELIMITER)
 
             first_entry_start = int(first_entry_start)
             first_entry_end = int(first_entry_end)
@@ -71,11 +138,12 @@ class Table(object):
 
             strand_values = []
 
-            if (strand_val == None):
+            if (strand_val == "none"):
                 strand_values.append(Table.POS_STRAND)
                 strand_values.append(Table.NEG_STRAND)
             else:
                 strand_values.append(strand_val)
+
 
             # in case we don't sure of the strand check for both
             for strand in strand_values:
@@ -89,14 +157,14 @@ class Table(object):
                     (first_entry_start >= start and first_entry_start <= end) or
                     (first_entry_end >= start and first_entry_end <= end)):
 
-                    matches.append((True, value[Table.UNIQUE_ID_FIELD]))
+                    matches.append((True, value[Table.UNIQUE_ID_FIELD], start - first_entry_start))
 
                 elif ((start >= second_entry_start and start <= second_entry_end) or
                     (end >= second_entry_start and end <= second_entry_end) or
                     (second_entry_start >= start and second_entry_start <= end) or
                     (second_entry_end >= start and second_entry_end <= end)):
 
-                    matches.append((True, value[Table.UNIQUE_ID_FIELD]))
+                    matches.append((True, value[Table.UNIQUE_ID_FIELD], start - second_entry_start))
 
                 first_distance = min(abs(start - first_entry_start),
                                      abs(end - first_entry_end),
@@ -118,22 +186,15 @@ class Table(object):
                     closest_segment = value[Table.UNIQUE_ID_FIELD]
                     closest_segment_distance = distance
 
-        if (len(matches) == 0):
+        if ((len(matches) == 0) and (distance is not None)):
 
-            matches.append((False, closest_segment))
+            matches.append((False, closest_segment, distance))
 
         return matches
 
     def findByField(self, field_name, search_value):
         for key, value in self._dctData.items():
-
-            compared = value[field_name]
-
-            if (type(search_value) is str):
-                search_value = search_value.lower()
-                compared = value[field_name].lower()
-
-            if (compared == search_value):
+            if (value[field_name] == search_value):
                 return (key, value)
 
         return (None, None)
@@ -144,9 +205,14 @@ class Table(object):
     def findByName(self, name):
         return self.findByField(Table.NAME_FIELD, name)
 
+
+class GeneTable(Table):
+
+    OTHER_NAMES_FIELD = "other_names"
+
     def findByOtherNames(self, name):
         for key, value in self._dctData.items():
-            if (name in value[Table.OTHER_NAMES_FIELD]):
+            if (name in value[GeneTable.OTHER_NAMES_FIELD]):
                 return (key, value)
 
         return (None, None)
@@ -163,4 +229,11 @@ if __name__ == "__main__":
 
     print table._dctData
 
-    print table.is_overlaps(1, 7, "+")
+    print table.is_overlaps(1, 7, "-")
+
+    print "-" * 100
+    print "iterator checks"
+    print "-" * 100
+
+    for row in table:
+        print row

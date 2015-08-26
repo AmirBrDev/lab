@@ -2,34 +2,86 @@ from Bio.TogoWS import entry
 
 __author__ = 'amirbar'
 
-from Table import Table
+from Table import Table, GeneTable
+from Globals import TableGlobals
 
 class TableLoader(object):
+    """
+    Loads tables from a file. The loaded tables has the following format:
+    first row is the column names delimited by tabs.
+    following rows are the values for the column delimited by tabs.
 
-    FIRST_START_BASE_KEY = "start_1"
-    FIRST_END_BASE_KEY = "end_1"
-    SECOND_START_BASE_KEY = "start_2"
-    SECOND_END_BASE_KEY = "end_2"
-    FIRST_STRAND_KEY = "strand_1"
-    SECOND_STRAND_KEY = "strand_2"
-    STRAND_POSITIVE = "+"
-    STRAND_NEGATIVE = "-"
+    Example:
+    COL1    COL2
+    VAL1    VAL2
+    VAL3    VAL4
+
+    where COL1, COL2 are the column names and the VAL#X is the values
+    """
+
+    def __init__(self):
+        """
+        Sets the default table type
+        :return:
+        """
+        self._tableType = Table
 
     def load(self, path):
+        """
+        Loads a table of the format described in the class description
+        :param path: the path to the file
+        :return: a list containing the data as dictionary
+        """
+        result = []
+
+        fl = open(path, "rb")
+
+        name_list = fl.readline().lower().replace("\n", "").split(Table.TABLE_DELIMITER)
+
+        for line in fl.readlines():
+
+            line = line.lower()
+
+            dct = {}
+
+            value_list = line.split(Table.TABLE_DELIMITER)
+
+            for key, val in zip(name_list, value_list):
+                dct[key.replace("\n", "")] = val.replace("\n", "")
+
+            result.append(dct)
+
+        fl.close()
+
+        return  result
+
+    def loadUnprocessed(self, path):
+        """
+        Loads unprocessed tables
+        This function should be implemented for each type of inheriting loader
+        :param path: the file path
+        :return:
+        """
         raise NotImplementedError
 
     def createTable(self, name, row_list):
-        result = Table(name)
+        """
+        Creates a table from output of the load
+        :param name: the name for the table
+        :param row_list: the output of the load method
+        :return: a table object
+        """
+        result = self._tableType(name)
 
         for row in row_list:
 
-            first = (row.pop(TableLoader.FIRST_START_BASE_KEY),
-                     row.pop(TableLoader.FIRST_END_BASE_KEY),
-                     row.pop(TableLoader.FIRST_STRAND_KEY))
+            first = (row.pop(TableGlobals.FIRST_START_BASE_KEY),
+                     row.pop(TableGlobals.FIRST_END_BASE_KEY),
+                     row.pop(TableGlobals.FIRST_STRAND_KEY))
 
-            second = (row.pop(TableLoader.SECOND_START_BASE_KEY),
-                     row.pop(TableLoader.SECOND_END_BASE_KEY),
-                     row.pop(TableLoader.SECOND_STRAND_KEY))
+            second = (row.pop(TableGlobals.SECOND_START_BASE_KEY),
+                     row.pop(TableGlobals.SECOND_END_BASE_KEY),
+                     row.pop(TableGlobals.SECOND_STRAND_KEY))
 
 
             result.insert(first, second, **row)
@@ -38,16 +90,20 @@ class TableLoader(object):
 
 class PDFTableLoader(TableLoader):
 
-    def load(self, path):
+    S5_NAME_FIELD = "srna-name"
+
+    def loadUnprocessed(self, path):
         result = []
 
         fl = open(path, "rb")
 
-        name_list = fl.readline().split("\t")
+        name_list = fl.readline().lower().split(Table.TABLE_DELIMITER)
 
         for line in fl.readlines():
 
-            value_list = line.split("\t")
+            line = line.lower()
+
+            value_list = line.split(Table.TABLE_DELIMITER)
 
             dct = {}
 
@@ -60,39 +116,52 @@ class PDFTableLoader(TableLoader):
 
         for entry in result:
 
-            entry[TableLoader.FIRST_STRAND_KEY] = None
-            entry[TableLoader.SECOND_STRAND_KEY] = None
-            entry[TableLoader.FIRST_START_BASE_KEY] = entry.pop('right_end')
-            entry[TableLoader.FIRST_END_BASE_KEY] = entry.pop('left_end')
-            entry[TableLoader.SECOND_START_BASE_KEY] = entry[TableLoader.FIRST_START_BASE_KEY]
-            entry[TableLoader.SECOND_END_BASE_KEY] = entry[TableLoader.FIRST_END_BASE_KEY]
+            if (entry.has_key(PDFTableLoader.S5_NAME_FIELD)):
+                entry["name"] = entry.pop(PDFTableLoader.S5_NAME_FIELD)
+
+            entry[TableGlobals.FIRST_STRAND_KEY] = None
+            entry[TableGlobals.SECOND_STRAND_KEY] = None
+            entry[TableGlobals.FIRST_START_BASE_KEY] = entry.pop('right_end')
+            entry[TableGlobals.FIRST_END_BASE_KEY] = entry.pop('left_end')
+            entry[TableGlobals.SECOND_START_BASE_KEY] = entry[TableGlobals.FIRST_START_BASE_KEY]
+            entry[TableGlobals.SECOND_END_BASE_KEY] = entry[TableGlobals.FIRST_END_BASE_KEY]
+
+            if (not entry.has_key("name")):
+                entry["name"] = "igr_%s-%s" % \
+                                (entry[TableGlobals.FIRST_START_BASE_KEY], entry[TableGlobals.FIRST_END_BASE_KEY])
 
         return result
 
 class GeneTableLoader(TableLoader):
-    def load(self, path):
 
-        ignore = ["REPLICON",
-                  "SWISS-PROT-ID",
-                  "GENE-CLASS",
-                  "PRODUCT-NAME",
-                  "GENE-CLASS"]
+    def __init__(self):
+        self._tableType = GeneTable
+
+    def loadUnprocessed(self, path):
+
+        ignore = ["REPLICON".lower(),
+                  "SWISS-PROT-ID".lower(),
+                  "GENE-CLASS".lower(),
+                  "PRODUCT-NAME".lower(),
+                  "GENE-CLASS".lower()]
 
         result = []
 
         fl = open(path, "rb")
 
-        name_list = fl.readline().split("\t")
+        name_list = fl.readline().lower().split(Table.TABLE_DELIMITER)
 
         for line in fl.readlines():
 
-            value_list = line.split("\t")
+            line = line.lower()
+
+            value_list = line.split(Table.TABLE_DELIMITER)
 
             dct = {"other_names" : []}
 
             for key, val in zip(name_list, value_list):
 
-                if (key == "SYNONYMS"):
+                if (key == "SYNONYMS".lower()):
                     if (val != ""):
                         dct["other_names"].append(val)
                 elif (key in ignore):
@@ -106,36 +175,38 @@ class GeneTableLoader(TableLoader):
 
         for entry in result:
 
-            if (int(entry['START-BASE']) < int(entry['END-BASE'])):
-                entry[TableLoader.FIRST_STRAND_KEY] = TableLoader.STRAND_POSITIVE
-                entry[TableLoader.SECOND_STRAND_KEY] = TableLoader.STRAND_POSITIVE
+            if (int(entry['START-BASE'.lower()]) < int(entry['END-BASE'.lower()])):
+                entry[TableGlobals.FIRST_STRAND_KEY] = TableGlobals.STRAND_POSITIVE
+                entry[TableGlobals.SECOND_STRAND_KEY] = TableGlobals.STRAND_POSITIVE
             else:
-                entry[TableLoader.FIRST_STRAND_KEY] = TableLoader.STRAND_NEGATIVE
-                entry[TableLoader.SECOND_STRAND_KEY] = TableLoader.STRAND_NEGATIVE
+                entry[TableGlobals.FIRST_STRAND_KEY] = TableGlobals.STRAND_NEGATIVE
+                entry[TableGlobals.SECOND_STRAND_KEY] = TableGlobals.STRAND_NEGATIVE
 
-            entry[TableLoader.FIRST_START_BASE_KEY] = entry.pop('START-BASE')
-            entry[TableLoader.FIRST_END_BASE_KEY] = entry.pop('END-BASE')
-            entry[TableLoader.SECOND_START_BASE_KEY] = entry[TableLoader.FIRST_START_BASE_KEY]
-            entry[TableLoader.SECOND_END_BASE_KEY] = entry[TableLoader.FIRST_END_BASE_KEY]
+            entry[TableGlobals.FIRST_START_BASE_KEY] = entry.pop('START-BASE'.lower())
+            entry[TableGlobals.FIRST_END_BASE_KEY] = entry.pop('END-BASE'.lower())
+            entry[TableGlobals.SECOND_START_BASE_KEY] = entry[TableGlobals.FIRST_START_BASE_KEY]
+            entry[TableGlobals.SECOND_END_BASE_KEY] = entry[TableGlobals.FIRST_END_BASE_KEY]
 
 
         return result
 
 class OurTableLoader(TableLoader):
-    def load(self, path):
+    def loadUnprocessed(self, path):
         ignore = []
 
         result = []
 
         fl = open(path, "rb")
 
-        name_list = fl.readline().split("\t")
+        name_list = fl.readline().lower().split(Table.TABLE_DELIMITER)
 
         for line in fl.readlines():
 
+            line = line.lower()
+
             dct = {}
 
-            value_list = line.split("\t")
+            value_list = line.split(Table.TABLE_DELIMITER)
 
             for key, val in zip(name_list, value_list):
                 if (key in ignore):
@@ -148,12 +219,12 @@ class OurTableLoader(TableLoader):
         fl.close()
 
         for entry in result:
-            entry[TableLoader.FIRST_START_BASE_KEY] = entry.pop('RNA1 from')
-            entry[TableLoader.SECOND_START_BASE_KEY] = entry.pop('RNA2 from')
-            entry[TableLoader.FIRST_END_BASE_KEY] = entry.pop('RNA1 to')
-            entry[TableLoader.SECOND_END_BASE_KEY] = entry.pop('RNA2 to')
-            entry[TableLoader.FIRST_STRAND_KEY] = entry.pop('RNA1 strand')
-            entry[TableLoader.SECOND_STRAND_KEY] = entry.pop('RNA2 strand')
+            entry[TableGlobals.FIRST_START_BASE_KEY] = entry.pop('RNA1 from'.lower())
+            entry[TableGlobals.SECOND_START_BASE_KEY] = entry.pop('RNA2 from'.lower())
+            entry[TableGlobals.FIRST_END_BASE_KEY] = entry.pop('RNA1 to'.lower())
+            entry[TableGlobals.SECOND_END_BASE_KEY] = entry.pop('RNA2 to'.lower())
+            entry[TableGlobals.FIRST_STRAND_KEY] = entry.pop('RNA1 strand'.lower())
+            entry[TableGlobals.SECOND_STRAND_KEY] = entry.pop('RNA2 strand'.lower())
 
 
         return result
@@ -162,17 +233,17 @@ if (__name__ == "__main__"):
 
 
 
-    # loader = OurTableLoader()
-    # result = loader.load("./our_files/assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type")
-    #
-    # j = 0
-    # for i in result:
-    #    if j == 10:
-    #        break
-    #    print i
-    #    j += 1
-    #
-    #
+    loader = OurTableLoader()
+    result = loader.load("./our_files/assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type")
+
+    j = 0
+    for i in result:
+       if j == 10:
+           break
+       print i
+       j += 1
+
+
     # table = loader.createTable("chimera", result)
     #
     #
@@ -184,135 +255,9 @@ if (__name__ == "__main__"):
 
 
 
-    loader = GeneTableLoader()
-    result = loader.load("genes.col")
-
-    table = loader.createTable("geneDB", result)
-
-    count = {}
-
-    for entry in result:
-
-        name = entry["NAME"].lower()
-
-        if not count.has_key(name):
-            count[name] = 1
-        else:
-            count[name] += 1
-
-        if count[name] > 1:
-            print "warning"
-
-    old_count = {}
-
-    warnings = ""
-    old_warnings = ""
-
-    for entry in result:
-
-        for name in entry["other_names"]:
-
-            lower_name = name.lower()
-
-            if count.has_key(lower_name):
-                count[lower_name] += 1
-                warnings += ("warning: %s is an old name of %s = %d\n" % (lower_name, entry["NAME"], count[lower_name]))
-            elif (old_count.has_key(lower_name)):
-                old_count[lower_name] += 1
-                old_warnings += ("warning: old multiplicity for %s = %d\n" % (lower_name, old_count[lower_name]))
-            else:
-                old_count[lower_name] = 1
-
-    print "-" * 100
-    print warnings
-    print "-" * 100
-    print old_warnings
-    print "-" * 100
-
-    # matches = table.is_overlaps(510860, 510863, "+")
-    #
-    # for match in matches:
-    #     res, id = match
-    #     print res, table.findById(id)
-    #
-    # print table.findByName("ybaS")
-
-    pdfLoader = PDFTableLoader()
-
-    result = pdfLoader.load("./parsed_files/s7.table")
-    pdfTable = pdfLoader.createTable("s5", result)
-
-    print "-" * 100
-    print "-" * 100
-    print "-" * 100
 
 
-    other_name_matches = ""
-
-    total_count = {}
-    total_count.update(count)
-    total_count.update(old_count)
-
-
-    # table_name = "sRNA-name"
-    table_name = "name"
-
-    # find matching candidates to copy their directionality
-    for entry in result:
-
-
-        match = table.findByField("NAME", entry[table_name])
-
-
-        if (match != (None, None)):
-
-            first_entry_start, first_entry_end, dummyA,\
-                second_entry_start, second_entry_end, dummyB = \
-                pdfTable.findByField(table_name, entry[table_name])[0].split(";")
-
-            startDiff = int(first_entry_start)
-            endDiff = int(first_entry_end)
-
-            first_entry_start, first_entry_end, dummyA,\
-                second_entry_start, second_entry_end, dummyB = match[0].split(";")
-
-            startDiff -= int (int(first_entry_start))
-            endDiff -= int(first_entry_end)
-
-            print "%s from PDF match to: %s diff is: %d;%d" % (entry[table_name], match[0], startDiff, endDiff)
-
-            if(total_count[entry[table_name].lower()] > 1):
-                print "%s has multiple instances" % entry[table_name]
-        else:
-
-            match = table.findByOtherNames(entry[table_name])
-
-            other_name_matches += "%s match to other names: %s\n" % (entry[table_name], match[0])
-
-            if (match[0] != None):
-                first_entry_start, first_entry_end, dummyA,\
-                    second_entry_start, second_entry_end, dummyB = \
-                    pdfTable.findByField(table_name, entry[table_name])[0].split(";")
-
-                startDiff = int(first_entry_start)
-                endDiff = int(first_entry_end)
-
-                first_entry_start, first_entry_end, dummyA,\
-                    second_entry_start, second_entry_end, dummyB = match[0].split(";")
-
-                startDiff -= int (int(first_entry_start))
-                endDiff -= int(first_entry_end)
-
-                other_name_matches += "the diff is %d;%d\n" % (startDiff, endDiff)
-
-            if (total_count.has_key(entry[table_name])):
-
-                other_name_matches += "%s appears %d in countings\n" % (entry[table_name], total_count[entry[table_name]])
-
-    print "-" * 100
-    print other_name_matches
-
-    # result = PDFTableLoader().load("./parsed_files/s5.table")
+    # result = PDFTableLoader().loadUnprocessed("./parsed_files/s5.table")
     #
     # for entry in result:
     #     print entry

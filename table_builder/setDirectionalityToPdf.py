@@ -1,6 +1,6 @@
 __author__ = 'amirbar'
 
-from TableLoader import GeneTableLoader, PDFTableLoader
+from TableLoader import GeneTableLoader, PDFTableLoader, ZhangTableLoader
 from Globals import TableGlobals
 from Table import Table
 
@@ -57,7 +57,6 @@ def addDirectionalityToPdfTables():
     # S6 handling
     result = pdfLoader.loadUnprocessed("./parsed_files/s6.table")
     pdfLoader.createTable("dummy", result).dump("./final_format/s6_directed.table")
-
 
 def printMatchAnalysis():
     """
@@ -203,6 +202,21 @@ def printMatchAnalysis():
     print other_name_matches
 
 
+def makeFinalZhangTables():
+
+    tables = ["Table-s3-zhang-2013-sheet2008",
+              "Table-s3-zhang-2013-sheet2009",
+              "Table-s4-zhang-2013-sheet2008",
+              "Table-s4-zhang-2013-sheet2009"]
+
+    loader = ZhangTableLoader()
+
+    for table in tables:
+        result = loader.loadUnprocessed("./zhang/csv/%s.csv" % table)
+        loader.createTable("dummy", result).dump("./zhang/final/%s.table" % table)
+
+
 if (__name__ == "__main__"):
     # printMatchAnalysis()
-    addDirectionalityToPdfTables()
+    #addDirectionalityToPdfTables()
+    makeFinalZhangTables()

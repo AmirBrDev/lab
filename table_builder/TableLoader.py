@@ -88,6 +88,28 @@ class TableLoader(object):
 
         return result
 
+class ZhangTableLoader(TableLoader):
+
+
+
+    def loadUnprocessed(self, path):
+
+        result = self.load(path)
+
+        for entry in result:
+
+            entry["name"] = entry.pop("gene")
+
+            entry[TableGlobals.FIRST_START_BASE_KEY] = entry.pop('gene start')
+            entry[TableGlobals.FIRST_END_BASE_KEY] = entry.pop('gene stop')
+            entry[TableGlobals.FIRST_STRAND_KEY] = entry.pop('strand')
+            entry[TableGlobals.SECOND_START_BASE_KEY] = entry[TableGlobals.FIRST_START_BASE_KEY]
+            entry[TableGlobals.SECOND_END_BASE_KEY] = entry[TableGlobals.FIRST_END_BASE_KEY]
+            entry[TableGlobals.SECOND_STRAND_KEY] = entry[TableGlobals.FIRST_STRAND_KEY]
+
+
+        return result
+
 class PDFTableLoader(TableLoader):
 
     S5_NAME_FIELD = "srna-name"
@@ -231,17 +253,23 @@ class OurTableLoader(TableLoader):
 
 if (__name__ == "__main__"):
 
+    loader = ZhangTableLoader()
+
+    result = loader.loadUnprocessed("./zhang/Table-s3-zhang-2013-2009sheet.csv")
+
+    for entry in result:
+        print entry
 
 
-    loader = OurTableLoader()
-    result = loader.load("./our_files/assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type")
-
-    j = 0
-    for i in result:
-       if j == 10:
-           break
-       print i
-       j += 1
+    # loader = OurTableLoader()
+    # result = loader.load("./our_files/assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type")
+    #
+    # j = 0
+    # for i in result:
+    #    if j == 10:
+    #        break
+    #    print i
+    #    j += 1
 
 
     # table = loader.createTable("chimera", result)

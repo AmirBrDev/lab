@@ -1,5 +1,8 @@
 __author__ = 'amirbar'
 
+import sys
+import os
+
 from TableLoader import TableLoader, OurTableLoader
 from Table import Table
 
@@ -19,7 +22,7 @@ class TableCrosser(object):
         loader = TableLoader()
         self._article_tables_list = [loader.createTable(name, loader.load(path)) for name, path in article_tables_list]
 
-    def crossTables(self, distance_treshold):
+    def crossTables(self, distance_treshold, workdir="./results"):
 
         table_keys = ["article name",
                       "article strand",
@@ -32,19 +35,33 @@ class TableCrosser(object):
                       "RNA1 name",
                       "RNA2 name",
                       "interactions",
-                      "odds ratio"]
+                      "odds ratio",
+                      "article table"]
 
         for curr_table in self._our_tables_list:
 
+            print "*" * 100
+            print curr_table._name
+            records = len(curr_table._dctData)
+            factor = 10
+            curr_record = 0
+            percentage = 0
+
             header = "\t".join(table_keys)
 
-            fl = open("results/%s.table" % curr_table._name, "wb")
+            fl = open("%s/%s.table" % (workdir, curr_table._name), "wb")
             fl.write(header)
             fl.write("\n")
 
             for id, additional_data in curr_table:
                 first_entry_start, first_entry_end, first_entry_strand,\
                     second_entry_start, second_entry_end, second_entry_strand = id.split(Table.ID_DELIMITER)
+
+                curr_record += 1
+
+                if curr_record % (records / factor) == 0:
+                    percentage += factor
+                    print "%d percent" % percentage
 
                 for table in self._article_tables_list:
                     match_list = table.is_overlaps(int(first_entry_start),
@@ -71,7 +88,8 @@ class TableCrosser(object):
                                         additional_data["rna1 name"],
                                         additional_data["rna2 name"],
                                         additional_data["interactions"],
-                                        additional_data["odds ratio"]]
+                                        additional_data["odds ratio"],
+                                        table._name]
 
                             line = "\t".join(to_print)
                             fl.write(line)
@@ -105,7 +123,8 @@ class TableCrosser(object):
                                             additional_data["rna1 name"],
                                             additional_data["rna2 name"],
                                             additional_data["interactions"],
-                                            additional_data["odds ratio"]]
+                                            additional_data["odds ratio"],
+                                            table._name]
 
                                 line = "\t".join(to_print)
                                 fl.write(line)
@@ -113,22 +132,21 @@ class TableCrosser(object):
             fl.close()
 
 
-if __name__ == "__main__":
+def crossRaghavan():
 
-
-    files = ["assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type"]
-             # "assign-type-to-all-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_all_interactions.with-type",
-             # "assign-type-to-all-chimeras-of-MG_hfq-WT101_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.with-type",
-             # "assign-type-to-all-chimeras-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.with-type",
-             # "assign-type-to-all-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_all_interactions.with-type",
-             # "assign-type-to-signif-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_sig_interactions.with-type",
-             # "assign-type-to-signif-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_sig_interactions.with-type",
+    files = [#"assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type"]
+             #"assign-type-to-all-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_all_interactions.with-type"]
+             #"assign-type-to-all-chimeras-of-MG_hfq-WT101_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.with-type"]
+             # "assign-type-to-all-chimeras-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.with-type"]
+             # "assign-type-to-all-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_all_interactions.with-type"]
+             # "assign-type-to-signif-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_sig_interactions.with-type"]
+             # "assign-type-to-signif-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_sig_interactions.with-type"]
              # "assign-type-to-signif-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_sig_interactions.with-type",
-             # "assign-type-to-single-counts-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_single_counts.with-type",
-             # "assign-type-to-single-counts-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_single_counts.with-type",
-             # "assign-type-to-single-counts-of-MG_hfq-WT101_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type",
-             # "assign-type-to-single-counts-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type",
-             # "assign-type-to-single-counts-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_single_counts.with-type"]
+             # "assign-type-to-single-counts-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_single_counts.with-type"]
+             # "assign-type-to-single-counts-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_single_counts.with-type"]
+             # "assign-type-to-single-counts-of-MG_hfq-WT101_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type"]
+             # "assign-type-to-single-counts-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type"]
+             "assign-type-to-single-counts-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_single_counts.with-type"]
 
 
 
@@ -144,5 +162,74 @@ if __name__ == "__main__":
     crosser = TableCrosser(our_tables, article_tables)
     crosser.crossTables(1000)
 
-    print "finished"
+def crossZhang(fileName):
+
+    files = [fileName]
+
+    # files = [#"assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type"]
+             #"assign-type-to-all-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_all_interactions.with-type"]
+             #"assign-type-to-all-chimeras-of-MG_hfq-WT101_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.with-type"]
+             # "assign-type-to-all-chimeras-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.with-type"]
+             # "assign-type-to-all-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_all_interactions.with-type"]
+             # "assign-type-to-signif-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_sig_interactions.with-type"]
+             # "assign-type-to-signif-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_sig_interactions.with-type"]
+             # "assign-type-to-signif-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_sig_interactions.with-type",
+             # "assign-type-to-single-counts-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_single_counts.with-type"]
+             # "assign-type-to-single-counts-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_single_counts.with-type"]
+             # "assign-type-to-single-counts-of-MG_hfq-WT101_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type"]
+             # "assign-type-to-single-counts-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type"]
+             # "assign-type-to-single-counts-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_single_counts.with-type"]
+
+    our_tables = [(name, "our_files/%s" % name) for name in files]
+
+    article_tables = [("zhang2013_s3_sheet_2008", "zhang/final/Table-s3-zhang-2013-sheet2008.table"),
+                      ("zhang2013_s3_sheet_2009", "zhang/final/Table-s3-zhang-2013-sheet2009.table"),
+                      ("zhang2013_s4_sheet_2008", "zhang/final/Table-s4-zhang-2013-sheet2008.table"),
+                      ("zhang2013_s4_sheet_2009", "zhang/final/Table-s4-zhang-2013-sheet2009.table")]
+
+    crosser = TableCrosser(our_tables, article_tables)
+    crosser.crossTables(1000, "results/zhang")
+
+def usage():
+    print """TableCrosser.py <TYPE> <FILE>
+    where type can be:
+    1. raghavan
+    2. zhang
+
+    and file is the name of one of our *.with-type files."""
+
+def run():
+    mode = sys.argv[1]
+    fileName = sys.argv[2]
+
+    try:
+        if mode == "raghavan":
+            crossRaghavan(fileName)
+
+        elif mode == "zhang":
+            crossZhang(fileName)
+
+        else:
+            print "invalid mode."
+
+    except IOError as ex:
+        print ex.message
+
+
+if __name__ == "__main__":
+
+    expected_args = 3
+
+    print sys.argv
+
+    if len(sys.argv) != expected_args:
+        usage()
+
+    else:
+        run()
+
+    print "Done"
+
+
+
 

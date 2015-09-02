@@ -44,6 +44,12 @@ class Table(object):
     def __iter__(self):
         return Table.TableIterator(self)
 
+    def __len__(self):
+        return len(self._dctData)
+
+    def get_name(self):
+        return self._name
+
     def dump(self, path):
         """
         Writes the table to a file
@@ -89,7 +95,7 @@ class Table(object):
 
         fl.close()
 
-    def insert(self, first, second, **kwargs):
+    def insert(self, first, second, append_dup = False, **kwargs):
         """
         Insert a new entry to the table
         :param first: a tuple (start, end, strand)
@@ -101,12 +107,35 @@ class Table(object):
         additional_data.update(kwargs)
         additional_data[Table.UNIQUE_ID_FIELD] = len(self._dctData)
 
+        # reorder the start and end if they were given in wrong order (sometimes on the negative strand
+        # it is written opposite)
+        start, end, strand = first
+
+        if (int(start) > int(end)):
+            first = (end, start, strand)
+
+        start, end, strand = second
+
+        if (int(start) > int(end)):
+            second = (end, start, strand)
+
+        # Generate unique id
         id = ("%s;%s;%s;" % first) + ("%s;%s;%s" % second)
 
         if (self._dctData.has_key(id)):
-            print "[Table:insert]warning multiple entries has the unique id: %s" % id
 
-        self._dctData[id] = additional_data
+            if (not append_dup):
+                print "[Table:insert]warning multiple entries has the unique id: %s" % id
+
+            else:
+
+                for key, value in additional_data.items():
+
+                    if key != Table.UNIQUE_ID_FIELD:
+                        self._dctData[id][key] += ";%s" % value
+
+        if not append_dup or not self._dctData.has_key(id):
+            self._dctData[id] = additional_data
 
     def is_overlaps(self, start, end, strand_val):
         """
@@ -157,14 +186,14 @@ class Table(object):
                     (first_entry_start >= start and first_entry_start <= end) or
                     (first_entry_end >= start and first_entry_end <= end)):
 
-                    matches.append((True, value[Table.UNIQUE_ID_FIELD], start - first_entry_start))
+                    matches.append((True, (key, value), start - first_entry_start))
 
                 elif ((start >= second_entry_start and start <= second_entry_end) or
                     (end >= second_entry_start and end <= second_entry_end) or
                     (second_entry_start >= start and second_entry_start <= end) or
                     (second_entry_end >= start and second_entry_end <= end)):
 
-                    matches.append((True, value[Table.UNIQUE_ID_FIELD], start - second_entry_start))
+                    matches.append((True, (key, value), start - second_entry_start))
 
                 first_distance = min(abs(start - first_entry_start),
                                      abs(end - first_entry_end),
@@ -179,16 +208,16 @@ class Table(object):
                 distance = min(first_distance, second_distance)
 
                 if (closest_segment == None):
-                    closest_segment = value[Table.UNIQUE_ID_FIELD]
+                    closest_segment = (key, value)
                     closest_segment_distance = distance
 
                 elif (distance < closest_segment_distance):
-                    closest_segment = value[Table.UNIQUE_ID_FIELD]
+                    closest_segment = (key, value)
                     closest_segment_distance = distance
 
         if ((len(matches) == 0) and (distance is not None)):
 
-            matches.append((False, closest_segment, distance))
+            matches.append((False, closest_segment, closest_segment_distance))
 
         return matches
 

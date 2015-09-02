@@ -39,7 +39,11 @@ files = ["assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_
 # for name in files:
 #     execute("./TableCrosser.py")
 
-from TableCrosser import crossZhang
+from TableCrosser import cross_zhang, cross_raghavan, cross_bilusic, cross_tss, cross_lybecker
 
 for name in files:
-    crossZhang(name)
+    cross_raghavan(name, reverse=True)
+    # crossZhang(name)
+    # crossBilusic(name)
+    # crossTss(name)
+    # crossLybecker(name)

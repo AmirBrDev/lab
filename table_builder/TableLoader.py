@@ -4,6 +4,7 @@ __author__ = 'amirbar'
 
 from Table import Table, GeneTable
 from Globals import TableGlobals
+from BuilderExceptions.StructureException import StructureException
 
 class TableLoader(object):
     """
@@ -46,6 +47,9 @@ class TableLoader(object):
 
             value_list = line.split(Table.TABLE_DELIMITER)
 
+            if (len(name_list) != len(value_list)):
+                raise StructureException("Unmatched arguments count in table.")
+
             for key, val in zip(name_list, value_list):
                 dct[key.replace("\n", "")] = val.replace("\n", "")
 
@@ -64,7 +68,7 @@ class TableLoader(object):
         """
         raise NotImplementedError
 
-    def createTable(self, name, row_list):
+    def createTable(self, name, row_list, append_dup = False):
         """
         Creates a table from output of the load
         :param name: the name for the table
@@ -84,13 +88,119 @@ class TableLoader(object):
                      row.pop(TableGlobals.SECOND_STRAND_KEY))
 
 
-            result.insert(first, second, **row)
+            result.insert(first, second, append_dup, **row)
+
+        return result
+
+class TssMasterTableLoader(TableLoader):
+    def loadUnprocessed(self, path):
+
+        result = self.load(path)
+
+        for entry in result:
+            entry["name"] = entry.pop('locus_tag')
+            entry[TableGlobals.FIRST_START_BASE_KEY] = entry.pop('pos')
+            entry[TableGlobals.FIRST_END_BASE_KEY] = entry[TableGlobals.FIRST_START_BASE_KEY]
+            entry[TableGlobals.FIRST_STRAND_KEY] = entry.pop('strand')
+            entry[TableGlobals.SECOND_START_BASE_KEY] = entry[TableGlobals.FIRST_START_BASE_KEY]
+            entry[TableGlobals.SECOND_END_BASE_KEY] = entry[TableGlobals.FIRST_END_BASE_KEY]
+            entry[TableGlobals.SECOND_STRAND_KEY] = entry[TableGlobals.FIRST_STRAND_KEY]
+
+        return result
+
+class LybeckerTableLoader(TableLoader):
+    def loadUnprocessed(self, path):
+
+        result = self.load(path)
+
+        for entry in result:
+            entry["name"] = "None"
+
+            start, end = entry.pop("coordinates").split("-")
+
+            print start, end, (int(start) > int(end))
+
+            if int(start) > int(end):
+                entry[TableGlobals.FIRST_STRAND_KEY] = Table.NEG_STRAND
+                entry[TableGlobals.FIRST_START_BASE_KEY] = end
+                entry[TableGlobals.FIRST_END_BASE_KEY] = start
+            else:
+                entry[TableGlobals.FIRST_STRAND_KEY] = Table.POS_STRAND
+                entry[TableGlobals.FIRST_START_BASE_KEY] = start
+                entry[TableGlobals.FIRST_END_BASE_KEY] = end
+
+            entry[TableGlobals.SECOND_START_BASE_KEY] = entry[TableGlobals.FIRST_START_BASE_KEY]
+            entry[TableGlobals.SECOND_END_BASE_KEY] = entry[TableGlobals.FIRST_END_BASE_KEY]
+            entry[TableGlobals.SECOND_STRAND_KEY] = entry[TableGlobals.FIRST_STRAND_KEY]
+
+        return result
+
+class LybeckerS2TableLoader(TableLoader):
+    def loadUnprocessed(self, path):
+
+        result = self.load(path)
+
+        for entry in result:
+            entry["name"] = "None"
+
+            start, end = entry.pop("coordinates ip-dsrnas").replace(",", "").split("-")
+
+            if int(start) > int(end):
+                entry[TableGlobals.FIRST_STRAND_KEY] = Table.NEG_STRAND
+                entry[TableGlobals.FIRST_START_BASE_KEY] = end
+                entry[TableGlobals.FIRST_END_BASE_KEY] = start
+            else:
+                entry[TableGlobals.FIRST_STRAND_KEY] = Table.POS_STRAND
+                entry[TableGlobals.FIRST_START_BASE_KEY] = start
+                entry[TableGlobals.FIRST_END_BASE_KEY] = end
+
+            entry[TableGlobals.SECOND_START_BASE_KEY] = entry[TableGlobals.FIRST_START_BASE_KEY]
+            entry[TableGlobals.SECOND_END_BASE_KEY] = entry[TableGlobals.FIRST_END_BASE_KEY]
+            entry[TableGlobals.SECOND_STRAND_KEY] = entry[TableGlobals.FIRST_STRAND_KEY]
+
+        return result
+
+class BilusicTableLoader(TableLoader):
+
+    def loadUnprocessed(self, path):
+
+        result = []
+
+        fl = open(path, "rb")
+
+        name_list = fl.readline().lower().split(Table.TABLE_DELIMITER)
+
+        for line in fl.readlines():
+
+            line = line.lower()
+
+            value_list = line.split(Table.TABLE_DELIMITER)
+
+            dct = {}
+
+            for key, val in zip(name_list, value_list):
+                dct[key.replace("\n", "")] = val.replace("\n", "")
+
+
+            # append only non empty rows
+            if dct["rna"] != "":
+                result.append(dct)
+
+        fl.close()
+
+        for entry in result:
+            entry["name"] = entry.pop("rna")
+
+            entry[TableGlobals.FIRST_START_BASE_KEY] = entry.pop('start')
+            entry[TableGlobals.FIRST_END_BASE_KEY] = entry.pop('end')
+            entry[TableGlobals.FIRST_STRAND_KEY] = entry.pop('strand')
+            entry[TableGlobals.SECOND_START_BASE_KEY] = entry[TableGlobals.FIRST_START_BASE_KEY]
+            entry[TableGlobals.SECOND_END_BASE_KEY] = entry[TableGlobals.FIRST_END_BASE_KEY]
+            entry[TableGlobals.SECOND_STRAND_KEY] = entry[TableGlobals.FIRST_STRAND_KEY]
 
         return result
 
 class ZhangTableLoader(TableLoader):
-
-
 
     def loadUnprocessed(self, path):
 
@@ -115,26 +225,7 @@ class PDFTableLoader(TableLoader):
     S5_NAME_FIELD = "srna-name"
 
     def loadUnprocessed(self, path):
-        result = []
-
-        fl = open(path, "rb")
-
-        name_list = fl.readline().lower().split(Table.TABLE_DELIMITER)
-
-        for line in fl.readlines():
-
-            line = line.lower()
-
-            value_list = line.split(Table.TABLE_DELIMITER)
-
-            dct = {}
-
-            for key, val in zip(name_list, value_list):
-                dct[key.replace("\n", "")] = val.replace("\n", "")
-
-            result.append(dct)
-
-        fl.close()
+        result = self.load()
 
         for entry in result:
 
@@ -253,11 +344,12 @@ class OurTableLoader(TableLoader):
 
 if (__name__ == "__main__"):
 
-    loader = ZhangTableLoader()
+    loader = LybeckerTableLoader()
 
-    result = loader.loadUnprocessed("./zhang/Table-s3-zhang-2013-2009sheet.csv")
+    result = loader.loadUnprocessed("./lybecker/csv/sd01.csv")
 
     for entry in result:
+
         print entry
 
 

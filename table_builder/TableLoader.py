@@ -1,5 +1,3 @@
-from Bio.TogoWS import entry
-
 __author__ = 'amirbar'
 
 from Table import Table, GeneTable

@@ -45,7 +45,50 @@ class TableFormatter(object):
     @staticmethod
     def _get_key(row):
 
-        return row[3] == "false"
+        score = 0
+
+        # give score according to found
+        if row[3] == "false":
+            score += 100
+
+        # give score according to type
+        if row[2] == "3utr":
+            score += 1
+
+        elif row[2] == "5utr":
+            score += 2
+
+        elif row[2] == "as":
+            score += 3
+
+        elif row[2] == "as_with_cis_t":
+            score += 4
+
+        elif row[2] == "cis_as_with_trans_t":
+            score += 5
+
+        elif row[2] == "other-ncrna":
+            score += 6
+
+        elif row[2] == "srna":
+            score += 7
+
+        elif row[2] == "trna":
+            score += 8
+
+        elif row[2] == "tu":
+            score += 9
+
+        elif row[2] == "mrna":
+            score += 10
+
+        elif row[2] == "igr":
+            score += 11
+
+        else:
+            raise BaseException("Unsupported type '%s'" % row[2])
+
+        return score
 
     @staticmethod
     def _sort_names_to_data(names_to_data):
@@ -80,10 +123,12 @@ class TableFormatter(object):
                   "odds ratio",
                   "article table"]
 
+        print "finished reading '%s'" % file_path
+
         for row in table_rows:
             # match_name = row["match to"].lower()
             # print row
-            match_name = row["distance"].lower()
+            match_name = row["match to"].lower()
 
             # Handle first
             to_print = [row["rna1 name"],
@@ -94,7 +139,7 @@ class TableFormatter(object):
                 to_print.extend([row["overlaps"],
                                  row["article name"],
                                  row["article strand"],
-                                 row["match to"],  # should be distance
+                                 row["distance"],  # should be distance
                                  row["article table"]])
 
             else:
@@ -113,7 +158,7 @@ class TableFormatter(object):
                 to_print.extend([row["overlaps"],
                                  row["article name"],
                                  row["article strand"],
-                                 row["match to"],  # should be distance
+                                 row["distance"],  # should be distance
                                  row["article table"]])
 
             else:
@@ -135,7 +180,7 @@ class TableFormatter(object):
 if __name__ == "__main__":
 
     TableFormatter.split_reverse_rows(TableLoader, "results/raghavan/reverse/assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type.table")
-    #
+
     # header = ["RNA name",
     #           "EcoCyc ID",
     #           "type",
@@ -147,19 +192,20 @@ if __name__ == "__main__":
     #           "odds ratio",
     #           "article table"]
     #
-    # rows = [["aaa", "", "", "false", "b1", "-", "100", "s5"],
-    #         ["aaa", "", "", "false", "b2", "-", "8", "s6"],
-    #         ["aaa", "", "", "false", "b3", "-", "12", "s7"],
-    #         ["ccc", "", "", "false", "b1", "-", "100", "s5"],
-    #         ["aaa", "", "", "true", "b4", "-", "-13", "s7"],
-    #         ["aaa", "", "", "false", "b5", "-", "7", "s5"]]
+    # rows = [["aaa", "", "as", "false", "b1", "-", "100", "s5"],
+    #         ["aaa", "", "as", "false", "b2", "-", "8", "s6"],
+    #         ["aaa", "", "as", "false", "b3", "-", "12", "s7"],
+    #         ["ccc", "", "tu", "false", "b1", "-", "100", "s5"],
+    #         ["aaa", "", "as", "true", "b4", "-", "-13", "s7"],
+    #         ["aaa", "", "as", "false", "b5", "-", "7", "s5"],
+    #         ["ddd", "", "trna", "false", "b1", "-", "100", "s5"]]
     #
     # dct = {}
     #
     # for row in rows:
-    #     formatter._add_names_to_data(dct, row)
+    #     TableFormatter._add_names_to_data(dct, row)
     #
     # print dct
     #
-    # for row in formatter._sort_names_to_data(dct):
+    # for row in TableFormatter._sort_names_to_data(dct):
     #     print row

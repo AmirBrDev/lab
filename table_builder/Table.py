@@ -184,14 +184,14 @@ class Table(object):
                 if ((start >= first_entry_start and start <= first_entry_end) or
                     (end >= first_entry_start and end <= first_entry_end) or
                     (first_entry_start >= start and first_entry_start <= end) or
-                    (first_entry_end >= start and first_entry_end <= end)):
+                    (first_entry_end >= start and first_entry_end <= end)) and strand == first_entry_strand:
 
                     matches.append((True, (key, value), start - first_entry_start))
 
                 elif ((start >= second_entry_start and start <= second_entry_end) or
                     (end >= second_entry_start and end <= second_entry_end) or
                     (second_entry_start >= start and second_entry_start <= end) or
-                    (second_entry_end >= start and second_entry_end <= end)):
+                    (second_entry_end >= start and second_entry_end <= end)) and strand == second_entry_strand:
 
                     matches.append((True, (key, value), start - second_entry_start))
 
@@ -254,7 +254,7 @@ if __name__ == "__main__":
            "name2" : "test2"}
 
     table.insert((10, 12, "+"), (13, 100, "+"), **dct)
-    table.insert((6, 9, "+"), (6, 9, "+"), **dct)
+    table.insert((6, 9, "+"), (300, 400, "-"), **dct)
 
     print table._dctData
 

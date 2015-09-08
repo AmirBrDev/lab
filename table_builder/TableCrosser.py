@@ -263,13 +263,13 @@ def cross_raghavan(file_name, reverse=False):
                       ("s6", "final_format/s6_directed.table"),
                       ("s7", "final_format/s7_directed.table")]
 
-    crosser = TableCrosser(our_tables, article_tables)
-
     if not reverse:
-        crosser.cross_tables(1000, "results/raghavan")
+        TableCrosser(our_tables, article_tables).cross_tables(1000, "results/raghavan")
     else:
-        crosser.cross_tables_reverse(100000000, "results/raghavan/reverse")
-        TableFormatter.split_reverse_rows(TableLoader, "results/raghavan/reverse/%s.table")
+        TableCrosser(our_tables, article_tables).cross_tables_reverse(100000000, "results/raghavan/reverse")
+        print "Formatting file..."
+        TableFormatter.split_reverse_rows(TableLoader, "results/raghavan/reverse/%s.table" % file_name)
+        print "Done."
 
 
 def cross_zhang(file_name, reverse=False):
@@ -285,13 +285,13 @@ def cross_zhang(file_name, reverse=False):
                       ("zhang2013_s4_sheet_2008", "zhang/final/Table-s4-zhang-2013-sheet2008.table"),
                       ("zhang2013_s4_sheet_2009", "zhang/final/Table-s4-zhang-2013-sheet2009.table")]
 
-    crosser = TableCrosser(our_tables, article_tables)
-
     if not reverse:
-        crosser.cross_tables(1000, "results/zhang")
+        TableCrosser(our_tables, article_tables).cross_tables(1000, "results/zhang")
     else:
-        crosser.cross_tables_reverse(100000000, "results/zhang/reverse")
-        TableFormatter.split_reverse_rows(TableLoader, "results/zhang/reverse/%s.table")
+        TableCrosser(our_tables, article_tables).cross_tables_reverse(100000000, "results/zhang/reverse")
+        print "Formatting file..."
+        TableFormatter.split_reverse_rows(TableLoader, "results/zhang/reverse/%s.table" % file_name)
+        print "Done."
 
 
 def cross_bilusic(file_name, reverse=False):
@@ -307,13 +307,13 @@ def cross_bilusic(file_name, reverse=False):
                       ("2014RNABIOL0069R_TableS3", "bilusic/final/2014RNABIOL0069R_TableS3.table"),
                       ("2014RNABIOL0069R_TableS4", "bilusic/final/2014RNABIOL0069R_TableS4.table")]
 
-    crosser = TableCrosser(our_tables, article_tables)
-
     if not reverse:
-        crosser.cross_tables(1000, "results/bilusic", 20)
+        TableCrosser(our_tables, article_tables).cross_tables(1000, "results/bilusic", 20)
     else:
-        crosser.cross_tables_reverse(100000000, "results/bilusic/reverse", 20)
-        TableFormatter.split_reverse_rows(TableLoader, "results/bilusic/reverse/%s.table")
+        TableCrosser(our_tables, article_tables).cross_tables_reverse(100000000, "results/bilusic/reverse", 20)
+        print "Formatting file..."
+        TableFormatter.split_reverse_rows(TableLoader, "results/bilusic/reverse/%s.table" % file_name)
+        print "Done."
 
 
 def cross_tss(file_name, reverse=False):
@@ -326,13 +326,10 @@ def cross_tss(file_name, reverse=False):
 
     article_tables = [("Tss master table", "tss/final/JB.02096-14_zjb999093409sd1-3.table")]
 
-    crosser = TableCrosser(our_tables, article_tables)
-
     if not reverse:
-        crosser.cross_tables(1000, "results/tss", 20)
+        TableCrosser(our_tables, article_tables).cross_tables(1000, "results/tss", 20)
     else:
-        crosser.cross_tables_reverse(100000000, "results/tss/reverse", 20)
-        TableFormatter.split_reverse_rows(TableLoader, "results/tss/reverse/%s.table")
+        TableCrosser(our_tables, article_tables).cross_tables_reverse(100000000, "results/tss/reverse", 20)
 
 
 def cross_lybecker(file_name, reverse=False):
@@ -346,15 +343,11 @@ def cross_lybecker(file_name, reverse=False):
     article_tables = [("Lybecker sd01", "lybecker/final/updated_sd01.table"),
                       ("Lybecker s2", "lybecker/final/updated_lybecker_s2.table")]
 
-    crosser = TableCrosser(our_tables, article_tables)
-
     if not reverse:
-        crosser.cross_tables(1000, "results/lybecker", 20)
+        TableCrosser(our_tables, article_tables).cross_tables(1000, "results/lybecker", 20)
 
     else:
-        crosser.cross_tables_reverse(100000000, "results/lybecker/reverse", 20)
-        TableFormatter.split_reverse_rows(TableLoader, "results/lybecker/reverse/%s.table")
-
+        TableCrosser(our_tables, article_tables).cross_tables_reverse(100000000, "results/lybecker/reverse", 20)
 
 def usage():
 
@@ -362,6 +355,9 @@ def usage():
     where type can be:
     1. raghavan
     2. zhang
+    3. lybecker
+    4. bilusic
+    5. tss
 
     and file is the name of one of our *.with-type files."""
 
@@ -371,18 +367,47 @@ def run():
     mode = sys.argv[1]
     file_name = sys.argv[2]
 
+    files = ["assign-type-to-all-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.with-type",
+             "assign-type-to-all-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_all_interactions.with-type",
+             "assign-type-to-all-chimeras-of-MG_hfq-WT101_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.with-type",
+             "assign-type-to-all-chimeras-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.with-type",
+             "assign-type-to-all-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_all_interactions.with-type",
+             "assign-type-to-signif-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_sig_interactions.with-type",
+             "assign-type-to-signif-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_sig_interactions.with-type",
+             "assign-type-to-signif-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_sig_interactions.with-type",
+             "assign-type-to-single-counts-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_single_counts.with-type",
+             "assign-type-to-single-counts-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_single_counts.with-type",
+             "assign-type-to-single-counts-of-MG_hfq-WT101_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type",
+             "assign-type-to-single-counts-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type",
+             "assign-type-to-single-counts-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_single_counts.with-type"]
+
+
+    cross_func = None
+
     try:
         if mode == "raghavan":
-            cross_raghavan(file_name)
+            cross_func = cross_raghavan
 
         elif mode == "zhang":
-            cross_zhang(file_name)
+            cross_func = cross_zhang
+
+        elif mode == "lybecker":
+            cross_func = cross_lybecker
+
+        elif mode == "bilusic":
+            cross_func = cross_bilusic
+
+        elif mode == "tss":
+            cross_func = cross_tss
 
         else:
             print "invalid mode."
 
     except IOError as ex:
         print ex.message
+
+    for name in files:
+        cross_func(name, reverse=True)
 
 
 if __name__ == "__main__":

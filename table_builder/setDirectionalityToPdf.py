@@ -154,15 +154,15 @@ def printMatchAnalysis():
 
         if (match != (None, None)):
 
-            first_entry_start, first_entry_end, dummyA,\
-                second_entry_start, second_entry_end, dummyB = \
+            first_entry_start, first_entry_end, dummy_a,\
+                second_entry_start, second_entry_end, dummy_b = \
                 pdfTable.findByField(table_name, entry[table_name])[0].split(";")
 
             startDiff = int(first_entry_start)
             endDiff = int(first_entry_end)
 
-            first_entry_start, first_entry_end, dummyA,\
-                second_entry_start, second_entry_end, dummyB = match[0].split(";")
+            first_entry_start, first_entry_end, dummy_a,\
+                second_entry_start, second_entry_end, dummy_b = match[0].split(";")
 
             startDiff -= int (int(first_entry_start))
             endDiff -= int(first_entry_end)
@@ -178,15 +178,15 @@ def printMatchAnalysis():
             other_name_matches += "%s match to other names: %s\n" % (entry[table_name], match[0])
 
             if (match[0] != None):
-                first_entry_start, first_entry_end, dummyA,\
-                    second_entry_start, second_entry_end, dummyB = \
+                first_entry_start, first_entry_end, dummy_a,\
+                    second_entry_start, second_entry_end, dummy_b = \
                     pdfTable.findByField(table_name, entry[table_name])[0].split(";")
 
                 startDiff = int(first_entry_start)
                 endDiff = int(first_entry_end)
 
-                first_entry_start, first_entry_end, dummyA,\
-                    second_entry_start, second_entry_end, dummyB = match[0].split(";")
+                first_entry_start, first_entry_end, dummy_a,\
+                    second_entry_start, second_entry_end, dummy_b = match[0].split(";")
 
                 startDiff -= int (int(first_entry_start))
                 endDiff -= int(first_entry_end)
@@ -195,18 +195,21 @@ def printMatchAnalysis():
 
             if (total_count.has_key(entry[table_name])):
 
-                other_name_matches += "%s appears %d in countings\n" % (entry[table_name], total_count[entry[table_name]])
+                other_name_matches += "%s appears %d in countings\n" % \
+                                      (entry[table_name], total_count[entry[table_name]])
 
     print "-" * 100
     print "matches to old names (in case of no match to major)"
     print "-" * 100
     print other_name_matches
 
+
 def lybecker_update(file_name,
-                       show_warnings = True,
-                       overlap_delimiter = "/",
-                       overlap_field = "annotation of overlapping genes",
-                       loader_type = LybeckerS2TableLoader):
+                    show_warnings=True,
+                    overlap_delimiter="/",
+                    overlap_field="annotation of overlapping genes",
+                    adjacent_field="adjacent genes",
+                    loader_type=LybeckerS2TableLoader):
 
     geneLoader = GeneTableLoader()
     gene_table = geneLoader.createTable("genes", geneLoader.loadUnprocessed("./genes.col"))
@@ -219,6 +222,7 @@ def lybecker_update(file_name,
     for id, info in table:
 
         dct = {}
+
         info.pop(Table.UNIQUE_ID_FIELD)
         start, end, strand = id.split(";")[:3]
         # print info["name"]
@@ -229,7 +233,7 @@ def lybecker_update(file_name,
 
         if show_warnings:
             print id
-            overlaps = info[overlap_field].split(overlap_delimiter)
+            overlaps = [gene for gene in info[overlap_field].split(overlap_delimiter) if gene != ""]
             print overlaps
 
             for index, gene in enumerate(result):
@@ -237,18 +241,22 @@ def lybecker_update(file_name,
                 if gene[1][1]["name"] not in overlaps:
                     print "[warning] older name is being used"
 
-            if len(overlaps) != len(result):
+            if len(overlaps) > len(result):
                 print "[warning] missing overlapping gene"
 
-
+            if len(overlaps) < len(result):
+                print "[warning] extra overlapping gene"
 
         # Set the record location
         dct[TableGlobals.FIRST_START_BASE_KEY], dct[TableGlobals.FIRST_END_BASE_KEY], \
             dct[TableGlobals.FIRST_STRAND_KEY], dct[TableGlobals.SECOND_START_BASE_KEY], \
             dct[TableGlobals.SECOND_END_BASE_KEY], dct[TableGlobals.SECOND_STRAND_KEY] = id.split(Table.ID_DELIMITER)
 
+        # Assume unknown strand
+        dct[TableGlobals.FIRST_STRAND_KEY] = "none"
+        dct[TableGlobals.SECOND_STRAND_KEY] = "none"
 
-        is_valid =  result[0][0]
+        is_valid = result[0][0]
         overlap_names = info[overlap_field].split(overlap_delimiter)
 
         # Check if major in overlapping names
@@ -284,8 +292,38 @@ def lybecker_update(file_name,
                 if is_valid:
                     break
 
+        if "intergenic" == info["category"]:
+            is_valid = False
+            adjacent_genes = [val for val in info[adjacent_field].split(overlap_delimiter) if val != ""]
+
+            first = gene_table.findByName(adjacent_genes[0])
+            second = gene_table.findByName(adjacent_genes[1])
+
+            if first == (None, None):
+                first = gene_table.findByOtherNames(adjacent_genes[0])
+            if second == (None, None):
+                second = gene_table.findByOtherNames(adjacent_genes[1])
+
+            if first != (None, None):
+                representing = first
+            elif second != (None, None):
+                representing = second
+            else:
+                raise BaseException("No presenting gene found")
+
+            strand = representing[0].split(Table.ID_DELIMITER)[2]
+
+            if strand == TableGlobals.STRAND_POSITIVE:
+                dct[TableGlobals.FIRST_STRAND_KEY] = TableGlobals.STRAND_NEGATIVE
+                dct[TableGlobals.SECOND_STRAND_KEY] = TableGlobals.STRAND_NEGATIVE
+
+            else:
+                dct[TableGlobals.FIRST_STRAND_KEY] = TableGlobals.STRAND_POSITIVE
+                dct[TableGlobals.SECOND_STRAND_KEY] = TableGlobals.STRAND_POSITIVE
+
         if is_valid:
-            is_valid = "divergent" not in info["category"] and "convergent" not in info["category"]
+            is_valid = "divergent" not in info["category"] and \
+                       "convergent" not in info["category"]
 
 
         # Update the record name if gene was found
@@ -293,12 +331,8 @@ def lybecker_update(file_name,
             info["name"] = "overlapping_"
         else:
             name_id = id.split(Table.ID_DELIMITER)[:2]
-            name_id.append("none")
+            name_id.append(dct[TableGlobals.FIRST_STRAND_KEY])
             info["name"] = "lybecker_%s_%s" % (info["category"], Table.ID_DELIMITER.join(name_id))
-
-        # Assume unknown strand
-        dct[TableGlobals.FIRST_STRAND_KEY] = "none"
-        dct[TableGlobals.SECOND_STRAND_KEY] = "none"
 
         pos_count = 0
         neg_count = 0
@@ -310,14 +344,13 @@ def lybecker_update(file_name,
 
                 # exact match add name
                 info["name"] += "%s." % entry[1][1]["name"]
-
                 strand = entry[1][0].split(Table.ID_DELIMITER)[2]
 
                 if TableGlobals.STRAND_NEGATIVE == strand:
-                    pos_count += 1
+                    neg_count += 1
 
                 if TableGlobals.STRAND_POSITIVE == strand:
-                    neg_count += 1
+                    pos_count += 1
 
             if neg_count == 0:
                 dct[TableGlobals.FIRST_STRAND_KEY] = TableGlobals.STRAND_NEGATIVE
@@ -349,9 +382,10 @@ def lybecker_update(file_name,
 if __name__ == "__main__":
 
     lybecker_update("lybecker_s2.table",
-                show_warnings=False)
+                show_warnings=True)
     # lybecker_update("sd01.table",
     #                 overlap_delimiter=",",
     #                 overlap_field="overlapping genes",
     #                 loader_type=LybeckerTableLoader,
-    #                 show_warnings=False)
+    #                 adjacent_field="neighboring genes",
+    #                 show_warnings=True)

@@ -384,7 +384,8 @@ their_tables = ["raghavan_s5",
                 "lybecker_s2",
                 "bilusic_s1",
                 "bilusic_s2",
-                "bilusic_s3",
+                "bilusic_s3_1",
+                "bilusic_s3_2",
                 "bilusic_s4",
                 "zhang_s3_2013_sheet2008",
                 "zhang_s3_2013_sheet2009",
@@ -535,6 +536,10 @@ def test_counts(our_tables):
 
 
 # test_counts(our_tables)
+
+def get_tss_type_string(name, position, cursor):
+    query = """SELECT
+    FROM tss"""
 
 def get_meme_mast_values(names, cursor):
 
@@ -691,7 +696,7 @@ def format_final_table(path, our_tables):
 
     sets = {"raghavan": ["raghavan_s5", "raghavan_s6", "raghavan_s7"],
             "lybecker": ["lybecker_s1", "lybecker_s2"],
-            "bilusic": ["bilusic_s1", "bilusic_s2", "bilusic_s3", "bilusic_s4"],
+            "bilusic": ["bilusic_s1", "bilusic_s2", "bilusic_s3_1", "bilusic_s3_2", "bilusic_s4"],
             "zhang": ["zhang_s3_2013_sheet2008", "zhang_s3_2013_sheet2009", "zhang_s4_2013_sheet2008", "zhang_s4_2013_sheet2009"],
             "tss": ["tss"]}
 
@@ -699,20 +704,21 @@ def format_final_table(path, our_tables):
                   "signif_chimeras_of_log_phase_cl",
                   "signif_chimeras_of_stationary_cl"]
 
-    short_name = {"raghavan_s5": "A1",
-                  "raghavan_s6": "A2",
-                  "raghavan_s7": "A3",
-                  "lybecker_s1": "B1",
-                  "lybecker_s2": "B2",
-                  "bilusic_s1": "C1",
-                  "bilusic_s2": "C2",
-                  "bilusic_s3": "C3",
-                  "bilusic_s4": "C4",
-                  "zhang_s3_2013_sheet2008": "D1",
-                  "zhang_s3_2013_sheet2009": "D2",
-                  "zhang_s4_2013_sheet2008": "D3",
-                  "zhang_s4_2013_sheet2009": "D4",
-                  "tss": "E1"}
+    short_name = {"raghavan_s5": "R1",
+                  "raghavan_s6": "R2",
+                  "raghavan_s7": "R3",
+                  "lybecker_s1": "L1",
+                  "lybecker_s2": "L2",
+                  "bilusic_s1": "B1",
+                  "bilusic_s2": "B2",
+                  "bilusic_s3_1": "B3",
+                  "bilusic_s3_2": "B4",
+                  "bilusic_s4": "B5",
+                  "zhang_s3_2013_sheet2008": "Z1",
+                  "zhang_s3_2013_sheet2009": "Z2",
+                  "zhang_s4_2013_sheet2008": "Z3",
+                  "zhang_s4_2013_sheet2009": "Z4",
+                  "tss": "T1"}
 
     loader = TableLoader()
     results = loader.load(path)
@@ -728,10 +734,7 @@ def format_final_table(path, our_tables):
     start_of_tables = end_of_interactions
 
     for set_name in sets:
-        for cond_name in conditions:
-            header.append("%s.%s" % (set_name, cond_name))
-
-        header.append("%s.total" % set_name)
+        header.append(set_name)
 
     end_of_tables = len(header)
 
@@ -769,32 +772,23 @@ def format_final_table(path, our_tables):
         total_articles = 0
 
         # Go over the table hit fields and merge columns
-        for field in header[start_of_tables : end_of_tables]:
-            set_name, cond_name = field.split(".")
-
-            if cond_name == "total":
-                combined = []
-                combined.extend(val for val in row_values[-1].split(";") if val not in combined and val != "")
-                combined.extend(val for val in row_values[-2].split(";") if val not in combined and val != "")
-                combined.extend(val for val in row_values[-3].split(";") if val not in combined and val != "")
-                row_values.append(";".join(combined))
-
-                if len(combined) > 0:
-                    total_articles += 1
-                continue
+        for set_name in header[start_of_tables : end_of_tables]:
 
             field_values = []
 
-            for table in sets[set_name]:
-                if row["%s_%s" % (table, cond_name)] == "+":
-                    field_values.append(short_name[table])
-                elif row["%s_%s" % (table, cond_name)] == "-":
-                    continue
-                else:
-                    print "[warning] invalid value for cell"
+            for cond_name in conditions:
+                for table in sets[set_name]:
+                    if row["%s_%s" % (table, cond_name)] == "+":
+                        field_values.append(short_name[table])
+                    elif row["%s_%s" % (table, cond_name)] == "-":
+                        continue
+                    else:
+                        print "[warning] invalid value for cell"
 
+            if len(field_values) > 0:
+                total_articles += 1
 
-            row_values.append(";".join(field_values))
+            row_values.append(";".join(list(set(field_values))))
 
         row_values.append(total_articles)
 

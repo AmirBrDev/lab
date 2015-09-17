@@ -23,7 +23,8 @@ def makeFinalBilusicTables():
 
     tables = ["2014RNABIOL0069R_TableS1",
               "2014RNABIOL0069R_TableS2",
-              "2014RNABIOL0069R_TableS3",
+              "2014RNABIOL0069R_TableS3_1",
+              "2014RNABIOL0069R_TableS3_2",
               "2014RNABIOL0069R_TableS4"]
 
     loader = BilusicTableLoader()
@@ -60,6 +61,6 @@ if (__name__ == "__main__"):
     # printMatchAnalysis()
     #addDirectionalityToPdfTables()
     #makeFinalZhangTables()
-    # makeFinalBilusicTables()
+    makeFinalBilusicTables()
     # makeFinalTssTables()
-    makeFinalLybeckerTables()
+    # makeFinalLybeckerTables()

@@ -12,7 +12,8 @@ raghavan_tables = ["raghavan_s5",
 
 bilusic_tables = ["bilusic_s1",
                   "bilusic_s2",
-                  "bilusic_s3",
+                  "bilusic_s3_1",
+                  "bilusic_s3_2",
                   "bilusic_s4"]
 
 zhang_tables = ["zhang_s3_2013_sheet2008",

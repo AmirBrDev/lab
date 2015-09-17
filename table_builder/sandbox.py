@@ -290,6 +290,8 @@ def generate_table(table_path, name, is_our_table=False):
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS1.table", "bilusic_s1")
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS2.table", "bilusic_s2")
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS3.table", "bilusic_s3")
+# generate_table("bilusic/final/2014RNABIOL0069R_TableS3_1.table", "bilusic_s3_1")
+# generate_table("bilusic/final/2014RNABIOL0069R_TableS3_2.table", "bilusic_s3_2")
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS4.table", "bilusic_s4")
 
 # generate_table("zhang/final/Table-s3-zhang-2013-sheet2008.table", "zhang_s3_2013_sheet2008")
@@ -298,7 +300,7 @@ def generate_table(table_path, name, is_our_table=False):
 # generate_table("zhang/final/Table-s4-zhang-2013-sheet2009.table", "zhang_s4_2013_sheet2009")
 
 # generate_table("lybecker/final/updated_sd01.table", "lybecker_s1")
-# generate_table("lybecker/final/lybecker_s2.table", "lybecker_s2")
+# generate_table("lybecker/final/updated_lybecker_s2.table", "lybecker_s2")
 
 # generate_table("tss/final/JB.02096-14_zjb999093409sd1-3.table", "tss")
 

@@ -113,7 +113,6 @@ class LybeckerTableLoader(TableLoader):
 
         for entry in result:
             entry["name"] = "None"
-
             start, end = entry.pop("coordinates").split("-")
 
             print start, end, (int(start) > int(end))

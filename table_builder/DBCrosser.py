@@ -59,6 +59,9 @@ def select_cross(our_table, their_table, treshold, cursor):
                                                      "closest_1": closest_1,
                                                      "closest_2": closest_2}
 
+    if their_table == "tss":
+        print query
+
     cursor.execute(query)
 
 

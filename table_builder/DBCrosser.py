@@ -4,7 +4,7 @@ import MySQLdb
 from TableFormatter import TableFormatter
 
 
-def select_cross(our_table, their_table, treshold, cursor):
+def select_cross(our_table, their_table, treshold, cursor, specific_condition="1=1"):
 
     match_first = """(((their.start_1 BETWEEN our.start_1 and our.end_1) OR
     (their.end_1 BETWEEN our.start_1 and our.end_1) OR
@@ -46,21 +46,94 @@ def select_cross(our_table, their_table, treshold, cursor):
     FROM
     %(their_table)s as their, %(our_table)s as our
     WHERE
-    %(in_range_first)s OR %(in_range_second)s;""" % {"our_table": our_table,
-                                                     "their_table": their_table,
-                                                     "treshold": treshold,
-                                                     "match_first": match_first,
-                                                     "match_second": match_second,
-                                                     "in_range_first": in_range_first,
-                                                     "in_range_second": in_range_second,
-                                                     "distance_1": distance_1,
-                                                     "distance_2": distance_2,
-                                                     "closest": closest,
-                                                     "closest_1": closest_1,
-                                                     "closest_2": closest_2}
+    (%(in_range_first)s OR %(in_range_second)s) AND %(specific_condition)s;""" % {"our_table": our_table,
+                                                                                  "their_table": their_table,
+                                                                                  "treshold": treshold,
+                                                                                  "match_first": match_first,
+                                                                                  "match_second": match_second,
+                                                                                  "in_range_first": in_range_first,
+                                                                                  "in_range_second": in_range_second,
+                                                                                  "distance_1": distance_1,
+                                                                                  "distance_2": distance_2,
+                                                                                  "closest": closest,
+                                                                                  "closest_1": closest_1,
+                                                                                  "closest_2": closest_2,
+                                                                                  "specific_condition": specific_condition}
 
-    if their_table == "tss":
-        print query
+    cursor.execute(query)
+
+
+def select_defenetive_cross(our_table, their_table, treshold, cursor, specific_condition="1=1"):
+
+    match_first = """(
+    (
+    (their.start_1 BETWEEN our.start_1 and our.end_1) OR
+    (their.end_1 BETWEEN our.start_1 and our.end_1) OR
+    (our.start_1 BETWEEN their.start_1 and their.end_1) OR
+    (our.end_1 BETWEEN their.start_1 and their.end_1)
+    ) AND
+    (their.strand_1=our.strand_1 AND their.strand_1!='none' AND our.strand_1!='none')
+    )"""
+
+    match_second = """(
+    (
+    (their.start_2 BETWEEN our.start_2 and our.end_2) OR
+    (their.end_2 BETWEEN our.start_2 and our.end_2) OR
+    (our.start_2 BETWEEN their.start_2 and their.end_2) OR
+    (our.end_2 BETWEEN their.start_2 and their.end_2)
+    ) AND
+    (their.strand_2=our.strand_2 AND their.strand_2!='none' AND our.strand_2!='none')
+    )"""
+
+    distance_1 = """(their.start_1 - our.start_1) as distance_1"""
+    distance_2 = """(their.start_2 - our.start_2) as distance_2"""
+
+    closest_1 = """LEAST(ABS(our.start_1 - their.end_1), ABS(their.start_1 - our.end_1))"""
+    closest_2 = """LEAST(ABS(our.start_2 - their.end_2), ABS(their.start_2 - our.end_2))"""
+    closest = "LEAST(%s, %s)" % (closest_1, closest_2)
+
+    in_range_first = """(
+    (
+    (their.start_1 BETWEEN (our.start_1 - %(treshold)s) and (our.end_1 + %(treshold)s)) OR
+    (their.end_1 BETWEEN (our.start_1 - %(treshold)s) and (our.end_1 + %(treshold)s)) OR
+    (our.start_1 BETWEEN (their.start_1 - %(treshold)s) and (their.end_1 + %(treshold)s)) OR
+    (our.end_1 BETWEEN (their.start_1 - %(treshold)s) and (their.end_1 + %(treshold)s))
+    ) AND
+    (their.strand_1=our.strand_1 AND their.strand_1!='none' AND our.strand_1!='none')
+    )""" % {"treshold": treshold}
+
+    in_range_second = """(
+    (
+    (their.start_2 BETWEEN (our.start_2 - %(treshold)s) and (our.end_2 + %(treshold)s)) OR
+    (their.end_2 BETWEEN (our.start_2 - %(treshold)s) and (our.end_2 + %(treshold)s)) OR
+    (our.start_2 BETWEEN (their.start_2 - %(treshold)s) and (their.end_2 + %(treshold)s)) OR
+    (our.end_2 BETWEEN (their.start_2 - %(treshold)s) and (their.end_2 + %(treshold)s))
+    ) AND
+    (their.strand_2=our.strand_2 AND their.strand_2!='none' AND our.strand_2!='none')
+    )""" % {"treshold": treshold}
+
+    query = """SELECT
+    their.name, their.start_1, their.end_1, their.strand_1, our.rna1_name, our.start_1, our.end_1, our.strand_1,
+    our.rna2_name, our.start_2, our.end_2, our.strand_2, our.rna1_ecocyc_id, our.rna2_ecocyc_id, our.first_type,
+    our.second_type, our.odds_ratio, our.interactions, %(match_first)s as match_first, %(match_second)s as match_second,
+    %(distance_1)s, %(distance_2)s, %(closest)s as closest, %(closest_1)s as closest_1, %(closest_2)s as closest_2,
+    '%(their_table)s' as table_name
+    FROM
+    %(their_table)s as their, %(our_table)s as our
+    WHERE
+    (%(in_range_first)s OR %(in_range_second)s) AND %(specific_condition)s;""" % {"our_table": our_table,
+                                                                                  "their_table": their_table,
+                                                                                  "treshold": treshold,
+                                                                                  "match_first": match_first,
+                                                                                  "match_second": match_second,
+                                                                                  "in_range_first": in_range_first,
+                                                                                  "in_range_second": in_range_second,
+                                                                                  "distance_1": distance_1,
+                                                                                  "distance_2": distance_2,
+                                                                                  "closest": closest,
+                                                                                  "closest_1": closest_1,
+                                                                                  "closest_2": closest_2,
+                                                                                  "specific_condition": specific_condition}
 
     cursor.execute(query)
 
@@ -70,7 +143,7 @@ def cross_tables(our_table, their_table, format_func, treshold, output):
     db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
     cur = db.cursor(MySQLdb.cursors.DictCursor)
 
-    select_cross(our_table, their_table, treshold, cur)
+    select_defenetive_cross(our_table, their_table[0], treshold, cur, specific_condition=their_table[1])
 
     format_func(cur, output)
 
@@ -145,14 +218,20 @@ def format_their_our(db_cursor, output):
 
         row = db_cursor.fetchone()
 
+    fl.close()
+
 
 def format_our_single(db_cursor, output):
 
     header = ["our_name",
               "ecocyc_id",
               "type",
+              "our_start",
+              "our_end",
               "result",
               "their_name",
+              "their_start",
+              "their_end",
               "their_strand",
               "distance",
               "interactions",
@@ -165,7 +244,8 @@ def format_our_single(db_cursor, output):
     # keep going over the results until done
     row = db_cursor.fetchone()
 
-    print row.keys()
+    if row is not None:
+        print row.keys()
 
     names_to_data = {}
 
@@ -177,8 +257,12 @@ def format_our_single(db_cursor, output):
             values = [row["rna1_name"],
                       row["rna1_ecocyc_id"],
                       row["first_type"],
+                      row["our.start_1"],
+                      row["our.end_1"],
                       "true",
                       row["name"],
+                      row["start_1"],
+                      row["end_1"],
                       row["strand_1"],
                       row["distance_1"],
                       row["interactions"],
@@ -189,8 +273,12 @@ def format_our_single(db_cursor, output):
             values = [row["rna2_name"],
                       row["rna2_ecocyc_id"],
                       row["second_type"],
+                      row["start_2"],
+                      row["end_2"],
                       "true",
                       row["name"],
+                      row["start_1"],
+                      row["end_1"],
                       row["strand_2"],
                       row["distance_2"],
                       row["interactions"],
@@ -202,8 +290,12 @@ def format_our_single(db_cursor, output):
                 values = [row["rna1_name"],
                           row["rna1_ecocyc_id"],
                           row["first_type"],
+                          row["our.start_1"],
+                          row["our.end_1"],
                           "false",
                           row["name"],
+                          row["start_1"],
+                          row["end_1"],
                           row["strand_1"],
                           row["closest_1"],
                           row["interactions"],
@@ -212,8 +304,12 @@ def format_our_single(db_cursor, output):
                 values = [row["rna2_name"],
                           row["rna2_ecocyc_id"],
                           row["second_type"],
+                          row["start_2"],
+                          row["end_2"],
                           "false",
                           row["name"],
+                          row["start_1"],
+                          row["end_1"],
                           row["strand_2"],
                           row["closest_2"],
                           row["interactions"],
@@ -232,7 +328,7 @@ def format_our_single(db_cursor, output):
 
     TableFormatter._sort_names_to_data(names_to_data)
 
-    fl = open("%s.split" % output, "wb")
+    fl = open("%s.sorted" % output, "wb")
 
     fl.write("%s\n" % "\t".join(header))
 

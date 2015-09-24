@@ -1,11 +1,52 @@
 __author__ = 'amirbar'
 
 import MySQLdb
-from DBCrosser import select_cross
+from DBCrosser import select_cross, select_defenetive_cross
+from TableLoader import TableLoader
+
+our_tables = ["signif_chimeras_of_iron_limitation_cl",
+              "signif_chimeras_of_log_phase_cl",
+              "signif_chimeras_of_stationary_cl"]
+
+conditions = ["iron", "log_phase", "stationary"]
+
+their_tables = [("raghavan_s5", "mev >= 1"),
+                ("raghavan_s6", "1=1"),
+                ("raghavan_s7", "mev >= 1"),
+                ("raghavan_2", "mev >= 1"),
+                # "raghavan_s8",
+                ("lybecker_s1", "1=1"),
+                ("lybecker_s2", "1=1"),
+                ("bilusic_s1", "1=1"),
+                ("bilusic_s2", "1=1"),
+                ("bilusic_s3_1", "1=1"),
+                ("bilusic_s3_2", "1=1"),
+                ("bilusic_s4_1", "1=1"),
+                ("bilusic_s4_2", "1=1"),
+                # "zhang_s3_2013_sheet2008",
+                # "zhang_s3_2013_sheet2009",
+                # "zhang_s4_2013_sheet2008",
+                # "zhang_s4_2013_sheet2009",
+                ("thomason", "1=1"),
+                ("thomason_primary", "1=1"),
+                ("thomason_secondary", "1=1"),
+                ("thomason_internal", "1=1"),
+                ("thomason_antisense", "1=1"),
+                ("thomason_putative_asrna", "1=1")]
+
+our_file_list = ["our_files/assign-type-to-signif-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_sig_interactions.with-type",
+                 "our_files/assign-type-to-signif-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_sig_interactions.with-type",
+                 "our_files/assign-type-to-signif-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_sig_interactions.with-type"]
+
 
 class Counter():
+
     first = 0
     second = 0
+
+    def __init__(self):
+        pass
+
 
 def get_ecocyc_id_by_name(name_list, cursor):
 
@@ -24,7 +65,6 @@ def get_ecocyc_id_by_name(name_list, cursor):
         if len(results) != 1:
             print name
             raise BaseException("too many results for one gene")
-
 
         ecocyc_ids.append(results[0]["gene_unique_id"])
 
@@ -155,10 +195,13 @@ def merge_results(our_tables_list, their_tables_list, treshold):
         # Go over the conditions
         for our_table in our_tables_list:
 
-            header.append("%s_%s" % (their_table, our_table))
+            header.append("%s_%s" % (their_table[0], our_table))
 
             names_found = {}
-            select_cross(our_table, their_table, treshold, cursor)
+
+            # Change this to allow none strands (remove the comment from the first)
+            # select_cross(our_table, their_table, treshold, cursor)
+            select_defenetive_cross(our_table, their_table[0], treshold, cursor, their_table[1])
 
             # Go over the cross results and add the matched rows
             row = cursor.fetchone()
@@ -214,35 +257,84 @@ def merge_results(our_tables_list, their_tables_list, treshold):
 
     header.append("meme")
     header.append("mast")
+    header.append("motif")
     header.append("meme_results")
+    header.append("binding_site_state")
 
     for row in values:
         name = row[0]
         meme_result = ""
         mast_result = ""
+        motif = ""
+        binding_site = "-"
 
         is_reciprocal = False
 
-        for meme_val, mast_val in meme_mast_values[name]:
+        # Select best meme/mast values for each entry
+        for meme_val, mast_val, motif_val, binding_site_val in meme_mast_values[name]:
             if meme_val is not None and \
                mast_val is not None and \
                meme_val <= 0.05 and mast_val <= 0.05:
-                meme_result = meme_val
-                mast_result = mast_val
-                is_reciprocal = True
-                break
 
-            else:
-                meme_result = ";".join([val for val in [str(meme_val), meme_result] if val != ""])
-                mast_result = ";".join([val for val in [str(mast_val), mast_result] if val != ""])
+                # Update first time
+                if not is_reciprocal:
+                    meme_result = "%.2e" % meme_val
+                    mast_result = "%.2e" % mast_val
+                    motif = motif_val
+                    binding_site = binding_site_val
+                    is_reciprocal = True
+
+                # Update if same binding and improves results
+                elif binding_site == binding_site_val:
+
+                    if mast_val < float(mast_result):
+                        meme_result = "%.2e" % meme_val
+                        mast_result = "%.2e" % mast_val
+                        motif = motif_val
+                        binding_site = binding_site_val
+
+                    elif mast_val == float(mast_result) and \
+                         meme_val < float(meme_result):
+
+                        meme_result = "%.2e" % meme_val
+                        mast_result = "%.2e" % mast_val
+                        motif = motif_val
+                        binding_site = binding_site_val
+
+                # Update if improves binding
+                elif binding_site_val == "yes" or \
+                     (binding_site_val == "no" and binding_site == "-"):
+
+                    meme_result = "%.2e" % meme_val
+                    mast_result = "%.2e" % mast_val
+                    motif = motif_val
+                    binding_site = binding_site_val
+
+
+            elif not is_reciprocal:
+                meme_result = ";".join([val for val in ["%.2e" % meme_val, meme_result] if val != ""])
+                mast_result = ";".join([val for val in ["%.2e" % mast_val, mast_result] if val != ""])
 
         row.append(meme_result)
         row.append(mast_result)
+        row.append(motif)
 
         if is_reciprocal:
             row.append("recip")
         else:
             row.append("")
+
+        row.append(binding_site)
+
+    # Generate tb-srnas targets
+    header.append("tb_srna_targets")
+    names_to_tb_srna_targets = find_tbs_srna_targets(total_names, our_tables, cursor)
+
+    for row in values:
+        name = row[0]
+
+        if name in names_to_tb_srna_targets.keys():
+            row.append(len(names_to_tb_srna_targets[name]))
 
     return header, values
 
@@ -371,29 +463,6 @@ def count_interactions(our_tables_list, name_list, cursor):
     return interactions_per_name
 
 
-our_tables = ["signif_chimeras_of_iron_limitation_cl",
-              "signif_chimeras_of_log_phase_cl",
-              "signif_chimeras_of_stationary_cl"]
-
-conditions = ["iron", "log_phase", "stationary"]
-
-their_tables = ["raghavan_s5",
-                "raghavan_s6",
-                "raghavan_s7",
-                "lybecker_s1",
-                "lybecker_s2",
-                "bilusic_s1",
-                "bilusic_s2",
-                "bilusic_s3_1",
-                "bilusic_s3_2",
-                "bilusic_s4",
-                "zhang_s3_2013_sheet2008",
-                "zhang_s3_2013_sheet2009",
-                "zhang_s4_2013_sheet2008",
-                "zhang_s4_2013_sheet2009",
-                "tss"]
-
-
 def find_targets(names, table_name_list, cursor):
 
     names_to_targets = {}
@@ -439,6 +508,54 @@ def find_targets(names, table_name_list, cursor):
     return names_to_targets
 
 
+def find_tbs_srna_targets(names, table_name_list, cursor):
+
+    names_to_targets = {}
+
+    for name in names:
+
+        union_statement = ""
+
+        for table_name in table_name_list[1:]:
+            union_statement += """ UNION
+            SELECT rna1_name
+            FROM %(table_name)s
+            WHERE rna2_name = '%(name)s' AND first_type='srna'
+            UNION
+            SELECT rna2_name
+            FROM %(table_name)s
+            WHERE rna1_name = '%(name)s' AND second_type='srna'""" % {"table_name": table_name,
+                                                                      "name": name}
+
+        query = """SELECT rna1_name
+        FROM %(table_name)s
+        WHERE rna2_name = '%(name)s' AND first_type='srna'
+        UNION
+        SELECT rna2_name
+        FROM %(table_name)s
+        WHERE rna1_name = '%(name)s' AND second_type='srna'
+        %(union_statement)s""" % {"table_name": table_name_list[0],
+                                  "name": name,
+                                  "union_statement": union_statement}
+
+        cursor.execute(query)
+
+        row = cursor.fetchone()
+
+        names_to_targets[name] = []
+
+        while row is not None:
+
+            to_add = row["rna1_name"].replace(".5utr", "").replace(".est5utr", "")
+
+            if to_add not in names_to_targets[name]:
+                names_to_targets[name].append(to_add)
+
+            row = cursor.fetchone()
+
+    return names_to_targets
+
+
 def get_combinations(targets_dictionary):
     combinations = []
 
@@ -446,6 +563,7 @@ def get_combinations(targets_dictionary):
         for target in target_list:
 
             target_name = target.replace(".5utr", "").replace(".est5utr", "")
+
             if (name, target_name) not in combinations and (target_name, name) not in combinations:
                 combinations.append((name, target_name))
 
@@ -477,14 +595,15 @@ def get_target_counts(names, table_name_list, cursor):
 
         # get the length for each name ignoring the .5utr
         for name, target_list in targets_dictionary.items():
-            names_to_counts[name] = len(set(target.replace(".5utr", "").replace(".est5utr", "") for target in target_list))
+            names_to_counts[name] = \
+                len(set(target.replace(".5utr", "").replace(".est5utr", "") for target in target_list))
 
         combinations = get_combinations(targets_dictionary)
 
         conditions["%s_targets" % table] = names_to_counts
         conditions_combinations["%s_targets" % table] = combinations
 
-    return  conditions, conditions_combinations
+    return conditions, conditions_combinations
 
 
 def test_counts(our_tables):
@@ -537,13 +656,9 @@ def test_counts(our_tables):
 
 # test_counts(our_tables)
 
-def get_tss_type_string(name, position, cursor):
-    query = """SELECT
-    FROM tss"""
-
 def get_meme_mast_values(names, cursor):
 
-    query = """SELECT meme.gene_name, meme.meme_e_value, meme.mast_e_value
+    query = """SELECT meme.gene_name, meme.meme_e_value, meme.mast_e_value, meme.meme_motif, meme.match_known_bs
     FROM meme_results as meme, signif_chimeras
     WHERE meme.gene_name = signif_chimeras.name and meme.number_of_targets >= 5"""
 
@@ -553,7 +668,10 @@ def get_meme_mast_values(names, cursor):
     names_to_values = {name: [] for name in names}
 
     for row in result:
-        names_to_values[row["gene_name"]].append((row["meme_e_value"], row["mast_e_value"]))
+        names_to_values[row["gene_name"]].append((row["meme_e_value"],
+                                                  row["mast_e_value"],
+                                                  row["meme_motif"],
+                                                  row["match_known_bs"]))
 
     return names_to_values
 
@@ -586,7 +704,6 @@ def test_interactions(our_tables_list):
     db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
-
     names = get_tables_names(["signif_chimeras_of_iron_limitation_cl"], cursor)[0]
 
     print len(names)
@@ -611,8 +728,8 @@ def test_interactions(our_tables_list):
 
 # test_interactions(our_tables)
 
-def test_merge_results():
-    header, final_table = merge_results(our_tables, their_tables, 50)
+def test_merge_results(treshold):
+    header, final_table = merge_results(our_tables, their_tables, treshold)
 
     fl = open("test.csv", "wb")
 
@@ -627,32 +744,6 @@ def test_merge_results():
     print Counter.first
     print Counter.second
 
-test_merge_results()
-
-# print header
-# for row in final_table:
-#     print row
-
-# db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
-# cursor = db.cursor(MySQLdb.cursors.DictCursor)
-#
-# tables_1 = ["all_chimeras_of_iron_limitation_cl",
-#                   "all_chimeras_of_log_phase_cl",
-#                   "all_chimeras_of_mg_hfq_wt101",
-#                   "all_chimeras_of_mg_hfq_wt202_cl_stationary",
-#                   "all_chimeras_of_stationary_cl"]
-#
-# tables_2 = ["single_of_iron_limitation_cl",
-#             "single_of_log_phase_cl",
-#             "single_of_mg_hfq_wt101",
-#             "single_of_mg_hfq_wt202_cl_stationary",
-#             "single_of_stationary_cl"]
-#
-# tables_1.extend(tables_2)
-#
-# names, ids = get_tables_names(tables_1, cursor)
-
-from TableLoader import TableLoader
 
 def get_name_dictionary(our_file_list):
     result = {}
@@ -673,6 +764,7 @@ def get_name_dictionary(our_file_list):
 
     return result
 
+
 def get_ecocyc_id_dictionary(our_file_list):
     result = {}
 
@@ -692,13 +784,14 @@ def get_ecocyc_id_dictionary(our_file_list):
 
     return result
 
+
 def format_final_table(path, our_tables):
 
-    sets = {"raghavan": ["raghavan_s5", "raghavan_s6", "raghavan_s7"],
+    sets = {"raghavan": ["raghavan_s5", "raghavan_s6", "raghavan_s7", "raghavan_2"],
             "lybecker": ["lybecker_s1", "lybecker_s2"],
-            "bilusic": ["bilusic_s1", "bilusic_s2", "bilusic_s3_1", "bilusic_s3_2", "bilusic_s4"],
-            "zhang": ["zhang_s3_2013_sheet2008", "zhang_s3_2013_sheet2009", "zhang_s4_2013_sheet2008", "zhang_s4_2013_sheet2009"],
-            "tss": ["tss"]}
+            "bilusic": ["bilusic_s1", "bilusic_s2", "bilusic_s3_1", "bilusic_s3_2", "bilusic_s4_1", "bilusic_s4_2"],
+            # "zhang": ["zhang_s3_2013_sheet2008", "zhang_s3_2013_sheet2009", "zhang_s4_2013_sheet2008", "zhang_s4_2013_sheet2009"],
+            "thomason": ["thomason", "thomason_primary", "thomason_secondary", "thomason_internal", "thomason_antisense", "thomason_putative_asrna"]}
 
     conditions = ["signif_chimeras_of_iron_limitation_cl",
                   "signif_chimeras_of_log_phase_cl",
@@ -707,27 +800,45 @@ def format_final_table(path, our_tables):
     short_name = {"raghavan_s5": "R1",
                   "raghavan_s6": "R2",
                   "raghavan_s7": "R3",
+                  "raghavan_2": "R4",
+                  # "raghavan_s8": "R4",
                   "lybecker_s1": "L1",
                   "lybecker_s2": "L2",
                   "bilusic_s1": "B1",
                   "bilusic_s2": "B2",
-                  "bilusic_s3_1": "B3",
-                  "bilusic_s3_2": "B4",
-                  "bilusic_s4": "B5",
-                  "zhang_s3_2013_sheet2008": "Z1",
-                  "zhang_s3_2013_sheet2009": "Z2",
-                  "zhang_s4_2013_sheet2008": "Z3",
-                  "zhang_s4_2013_sheet2009": "Z4",
-                  "tss": "T1"}
+                  "bilusic_s3_1": "B3_1",
+                  "bilusic_s3_2": "B3_2",
+                  "bilusic_s4_1": "B4_1",
+                  "bilusic_s4_2": "B4_2",
+                  # "zhang_s3_2013_sheet2008": "Z1",
+                  # "zhang_s3_2013_sheet2009": "Z2",
+                  # "zhang_s4_2013_sheet2008": "Z3",
+                  # "zhang_s4_2013_sheet2009": "Z4",
+                  "thomason": "T1",
+                  "thomason_primary": "T1_1",
+                  "thomason_secondary": "T1_2",
+                  "thomason_internal": "T1_3",
+                  "thomason_antisense": "T1_4",
+                  "thomason_putative_asrna": "T1_5"}
 
     loader = TableLoader()
     results = loader.load(path)
 
-    header = ["name", "ecocyc_id", "type", "total_targets", "max_poly_u_length", "meme", "mast", "meme_result"]
+    header = ["name",
+              "ecocyc_id",
+              "type",
+              "total_interactions",
+              "tb_srna_targets",
+              "max_poly_u_length",
+              "meme",
+              "mast",
+              "meme_result",
+              "binding_site_state",
+              "motif"]
 
     start_of_interactions = len(header)
     for cond_name in conditions:
-        header.append("%s.as_rna2_precentage" % cond_name)
+        header.append("%s.as_rna2_percentage" % cond_name)
 
     end_of_interactions = len(header)
 
@@ -740,9 +851,6 @@ def format_final_table(path, our_tables):
 
     header.append("total_articles")
 
-
-    print header
-
     final_rows = []
 
     # Go over the rows and fill according to the header
@@ -751,13 +859,16 @@ def format_final_table(path, our_tables):
                       row["ecocyc_id"],
                       row["type"],
                       row["total_targets"],
+                      row["tb_srna_targets"],
                       row["max_poly_u_length"],
-                      row["meme"],
-                      row["mast"],
-                      row["meme_results"]]
+                      row["meme"].upper(),
+                      row["mast"].upper(),
+                      row["meme_results"],
+                      row["binding_site_state"],
+                      row["motif"]]
 
-        # Go over the interaction fields
-        for field in header[start_of_interactions : end_of_interactions]:
+        # Go over the i fields
+        for field in header[start_of_interactions: end_of_interactions]:
             cond_name = field.split(".")[0]
 
             if float(row["%s_total" % cond_name]) == 0:
@@ -768,11 +879,10 @@ def format_final_table(path, our_tables):
 
             row_values.append(res)
 
-
         total_articles = 0
 
         # Go over the table hit fields and merge columns
-        for set_name in header[start_of_tables : end_of_tables]:
+        for set_name in header[start_of_tables: end_of_tables]:
 
             field_values = []
 
@@ -794,7 +904,6 @@ def format_final_table(path, our_tables):
 
         final_rows.append(row_values)
 
-
     # go over the rows and fix name and id notation
     names = get_name_dictionary(our_tables)
     ecocyc_ids = get_ecocyc_id_dictionary(our_tables)
@@ -806,8 +915,6 @@ def format_final_table(path, our_tables):
         if row[1].split(".")[-1].isdigit():
             row[1] = ".".join(row[1].split(".")[:-1])
 
-
-
     fl = open("formatted_test.csv", "wb")
 
     fl.write("%s\n" % "\t".join(header))
@@ -815,9 +922,5 @@ def format_final_table(path, our_tables):
     for row in final_rows:
         fl.write("%s\n" % "\t".join(str(val) for val in row))
 
-
-our_file_list = ["our_files/assign-type-to-signif-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_sig_interactions.with-type",
-                 "our_files/assign-type-to-signif-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_sig_interactions.with-type",
-                 "our_files/assign-type-to-signif-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_sig_interactions.with-type"]
-
+test_merge_results(50)
 format_final_table("test.csv", our_file_list)

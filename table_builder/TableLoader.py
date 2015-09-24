@@ -222,7 +222,7 @@ class PDFTableLoader(TableLoader):
     S5_NAME_FIELD = "srna-name"
 
     def loadUnprocessed(self, path):
-        result = self.load()
+        result = self.load(path)
 
         for entry in result:
 

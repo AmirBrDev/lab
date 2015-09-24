@@ -25,7 +25,8 @@ def makeFinalBilusicTables():
               "2014RNABIOL0069R_TableS2",
               "2014RNABIOL0069R_TableS3_1",
               "2014RNABIOL0069R_TableS3_2",
-              "2014RNABIOL0069R_TableS4"]
+              "2014RNABIOL0069R_TableS4_1",
+              "2014RNABIOL0069R_TableS4_2"]
 
     loader = BilusicTableLoader()
 
@@ -34,7 +35,12 @@ def makeFinalBilusicTables():
         loader.createTable("dummy", result).dump("./bilusic/final/%s.table" % table)
 
 def makeFinalTssTables():
-    tables = ["JB.02096-14_zjb999093409sd1-3"]
+    # tables = ["JB.02096-14_zjb999093409sd1-3"]
+    tables = ["thomason_primary",
+              "thomason_secondary",
+              "thomason_internal",
+              "thomason_antisense",
+              "thomason_putative_asrna"]
 
     loader = TssMasterTableLoader()
 
@@ -60,7 +66,7 @@ def makeFinalLybeckerTables():
 if (__name__ == "__main__"):
     # printMatchAnalysis()
     #addDirectionalityToPdfTables()
-    #makeFinalZhangTables()
+    # makeFinalZhangTables()
     makeFinalBilusicTables()
     # makeFinalTssTables()
     # makeFinalLybeckerTables()

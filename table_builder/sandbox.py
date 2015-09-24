@@ -220,6 +220,7 @@ def generate_table_old(table_path, name, is_our_table=False):
 
     db.commit()
 
+
 def generate_table(table_path, name, is_our_table=False):
 
     if not is_our_table:
@@ -286,6 +287,8 @@ def generate_table(table_path, name, is_our_table=False):
 # generate_table("final_format/s5_directed.table", "raghavan_s5")
 # generate_table("final_format/s6_directed.table", "raghavan_s6")
 # generate_table("final_format/s7_directed.table", "raghavan_s7")
+# generate_table("final_format/s8_directed.table", "raghavan_s8")
+# generate_table("final_format/2_directed.table", "raghavan_2")
 
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS1.table", "bilusic_s1")
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS2.table", "bilusic_s2")
@@ -293,6 +296,8 @@ def generate_table(table_path, name, is_our_table=False):
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS3_1.table", "bilusic_s3_1")
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS3_2.table", "bilusic_s3_2")
 # generate_table("bilusic/final/2014RNABIOL0069R_TableS4.table", "bilusic_s4")
+# generate_table("bilusic/final/2014RNABIOL0069R_TableS4_1.table", "bilusic_s4_1")
+# generate_table("bilusic/final/2014RNABIOL0069R_TableS4_2.table", "bilusic_s4_2")
 
 # generate_table("zhang/final/Table-s3-zhang-2013-sheet2008.table", "zhang_s3_2013_sheet2008")
 # generate_table("zhang/final/Table-s3-zhang-2013-sheet2009.table", "zhang_s3_2013_sheet2009")
@@ -303,6 +308,11 @@ def generate_table(table_path, name, is_our_table=False):
 # generate_table("lybecker/final/updated_lybecker_s2.table", "lybecker_s2")
 
 # generate_table("tss/final/JB.02096-14_zjb999093409sd1-3.table", "tss")
+# generate_table("tss/final/thomason_primary.table", "thomason_primary")
+# generate_table("tss/final/thomason_secondary.table", "thomason_secondary")
+# generate_table("tss/final/thomason_internal.table", "thomason_internal")
+# generate_table("tss/final/thomason_antisense.table", "thomason_antisense")
+# generate_table("tss/final/thomason_putative_asrna.table", "thomason_putative_asrna")
 
 def generate_gene_table(table_path, name):
     loader = GeneTableLoader()
@@ -558,3 +568,94 @@ def dump_our_to_sql():
         generate_table("our_files/%s" % file_name, table_name, is_our_table=True)
 
 
+def get_zhang_stats_by_name(name):
+
+    db = MySQLdb.connect(host="localhost",user="amirbar",db="amir")
+    cur = db.cursor()
+
+    # query = """SELECT k31a_ip_k31a_total, r16a_ip_____r16a_total, q8a_ip_____q8a_total,
+    # k31a_total_wt_total, r16a_total____wt_total, q8a_total___wt_total
+    # FROM zhang_s4_2013_sheet2009 as zhang
+    # WHERE zhang.name=%(name)s;""" % {"name": db.literal(name)}
+
+    query = """SELECT k31a_ip____k31a_total, r16a_ip______r16a_total, q8a_ip________q8a_total,
+    k31a_total__wt_total, r16a_total__wt_total, q8a_total__wt_total
+    FROM zhang_s3_2013_sheet2009 as zhang
+    WHERE zhang.name=%(name)s;""" % {"name": db.literal(name)}
+    cur.execute(query)
+
+    return cur.fetchall()
+
+
+def generate_zhang_stats():
+    loader = TableLoader()
+
+    rows_as_dictionary = loader.load("output/table_s6_range_0.csv")
+
+    row_list = []
+
+    header = ["name",
+              "il_rna2_percent",
+              "stat_rna2_percent",
+              "log_rna2_percent",
+              "k31_ip", #  distal
+              "r16a_ip", #  rim
+              "q8a_ip", #  proximal
+              "k31",
+              "r16a",
+              "q8a",
+              "average_percent"]
+
+    for row in rows_as_dictionary:
+
+        new_row = [row["name"],
+                   row["signif_chimeras_of_iron_limitation_cl.as_rna2_percentage"].replace("-", ""),
+                   row["signif_chimeras_of_stationary_cl.as_rna2_percentage"].replace("-", ""),
+                   row["signif_chimeras_of_log_phase_cl.as_rna2_percentage"].replace("-", "")]
+
+        matches = get_zhang_stats_by_name(row["name"])
+
+        if len(matches) > 1:
+            print "warning too many results"
+
+        elif len(matches) == 1:
+            new_row.extend(val for val in matches[0])
+            # print new_row
+
+        else:
+            new_row.extend([""] * 6)
+
+        average_percent = 0.0
+        fields = 0
+
+        if row["signif_chimeras_of_iron_limitation_cl.as_rna2_percentage"] != "-":
+            average_percent += float(row["signif_chimeras_of_iron_limitation_cl.as_rna2_percentage"])
+            fields += 1
+
+        if row["signif_chimeras_of_stationary_cl.as_rna2_percentage"] != "-":
+            average_percent += float(row["signif_chimeras_of_stationary_cl.as_rna2_percentage"])
+            fields += 1
+
+        if row["signif_chimeras_of_log_phase_cl.as_rna2_percentage"] != "-":
+            average_percent += float(row["signif_chimeras_of_log_phase_cl.as_rna2_percentage"])
+            fields += 1
+
+        average_percent /= fields
+
+        new_row.append(average_percent)
+
+        row_list.append(new_row)
+
+    # for row in row_list:
+    #     print row
+
+    fl = open("zhang_stats.csv", "wb")
+
+    fl.write("%s\n" % "\t".join(header))
+
+    for row in row_list:
+        fl.write("%s\n" % "\t".join(str(val) for val in row))
+
+    fl.close()
+
+generate_zhang_stats()

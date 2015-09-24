@@ -8,10 +8,33 @@ from Table import Table
 def addDirectionalityToPdfTables():
 
     loader = GeneTableLoader()
-    geneTable = loader.createTable("geneDB", loader.loadUnprocessed("genes.col"))
+    geneTable = loader.createTable("geneDB", loader.loadUnprocessed("our_files/genes.col"))
 
 
     pdfLoader = PDFTableLoader()
+
+    # handling table 2 (not from supplementary)
+    result = pdfLoader.loadUnprocessed("./parsed_files/2.table")
+
+    # match for each entry in the in s5 table a strand
+    for entry in result:
+
+        id, data = geneTable.findByField(Table.NAME_FIELD, entry["name"])
+
+        strand = None
+
+        # if there is no data look in the old names
+        if (id == None):
+            id, data = geneTable.findByOtherNames(entry["name"])
+
+        if (data != None):
+            strand = id.split(Table.ID_DELIMITER)[2]
+
+        entry[TableGlobals.FIRST_STRAND_KEY] = strand
+        entry[TableGlobals.SECOND_STRAND_KEY] = strand
+
+    pdfTable = pdfLoader.createTable("dummy", result)
+    pdfTable.dump("./final_format/2_directed.table")
 
     # S5 handling
     result = pdfLoader.loadUnprocessed("./parsed_files/s5.table")
@@ -36,6 +59,30 @@ def addDirectionalityToPdfTables():
     pdfTable = pdfLoader.createTable("dummy", result)
     pdfTable.dump("./final_format/s5_directed.table")
 
+    # S8 handling
+    result = pdfLoader.loadUnprocessed("./parsed_files/s8.table")
+
+    # match for each entry in the in s5 table a strand
+    for entry in result:
+
+        id, data = geneTable.findByField(Table.NAME_FIELD, entry["name"])
+
+        strand = None
+
+        # if there is no data look in the old names
+        if (id == None):
+            id, data = geneTable.findByOtherNames(entry["name"])
+
+        if (data != None):
+            print "[warning] using by old name"
+            strand = id.split(Table.ID_DELIMITER)[2]
+
+        entry[TableGlobals.FIRST_STRAND_KEY] = strand
+        entry[TableGlobals.SECOND_STRAND_KEY] = strand
+
+    pdfTable = pdfLoader.createTable("dummy", result)
+    pdfTable.dump("./final_format/s8_directed.table")
+
     #S7 handling
     result = pdfLoader.loadUnprocessed("./parsed_files/s7.table")
 
@@ -58,6 +105,8 @@ def addDirectionalityToPdfTables():
     # S6 handling
     result = pdfLoader.loadUnprocessed("./parsed_files/s6.table")
     pdfLoader.createTable("dummy", result).dump("./final_format/s6_directed.table")
+
+
 
 def printMatchAnalysis():
     """
@@ -381,8 +430,10 @@ def lybecker_update(file_name,
 
 if __name__ == "__main__":
 
-    lybecker_update("lybecker_s2.table",
-                show_warnings=True)
+    addDirectionalityToPdfTables()
+
+    # lybecker_update("lybecker_s2.table",
+    #             show_warnings=True)
     # lybecker_update("sd01.table",
     #                 overlap_delimiter=",",
     #                 overlap_field="overlapping genes",

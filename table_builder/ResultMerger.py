@@ -245,7 +245,7 @@ def merge_results(our_tables_list, their_tables_list, treshold):
             else:
                 row.append(0)
 
-    total_targets = get_total_targets(total_names, our_tables, cursor)
+    total_targets = get_total_targets(total_names, our_tables, True, cursor)
     header.append("total_targets")
 
     for row in values:
@@ -335,6 +335,29 @@ def merge_results(our_tables_list, their_tables_list, treshold):
 
         if name in names_to_tb_srna_targets.keys():
             row.append(len(names_to_tb_srna_targets[name]))
+
+    # Generate mrna/5utr targets
+    header.append("mrna_5utr_targets")
+    names_to_mrna_5utr_targets = find_mrna_5utr_targets(total_names, our_tables, cursor)
+
+    for row in values:
+        name = row[0]
+
+        if name in names_to_mrna_5utr_targets.keys():
+            row.append(len(names_to_mrna_5utr_targets[name]))
+
+    # Generate consistency - Just for my curiosity
+    # header.append("total_as_first")
+    # header.append("unique_as_first")
+    # header.append("as_first_consistency_precentage")
+    #
+    # for row in values:
+    #     name = row[0]
+    #
+    #     total, unique, percentage = get_consistency_as_first(our_tables_list, name, cursor)
+    #     row.append(total)
+    #     row.append(unique)
+    #     row.append(percentage)
 
     return header, values
 
@@ -556,6 +579,54 @@ def find_tbs_srna_targets(names, table_name_list, cursor):
     return names_to_targets
 
 
+def find_mrna_5utr_targets(names, table_name_list, cursor):
+
+    names_to_targets = {}
+
+    for name in names:
+
+        union_statement = ""
+
+        for table_name in table_name_list[1:]:
+            union_statement += """ UNION
+            SELECT rna1_name
+            FROM %(table_name)s
+            WHERE rna2_name = '%(name)s' AND (first_type='mrna' OR first_type='5utr')
+            UNION
+            SELECT rna2_name
+            FROM %(table_name)s
+            WHERE rna1_name = '%(name)s' AND (second_type='mrna' OR second_type='5utr')""" % {"table_name": table_name,
+                                                                                              "name": name}
+
+        query = """SELECT rna1_name
+        FROM %(table_name)s
+        WHERE rna2_name = '%(name)s' AND (first_type='mrna' OR first_type='5utr')
+        UNION
+        SELECT rna2_name
+        FROM %(table_name)s
+        WHERE rna1_name = '%(name)s' AND (second_type='mrna' OR second_type='5utr')
+        %(union_statement)s""" % {"table_name": table_name_list[0],
+                                  "name": name,
+                                  "union_statement": union_statement}
+
+        cursor.execute(query)
+
+        row = cursor.fetchone()
+
+        names_to_targets[name] = []
+
+        while row is not None:
+
+            to_add = row["rna1_name"].replace(".5utr", "").replace(".est5utr", "")
+
+            if to_add not in names_to_targets[name]:
+                names_to_targets[name].append(to_add)
+
+            row = cursor.fetchone()
+
+    return names_to_targets
+
+
 def get_combinations(targets_dictionary):
     combinations = []
 
@@ -570,12 +641,17 @@ def get_combinations(targets_dictionary):
     return combinations
 
 
-def get_total_targets(names, table_name_list, cursor):
+def get_total_targets(names, table_name_list, merge_5utr, cursor):
     targets_dictionary = find_targets(names, table_name_list, cursor)
 
     for name, target_list in targets_dictionary.items():
-        targets_dictionary[name] = \
-            len(set(target.replace(".5utr", "").replace(".est5utr", "") for target in target_list))
+
+        if merge_5utr:
+            targets_dictionary[name] = \
+                len(set(target.replace(".5utr", "").replace(".est5utr", "") for target in target_list))
+
+        else:
+            targets_dictionary[name] = len(set(target_list))
 
         if targets_dictionary[name] == 0:
             print "[warning] no targets! -", name, targets_dictionary[name]
@@ -785,6 +861,60 @@ def get_ecocyc_id_dictionary(our_file_list):
     return result
 
 
+def get_consistency_as_first(table_name_list, name, cursor):
+
+    union_statement = ""
+
+    for table_name in table_name_list[1:]:
+        union_statement += """ UNION
+        SELECT rna2_name
+        FROM %(table_name)s
+        WHERE rna1_name = '%(name)s'""" % {"table_name": table_name,
+                                           "name": name}
+
+    query = """SELECT rna2_name
+    FROM %(table_name)s
+    WHERE rna1_name = '%(name)s'
+    %(union_statement)s""" % {"table_name": table_name_list[0],
+                              "name": name,
+                              "union_statement": union_statement}
+
+    cursor.execute(query)
+
+    total = len(cursor.fetchallDict())
+
+    union_statement = ""
+
+    for table_name in table_name_list[1:]:
+        union_statement += """ UNION
+        SELECT rna2_name
+        FROM %(table_name)s
+        WHERE rna1_name = '%(name)s' AND
+        rna2_name NOT IN
+        (SELECT rna1_name FROM %(table_name)s WHERE rna2_name='%(name)s')""" % {"table_name": table_name,
+                                                                                "name": name}
+
+    query = """SELECT rna2_name
+        FROM %(table_name)s
+        WHERE rna1_name = '%(name)s' AND
+        rna2_name NOT IN
+        (SELECT rna1_name FROM %(table_name)s WHERE rna2_name='%(name)s')
+        %(union_statement)s""" % {"table_name": table_name,
+                                  "name": name,
+                                  "union_statement": union_statement}
+
+    cursor.execute(query)
+
+    unique_first = len(cursor.fetchallDict())
+
+    if total != 0:
+        percentage = float(unique_first) / float(total)
+
+    else:
+        percentage = '-'
+
+    return total, unique_first, percentage
+
 def format_final_table(path, our_tables):
 
     sets = {"raghavan": ["raghavan_s5", "raghavan_s6", "raghavan_s7", "raghavan_2"],
@@ -829,6 +959,7 @@ def format_final_table(path, our_tables):
               "type",
               "total_interactions",
               "tb_srna_targets",
+              "mrna_5utr_targets",
               "max_poly_u_length",
               "meme",
               "mast",
@@ -860,6 +991,7 @@ def format_final_table(path, our_tables):
                       row["type"],
                       row["total_targets"],
                       row["tb_srna_targets"],
+                      row["mrna_5utr_targets"],
                       row["max_poly_u_length"],
                       row["meme"].upper(),
                       row["mast"].upper(),

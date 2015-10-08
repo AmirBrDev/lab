@@ -658,4 +658,23 @@ def generate_zhang_stats():
 
     fl.close()
 
-generate_zhang_stats()
+# generate_zhang_stats()
+
+from Bio.Seq import Seq
+
+from Bio import SeqIO
+import gzip
+
+db = "/home/users/amirbar/lab/phylogenetic/NC_000913.fna.gz"
+
+fl = gzip.open(db, "rb")
+
+for record in SeqIO.parse(fl, "fasta"):
+    print record.seq
+
+fl.close()
+
+# for seq_record in SeqIO.r(db, "fasta"):
+#     print seq_record.id
+#     print repr(seq_record.seq)
+#     print len(seq_record)

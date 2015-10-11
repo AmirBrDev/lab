@@ -8,49 +8,75 @@ from EmbossCommands import EmmaCommandline, SuperMatcherCommandline
 import gzip
 import os
 import numpy
+import pylab
 
-def run_local_alignment(seq_file, genome_list):
+def run_local_alignment(seq_file, genome_list, workdir):
 
 	genome_table = Table(genome_list)
 	result = []
 
 	for row in genome_table:
 		genome_name = row["genome_file"]
+		print genome_name
 
 		# Find the genome file according to the genome directory
 		for file_name in os.listdir("./microbial/%s" % genome_name):
 			if file_name.endswith(".fna.gz"):
 				genome_file = "./microbial/%s/%s" % (genome_name, file_name)
 
-		with gzip.open(genome_file, "rb") as fl:
-			records = SeqIO.read(fl, "fasta")
-			SeqIO.write(records, "./tmp/curr_genome.fasta", "fasta")
+		# Run on both strands
+		result.append(directed_local_alignment(genome_file,
+											   seq_file,
+											   genome_name,
+											   True,
+											   workdir))
 
-		alignment_file = "tmp/aln/%s.aln" % genome_name
-
-		# Build the matching command
-		cmd = SuperMatcherCommandline(asequence=seq_file, 
-									  bsequence="./tmp/curr_genome.fasta", 
-									  gapopen=10, 
-									  gapextend=0.5,
-									  outfile=alignment_file)
-
-		# Excecute the command
-		stdout, stderr = cmd()
-		
-		#print(stdout + stderr)
-
-		# Get the score for the genome and the matching alignment
-		align_seq = list(AlignIO.read(alignment_file, "emboss"))[1]
-		align_seq._set_seq(align_seq.seq.ungap("-"))  # remove the gaps
-		score = extract_score(alignment_file)
-
-		result.append((genome_name, score, align_seq))
-
+		result.append(directed_local_alignment(genome_file,
+											   seq_file,
+											   genome_name,
+											   False,
+											   workdir))
 
 	os.remove("./tmp/curr_genome.fasta")
 
 	return result
+
+def directed_local_alignment(genome_file, seq_file, genome_name, is_positive, workdir):
+
+	if is_positive:
+		name_extension = "positive"
+
+	else:
+		name_extension = "negative"
+
+	with gzip.open(genome_file, "rb") as fl:
+		records = SeqIO.read(fl, "fasta")
+
+		if not is_positive:
+			records = records.reverse_complement()
+
+		SeqIO.write(records, "%s/curr_genome.fasta" % workdir, "fasta")
+
+	alignment_file = "%s/aln/%s_%s.aln" % (workdir, genome_name, name_extension)
+
+	# Build the matching command
+	cmd = SuperMatcherCommandline(asequence=seq_file, 
+								  bsequence="%s/curr_genome.fasta" % workdir, 
+								  gapopen=10, 
+								  gapextend=0.5,
+								  outfile=alignment_file)
+
+	# Excecute the command
+	stdout, stderr = cmd()
+	
+	#print(stdout + stderr)
+
+	# Get the score for the genome and the matching alignment
+	align_seq = list(AlignIO.read(alignment_file, "emboss"))[1]
+	align_seq._set_seq(align_seq.seq.ungap("-"))  # remove the gaps
+	score = extract_score(alignment_file)
+
+	return ("_".join([genome_name, name_extension]), score, align_seq)
 
 
 def extract_score(file_name):
@@ -65,12 +91,25 @@ def extract_score(file_name):
 	return float(line.replace("# Score: ", ""))
 
 
-def prepare_for_multiple_aignment(base_record, local_alignment_list):
+def generate_score_histogram(path, local_alignment_list):
+	SCORE_INDEX = 1
+
+	score_list = \
+		[genome_tuple[SCORE_INDEX] for genome_tuple in local_alignment_list]
+
+	pylab.hist(numpy.array(score_list))
+	pylab.savefig(path)
+
+
+def prepare_for_multiple_aignment(local_alignment_list, 
+								  proj_id_to_tax_id_dict,
+								  secondary_proj_id_to_tax_id_dict):
 	NAME_INDEX = 0
 	SCORE_INDEX = 1
 	RECORD_INDEX = 2
 
-	score_list = [genome_tuple[SCORE_INDEX] for genome_tuple in local_alignment_list]
+	score_list = \
+		[genome_tuple[SCORE_INDEX] for genome_tuple in local_alignment_list]
 
 	median = numpy.median(score_list)
 	std = numpy.std(score_list)
@@ -90,14 +129,70 @@ def prepare_for_multiple_aignment(base_record, local_alignment_list):
 
 	for genome_tuple in segnificant_alignments_list:
 		record = genome_tuple[RECORD_INDEX]
-		record.id = genome_tuple[NAME_INDEX]
+		record.id = \
+			get_id_by_name(genome_tuple[NAME_INDEX], proj_id_to_tax_id_dict)
+
+		if record.id is None:
+			record.id = \
+				get_id_by_name(genome_tuple[NAME_INDEX], secondary_proj_id_to_tax_id_dict)
+
+		if record.id is None:
+			raise BaseException("Unmatched taxonomy id to given name %s" % \
+				genome_tuple[NAME_INDEX])
+
+
 		record.name = genome_tuple[NAME_INDEX]
 		records.append(record)
-	
-
-	records.append(base_record)
 
 	return records
+
+
+def build_project_id_to_tax_id_dictionary(file_path):
+
+	with gzip.open(file_path, "rb") as fl:
+
+		# Remove two header lines
+		fl.readline()
+		fl.readline()
+
+		result = {}
+
+		# Build the table
+		for line in fl.readlines():
+
+			args = line.split("\t")
+			result[args[0]] = args[2]
+
+	return result
+
+def build_secondary_project_id_to_tax_id_dictionary(file_path):
+
+	with gzip.open(file_path, "rb") as fl:
+
+		# Remove two header lines
+		fl.readline()
+		fl.readline()
+
+		result = {}
+
+		# Build the table
+		for line in fl.readlines():
+
+			args = line.split("\t")
+			result[args[1]] = args[2]
+
+	return result
+
+def get_id_by_name(name, proj_id_to_tax_id_dict):
+
+	name = name.replace("_positive", "").replace("_negative", "")
+	project_id = name[name.find("uid") + 3:]
+
+	try:
+		return proj_id_to_tax_id_dict[project_id]
+
+	except KeyError:
+		return None
 
 
 def is_score_segnificant(score, median, std):
@@ -105,11 +200,11 @@ def is_score_segnificant(score, median, std):
 	return score > median + 2 * std
 
 
-def run_multiple_sequence_alignment(records, aln_path, dnd_path):
+def run_multiple_sequence_alignment(records, aln_path, dnd_path, workdir):
 
-	SeqIO.write(records, "tmp/emma.fasta", "fasta")
+	SeqIO.write(records, "%s/emma.fasta" % workdir, "fasta")
 
-	cmd = EmmaCommandline(sequence="tmp/emma.fasta",
+	cmd = EmmaCommandline(sequence="%s/emma.fasta" % workdir,
 						  outseq=aln_path,
 						  dendoutfile=dnd_path)
 

@@ -3,7 +3,7 @@ Run rate4site on given alignment and a tree. The tree is given as a filename,
 the aln as a set of records in fasta format
 '''
 from subprocess import Popen,PIPE
-#import dendropy
+import dendropy
 from Bio import SeqIO
 import sys,os,os.path
 import tempfile
@@ -11,6 +11,7 @@ from Bio import AlignIO
 from Bio.Align import MultipleSeqAlignment
 from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
+import os
 
 def narrow_tree(tree,aln):
 	nodes=[]
@@ -18,8 +19,10 @@ def narrow_tree(tree,aln):
 		nodes.append(record.id)  
 	nd = tree.nodes()
 	for n in nd:
-		if n.is_leaf() and (n.taxon is not None) and (str(n.taxon) not in nodes):
-			tree2=dendropy.treemanip.prune_subtree(tree,n)
+#		if n.is_leaf() and (n.taxon is not None) and (str(n.taxon) not in nodes):
+#		   tree2=dendropy.treemanip.prune_subtree(tree,n)
+		if n.is_leaf() and (n.taxon is not None) and (str(n.taxon).replace("'", "") not in nodes):
+			tree.prune_subtree(n)
 	return tree
 
 class Rate4Site(object):
@@ -53,10 +56,12 @@ class Rate4Site(object):
 			parent_tree=treef
 		elif os.path.isfile(treef):
 			parent_tree=dendropy.Tree.get_from_path(treef,'newick')
+
 		self.tree = narrow_tree(parent_tree,self.aln)
 		self.treefile = tempfile.NamedTemporaryFile()
 #		self.tree.write(self.treefile,'newick',internal_labels=False)
-		self.treefile.write(self.tree.as_string('newick',internal_labels=False)[5:])
+#		self.treefile.write(self.tree.as_string('newick',internal_labels=False)[5:])
+		self.treefile.write(self.tree.as_string('newick',suppress_internal_taxon_labels=False)[5:])
 		self.treefile.flush()
 		self.cmd=cmd
 
@@ -69,7 +74,7 @@ class Rate4Site(object):
 		if refseq:
 			runcmd+=' -a '+refseq
 #			sys.stderr.write(refseq+'\n')
-		pipe = Popen(runcmd,shell=True, stdout=PIPE, stderr=PIPE).stdout
+		pipe = Popen("./%s" % runcmd,shell=True, stdout=PIPE, stderr=PIPE).stdout
 		rates=[]
 		for line in pipe:
 #			sys.stderr.write(line)

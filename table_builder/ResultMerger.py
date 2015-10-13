@@ -346,6 +346,16 @@ def merge_results(our_tables_list, their_tables_list, treshold):
         if name in names_to_mrna_5utr_targets.keys():
             row.append(len(names_to_mrna_5utr_targets[name]))
 
+    # Generate igr/3utr targets
+    header.append("igr_3utr_targets")
+    names_to_igr_3utr_targets = find_igr_3utr_targets(total_names, our_tables, cursor)
+
+    for row in values:
+        name = row[0]
+
+        if name in names_to_igr_3utr_targets.keys():
+            row.append(len(names_to_igr_3utr_targets[name]))
+
     # Generate consistency - Just for my curiosity
     # header.append("total_as_first")
     # header.append("unique_as_first")
@@ -618,6 +628,54 @@ def find_mrna_5utr_targets(names, table_name_list, cursor):
         while row is not None:
 
             to_add = row["rna1_name"].replace(".5utr", "").replace(".est5utr", "")
+
+            if to_add not in names_to_targets[name]:
+                names_to_targets[name].append(to_add)
+
+            row = cursor.fetchone()
+
+    return names_to_targets
+
+
+def find_igr_3utr_targets(names, table_name_list, cursor):
+
+    names_to_targets = {}
+
+    for name in names:
+
+        union_statement = ""
+
+        for table_name in table_name_list[1:]:
+            union_statement += """ UNION
+            SELECT rna1_name
+            FROM %(table_name)s
+            WHERE rna2_name = '%(name)s' AND (first_type='igr' OR first_type='3utr')
+            UNION
+            SELECT rna2_name
+            FROM %(table_name)s
+            WHERE rna1_name = '%(name)s' AND (second_type='igr' OR second_type='3utr')""" % {"table_name": table_name,
+                                                                                              "name": name}
+
+        query = """SELECT rna1_name
+        FROM %(table_name)s
+        WHERE rna2_name = '%(name)s' AND (first_type='igr' OR first_type='3utr')
+        UNION
+        SELECT rna2_name
+        FROM %(table_name)s
+        WHERE rna1_name = '%(name)s' AND (second_type='igr' OR second_type='3utr')
+        %(union_statement)s""" % {"table_name": table_name_list[0],
+                                  "name": name,
+                                  "union_statement": union_statement}
+
+        cursor.execute(query)
+
+        row = cursor.fetchone()
+
+        names_to_targets[name] = []
+
+        while row is not None:
+
+            to_add = row["rna1_name"]
 
             if to_add not in names_to_targets[name]:
                 names_to_targets[name].append(to_add)
@@ -960,6 +1018,7 @@ def format_final_table(path, our_tables):
               "total_interactions",
               "tb_srna_targets",
               "mrna_5utr_targets",
+              "igr_3utr_targets",
               "max_poly_u_length",
               "meme",
               "mast",
@@ -967,7 +1026,14 @@ def format_final_table(path, our_tables):
               "binding_site_state",
               "motif"]
 
-    start_of_interactions = len(header)
+    start_of_total_interactions = len(header)
+    for cond_name in conditions:
+        header.append("%s.total_interactions" % cond_name)
+
+    end_of_total_interactions = len(header)
+
+    start_of_interactions = end_of_total_interactions
+
     for cond_name in conditions:
         header.append("%s.as_rna2_percentage" % cond_name)
 
@@ -992,6 +1058,7 @@ def format_final_table(path, our_tables):
                       row["total_targets"],
                       row["tb_srna_targets"],
                       row["mrna_5utr_targets"],
+                      row["igr_3utr_targets"],
                       row["max_poly_u_length"],
                       row["meme"].upper(),
                       row["mast"].upper(),
@@ -999,14 +1066,27 @@ def format_final_table(path, our_tables):
                       row["binding_site_state"],
                       row["motif"]]
 
-        # Go over the i fields
+        # Total interactions
         for field in header[start_of_interactions: end_of_interactions]:
             cond_name = field.split(".")[0]
 
-            if float(row["%s_total" % cond_name]) == 0:
+            first_count = float(row["%s_first_interactions" % cond_name])
+            second_count = float(row["%s_second_interactions" % cond_name])
+
+            row_values.append(first_count + second_count)
+
+        # interactions percentage
+        for field in header[start_of_interactions: end_of_interactions]:
+            cond_name = field.split(".")[0]
+
+            first_count = float(row["%s_first_interactions" % cond_name])
+            second_count = float(row["%s_second_interactions" % cond_name])
+            total_count = first_count + second_count
+
+            if float(total_count) == 0:
                 res = "-"
             else:
-                res = float(row["%s_second_count" % cond_name]) / float(row["%s_total" % cond_name])
+                res = second_count / total_count
                 res = "%.2f" % res
 
             row_values.append(res)
@@ -1054,5 +1134,5 @@ def format_final_table(path, our_tables):
     for row in final_rows:
         fl.write("%s\n" % "\t".join(str(val) for val in row))
 
-test_merge_results(50)
+test_merge_results(0)
 format_final_table("test.csv", our_file_list)

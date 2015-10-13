@@ -660,21 +660,153 @@ def generate_zhang_stats():
 
 # generate_zhang_stats()
 
-from Bio.Seq import Seq
 
-from Bio import SeqIO
-import gzip
+def find_all_combos(table_name_list, cursor, allow_5utr_dup):
 
-db = "/home/users/amirbar/lab/phylogenetic/NC_000913.fna.gz"
+    combos = []
+    union_statement = ""
 
-fl = gzip.open(db, "rb")
+    for table_name in table_name_list[1:]:
+        union_statement += """ UNION
+        SELECT rna1_name, rna2_name
+        FROM %(table_name)s""" % {"table_name": table_name}
 
-for record in SeqIO.parse(fl, "fasta"):
-    print record.seq
+    query = """SELECT rna1_name, rna2_name
+    FROM %(table_name)s
+    %(union_statement)s""" % {"table_name": table_name_list[0],
+                              "union_statement": union_statement}
+    cursor.execute(query)
 
-fl.close()
+    row = cursor.fetchone()
 
-# for seq_record in SeqIO.r(db, "fasta"):
-#     print seq_record.id
-#     print repr(seq_record.seq)
-#     print len(seq_record)
+    while row is not None:
+        
+        first_name = row["rna1_name"]
+        second_name = row["rna2_name"]
+
+        if not allow_5utr_dup:
+            first_name = first_name.replace(".5utr", "").replace(".est5utr", "")
+            second_name = second_name.replace(".5utr", "").replace(".est5utr", "")
+
+        if (first_name, second_name) not in combos and \
+           (second_name, first_name) not in combos:
+            combos.append((first_name, second_name))
+
+        row = cursor.fetchone()
+
+    return combos
+
+
+def find_all_srna_combos(table_name_list, cursor, allow_5utr_dup):
+
+    combos = []
+    union_statement = ""
+
+    for table_name in table_name_list[1:]:
+        union_statement += """ UNION
+        SELECT rna1_name, rna2_name
+        FROM %(table_name)s
+        WHERE first_type = 'srna' OR second_type='srna'""" % {"table_name": table_name}
+
+    query = """SELECT rna1_name, rna2_name
+    FROM %(table_name)s
+    WHERE first_type = 'srna' OR second_type='srna'
+    %(union_statement)s""" % {"table_name": table_name_list[0],
+                              "union_statement": union_statement}
+    cursor.execute(query)
+
+    row = cursor.fetchone()
+
+    while row is not None:
+        
+        first_name = row["rna1_name"]
+        second_name = row["rna2_name"]
+
+        if not allow_5utr_dup:
+            first_name = first_name.replace(".5utr", "").replace(".est5utr", "")
+            second_name = second_name.replace(".5utr", "").replace(".est5utr", "")
+
+        if (first_name, second_name) not in combos and \
+           (second_name, first_name) not in combos:
+            combos.append((first_name, second_name))
+
+        row = cursor.fetchone()
+
+    return combos
+
+
+def test_find_all_combos():
+    db = MySQLdb.connect(host="localhost",user="amirbar",db="amir")
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+
+    tables = ["signif_chimeras_of_iron_limitation_cl",
+              "signif_chimeras_of_log_phase_cl",
+              "signif_chimeras_of_stationary_cl"]    
+
+    print len(find_all_combos(tables, cursor, True))
+    print len(find_all_combos(tables, cursor, False))
+    print len(find_all_srna_combos(tables, cursor, True))
+    print len(find_all_srna_combos(tables, cursor, False))
+
+#test_find_all_combos()
+
+def find_all_srna_combos_when_srna_second(table_name_list, cursor, allow_5utr_dup):
+
+    combos = []
+    union_statement = ""
+
+    for table_name in table_name_list[1:]:
+        union_statement += """ UNION
+        SELECT rna1_name, rna2_name
+        FROM %(table_name)s
+        WHERE second_type = 'srna' 
+        UNION
+        SELECT rna2_name, rna1_name
+        FROM %(table_name)s
+        WHERE first_type = 'srna'""" % {"table_name": table_name}
+
+    query = """SELECT rna1_name, rna2_name
+    FROM %(table_name)s
+    WHERE second_type = 'srna' 
+    UNION
+    SELECT rna2_name, rna1_name
+    FROM %(table_name)s
+    WHERE first_type = 'srna' 
+    %(union_statement)s""" % {"table_name": table_name_list[0],
+                              "union_statement": union_statement}
+    cursor.execute(query)
+
+    row = cursor.fetchone()
+
+    while row is not None:
+        
+        first_name = row["rna1_name"]
+        second_name = row["rna2_name"]
+
+        if not allow_5utr_dup:
+            first_name = first_name.replace(".5utr", "").replace(".est5utr", "")
+            second_name = second_name.replace(".5utr", "").replace(".est5utr", "")
+
+        if (first_name, second_name) not in combos and \
+           (second_name, first_name) not in combos:
+            combos.append((first_name, second_name))
+
+        row = cursor.fetchone()
+
+    return combos
+
+def test_srna_combos_2nd():
+    db = MySQLdb.connect(host="localhost",user="amirbar",db="amir")
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+
+    tables = ["signif_chimeras_of_iron_limitation_cl",
+              "signif_chimeras_of_log_phase_cl",
+              "signif_chimeras_of_stationary_cl"]
+
+    #combos = find_all_srna_combos_when_srna_second(tables, cursor, False)
+    combos = find_all_combos(tables, cursor, False)
+
+    for first, second in combos:
+        print "\t".join([first, second])
+
+test_srna_combos_2nd()

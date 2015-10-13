@@ -3,7 +3,9 @@ from sequence_extractor import get_seq_list
 from Bio.Emboss.Applications import NeedleCommandline, WaterCommandline
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
-from Bio import AlignIO
+from Bio.Seq import Seq
+#from Bio import AlignIO
+import AlignIO
 from EmbossCommands import EmmaCommandline, SuperMatcherCommandline
 import gzip
 import os
@@ -53,7 +55,13 @@ def directed_local_alignment(genome_file, seq_file, genome_name, is_positive, wo
 		records = SeqIO.read(fl, "fasta")
 
 		if not is_positive:
-			records = records.reverse_complement()
+			records = records.reverse_complement(id=True, 
+												 name=True, 
+												 description=True, 
+												 features=True, 
+												 annotations=True, 
+												 letter_annotations=True, 
+												 dbxrefs=True)
 
 		SeqIO.write(records, "%s/curr_genome.fasta" % workdir, "fasta")
 
@@ -72,7 +80,7 @@ def directed_local_alignment(genome_file, seq_file, genome_name, is_positive, wo
 	#print(stdout + stderr)
 
 	# Get the score for the genome and the matching alignment
-	align_seq = list(AlignIO.read(alignment_file, "emboss"))[1]
+	align_seq = list(AlignIO.read(alignment_file, "amir_emboss"))[1]
 	align_seq._set_seq(align_seq.seq.ungap("-"))  # remove the gaps
 	score = extract_score(alignment_file)
 
@@ -99,6 +107,7 @@ def generate_score_histogram(path, local_alignment_list):
 
 	pylab.hist(numpy.array(score_list))
 	pylab.savefig(path)
+	pylab.close()
 
 
 def prepare_for_multiple_aignment(local_alignment_list, 
@@ -184,12 +193,15 @@ def build_secondary_project_id_to_tax_id_dictionary(file_path):
 	return result
 
 def get_id_by_name(name, proj_id_to_tax_id_dict):
-
+	appendix = name[name.rfind("_") + 1:]
 	name = name.replace("_positive", "").replace("_negative", "")
 	project_id = name[name.find("uid") + 3:]
 
 	try:
-		return proj_id_to_tax_id_dict[project_id]
+		if appendix == "positive":
+			return proj_id_to_tax_id_dict[project_id]
+		else:
+			return "%s_neg" % proj_id_to_tax_id_dict[project_id]
 
 	except KeyError:
 		return None

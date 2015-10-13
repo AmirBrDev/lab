@@ -1,0 +1,2117 @@
+name	ecocyc_id	type	total_interactions	tb_srna_targets	mrna_5utr_targets	igr_3utr_targets	max_poly_u_length	meme	mast	meme_result	binding_site_state	motif	signif_chimeras_of_iron_limitation_cl.total_interactions	signif_chimeras_of_log_phase_cl.total_interactions	signif_chimeras_of_stationary_cl.total_interactions	signif_chimeras_of_iron_limitation_cl.as_rna2_percentage	signif_chimeras_of_log_phase_cl.as_rna2_percentage	signif_chimeras_of_stationary_cl.as_rna2_percentage	lybecker	raghavan	bilusic	thomason	total_articles
+hdfR.EST3UTR	EG11449.EST3UTR	3utr	1	0	0	0	4				-		0.0	0.0	8.0	-	-	0.00					0
+nlpE.EST3UTR	EG12137.EST3UTR	3utr	2	0	1	1	6				-		9.0	20.0	0.0	0.00	0.30	-					0
+yfgJ.EST3UTR	G7318.EST3UTR	3utr	1	1	0	0	7				-		15.0	0.0	35.0	0.00	-	0.00					0
+malG.3UTR	EG10556.3UTR	3utr	47	0	40	2	7	6.90E+02;3.00E+01;1.40E+00;1.70E-01	2.10E-01;5.10E-03;1.90E+00;1.30E+00		-		1904.0	466.0	1740.0	1.00	1.00	1.00					0
+yjfY.EST3UTR	G7861.EST3UTR	3utr	5	0	4	0	8	6.30E+01;4.80E+01	1.60E-01;2.50E-01		-		22.0	21.0	40.0	1.00	1.00	1.00					0
+yafK.EST3UTR	G6108.EST3UTR	3utr	1	0	1	0	4				-		0.0	6.0	0.0	-	0.00	-					0
+sucD.EST3UTR	EG10982.EST3UTR	3utr	33	0	26	5	6	7.40E-05	7.00E-05	recip	-	cc[ac]ugucg[ag]aa	5287.0	3116.0	11479.0	0.86	0.69	0.84					0
+cysG.EST3UTR	EG10188.EST3UTR	3utr	1	1	0	0	5				-		0.0	7.0	0.0	-	0.00	-			B1		1
+pncB.EST3UTR	EG10742.EST3UTR	3utr	1	0	0	1	7				-		45.0	0.0	13.0	0.00	-	0.00					0
+opgC.EST3UTR	G6552.EST3UTR	3utr	6	0	5	0	6	3.50E+00	2.50E-02		-		33.0	53.0	0.0	1.00	1.00	-				T1_4;T1_5;T1	1
+yjgA.EST3UTR	EG11410.EST3UTR	3utr	1	0	0	1	4				-		5.0	0.0	0.0	0.00	-	-					0
+fliC.EST3UTR	EG10321.EST3UTR	3utr	2	0	1	1	5				-		43.0	188.0	0.0	1.00	0.78	-			B3_1;B4_2;B1		1
+ydcI.EST3UTR	G6737.EST3UTR	3utr	1	1	0	0	4				-		6.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1	1
+ycfJ.EST3UTR	EG12444.EST3UTR	3utr	3	0	3	0	7				-		13.0	14.0	95.0	1.00	1.00	1.00					0
+yncL.EST3UTR	G0-8887.EST3UTR	3utr	2	2	0	0	4				-		172.0	75.0	56.0	1.00	1.00	1.00					0
+sucB.3UTR	EG10980.3UTR	3utr	1	1	0	0	3				-		0.0	0.0	52.0	-	-	1.00					0
+dinI.EST3UTR	G6558.EST3UTR	3utr	3	1	2	0	8				-		126.0	302.0	53.0	1.00	1.00	1.00					0
+bhsA.EST3UTR	G6570.EST3UTR	3utr	3	0	2	0	7				-		9.0	0.0	50.0	1.00	-	1.00					0
+yegE.EST3UTR	EG12396.EST3UTR	3utr	1	1	0	0	3				-		0.0	0.0	15.0	-	-	0.00					0
+lgoD.EST3UTR	G7945.EST3UTR	3utr	2	0	2	0	8				-		30.0	0.0	0.0	1.00	-	-					0
+uhpT.EST3UTR	EG11054.EST3UTR	3utr	123	0	103	9	7	1.30E-11	1.10E-05	recip	-	[ga]u[cu][ag]cc[ag][gu][ua][agu][ac][cua][ga][uag][uc]	7464.0	4596.0	198.0	1.00	1.00	1.00					0
+glnA.3UTR	EG10383.3UTR	3utr	15	0	7	5	6	1.30E-03	4.00E-04	recip	-	a[au][gacu][acu][ag][cu]g[gc]ca[ag]cua[au]	1304.0	201.0	483.0	1.00	1.00	1.00			B4_2	T1_3;T1	2
+yehA.EST3UTR	EG11987.EST3UTR	3utr	7	2	4	1	7	1.40E+02;6.80E+00	1.10E+00;1.20E+00		-		45.0	0.0	139.0	1.00	-	0.45			B1		1
+yjfN.EST3UTR	G7851.EST3UTR	3utr	1	0	1	0	4				-		5.0	0.0	0.0	0.00	-	-					0
+ykgH.EST3UTR	G6180.EST3UTR	3utr	25	0	16	7	5	2.30E-02	2.60E-04	recip	-	[gu]u[cu][ag]cuuc[ag]g	692.0	838.0	299.0	1.00	1.00	1.00					0
+glpX.3UTR	EG11517.3UTR	3utr	18	0	14	2	7	6.60E+02;3.70E+02;5.10E+01;2.70E+01	3.90E-01;1.10E+00;1.20E-01;3.00E-02		-		336.0	417.0	729.0	1.00	1.00	1.00			B1	T1_1;T1	2
+folM.EST3UTR	G6862.EST3UTR	3utr	1	1	0	0	3				-		113.0	50.0	97.0	0.00	0.00	0.00				T1_4;T1_5;T1	1
+ycaK.EST3UTR	EG12702.EST3UTR	3utr	1	0	1	0	3				-		0.0	0.0	19.0	-	-	0.00				T1_4;T1_5;T1	1
+flgL.EST3UTR	EG11545.EST3UTR	3utr	4	0	3	0	7				-		158.0	10.0	56.0	1.00	1.00	1.00					0
+allE.EST3UTR	G6284.EST3UTR	3utr	5	0	4	1	7	2.90E+01;1.90E+01	8.10E-02;4.40E-03		-		85.0	43.0	137.0	1.00	1.00	1.00				T1	1
+yeaD.EST3UTR	G6966.EST3UTR	3utr	1	0	0	1	5				-		11.0	13.0	14.0	0.00	0.00	0.00					0
+yciE.3UTR	EG11125.3UTR	3utr	1	0	0	1	5				-		0.0	0.0	28.0	-	-	1.00					0
+ibpB.EST3UTR	EG11535.EST3UTR	3utr	1	0	0	0	7				-		26.0	29.0	23.0	1.00	1.00	1.00					0
+cspA.3UTR	EG10166.3UTR	3utr	6	0	5	1	7	2.00E+01;1.30E+01	9.60E-01;4.10E-01		-		27.0	109.0	0.0	1.00	1.00	-					0
+lpp.EST3UTR	EG10544.EST3UTR	3utr	4	0	3	0	8				-		1196.0	298.0	394.0	1.00	1.00	1.00					0
+narK.EST3UTR	EG10642.EST3UTR	3utr	1	0	0	0	3				-		10.0	0.0	0.0	1.00	-	-					0
+fpr.EST3UTR	EG10628.EST3UTR	3utr	1	0	1	0	5				-		0.0	0.0	7.0	-	-	1.00					0
+ygaM.EST3UTR	G7400.EST3UTR	3utr	3	1	2	0	5				-		27.0	0.0	196.0	1.00	-	1.00		R2			1
+galM.3UTR	EG11698.3UTR	3utr	1	1	0	0	3				-		27.0	0.0	0.0	1.00	-	-					0
+ydcZ.EST3UTR	G6758.EST3UTR	3utr	1	1	0	0	4				-		16.0	0.0	0.0	0.00	-	-					0
+yghJ.EST3UTR	G7541.EST3UTR	3utr	1	1	0	0	2				-		0.0	0.0	69.0	-	-	0.00					0
+ydcP.EST3UTR	G6746.EST3UTR	3utr	1	0	0	1	5				-		66.0	94.0	6.0	0.58	0.55	0.00					0
+tdcG.EST3UTR	G7624.EST3UTR	3utr	1	0	1	0	8				-		0.0	6.0	7.0	-	1.00	1.00					0
+aldA.EST3UTR	EG10035.EST3UTR	3utr	1	1	0	0	6				-		0.0	0.0	46.0	-	-	0.00					0
+mtfA.EST3UTR	G7063.EST3UTR	3utr	1	0	0	1	3				-		5.0	0.0	0.0	1.00	-	-				T1_1;T1_2;T1	1
+bolA.3UTR	EG10125.3UTR	3utr	1	0	0	1	4				-		0.0	0.0	7.0	-	-	0.00					0
+etk.EST3UTR	EG11826.EST3UTR	3utr	1	0	0	1	6				-		0.0	0.0	12.0	-	-	0.00					0
+yhaI.EST3UTR	G7618.EST3UTR	3utr	1	1	0	0	5				-		8.0	13.0	0.0	0.00	0.00	-					0
+dps.EST3UTR	EG11415.EST3UTR	3utr	1	1	0	0	4				-		0.0	0.0	11.0	-	-	1.00					0
+csgC.EST3UTR	G6548.EST3UTR	3utr	1	1	0	0	3				-		38.0	0.0	0.0	0.00	-	-					0
+parC.EST3UTR	EG10686.EST3UTR	3utr	1	1	0	0	3				-		9.0	0.0	0.0	1.00	-	-					0
+yqeB.EST3UTR	G7494.EST3UTR	3utr	3	0	1	2	4				-		77.0	94.0	0.0	0.25	0.45	-			B1		1
+cirA.EST3UTR	EG10155.EST3UTR	3utr	2	0	1	1	5				-		52.0	0.0	0.0	0.52	-	-				T1_4;T1_5;T1	1
+ybiJ.EST3UTR	EG12422.EST3UTR	3utr	1	1	0	0	3				-		0.0	0.0	12.0	-	-	0.00			B1;B3_1		1
+ybhL.EST3UTR	G6403.EST3UTR	3utr	1	0	1	0	7				-		0.0	0.0	9.0	-	-	1.00					0
+secF.EST3UTR	EG10940.EST3UTR	3utr	2	0	2	0	8				-		23.0	15.0	0.0	1.00	1.00	-					0
+lacA.3UTR	EG10524.3UTR	3utr	1	0	1	0	3				-		5.0	16.0	0.0	1.00	1.00	-					0
+cpxP.3UTR	G7816.3UTR	3utr	251	0	224	14	8	6.80E-04	3.90E-03	recip	-	a[auc][ug][gu][gu]g[ac]ugg[uc]	5212.0	3026.0	30520.0	0.91	0.94	0.99			B1	T1_1;T1	2
+putA.EST3UTR	EG10801.EST3UTR	3utr	1	1	0	0	4				-		16.0	0.0	11.0	0.00	-	0.00					0
+rcsB.EST3UTR	EG10821.EST3UTR	3utr	1	1	0	0	3				-		0.0	26.0	0.0	-	1.00	-					0
+osmB.EST3UTR	EG10679.EST3UTR	3utr	1	1	0	0	5				-		0.0	27.0	0.0	-	0.00	-					0
+yahN.EST3UTR	G6193.EST3UTR	3utr	1	0	1	0	6				-		0.0	5.0	0.0	-	1.00	-					0
+yhcN.EST3UTR	G7683.EST3UTR	3utr	4	0	4	0	8				-		156.0	45.0	0.0	1.00	1.00	-					0
+smpB.EST3UTR	EG11782.EST3UTR	3utr	1	0	1	0	2				-		21.0	0.0	0.0	0.00	-	-					0
+yddE.EST3UTR	EG11825.EST3UTR	3utr	1	0	1	0	4				-		0.0	6.0	0.0	-	0.00	-					0
+glpQ.EST3UTR	EG10399.EST3UTR	3utr	1	0	1	0	5				-		0.0	0.0	8.0	-	-	1.00					0
+uspB.EST3UTR	EG12231.EST3UTR	3utr	1	0	0	0	3				-		0.0	0.0	50.0	-	-	0.00					0
+malM.EST3UTR	EG10559.EST3UTR	3utr	2	0	2	0	7				-		0.0	0.0	19.0	-	-	1.00					0
+yrdA.EST3UTR	G7696.EST3UTR	3utr	1	0	0	1	4				-		9.0	0.0	0.0	0.00	-	-					0
+yciI.EST3UTR	EG11607.EST3UTR	3utr	1	1	0	0	5				-		13.0	0.0	0.0	0.00	-	-					0
+glk.3UTR	EG12957.3UTR	3utr	2	0	2	0	5				-		16.0	21.0	20.0	1.00	1.00	1.00					0
+xylE.EST3UTR	EG11076.EST3UTR	3utr	1	0	1	0	5				-		0.0	6.0	0.0	-	1.00	-					0
+fieF.EST3UTR	EG11873.EST3UTR	3utr	1	0	0	1	4				-		0.0	9.0	0.0	-	0.00	-				T1_2;T1	1
+wzzB.EST3UTR	G7090.EST3UTR	3utr	1	0	1	0	3				-		12.0	0.0	0.0	1.00	-	-					0
+yrbL.EST3UTR	G7667.EST3UTR	3utr	1	0	1	0	3				-		0.0	0.0	10.0	-	-	1.00					0
+yjbB.EST3UTR	EG11919.EST3UTR	3utr	1	0	0	1	2				-		5.0	0.0	0.0	1.00	-	-					0
+ahpF.EST3UTR	EG11385.EST3UTR	3utr	2	0	2	0	6				-		28.0	0.0	0.0	1.00	-	-					0
+fhuF.EST3UTR	G7949.EST3UTR	3utr	1	1	0	0	4				-		473.0	0.0	0.0	0.16	-	-					0
+fliT.3UTR	EG11389.3UTR	3utr	1	1	0	0	4				-		23.0	31.0	0.0	0.00	0.00	-				T1_1;T1	1
+fre.EST3UTR	EG10334.EST3UTR	3utr	1	0	0	1	3				-		0.0	0.0	16.0	-	-	0.00					0
+yeeA.EST3UTR	EG11891.EST3UTR	3utr	1	0	0	1	2				-		0.0	11.0	0.0	-	0.00	-				T1_1;T1	1
+rpoD.3UTR	EG10896.3UTR	3utr	2	0	1	1	6				-		23.0	9.0	6.0	0.43	0.00	0.00				T1_4;T1_5;T1	1
+ydfH.EST3UTR	G6814.EST3UTR	3utr	1	0	0	1	4				-		17.0	69.0	0.0	0.00	0.00	-					0
+hypE.3UTR	EG10487.3UTR	3utr	2	2	0	0	4				-		44.0	141.0	0.0	0.00	0.00	-			B1	T1_3;T1	2
+fsaA.EST3UTR	G6428.EST3UTR	3utr	1	1	0	0	3				-		0.0	20.0	0.0	-	0.00	-			B1		1
+barA.EST3UTR	EG11367.EST3UTR	3utr	1	0	0	1	5				-		0.0	0.0	5.0	-	-	0.00					0
+afuC.EST3UTR	EG12340.EST3UTR	3utr	1	0	1	0	4				-		0.0	14.0	0.0	-	1.00	-					0
+yphH.EST3UTR	G7344.EST3UTR	3utr	1	0	0	1	2				-		0.0	11.0	0.0	-	0.00	-					0
+rpsI.3UTR	EG10908.3UTR	3utr	1	0	1	0	7				-		0.0	10.0	0.0	-	1.00	-					0
+mepM.EST3UTR	EG10013.EST3UTR	3utr	1	0	1	0	7				-		0.0	0.0	6.0	-	-	1.00					0
+yfbV.EST3UTR	G7189.EST3UTR	3utr	1	0	1	0	8				-		0.0	10.0	0.0	-	0.00	-					0
+yibT.EST3UTR	G0-10468.EST3UTR	3utr	1	0	1	0	7				-		0.0	0.0	7.0	-	-	0.00					0
+dxr.EST3UTR	EG12715.EST3UTR	3utr	1	1	0	0	8				-		13.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+fbp.EST3UTR	EG10283.EST3UTR	3utr	1	1	0	0	5				-		15.0	0.0	24.0	0.00	-	0.00					0
+ptsG.5UTR	EG10787.5UTR	5utr	4	1	1	0	5				-		382.0	281.0	59.0	0.46	0.40	0.20			B4_1	T1_1;T1	2
+opgD.EST5UTR	EG12859.EST5UTR	5utr	1	1	0	0	3				-		69.0	14.0	77.0	0.00	0.00	0.00					0
+ompC.5UTR	EG10670.5UTR	5utr	13	1	6	5	5	1.30E-01;9.40E-02;7.30E-02;6.30E-02;2.20E-02;1.30E-02;9.70E-03;4.40E-04	5.00E-01;1.50E-02;6.90E-01;5.90E-01;5.50E-02;2.00E-01;1.60E-01;4.30E-01		-		1402.0	431.0	1144.0	0.28	0.38	0.18				T1_1;T1_2;T1	1
+oppA.5UTR	EG10674.5UTR	5utr	2	1	0	1	3				-		335.0	0.0	81.0	0.00	-	0.00			B4_1		1
+yagU.EST5UTR	G6158.EST5UTR	5utr	1	1	0	0	4				-		0.0	16.0	0.0	-	0.00	-				T1_2;T1	1
+nanC.5UTR	G7921.5UTR	5utr	4	3	0	1	5				-		503.0	306.0	0.0	0.59	0.67	-					0
+maeB.EST5UTR	G7293.EST5UTR	5utr	3	3	0	0	3				-		136.0	60.0	91.0	0.68	0.68	1.00					0
+ompX.5UTR	EG12117.5UTR	5utr	1	1	0	0	4				-		100.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+osmB.5UTR	EG10679.5UTR	5utr	1	1	0	0	5				-		56.0	0.0	346.0	0.00	-	0.00				T1_1;T1	1
+nrfA.5UTR	EG11781.5UTR	5utr	3	0	2	1	6				-		12.0	387.0	93.0	0.00	0.02	0.00			B1;B2	T1_4;T1_5;T1_1;T1	2
+ilvC.5UTR	EG10495.5UTR	5utr	1	1	0	0	3				-		26.0	0.0	0.0	0.00	-	-			B1	T1_4;T1_5;T1_1;T1	2
+raiA.5UTR	EG11151.5UTR	5utr	1	1	0	0	7				-		1080.0	0.0	42.0	0.54	-	1.00			B1	T1_1;T1_2;T1	2
+asd.EST5UTR	EG10088.EST5UTR	5utr	2	2	0	0	5				-		170.0	230.0	0.0	0.40	0.00	-				T1_1;T1	1
+feoA.5UTR	EG12101.5UTR	5utr	1	0	1	0	3				-		24.0	0.0	0.0	0.00	-	-					0
+zapC.EST5UTR	G6486.EST5UTR	5utr	1	1	0	0	4				-		0.0	13.0	0.0	-	1.00	-			B4_1		1
+mutS.5UTR	EG10625.5UTR	5utr	1	1	0	0	3				-		103.0	0.0	39.0	0.00	-	0.00				T1_1;T1	1
+ompW.5UTR	EG11124.5UTR	5utr	2	1	0	1	6				-		0.0	0.0	131.0	-	-	0.00			B1	T1_1;T1	2
+yifK.EST5UTR	EG11459.EST5UTR	5utr	1	1	0	0	6				-		2362.0	1400.0	169.0	0.00	0.00	0.00			B4_1	T1_1;T1	2
+cirA.5UTR	EG10155.5UTR	5utr	2	1	0	1	4				-		8524.0	0.0	0.0	0.14	-	-		R2		T1_3;T1_1;T1_2;T1	2
+rpsF.5UTR	EG10905.5UTR	5utr	6	2	2	1	5	2.80E+00;2.80E+00;2.80E+00;2.80E+00	1.10E+00;1.10E+00;1.10E+00;1.10E+00		-		390.0	0.0	17.0	0.00	-	0.00				T1_1;T1	1
+nadE.5UTR	EG10663.5UTR	5utr	4	2	1	1	5				-		422.0	125.0	52.0	0.00	0.00	0.10				T1_1;T1	1
+fecA.5UTR	EG10286.5UTR	5utr	9	2	3	3	5	7.10E+01;7.10E+01;2.90E-01;2.90E-01	9.40E-01;9.40E-01;1.10E-01;1.10E-01		-		1703.0	45.0	0.0	0.11	0.00	-					0
+katG.5UTR	EG10511.5UTR	5utr	2	1	1	0	2				-		22.0	0.0	42.0	0.00	-	0.00			B4_1		1
+cycA.5UTR	EG12504.5UTR	5utr	3	2	0	1	5				-		1421.0	252.0	915.0	0.00	0.00	0.20			B4_1	T1_1;T1_2;T1	2
+hdhA.5UTR	EG10425.5UTR	5utr	1	0	0	0	5				-		0.0	0.0	13.0	-	-	0.00					0
+sdhE.5UTR	G7510.5UTR	5utr	1	1	0	0	4				-		154.0	53.0	22.0	0.00	0.00	0.00				T1_4;T1_5;T1_1;T1_2;T1	1
+cydA.5UTR	EG10173.5UTR	5utr	5	1	1	1	5	1.20E+01	1.60E+00		-		442.0	0.0	372.0	0.02	-	0.04		R3		T1_1;T1_2;T1	2
+argP.5UTR	EG10490.5UTR	5utr	2	2	0	0	6				-		129.0	79.0	12.0	0.00	0.00	0.00					0
+ytfB.5UTR	G7864.5UTR	5utr	1	1	0	0	4				-		11.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+hybO.5UTR	G7554.5UTR	5utr	3	2	0	1	4				-		25.0	25.0	25.0	0.00	1.00	0.00			B1	T1_2;T1	2
+ruvA.5UTR	RUVA.5UTR	5utr	3	0	3	0	7				-		22.0	0.0	54.0	1.00	-	1.00					0
+bolA.5UTR	EG10125.5UTR	5utr	1	1	0	0	3				-		1240.0	0.0	0.0	0.00	-	-			B4_1	T1_1;T1_2;T1	2
+dps.5UTR	EG11415.5UTR	5utr	1	0	1	0	3				-		0.0	0.0	13.0	-	-	1.00					0
+pyrL.5UTR	EG11279.5UTR	5utr	1	1	0	0	3				-		16.0	12.0	0.0	0.00	0.00	-			B4_1	T1_2;T1	2
+gltB.5UTR	EG10403.5UTR	5utr	1	1	0	0	3				-		26.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+ygdI.EST5UTR	G7453.EST5UTR	5utr	1	0	1	0	4				-		0.0	0.0	115.0	-	-	0.00				T1_1;T1	1
+aspS.5UTR	EG10097.5UTR	5utr	1	1	0	0	6				-		19.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+iscR.5UTR	G7326.5UTR	5utr	1	1	0	0	4				-		898.0	654.0	1117.0	0.00	0.00	0.00			B4_1	T1_1;T1	2
+zwf.5UTR	EG11221.5UTR	5utr	1	1	0	0	4				-		28.0	0.0	0.0	0.00	-	-					0
+sodA.5UTR	EG10953.5UTR	5utr	1	1	0	0	4				-		155.0	0.0	0.0	0.00	-	-					0
+dcuA.5UTR	EG11225.5UTR	5utr	3	2	0	1	6				-		389.0	22.0	56.0	1.00	0.00	0.00					0
+gdhA.5UTR	EG10372.5UTR	5utr	1	1	0	0	7				-		1063.0	305.0	194.0	0.36	0.62	0.26				T1_1;T1	1
+mdtK.EST5UTR	EG12400.EST5UTR	5utr	3	0	3	0	5				-		48.0	38.0	26.0	1.00	1.00	1.00					0
+ybjQ.5UTR	G6451.5UTR	5utr	1	0	0	0	4				-		0.0	0.0	6.0	-	-	0.00				T1_4;T1_5;T1_1;T1	1
+tonB.5UTR	EG11012.5UTR	5utr	1	1	0	0	5				-		45.0	0.0	0.0	0.00	-	-					0
+yibF.5UTR	EG11762.5UTR	5utr	1	0	0	0	5				-		0.0	0.0	13.0	-	-	0.00					0
+mscK.5UTR	G6255.5UTR	5utr	1	1	0	0	6				-		15.0	0.0	11.0	0.00	-	0.00				T1_1;T1	1
+fadL.5UTR	EG10280.5UTR	5utr	1	1	0	0	3				-		0.0	8.0	5.0	-	1.00	1.00				T1_1;T1	1
+ibaG.5UTR	G7657.5UTR	5utr	1	1	0	0	5				-		0.0	0.0	9.0	-	-	0.00				T1_2;T1	1
+proQ.EST5UTR	EG12866.EST5UTR	5utr	1	1	0	0	3				-		0.0	0.0	46.0	-	-	0.00				T1_1;T1	1
+ybhP.EST5UTR	G6407.EST5UTR	5utr	1	0	0	0	5				-		0.0	0.0	105.0	-	-	0.00				T1_1;T1_2;T1	1
+mglB.5UTR	EG10593.5UTR	5utr	1	0	1	0	4				-		0.0	0.0	15.0	-	-	1.00					0
+rpiB.5UTR	EG11827.5UTR	5utr	1	0	0	1	6				-		0.0	0.0	11.0	-	-	0.00			B1		1
+aroP.5UTR	EG10084.5UTR	5utr	2	2	0	0	5				-		282.0	171.0	27.0	0.00	0.00	0.00				T1_1;T1	1
+lldP.5UTR	EG11961.5UTR	5utr	4	3	1	0	5				-		298.0	7.0	20.0	0.42	0.00	1.00				T1_3;T1_1;T1_2;T1	1
+secG.5UTR	EG12095.5UTR	5utr	1	1	0	0	4				-		49.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+csiD.5UTR	G7394.5UTR	5utr	1	1	0	0	5				-		0.0	0.0	15.0	-	-	1.00					0
+rsd.5UTR	EG11738.5UTR	5utr	1	0	0	1	5				-		0.0	0.0	6.0	-	-	0.00					0
+osmE.5UTR	EG10044.5UTR	5utr	1	0	0	1	3				-		0.0	0.0	41.0	-	-	0.00				T1_1;T1	1
+aceB.5UTR	EG10023.5UTR	5utr	1	0	1	0	5				-		0.0	0.0	12.0	-	-	0.00				T1_1;T1	1
+csgD.5UTR	G6546.5UTR	5utr	6	4	2	0	6	1.00E+02;2.50E-01;1.70E-01;1.20E-01	1.60E-01;1.10E+00;1.80E+00;1.10E+00		-		399.0	104.0	1356.0	0.32	0.25	0.30				T1_3;T1_1;T1	1
+acnB.5UTR	EG12316.5UTR	5utr	2	2	0	0	6				-		85.0	0.0	393.0	0.00	-	0.00				T1_3;T1_1;T1	1
+serC.5UTR	EG10946.5UTR	5utr	1	1	0	0	4				-		0.0	0.0	9.0	-	-	0.00					0
+rssA.5UTR	EG12120.5UTR	5utr	1	0	0	0	2				-		0.0	0.0	11.0	-	-	0.00			B4_1		1
+rpsU.5UTR	EG10920.5UTR	5utr	1	0	1	0	2				-		87.0	0.0	0.0	1.00	-	-					0
+osmC.5UTR	EG10680.5UTR	5utr	1	0	0	1	5				-		0.0	0.0	9.0	-	-	0.00					0
+amiA.5UTR	EG11823.5UTR	5utr	1	0	0	1	4				-		22.0	0.0	15.0	0.00	-	0.00			B4_1		1
+pfkA.5UTR	EG10699.5UTR	5utr	1	0	0	1	4				-		8.0	0.0	0.0	0.00	-	-				T1_2;T1	1
+rne.5UTR	EG10859.5UTR	5utr	1	0	0	1	5				-		74.0	96.0	0.0	0.00	0.00	-					0
+mdh.5UTR	EG10576.5UTR	5utr	1	1	0	0	5				-		118.0	0.0	717.0	0.00	-	0.00				T1_1;T1_2;T1	1
+hdeA.5UTR	EG11398.5UTR	5utr	1	0	1	0	3				-		0.0	0.0	15.0	-	-	1.00					0
+ydcS.5UTR	G6751.5UTR	5utr	1	1	0	0	5				-		0.0	0.0	34.0	-	-	0.00				T1_1;T1	1
+hupB.5UTR	EG10467.5UTR	5utr	15	4	6	5	7	3.20E+01;6.80E+00;1.60E-01;1.00E-01;4.20E-03;2.70E-03	1.10E+00;1.90E-01;8.60E-01;8.60E-01;1.30E+00;8.40E-01		-		4967.0	705.0	4004.0	0.12	0.28	0.06			B1	T1_1;T1_2;T1	2
+lpp.5UTR	EG10544.5UTR	5utr	3	0	1	1	3				-		156.0	115.0	311.0	0.22	0.00	0.24				T1_1;T1	1
+yaiZ.5UTR	G6229.5UTR	5utr	1	0	0	1	5				-		58.0	82.0	0.0	0.00	0.00	-				T1_1;T1	1
+osmY.5UTR	EG11391.5UTR	5utr	2	1	0	1	4				-		0.0	0.0	55.0	-	-	0.00					0
+pyrG.5UTR	EG10810.5UTR	5utr	1	0	0	1	5				-		12.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+proV.5UTR	EG10771.5UTR	5utr	1	1	0	0	5				-		14.0	0.0	0.0	0.00	-	-					0
+gapA.5UTR	EG10367.5UTR	5utr	1	0	0	0	5				-		0.0	0.0	23.0	-	-	0.00				T1_1;T1_2;T1	1
+rmf.5UTR	EG50004.5UTR	5utr	4	1	2	1	4				-		0.0	0.0	153.0	-	-	0.00				T1_1;T1	1
+evgA.5UTR	EG11609.5UTR	5utr	1	0	0	1	5				-		0.0	0.0	15.0	-	-	0.00					0
+folE.5UTR	EG11375.5UTR	5utr	1	1	0	0	3				-		7.0	0.0	0.0	0.00	-	-					0
+ydhS.EST5UTR	G6896.EST5UTR	5utr	1	1	0	0	3				-		0.0	0.0	11.0	-	-	0.00				T1_1;T1	1
+srlA.5UTR	G8210.5UTR	5utr	2	1	0	0	4				-		500.0	526.0	0.0	0.00	0.00	-			B4_1	T1_1;T1	2
+malK.5UTR	EG10558.5UTR	5utr	1	1	0	0	3				-		44.0	0.0	0.0	0.00	-	-					0
+ydhQ.5UTR	G6894.5UTR	5utr	1	0	0	1	3				-		0.0	0.0	26.0	-	-	0.00				T1_1;T1_2;T1	1
+kgtP.EST5UTR	EG10522.EST5UTR	5utr	6	1	2	2	3	1.90E-01;1.90E-01	1.00E+00;1.00E+00		-		161.0	78.0	521.0	0.00	0.00	0.00					0
+ndh.5UTR	EG10649.5UTR	5utr	1	1	0	0	3				-		26.0	0.0	0.0	0.00	-	-					0
+fimA.5UTR	EG10308.5UTR	5utr	1	0	0	1	6				-		0.0	0.0	11.0	-	-	0.00					0
+yihG.5UTR	EG11833.5UTR	5utr	1	0	0	1	6				-		10.0	22.0	0.0	0.00	0.00	-				T1_3;T1_1;T1	1
+ompF.5UTR	EG10671.5UTR	5utr	3	0	1	2	5				-		731.0	17.0	0.0	0.00	0.00	-					0
+ychH.5UTR	EG11533.5UTR	5utr	2	1	0	0	3				-		24.0	18.0	0.0	0.00	0.00	-					0
+ydfK.5UTR	G6818.5UTR	5utr	2	0	1	1	5				-		28.0	89.0	52.0	0.00	0.00	0.00			B4_1	T1	2
+ebgR.5UTR	EG10254.5UTR	5utr	1	1	0	0	3				-		44.0	0.0	0.0	0.00	-	-			B1	T1_1;T1_2;T1	2
+cyaA.5UTR	EG10170.5UTR	5utr	1	1	0	0	6				-		17.0	0.0	0.0	0.00	-	-				T1_1;T1_2;T1	1
+msrA.5UTR	EG11433.5UTR	5utr	1	1	0	0	4				-		14.0	10.0	12.0	0.00	0.00	0.00				T1_1;T1	1
+yeaG.5UTR	G6969.5UTR	5utr	1	1	0	0	4				-		0.0	0.0	12.0	-	-	0.00				T1_1;T1	1
+fepA.5UTR	EG10293.5UTR	5utr	1	0	1	0	4				-		57.0	0.0	0.0	0.00	-	-			B1		1
+btuC.EST5UTR	EG10127.EST5UTR	5utr	1	0	0	1	6				-		0.0	0.0	7.0	-	-	0.00				T1_1;T1	1
+secM.EST5UTR	EG11087.EST5UTR	5utr	2	1	0	1	4				-		38.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+yhdW.5UTR	EG12834.5UTR	5utr	1	1	0	0	5				-		0.0	0.0	23.0	-	-	0.00				T1_1;T1	1
+sbmA.5UTR	EG10928.5UTR	5utr	2	2	0	0	6				-		244.0	105.0	161.0	0.00	0.00	0.00				T1_2;T1	1
+rpsT.5UTR	EG10919.5UTR	5utr	1	1	0	0	3				-		205.0	224.0	0.0	0.00	0.00	-					0
+ypfM.5UTR	G0-8888.5UTR	5utr	3	0	2	1	6				-		157.0	140.0	5.0	0.00	0.00	0.00					0
+nrdD.5UTR	EG11417.5UTR	5utr	2	1	0	1	3				-		0.0	0.0	67.0	-	-	0.25				T1_1;T1	1
+panB.5UTR	EG11675.5UTR	5utr	2	1	1	0	3				-		34.0	45.0	0.0	1.00	1.00	-					0
+ychJ.5UTR	EG12119.5UTR	5utr	1	1	0	0	3				-		16.0	0.0	0.0	0.00	-	-					0
+dcyD.5UTR	G7038.5UTR	5utr	3	1	2	0	6				-		423.0	362.0	15.0	0.57	0.59	1.00				T1_1;T1	1
+glcD.5UTR	G7545.5UTR	5utr	1	1	0	0	3				-		0.0	0.0	172.0	-	-	0.76				T1_1;T1	1
+sugE.5UTR	EG11616.5UTR	5utr	1	1	0	0	4				-		0.0	0.0	12.0	-	-	0.00			B1	T1_1;T1	2
+dadA.5UTR	EG11407.5UTR	5utr	2	2	0	0	4				-		65.0	0.0	71.0	0.00	-	0.00				T1_1;T1_2;T1	1
+ispU.5UTR	G6092.5UTR	5utr	3	1	2	0	8				-		11.0	17.0	9.0	1.00	0.00	0.00				T1_1;T1_2;T1	1
+flxA.5UTR	G6833.5UTR	5utr	1	1	0	0	7				-		0.0	0.0	23.0	-	-	0.00				T1_1;T1	1
+fiu.5UTR	G6414.5UTR	5utr	5	4	0	1	5	2.10E+01;2.10E+01	1.40E-02;1.40E-02		-		1353.0	0.0	0.0	0.14	-	-				T1_1;T1	1
+rnk.EST5UTR	G6337.EST5UTR	5utr	1	0	1	0	4				-		17.0	0.0	0.0	1.00	-	-					0
+livK.5UTR	EG10540.5UTR	5utr	1	1	0	0	5				-		73.0	16.0	0.0	0.58	1.00	-					0
+ssb.5UTR	EG10976.5UTR	5utr	2	1	0	0	7				-		41.0	41.0	22.0	0.00	0.00	0.00				T1_1;T1	1
+pck.5UTR	EG10688.5UTR	5utr	1	1	0	0	6				-		549.0	429.0	1539.0	0.00	0.00	0.00				T1_3;T1	1
+cfa.5UTR	EG11531.5UTR	5utr	9	3	1	3	7	5.50E+00;5.50E+00;1.50E-04;1.50E-04;4.00E-05;4.00E-05;3.40E-05;3.40E-05	8.50E-01;8.50E-01;1.20E+00;1.20E+00;5.50E-01;5.50E-01;1.50E+00;1.50E+00		-		951.0	618.0	362.0	0.00	0.00	0.00		R2		T1_1;T1_2;T1	2
+glcC.5UTR	G7546.5UTR	5utr	1	1	0	0	4				-		5.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+ydbJ.5UTR	G0-10450.5UTR	5utr	1	0	0	1	4				-		0.0	11.0	16.0	-	0.00	0.00				T1_1;T1_2;T1	1
+crp.5UTR	EG10164.5UTR	5utr	1	0	0	1	3				-		0.0	0.0	150.0	-	-	0.00					0
+trxA.5UTR	EG11031.5UTR	5utr	2	2	0	0	4				-		209.0	0.0	21.0	0.00	-	0.00					0
+ydeE.EST5UTR	EG11640.EST5UTR	5utr	1	1	0	0	5				-		64.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+recA.5UTR	EG10823.5UTR	5utr	1	1	0	0	3				-		77.0	0.0	0.0	0.00	-	-					0
+focA.5UTR	EG11258.5UTR	5utr	1	0	0	1	5				-		0.0	12.0	0.0	-	0.00	-					0
+panD.5UTR	EG11747.5UTR	5utr	2	1	0	1	3				-		60.0	37.0	14.0	0.00	0.00	0.00					0
+serA.5UTR	EG10944.5UTR	5utr	2	1	0	1	6				-		522.0	363.0	158.0	0.33	0.00	0.21			B4_1	T1_1;T1_2;T1	2
+ompR.5UTR	EG10672.5UTR	5utr	3	1	0	2	6				-		70.0	57.0	5.0	0.24	0.00	0.00			B4_1	T1_1;T1_2;T1	2
+yeeX.EST5UTR	G7087.EST5UTR	5utr	1	0	0	1	2				-		53.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+insH-10.EST5UTR	G7672.EST5UTR	5utr	1	0	0	0	3				-		0.0	7.0	15.0	-	1.00	1.00					0
+yghJ.EST5UTR	G7541.EST5UTR	5utr	2	0	1	1	6				-		14.0	198.0	0.0	1.00	0.00	-					0
+ygeV.5UTR	G7488.5UTR	5utr	1	1	0	0	5				-		52.0	0.0	0.0	0.00	-	-			B1	T1_1;T1	2
+grcA.5UTR	EG11784.5UTR	5utr	5	2	1	1	4	1.10E+01;1.10E+01	9.30E-01;9.30E-01		-		143.0	48.0	242.0	0.00	0.00	0.00			B1	T1_1;T1	2
+fliC.5UTR	EG10321.5UTR	5utr	3	0	0	2	8				-		233.0	160.0	0.0	0.00	0.00	-			B1	T1_1;T1	2
+yahA.5UTR	EG11236.5UTR	5utr	1	1	0	0	5				-		7.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+yggN.5UTR	EG12705.5UTR	5utr	2	0	1	1	6				-		21.0	13.0	94.0	1.00	1.00	0.36				T1_3;T1_1;T1_2;T1	1
+gltP.EST5UTR	EG10405.EST5UTR	5utr	1	1	0	0	3				-		124.0	70.0	0.0	1.00	1.00	-					0
+leuE.5UTR	G6984.5UTR	5utr	1	0	1	0	4				-		9.0	0.0	0.0	0.00	-	-				T1_1;T1_2;T1	1
+ves.5UTR	G6938.5UTR	5utr	4	3	1	0	3				-		199.0	151.0	0.0	0.00	0.00	-				T1_2;T1	1
+glpD.5UTR	EG10394.5UTR	5utr	1	1	0	0	6				-		97.0	58.0	115.0	0.00	0.00	0.00					0
+yncE.5UTR	G6763.5UTR	5utr	2	1	0	1	4				-		4495.0	11.0	0.0	0.07	0.00	-				T1_1;T1	1
+flhD.5UTR	EG10320.5UTR	5utr	4	3	0	1	6				-		917.0	440.0	209.0	0.00	0.00	0.00			B4_1		1
+hcaR.5UTR	G7331.5UTR	5utr	1	0	1	0	6				-		18.0	14.0	13.0	0.00	0.00	0.00				T1_4;T1_5;T1_1;T1_2;T1	1
+yjeF.5UTR	EG11758.5UTR	5utr	1	1	0	0	6				-		0.0	0.0	16.0	-	-	0.00					0
+cstA.5UTR	EG10167.5UTR	5utr	5	4	0	1	5	3.50E+01;5.10E+00	1.20E+00;1.30E+00		-		691.0	150.0	3586.0	0.20	0.00	0.16				T1_1;T1_2;T1	1
+nuoA.5UTR	EG12082.5UTR	5utr	1	1	0	0	8				-		1169.0	0.0	0.0	0.00	-	-			B4_1		1
+nagE.5UTR	EG10635.5UTR	5utr	6	1	2	1	6	7.70E+01;1.40E+01;2.10E-01	6.40E-01;6.00E-02;3.10E-01		-		428.0	140.0	52.0	0.12	0.08	0.00				T1_1;T1	1
+essD.5UTR	G6309.5UTR	5utr	2	0	1	1	6				-		37.0	29.0	23.0	0.41	0.00	0.00		R3	B1	T1_1;T1	3
+hns.5UTR	EG10457.5UTR	5utr	1	0	0	1	3				-		0.0	0.0	7.0	-	-	1.00					0
+gcd.5UTR	EG10369.5UTR	5utr	1	0	0	1	5				-		29.0	11.0	101.0	0.00	0.00	0.00				T1_1;T1_2;T1	1
+yhgN.EST5UTR	G7753.EST5UTR	5utr	1	1	0	0	3				-		7.0	0.0	0.0	0.00	-	-					0
+cysE.5UTR	EG10187.5UTR	5utr	1	1	0	0	5				-		183.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+dinD.5UTR	EG11193.5UTR	5utr	1	1	0	0	4				-		25.0	0.0	0.0	0.00	-	-			B1		1
+dctA.5UTR	EG20044.5UTR	5utr	2	1	1	0	5				-		18.0	0.0	46.0	0.00	-	0.00				T1_1;T1	1
+cysB.5UTR	EG10184.5UTR	5utr	3	2	0	1	6				-		141.0	31.0	872.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+ftsB.EST5UTR	G7424.EST5UTR	5utr	1	1	0	0	5				-		11.0	0.0	10.0	0.00	-	0.00				T1_1;T1_2;T1	1
+acrA.5UTR	EG11703.5UTR	5utr	1	0	0	0	4				-		0.0	0.0	17.0	-	-	0.00					0
+rnhA.5UTR	EG10860.5UTR	5utr	1	1	0	0	4				-		10.0	14.0	0.0	0.00	0.00	-					0
+uspA.5UTR	EG11390.5UTR	5utr	3	1	0	2	3				-		182.0	317.0	344.0	0.00	0.00	0.00				T1_2;T1	1
+gltI.5UTR	G6359.5UTR	5utr	3	2	0	1	3				-		1007.0	443.0	329.0	0.40	0.52	0.54			B1		1
+malI.5UTR	EG10557.5UTR	5utr	1	1	0	0	4				-		0.0	31.0	0.0	-	1.00	-			B1		1
+ftnA.5UTR	EG10921.5UTR	5utr	3	1	0	2	6				-		837.0	364.0	0.0	0.00	0.00	-				T1_1;T1	1
+proS.5UTR	EG10770.5UTR	5utr	1	1	0	0	8				-		9.0	0.0	20.0	0.00	-	0.00					0
+gcvT.5UTR	EG11442.5UTR	5utr	1	1	0	0	7				-		16.0	35.0	0.0	0.00	0.00	-		R3		T1_1;T1_2;T1	2
+yahO.5UTR	G6194.5UTR	5utr	1	1	0	0	3				-		0.0	0.0	18.0	-	-	0.00					0
+ppc.5UTR	EG10756.5UTR	5utr	1	1	0	0	4				-		28.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+bacA.5UTR	EG11665.5UTR	5utr	1	1	0	0	4				-		46.0	29.0	0.0	0.00	0.00	-				T1_1;T1	1
+fumA.5UTR	EG10356.5UTR	5utr	1	1	0	0	4				-		48.0	0.0	0.0	1.00	-	-					0
+glpE.5UTR	EG10395.5UTR	5utr	1	1	0	0	4				-		13.0	0.0	0.0	0.00	-	-					0
+greA.5UTR	EG10415.5UTR	5utr	2	1	0	0	7				-		83.0	12.0	53.0	0.28	1.00	0.38				T1_3;T1	1
+ahpC.5UTR	EG11384.5UTR	5utr	2	2	0	0	5				-		170.0	75.0	21.0	0.00	0.00	0.00				T1_1;T1	1
+msrB.5UTR	EG12394.5UTR	5utr	1	1	0	0	4				-		70.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+talB.5UTR	EG11556.5UTR	5utr	3	1	2	0	4				-		83.0	12.0	0.0	0.00	0.00	-					0
+aldA.5UTR	EG10035.5UTR	5utr	1	1	0	0	3				-		13.0	0.0	0.0	0.00	-	-					0
+fliL.5UTR	EG10322.5UTR	5utr	1	1	0	0	3				-		163.0	0.0	0.0	1.00	-	-					0
+sdaC.EST5UTR	EG12142.EST5UTR	5utr	1	0	0	1	5				-		7.0	0.0	0.0	0.00	-	-					0
+insH-4.EST5UTR	G6667.EST5UTR	5utr	1	0	0	0	3				-		7.0	5.0	16.0	1.00	1.00	1.00					0
+cspD.5UTR	EG11111.5UTR	5utr	4	1	1	1	5				-		227.0	156.0	2174.0	0.00	0.00	0.02				T1_1;T1	1
+ompA.5UTR	EG10669.5UTR	5utr	11	2	4	4	4	1.60E-01;1.60E-01;4.20E-02;4.20E-02;1.50E-02;1.50E-02	1.50E+00;1.50E+00;2.00E-01;2.00E-01;5.00E-01;5.00E-01		-		5421.0	1298.0	6548.0	0.15	0.28	0.07				T1_1;T1_2;T1	1
+ppiD.5UTR	G6242.5UTR	5utr	1	1	0	0	6				-		57.0	22.0	0.0	0.00	0.00	-				T1_1;T1_2;T1	1
+brnQ.5UTR	EG12168.5UTR	5utr	2	2	0	0	4				-		62.0	0.0	32.0	0.63	-	0.00			B4_1	T1_3;T1_2;T1	2
+araJ.5UTR	EG10060.5UTR	5utr	1	1	0	0	6				-		383.0	475.0	502.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+icd.5UTR	EG10489.5UTR	5utr	1	0	1	0	6				-		0.0	0.0	10.0	-	-	0.00				T1_4;T1_5;T1_2;T1	1
+thrL.5UTR	EG11277.5UTR	5utr	2	1	1	0	4				-		1229.0	308.0	233.0	0.21	1.00	0.00			B4_2	T1_1;T1_2;T1	2
+glpT.5UTR	EG10401.5UTR	5utr	3	3	0	0	5				-		437.0	28.0	0.0	0.00	0.00	-				T1_1;T1	1
+rfe.5UTR	EG10840.5UTR	5utr	1	0	0	1	5				-		0.0	8.0	0.0	-	0.00	-				T1_1;T1	1
+fhuA.5UTR	EG10302.5UTR	5utr	2	2	0	0	3				-		31.0	0.0	0.0	0.00	-	-					0
+rlmJ.5UTR	EG12234.5UTR	5utr	2	2	0	0	5				-		15.0	5.0	0.0	0.00	0.00	-					0
+rpsJ.5UTR	EG10909.5UTR	5utr	3	0	0	2	4				-		82.0	67.0	13.0	0.00	0.00	0.00		R2			1
+arcA.5UTR	EG10061.5UTR	5utr	2	1	0	1	5				-		0.0	0.0	41.0	-	-	0.00			B4_1	T1_4;T1_5;T1_1;T1	2
+yafT.EST5UTR	G6101.EST5UTR	5utr	1	1	0	0	3				-		15.0	0.0	0.0	0.00	-	-			B1		1
+ydiJ.EST5UTR	G6913.EST5UTR	5utr	1	1	0	0	6				-		0.0	62.0	0.0	-	1.00	-					0
+fadH.5UTR	G36.5UTR	5utr	1	0	1	0	4				-		5.0	0.0	0.0	0.00	-	-					0
+insG.EST5UTR	G7900.EST5UTR	5utr	1	0	1	0	7				-		0.0	5.0	0.0	-	1.00	-					0
+yciG.5UTR	EG11127.5UTR	5utr	1	1	0	0	4				-		0.0	0.0	14.0	-	-	0.00					0
+phoP.5UTR	EG10731.5UTR	5utr	1	1	0	0	6				-		18.0	0.0	0.0	0.00	-	-					0
+rplN.5UTR	EG10875.5UTR	5utr	2	1	0	1	6				-		25.0	0.0	0.0	0.00	-	-				T1_1;T1_2;T1	1
+rpoH.5UTR	EG10897.5UTR	5utr	4	2	2	0	4				-		16.0	14.0	35.0	0.00	1.00	0.00		R2		T1_3;T1_1;T1_2;T1	2
+ytfJ.5UTR	G7871.5UTR	5utr	1	1	0	0	2				-		0.0	29.0	0.0	-	1.00	-					0
+aspA.5UTR	EG10095.5UTR	5utr	3	0	0	3	3				-		10.0	13.0	34.0	0.00	0.00	0.00				T1_1;T1	1
+rplK.5UTR	EG10872.5UTR	5utr	1	1	0	0	6				-		3967.0	0.0	0.0	0.00	-	-					0
+slt.5UTR	EG10950.5UTR	5utr	1	1	0	0	3				-		0.0	0.0	32.0	-	-	0.00				T1_1;T1	1
+nanA.5UTR	EG10637.5UTR	5utr	4	1	0	1	4				-		214.0	82.0	0.0	0.61	0.11	-				T1_3;T1	1
+ycgB.5UTR	EG11516.5UTR	5utr	2	2	0	0	5				-		0.0	0.0	81.0	-	-	0.00				T1_1;T1	1
+yqjA.5UTR	G7609.5UTR	5utr	5	3	0	2	5	4.40E-02;4.40E-02;3.80E-02;3.80E-02	1.60E+00;1.60E+00;1.60E+00;1.60E+00		-		517.0	159.0	700.0	0.00	0.08	0.00			B4_1	T1_1;T1_2;T1	2
+gpmA.5UTR	EG11699.5UTR	5utr	1	1	0	0	4				-		196.0	132.0	0.0	0.46	0.64	-					0
+gltA.5UTR	EG10402.5UTR	5utr	2	2	0	0	4				-		30.0	19.0	13.0	0.00	0.00	0.00				T1_1;T1	1
+bamD.5UTR	G7352.5UTR	5utr	2	0	1	1	5				-		5.0	0.0	6.0	1.00	-	0.00				T1_4;T1_5;T1_1;T1_2;T1	1
+lipA.5UTR	EG11306.5UTR	5utr	1	1	0	0	3				-		81.0	60.0	0.0	0.00	0.00	-				T1_1;T1	1
+metH.5UTR	EG10587.5UTR	5utr	1	1	0	0	5				-		71.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+exbB.5UTR	EG10271.5UTR	5utr	1	1	0	0	6				-		75.0	20.0	0.0	0.00	0.00	-				T1_2;T1	1
+grxD.5UTR	EG12181.5UTR	5utr	1	1	0	0	4				-		70.0	214.0	27.0	0.00	0.34	0.00				T1_1;T1_2;T1	1
+slyB.5UTR	G6881.5UTR	5utr	3	2	0	0	5				-		93.0	24.0	14.0	0.14	0.00	0.00				T1_1;T1	1
+frdA.5UTR	EG10330.5UTR	5utr	2	1	1	0	3				-		2233.0	0.0	0.0	0.11	-	-			B4_1	T1_1;T1	2
+sstT.5UTR	EG12732.5UTR	5utr	7	2	3	1	5	2.00E-01;2.00E-01	1.50E+00;1.50E+00		-		23600.0	17926.0	5725.0	0.00	0.00	0.00			B1	T1_1;T1	2
+ysgA.5UTR	G7804.5UTR	5utr	2	1	0	1	5				-		397.0	289.0	447.0	0.00	0.00	0.00			B1	T1_1;T1	2
+pssA.EST5UTR	EG10781.EST5UTR	5utr	1	0	1	0	2				-		9.0	0.0	0.0	0.00	-	-		R3		T1_1;T1	2
+dhaK.5UTR	G6627.5UTR	5utr	1	1	0	0	4				-		0.0	21.0	0.0	-	0.00	-				T1_1;T1	1
+ydbK.5UTR	G6701.5UTR	5utr	1	1	0	0	3				-		77.0	0.0	0.0	0.62	-	-				T1_1;T1	1
+dmsA.5UTR	EG10232.5UTR	5utr	3	1	0	1	4				-		9508.0	3772.0	130.0	0.00	0.01	0.00			B1	T1_1;T1_2;T1	2
+ansB.5UTR	EG10046.5UTR	5utr	1	1	0	0	5				-		0.0	693.0	0.0	-	0.00	-			B1	T1_1;T1	2
+nlpD.5UTR	EG12111.5UTR	5utr	1	0	0	0	5				-		0.0	0.0	11.0	-	-	0.00					0
+luxS.5UTR	EG12712.5UTR	5utr	1	1	0	0	5				-		23.0	0.0	0.0	0.00	-	-	L2;L1				1
+dacC.5UTR	EG10203.5UTR	5utr	1	1	0	0	8				-		23.0	0.0	0.0	0.00	-	-					0
+rpsM.5UTR	EG10912.5UTR	5utr	1	0	0	0	6				-		0.0	0.0	22.0	-	-	0.00					0
+mepS.5UTR	G7147.5UTR	5utr	6	2	2	1	7	1.10E+02;1.10E+02	9.70E-01;9.70E-01		-		214.0	89.0	18.0	0.14	0.17	0.00				T1_1;T1_2;T1	1
+tktA.5UTR	EG11427.5UTR	5utr	1	1	0	0	4				-		23.0	0.0	0.0	0.00	-	-					0
+fumC.5UTR	EG10358.5UTR	5utr	1	1	0	0	7				-		0.0	0.0	502.0	-	-	0.00				T1_1;T1_2;T1	1
+putP.5UTR	EG10802.5UTR	5utr	1	0	0	0	6				-		0.0	0.0	60.0	-	-	0.00				T1_1;T1	1
+malE.5UTR	EG10554.5UTR	5utr	1	1	0	0	4				-		231.0	63.0	74.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+ydhZ.EST5UTR	G6903.EST5UTR	5utr	1	1	0	0	5				-		0.0	7.0	0.0	-	0.00	-				T1_2;T1	1
+borD.5UTR	G6312.5UTR	5utr	2	1	0	0	4				-		198.0	67.0	15.0	0.00	0.00	0.00					0
+glnH.5UTR	EG10386.5UTR	5utr	1	1	0	0	6				-		147.0	81.0	709.0	0.14	0.00	0.11				T1_2;T1	1
+dppA.5UTR	EG10248.5UTR	5utr	3	1	1	0	4				-		3504.0	2628.0	8898.0	0.16	0.33	0.36			B1	T1_1;T1	2
+crfC.5UTR	EG11210.5UTR	5utr	3	3	0	0	4				-		100.0	114.0	113.0	0.00	0.00	0.00					0
+hemN.5UTR	EG11836.5UTR	5utr	1	1	0	0	3				-		257.0	0.0	0.0	0.00	-	-		R3		T1_3;T1_1;T1_2;T1	2
+argT.5UTR	EG10072.5UTR	5utr	1	1	0	0	4				-		93.0	0.0	185.0	1.00	-	1.00					0
+sodB.5UTR	EG10954.5UTR	5utr	4	2	2	0	4				-		109.0	413.0	62.0	0.65	0.00	0.00				T1_1;T1	1
+yjbB.5UTR	EG11919.5UTR	5utr	1	1	0	0	3				-		28.0	82.0	14.0	1.00	1.00	1.00			B4_1	T1_2;T1	2
+tsx.5UTR	EG11035.5UTR	5utr	5	3	1	1	5	4.30E-01	1.70E-01		-		249.0	174.0	37.0	0.72	0.72	0.51				T1_1;T1	1
+fabI.5UTR	EG11528.5UTR	5utr	1	1	0	0	4				-		184.0	0.0	0.0	0.34	-	-					0
+bglX.5UTR	EG12013.5UTR	5utr	2	0	1	1	5				-		24.0	13.0	0.0	0.00	0.00	-					0
+pepQ.5UTR	EG10698.5UTR	5utr	1	1	0	0	2				-		15.0	0.0	0.0	1.00	-	-					0
+ymgE.EST5UTR	G6624.EST5UTR	5utr	1	0	0	0	5				-		0.0	0.0	86.0	-	-	0.00				T1_1;T1	1
+yhdT.5UTR	G7693.5UTR	5utr	1	1	0	0	6				-		9.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+ygfB.5UTR	EG11323.5UTR	5utr	1	0	0	1	4				-		0.0	5.0	0.0	-	0.00	-					0
+rpoE.5UTR	EG11897.5UTR	5utr	3	1	0	0	5				-		39.0	52.0	228.0	0.00	0.00	0.00				T1_2;T1	1
+cysJ.5UTR	EG10191.5UTR	5utr	1	1	0	0	4				-		0.0	0.0	51.0	-	-	0.43				T1_1;T1	1
+tig.5UTR	EG11003.5UTR	5utr	3	2	0	1	6				-		238.0	86.0	0.0	0.08	0.00	-				T1_1;T1	1
+lrp.5UTR	EG10547.5UTR	5utr	3	2	0	1	3				-		150.0	0.0	85.0	0.00	-	0.00					0
+pka.5UTR	G7350.5UTR	5utr	2	1	0	1	4				-		88.0	0.0	5.0	0.00	-	0.00				T1_1;T1	1
+glpF.5UTR	EG10396.5UTR	5utr	3	2	1	0	5				-		293.0	91.0	102.0	0.42	0.00	0.12				T1_1;T1	1
+hchA.5UTR	G7055.5UTR	5utr	2	1	1	0	4				-		8.0	0.0	1198.0	0.00	-	0.00				T1_1;T1_2;T1	1
+tpx.5UTR	G6660.5UTR	5utr	1	1	0	0	3				-		36.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1_1;T1	1
+narG.5UTR	EG10638.5UTR	5utr	2	1	0	0	3				-		94.0	16.0	0.0	1.00	0.00	-			B1		1
+ecnB.5UTR	G0-9562.5UTR	5utr	1	1	0	0	5				-		0.0	0.0	49.0	-	-	0.00				T1_1;T1	1
+ghrA.EST5UTR	G6539.EST5UTR	5utr	1	1	0	0	7				-		14.0	0.0	0.0	0.00	-	-					0
+uspG.5UTR	G6334.5UTR	5utr	1	1	0	0	4				-		0.0	0.0	15.0	-	-	0.00				T1_1;T1	1
+cpxP.5UTR	G7816.5UTR	5utr	2	1	1	0	4				-		0.0	0.0	55.0	-	-	0.00			B1	T1_1;T1	2
+clpP.5UTR	EG10158.5UTR	5utr	1	1	0	0	6				-		32.0	45.0	40.0	0.00	0.00	0.00				T1_1;T1	1
+ygaC.5UTR	EG12201.5UTR	5utr	2	1	0	1	5				-		118.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1	1
+eptB.5UTR	EG12267.5UTR	5utr	2	1	1	0	6				-		6648.0	7542.0	1054.0	0.03	0.02	0.05			B4_1	T1_1;T1_2;T1	2
+malT.5UTR	EG10562.5UTR	5utr	1	0	1	0	4				-		0.0	0.0	125.0	-	-	0.00				T1_1;T1	1
+nsrR.5UTR	EG11212.5UTR	5utr	1	0	0	0	6				-		5.0	5.0	0.0	0.00	0.00	-			B1		1
+yfeC.5UTR	EG11431.5UTR	5utr	1	0	0	1	3				-		0.0	0.0	16.0	-	-	0.00				T1_1;T1	1
+prlC.5UTR	EG11441.5UTR	5utr	1	1	0	0	3				-		0.0	0.0	11.0	-	-	0.00					0
+yobF.5UTR	G7000.5UTR	5utr	1	1	0	0	4				-		0.0	0.0	222.0	-	-	0.00				T1_2;T1	1
+rcsA.5UTR	EG10820.5UTR	5utr	1	1	0	0	3				-		11.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+rpsP.5UTR	EG10915.5UTR	5utr	1	0	0	1	4				-		0.0	0.0	23.0	-	-	0.00					0
+livJ.5UTR	EG10539.5UTR	5utr	1	1	0	0	4				-		270.0	80.0	49.0	0.53	1.00	0.47			B1	T1_1;T1_2;T1	2
+ybaB.5UTR	EG11100.5UTR	5utr	1	1	0	0	3				-		9.0	0.0	0.0	0.00	-	-					0
+sdhC.5UTR	EG10933.5UTR	5utr	3	3	0	0	4				-		243.0	16.0	71.0	0.00	0.00	0.00				T1_1;T1	1
+uspB.5UTR	EG12231.5UTR	5utr	1	1	0	0	3				-		10.0	0.0	79.0	0.00	-	0.00				T1_1;T1	1
+ynaE.EST5UTR	G6698.EST5UTR	5utr	1	1	0	0	4				-		0.0	96.0	0.0	-	1.00	-		R2			1
+hdeD.5UTR	EG11495.5UTR	5utr	1	0	0	1	5				-		0.0	0.0	19.0	-	-	0.00				T1_1;T1	1
+gpmM.5UTR	EG12296.5UTR	5utr	1	1	0	0	4				-		27.0	0.0	0.0	0.00	-	-				T1_2;T1	1
+lysC.5UTR	EG10550.5UTR	5utr	1	0	0	1	3				-		12.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+tesB.5UTR	EG10995.5UTR	5utr	1	1	0	0	3				-		0.0	0.0	6.0	-	-	0.00				T1_1;T1	1
+adhE.5UTR	EG10031.5UTR	5utr	2	1	1	0	3				-		28.0	0.0	8.0	0.00	-	0.00			B4_1	T1_2;T1	2
+yejG.5UTR	EG12042.5UTR	5utr	2	2	0	0	5				-		134.0	67.0	55.0	0.00	0.00	0.00		R4	B4_1	T1_3;T1	3
+ytfK.5UTR	G7872.5UTR	5utr	2	0	0	2	4				-		0.0	0.0	90.0	-	-	0.00					0
+tdcA.5UTR	EG10989.5UTR	5utr	1	1	0	0	4				-		707.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+shiA.5UTR	G7067.5UTR	5utr	1	1	0	0	4				-		184.0	0.0	0.0	1.00	-	-			B4_1		1
+tomB.5UTR	EG12429.5UTR	5utr	1	0	1	0	6				-		0.0	0.0	7.0	-	-	1.00					0
+fhuE.5UTR	EG10306.5UTR	5utr	1	1	0	0	3				-		75.0	0.0	0.0	0.00	-	-					0
+chiP.5UTR	G6370.5UTR	5utr	2	2	0	0	6				-		89872.0	47461.0	1666.0	0.00	0.00	0.00			B1	T1_1;T1	2
+pykA.5UTR	EG10803.5UTR	5utr	1	1	0	0	3				-		20.0	0.0	0.0	0.00	-	-					0
+cbpA.5UTR	EG12193.5UTR	5utr	1	1	0	0	4				-		0.0	0.0	6.0	-	-	0.00					0
+fliE.5UTR	EG11346.5UTR	5utr	1	0	1	0	3				-		0.0	13.0	0.0	-	0.00	-					0
+fepD.5UTR	EG10296.5UTR	5utr	1	0	0	0	4				-		13.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1_1;T1	1
+motA.5UTR	EG10601.5UTR	5utr	22	0	20	1	8	3.90E+00;8.90E-01;1.10E-01	6.10E-01;2.00E+00;8.70E-01		-		976.0	1210.0	30.0	1.00	1.00	1.00			B1;B3_2		1
+pepA.5UTR	EG10694.5UTR	5utr	2	1	1	0	4				-		70.0	0.0	51.0	0.00	-	0.00				T1_4;T1_5;T1_1;T1_2;T1	1
+grpE.5UTR	EG10416.5UTR	5utr	1	0	1	0	2				-		7.0	0.0	0.0	1.00	-	-					0
+tolC.5UTR	EG11009.5UTR	5utr	2	1	1	0	4				-		30.0	0.0	15.0	0.00	-	0.00				T1_4;T1_5;T1_2;T1	1
+zupT.5UTR	EG11167.5UTR	5utr	1	1	0	0	4				-		13.0	0.0	0.0	0.00	-	-					0
+acpP.5UTR	EG50003.5UTR	5utr	1	0	0	1	5				-		37.0	0.0	6.0	0.00	-	0.00					0
+mcbR.EST5UTR	G6761.EST5UTR	5utr	1	1	0	0	4				-		0.0	0.0	39.0	-	-	0.00				T1_1;T1	1
+rplU.5UTR	EG50001.5UTR	5utr	2	2	0	0	4				-		257.0	0.0	0.0	0.24	-	-				T1_1;T1	1
+iraP.5UTR	EG11256.5UTR	5utr	1	0	1	0	3				-		0.0	0.0	6.0	-	-	0.00					0
+loiP.5UTR	EG11291.5UTR	5utr	2	2	0	0	5				-		768.0	0.0	34.0	0.00	-	0.00				T1_3;T1_1;T1	1
+gspL.AS	G7711.AS	as	1	1	0	0	3				-		8.0	0.0	0.0	0.00	-	-					0
+leuT.AS	EG30049.AS	as	2	2	0	0	5				-		314.0	0.0	0.0	0.27	-	-					0
+mepH.AS	G6892.AS	as	1	1	0	0	6				-		0.0	0.0	22.0	-	-	0.00					0
+yiaV.AS	EG12290.AS	as	1	1	0	0	5				-		48.0	39.0	99.0	0.29	0.51	0.53				T1_4;T1_5;T1	1
+miaB.AS	G6364.AS	as	1	1	0	0	4				-		6.0	0.0	0.0	0.00	-	-					0
+bax.AS	EG11360.AS	as	1	1	0	0	4				-		0.0	0.0	11.0	-	-	0.00					0
+pncB.AS	EG10742.AS	as	1	1	0	0	2				-		0.0	0.0	5.0	-	-	0.00					0
+ymfI.AS	G6587.AS	as	1	1	0	0	6				-		0.0	0.0	14.0	-	-	0.00					0
+asnS.AS	EG10094.AS	as	1	0	0	1	4				-		5.0	0.0	0.0	0.00	-	-					0
+leuT.proM.TU_AS	EG30049.EG30068.TU_AS	as	1	1	0	0	5				-		0.0	0.0	18.0	-	-	0.00					0
+yciF.AS	EG11126.AS	as	1	1	0	0	4				-		0.0	14.0	26.0	-	1.00	0.42					0
+ydgC.AS	G6863.AS	as	1	1	0	0	5				-		18.0	0.0	0.0	0.00	-	-					0
+yjjJ.AS	EG12342.AS	as	1	1	0	0	5				-		231.0	0.0	0.0	0.00	-	-					0
+bepA.AS	G7311.AS	as	1	1	0	0	5				-		7.0	7.0	0.0	0.00	0.00	-					0
+intQ.AS	G6837.AS	as	1	1	0	0	5				-		0.0	0.0	8.0	-	-	0.00					0
+yijD.AS	EG11395.AS	as	1	1	0	0	2				-		19.0	13.0	44.0	0.00	0.00	0.00				T1_4;T1_5;T1	1
+waaL.AS	EG11424.AS	as	4	3	1	0	7				-		125.0	128.0	56.0	0.00	0.00	0.00					0
+pspF.AS	EG12344.AS	as	1	1	0	0	5				-		0.0	0.0	12.0	-	-	0.00					0
+speB.AS	EG10960.AS	as	1	0	1	0	4				-		40.0	0.0	0.0	0.65	-	-					0
+yeiG.AS	EG12026.AS	as	1	0	1	0	5				-		18.0	0.0	0.0	1.00	-	-					0
+yedE.AS	EG11660.AS	as	1	0	0	1	3				-		0.0	0.0	7.0	-	-	0.00					0
+ribF.AS	EG11079.AS	as	1	1	0	0	4				-		0.0	0.0	5.0	-	-	0.00					0
+araH.AS	EG10059.AS	as	1	0	0	1	5				-		25.0	0.0	10.0	0.00	-	0.00					0
+leuP.leuQ.TU_AS	EG30047.EG30048.TU_AS	as	1	1	0	0	7				-		169.0	0.0	0.0	0.00	-	-					0
+ydaN.AS	G6674.AS	as	1	1	0	0	4				-		89.0	87.0	0.0	0.00	0.00	-					0
+pgpB.AS	EG10705.AS	as	1	1	0	0	6				-		88.0	24.0	44.0	0.00	0.00	0.00					0
+arpA.AS	EG11208.AS	as	1	1	0	0	5				-		0.0	0.0	7.0	-	-	0.00					0
+insB-1.AS	G6085.AS	as	1	0	1	0	4				-		0.0	0.0	21.0	-	-	0.00				T1_4;T1_5;T1	1
+frmB.frmA.TU_AS	G6208.EG50010.TU_AS	as	1	1	0	0	5				-		8.0	0.0	0.0	1.00	-	-					0
+hepA.AS	EG11083.AS	as	1	1	0	0	4				-		7.0	0.0	0.0	0.00	-	-					0
+ymfL.AS	G6591.AS	as	4	0	4	0	4				-		7.0	0.0	95.0	0.00	-	0.65				T1_4;T1_5;T1	1
+polB.AS	EG10747.AS	as	2	1	0	1	4				-		19.0	60.0	32.0	0.00	0.00	0.00				T1_4;T1_5;T1	1
+plsX.AS	EG11437.AS	as	1	0	0	1	4				-		0.0	0.0	6.0	-	-	0.00				T1_4;T1_5;T1	1
+mutY.AS	EG10627.AS	as	1	1	0	0	5				-		0.0	9.0	23.0	-	0.00	0.00				T1_4;T1_5;T1_2;T1	1
+gadC.AS	G6786.AS	as	1	1	0	0	4				-		18.0	6.0	59.0	0.00	0.00	0.00					0
+hisM.AS	EG10007.AS	as	1	1	0	0	3				-		0.0	0.0	14.0	-	-	0.00					0
+C0719.AS	G0-8912.AS	as	1	1	0	0	4				-		0.0	0.0	12.0	-	-	0.00		R2			1
+eutB.AS	EG50006.AS	as	1	0	0	1	4				-		29.0	30.0	38.0	0.00	0.00	0.00				T1_4;T1_5;T1	1
+yecE.AS	EG12379.AS	as	1	1	0	0	3				-		0.0	0.0	21.0	-	-	0.00				T1_4;T1_5;T1	1
+cusC.cusF.TU_AS	G6320.G6321.TU_AS	as	2	0	1	1	6				-		22.0	23.0	0.0	0.00	1.00	-				T1_4;T1_5;T1	1
+ygfZ.AS	G7511.AS	as	1	1	0	0	4				-		18.0	0.0	18.0	0.00	-	0.00				T1_4;T1_5;T1	1
+mngB.AS	EG13236.AS	as	1	0	0	1	3				-		0.0	5.0	0.0	-	0.00	-					0
+ybcW.AS	G6314.AS	as	1	1	0	0	2				-		0.0	0.0	11.0	-	-	0.00					0
+phnL.phnK.TU_AS	EG10721.EG10720.TU_AS	as	2	0	1	1	3				-		9.0	10.0	0.0	0.00	1.00	-					0
+rprA.AS	G0-8863.AS	as	1	0	1	0	3				-		0.0	5.0	0.0	-	0.00	-					0
+hipB.AS	EG10442.AS	as	1	0	1	0	6				-		0.0	7.0	0.0	-	0.00	-					0
+xapB.xapA.TU_AS	EG13159.G85.TU_AS	as	1	0	1	0	5				-		14.0	0.0	0.0	1.00	-	-					0
+insL-1.AS	G6083.AS	as	8	1	6	1	6	1.90E+01	3.00E-01		-		64.0	53.0	23.0	0.28	1.00	1.00					0
+yagN.AS	G6151.AS	as	1	1	0	0	5				-		15.0	0.0	0.0	0.00	-	-	L1			T1_4;T1_5;T1	2
+ydjX.AS	G6945.AS	as	1	0	0	1	5				-		33.0	32.0	0.0	0.00	0.00	-					0
+leuV.leuP.TU_AS	EG30051.EG30047.TU_AS	as	2	2	0	0	7				-		291.0	0.0	0.0	0.21	-	-					0
+pykF.AS	EG10804.AS	as	1	1	0	0	3				-		0.0	0.0	8.0	-	-	0.00					0
+rsxC.AS	G6873.AS	as	1	1	0	0	5				-		6.0	7.0	0.0	0.00	0.00	-					0
+lacA.lacY.TU_AS	EG10524.EG10526.TU_AS	as	1	1	0	0	3				-		0.0	0.0	50.0	-	-	0.00					0
+yfcA.AS	EG11144.AS	as	1	1	0	0	3				-		11.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1	1
+rspA.AS	G6839.AS	as	1	1	0	0	4				-		0.0	0.0	11.0	-	-	0.00					0
+araG.araF.TU_AS	EG10058.EG10057.TU_AS	as	2	0	2	0	6				-		0.0	16.0	9.0	-	1.00	1.00					0
+yqiB.AS	G7580.AS	as	1	1	0	0	5				-		13.0	0.0	0.0	0.00	-	-	L1				1
+secF.AS	EG10940.AS	as	1	0	0	1	5				-		8.0	10.0	0.0	0.00	0.00	-					0
+acrR.AS	EG12116.AS	as	1	1	0	0	4				-		51.0	50.0	76.0	0.00	0.00	0.00					0
+rhaD.rhaA.TU_AS	EG11866.EG11867.TU_AS	as	1	1	0	0	4				-		0.0	0.0	24.0	-	-	0.00				T1_4;T1_5;T1	1
+thrA.AS	EG10998.AS	as	1	1	0	0	5				-		98.0	0.0	0.0	0.00	-	-					0
+IS128.AS	G0-8908.AS	as	1	1	0	0	5				-		12.0	0.0	0.0	0.00	-	-					0
+yafZ.ykfA.TU_AS	G6127.G6128.TU_AS	as	1	0	0	1	3				-		9.0	0.0	16.0	0.00	-	0.00				T1_4;T1_5;T1	1
+rrsH.AS	EG30090.AS	as	1	0	0	0	3				-		16.0	0.0	0.0	0.00	-	-					0
+sibE	G0-10602	cis_as_with_trans_t	1	0	1	0	6				-		0.0	0.0	6.0	-	-	0.00		R1			1
+rdlA	G0-9603	cis_as_with_trans_t	2	1	1	0	4				-		14.0	8.0	13.0	0.00	0.00	0.00		R1		T1_4;T1_5;T1_1;T1	2
+gadY	G0-8914	cis_as_with_trans_t	14	1	12	1	8	3.50E+01;3.50E+01;2.80E+00;7.30E-01	8.90E-01;8.90E-01;1.70E+00;1.80E+00		-		11.0	14.0	222.0	1.00	1.00	0.60		R1	B1	T1_1;T1	3
+sibB	G0-8885	cis_as_with_trans_t	1	0	0	0	3				-		0.0	0.0	9.0	-	-	0.00		R1			1
+rdlA.EST3UTR	G0-9603.EST3UTR	cis_as_with_trans_t	1	0	1	0	4				-		0.0	18.0	0.0	-	1.00	-					0
+rdlD	G0-9042	cis_as_with_trans_t	1	0	0	0	4				-		16.0	0.0	0.0	0.00	-	-		R1		T1_4;T1_5;T1_1;T1	2
+arrS	G0-10694	cis_as_with_trans_t	42	0	36	5	5	8.70E+03;5.80E+03	1.60E+00;1.60E+00		-		24.0	0.0	11484.0	1.00	-	1.00					0
+sibD	G0-8913	cis_as_with_trans_t	1	0	1	0	3				-		0.0	0.0	7.0	-	-	1.00		R1			1
+ygcE.queE.IGR	G7442.G7443.IGR	igr	4	3	1	0	5				-		0.0	0.0	46.0	-	-	0.17				T1	1
+rrsG.clpB.IGR	EG30089.EG10157.IGR	igr	2	0	1	1	3				-		26.0	15.0	0.0	0.00	0.00	-				T1_2;T1	1
+yobF.yebO.IGR	G7000.G7001.IGR	igr	1	1	0	0	3				-		10.0	0.0	0.0	0.00	-	-					0
+mdtJ.tqsA.IGR	G6858.G6859.IGR	igr	1	1	0	0	4				-		0.0	0.0	8.0	-	-	0.00				T1_1;T1	1
+yhhH.yhhI.IGR	EG11520.EG11525.IGR	igr	1	1	0	0	5				-		11.0	0.0	0.0	0.00	-	-					0
+insH-7.wbbK.IGR	G7092.EG11985.IGR	igr	2	0	0	2	5				-		0.0	12.0	20.0	-	1.00	0.00				T1_3;T1_2;T1	1
+ryeA.yebY.IGR	G0-8865.G7012.IGR	igr	1	1	0	0	7				-		0.0	0.0	17.0	-	-	0.00		R1		T1_4;T1_5;T1	2
+edd.zwf.IGR	EG10257.EG11221.IGR	igr	1	0	0	1	7				-		0.0	0.0	6.0	-	-	1.00					0
+yhjJ.dctA.IGR	EG12254.EG20044.IGR	igr	1	0	0	1	2				-		0.0	0.0	14.0	-	-	0.00		R3		T1_4;T1_5;T1	2
+crcB.tatE.IGR	EG12209.EG11305.IGR	igr	1	1	0	0	4				-		0.0	0.0	32.0	-	-	0.00				T1_4;T1_5;T1_1;T1_2;T1	1
+glpD.yzgL.IGR	EG10394.G7752.IGR	igr	3	2	1	0	5				-		94.0	0.0	23.0	0.00	-	0.00				T1	1
+fnrS.C0343.IGR	G0-10677.G0-8900.IGR	igr	1	1	0	0	5				-		0.0	0.0	312.0	-	-	0.00				T1_4;T1_5;T1	1
+kgtP.rrfG.IGR	EG10522.EG30075.IGR	igr	4	2	0	2	8				-		0.0	0.0	237.0	-	-	0.00				T1_4;T1_5;T1	1
+yfdI.yfdK.IGR	G7221.G7223.IGR	igr	6	4	0	1	3	5.80E+01;4.10E-01;1.00E-01;3.90E-02;3.90E-02;4.20E-03	9.00E-01;1.10E-01;1.00E+00;9.80E-01;9.80E-01;1.30E-01		-		827.0	292.0	619.0	0.16	0.04	0.00		R2;R3		T1_1;T1	2
+mngB.cydA.IGR	EG13236.EG10173.IGR	igr	1	0	0	1	4				-		9.0	9.0	0.0	0.00	0.00	-					0
+pykA.lpxM.IGR	EG10803.EG10614.IGR	igr	1	0	1	0	6				-		6.0	0.0	9.0	1.00	-	1.00					0
+ppc.argE.IGR	EG10756.EG11286.IGR	igr	1	1	0	0	5				-		0.0	0.0	31.0	-	-	0.00					0
+zapE.yhcB.IGR	G7680.G7681.IGR	igr	1	0	1	0	2				-		11.0	0.0	0.0	1.00	-	-					0
+yidE.ibpB.IGR	EG11536.EG11535.IGR	igr	1	1	0	0	3				-		18.0	0.0	0.0	0.33	-	-				T1_4;T1_5;T1	1
+yfjT.yfjU.IGR	G7372.G7373.IGR	igr	1	1	0	0	4				-		0.0	0.0	28.0	-	-	0.00					0
+loiP.speB.IGR	EG11291.EG10960.IGR	igr	1	1	0	0	3				-		26.0	0.0	27.0	0.00	-	0.00					0
+npr.yrbL.IGR	EG12147.G7667.IGR	igr	1	1	0	0	4				-		52.0	0.0	53.0	0.00	-	0.00				T1_4;T1_5;T1	1
+ppsA.ppsR.IGR	EG10759.EG11132.IGR	igr	1	1	0	0	6				-		0.0	0.0	34.0	-	-	0.00					0
+yghJ.glcA.IGR	G7541.G7542.IGR	igr	2	0	1	1	6				-		72.0	50.0	0.0	0.00	1.00	-					0
+serT.hyaA.IGR	EG30093.EG10468.IGR	igr	1	1	0	0	5				-		5.0	0.0	0.0	0.00	-	-					0
+yjfC.aidB.IGR	EG11812.EG11811.IGR	igr	1	1	0	0	3				-		11.0	0.0	0.0	0.00	-	-					0
+argT.ubiX.IGR	EG10072.EG11044.IGR	igr	2	1	1	0	4				-		10163.0	5825.0	2602.0	0.00	0.00	0.00				T1_1;T1_2;T1	1
+yicJ.selC.IGR	EG11686.EG30092.IGR	igr	1	0	1	0	4				-		10.0	0.0	0.0	0.00	-	-				T1_2;T1	1
+nadE.cho.IGR	EG10663.G6937.IGR	igr	1	0	1	0	6				-		0.0	14.0	0.0	-	1.00	-			B4_2	T1_1;T1	2
+mscK.ybaM.IGR	G6255.EG12830.IGR	igr	1	1	0	0	3				-		0.0	0.0	23.0	-	-	0.00				T1	1
+yjdN.yjdM.IGR	EG10712.EG10711.IGR	igr	1	0	0	1	3				-		0.0	21.0	0.0	-	1.00	-					0
+yhaO.tdcG.IGR	EG12754.G7624.IGR	igr	1	1	0	0	8				-		1892.0	1612.0	39.0	0.85	1.00	1.00			B1	T1_1;T1	2
+flxA.ydfW.IGR	G6833.G6834.IGR	igr	3	2	1	0	4				-		228.0	124.0	95.0	0.66	0.70	0.47		R3		T1	2
+ddlA.iraP.IGR	EG10213.EG11256.IGR	igr	1	0	0	1	5				-		13.0	6.0	0.0	0.00	0.00	-					0
+G0-10697.oppA.IGR	G0-10697.EG10674.IGR	igr	3	2	1	0	4				-		53.0	0.0	2861.0	0.00	-	0.16		R4	B4_2;B4_1	T1_1;T1	3
+pfkA.sbp.IGR	EG10699.EG10929.IGR	igr	1	0	0	1	4				-		20.0	0.0	0.0	0.00	-	-					0
+hemN.yshB.IGR	EG11836.G0-10657.IGR	igr	1	0	0	1	4				-		9.0	14.0	0.0	1.00	1.00	-					0
+gcvT.ubiI.IGR	EG11442.EG11333.IGR	igr	2	1	0	1	6				-		28.0	0.0	0.0	0.00	-	-					0
+ybcQ.insH-2.IGR	G6307.G6308.IGR	igr	7	1	4	1	5	4.50E+00;4.50E+00;1.50E+00	1.60E+00;1.00E+00;1.20E+00		-		387.0	322.0	127.0	0.33	0.08	0.69			B1		1
+pstS.glmS.IGR	EG10734.EG10382.IGR	igr	1	1	0	0	4				-		0.0	25.0	0.0	-	0.00	-					0
+yjgZ.insG.IGR	G7899.G7900.IGR	igr	3	1	2	0	5				-		82.0	42.0	40.0	1.00	1.00	0.60			B4_2	T1_4;T1_5;T1	2
+ampH.sbmA.IGR	EG12867.EG10928.IGR	igr	1	0	1	0	5				-		6.0	0.0	0.0	1.00	-	-					0
+araE.kduD.IGR	EG10056.EG12361.IGR	igr	1	0	0	1	2				-		9.0	0.0	0.0	0.00	-	-					0
+G0-10700.bcr.IGR	G0-10700.EG11419.IGR	igr	2	1	1	0	6				-		0.0	0.0	18.0	-	-	0.00					0
+insH-3.lnt.IGR	G6360.EG10168.IGR	igr	2	2	0	0	4				-		0.0	8.0	21.0	-	0.00	0.00				T1_2;T1	1
+ylaC.maa.IGR	G6253.G58.IGR	igr	1	1	0	0	6				-		8.0	0.0	11.0	0.00	-	0.00	L1			T1_4;T1_5;T1	2
+yecR.ftnA.IGR	G7035.EG10921.IGR	igr	1	1	0	0	5				-		0.0	11.0	0.0	-	0.00	-					0
+cysP.ucpA.IGR	EG10195.EG12133.IGR	igr	1	0	0	1	4				-		10.0	0.0	0.0	0.00	-	-					0
+fliA.fliC.IGR	EG11355.EG10321.IGR	igr	36	0	20	13	7	7.90E-24	3.20E-06	recip	-	[gu]gccggau[ag][ac]ggcgu	5640.0	6989.0	220.0	0.99	0.99	1.00			B4_2;B1;B3_1	T1_1;T1_2;T1	2
+nhaR.insAB-1.IGR	EG11078.G0-10535.IGR	igr	2	0	2	0	4				-		40.0	21.0	23.0	0.57	1.00	1.00				T1_4;T1_5;T1	1
+gnd.insH-7.IGR	EG10411.G7092.IGR	igr	1	0	0	1	8				-		0.0	12.0	0.0	-	0.00	-				T1_3;T1	1
+insH-6.yoeA.IGR	G7074.G7075.IGR	igr	1	0	0	0	4				-		0.0	0.0	8.0	-	-	0.00					0
+putP.efeU_1.IGR	EG10802.G6525.IGR	igr	1	0	0	1	4				-		0.0	7.0	11.0	-	0.00	0.00					0
+fimE.fimA.IGR	EG10312.EG10308.IGR	igr	1	1	0	0	5				-		0.0	0.0	23.0	-	-	0.39					0
+ybcW.ylcI.IGR	G6314.G0-10585.IGR	igr	1	1	0	0	4				-		18.0	26.0	82.0	0.00	0.00	0.00					0
+iscR.trmJ.IGR	G7326.G7327.IGR	igr	1	0	1	0	4				-		0.0	31.0	0.0	-	0.29	-			B4_1	T1_1;T1	2
+adiY.adiA.IGR	EG11966.EG11501.IGR	igr	1	0	1	0	8				-		0.0	8.0	0.0	-	1.00	-			B1	T1_2;T1	2
+yidB.gyrB.IGR	EG11196.EG10424.IGR	igr	1	0	1	0	5				-		0.0	6.0	0.0	-	1.00	-					0
+ycbL.aspC.IGR	G6475.EG10096.IGR	igr	2	1	0	1	4				-		203.0	38.0	2712.0	0.00	0.00	0.00				T1_3;T1	1
+ygdH.sdaC.IGR	EG12373.EG12142.IGR	igr	1	1	0	0	5				-		0.0	0.0	13.0	-	-	0.00	L1			T1	2
+yjtD.thrL.IGR	EG12309.EG11277.IGR	igr	1	0	1	0	0				-		76.0	94.0	11.0	1.00	0.54	1.00			B4_2	T1_1;T1_2;T1	2
+yqaB.argQ.IGR	G7408.EG30013.IGR	igr	1	1	0	0	2				-		41.0	30.0	0.0	0.00	0.00	-					0
+osmF.bglX.IGR	EG12012.EG12013.IGR	igr	1	1	0	0	4				-		71.0	12.0	1103.0	0.00	0.00	0.00				T1_1;T1	1
+tisB.emrD.IGR	G0-9962.EG11693.IGR	igr	1	1	0	0	4				-		106.0	11.0	37.0	0.00	0.00	0.00			B4_2		1
+yabQ.rluA.IGR	EG12611.EG12609.IGR	igr	1	1	0	0	3				-		42.0	71.0	0.0	0.00	0.00	-					0
+dppA.proK.IGR	EG10248.EG30066.IGR	igr	1	0	0	1	3				-		0.0	0.0	11.0	-	-	0.00					0
+trmI.mutY.IGR	EG11779.EG10627.IGR	igr	1	1	0	0	5				-		6.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1_2;T1	1
+yccA.serT.IGR	EG11113.EG30093.IGR	igr	1	0	0	0	3				-		0.0	0.0	6.0	-	-	0.00					0
+slyA.ydhI.IGR	G6882.G6883.IGR	igr	1	1	0	0	5				-		5.0	0.0	0.0	0.00	-	-					0
+artJ.artM.IGR	EG11628.EG11627.IGR	igr	1	1	0	0	5				-		6.0	0.0	0.0	0.00	-	-					0
+fiu.mcbA.IGR	G6414.G6415.IGR	igr	1	0	1	0	5				-		0.0	6.0	0.0	-	0.00	-				T1_4;T1_5;T1	1
+yzcX.yifL.IGR	G7802.G0-10471.IGR	igr	1	1	0	0	6				-		298.0	0.0	0.0	0.00	-	-			B4_2	T1	2
+cspF.ydfT.IGR	EG12205.G6830.IGR	igr	3	1	1	1	6				-		87.0	70.0	156.0	0.00	0.00	0.16				T1	1
+zwf.yebK.IGR	EG11221.EG12860.IGR	igr	1	0	0	1	7				-		0.0	0.0	6.0	-	-	0.00					0
+ybiO.glnQ.IGR	G6417.EG10389.IGR	igr	1	0	0	1	4				-		0.0	0.0	8.0	-	-	0.00					0
+lrhA.alaA.IGR	EG12123.G7184.IGR	igr	4	3	0	1	6				-		523.0	458.0	502.0	0.00	0.00	0.00				T1_2;T1	1
+suhB.yfhR.IGR	EG10983.G7328.IGR	igr	1	1	0	0	4				-		0.0	0.0	9.0	-	-	0.00					0
+rseX.hchA.IGR	G0-10574.G7055.IGR	igr	1	1	0	0	3				-		0.0	0.0	18.0	-	-	0.00					0
+spy.astE.IGR	G6939.G6940.IGR	igr	1	0	0	1	7				-		13.0	0.0	0.0	0.00	-	-					0
+maeB.talA.IGR	G7293.EG11797.IGR	igr	2	1	0	1	8				-		18.0	0.0	74.0	0.00	-	0.00				T1_4;T1_5;T1	1
+mnmE.tnaC.IGR	EG10997.EG11276.IGR	igr	1	1	0	0	5				-		8.0	0.0	0.0	0.00	-	-					0
+ydfC.dicF.IGR	EG11302.EG31115.IGR	igr	1	0	1	0	5				-		231.0	80.0	135.0	0.51	0.40	0.43		R1;R2		T1_1;T1	2
+sibB.mdtA.IGR	G0-8885.G7113.IGR	igr	1	1	0	0	4				-		0.0	8.0	0.0	-	0.00	-					0
+insH-4.ynaJ.IGR	G6667.G6668.IGR	igr	1	0	0	0	3				-		10.0	14.0	10.0	0.00	0.00	0.00					0
+yhaL.yhaM.IGR	G7621.G7622.IGR	igr	2	1	0	1	4				-		20.0	0.0	0.0	0.50	-	-					0
+pykF.lpp.IGR	EG10804.EG10544.IGR	igr	2	2	0	0	7				-		0.0	7.0	34.0	-	0.00	0.00					0
+mscS.fbaA.IGR	EG11160.EG10282.IGR	igr	1	0	0	1	6				-		7.0	0.0	0.0	1.00	-	-					0
+potA.pepT.IGR	EG10749.EG11549.IGR	igr	1	1	0	0	4				-		0.0	9.0	12.0	-	0.00	0.00				T1_1;T1	1
+narK.narG.IGR	EG10642.EG10638.IGR	igr	9	0	5	1	7	8.30E-06	3.20E-02	recip	-	uc[cg]c[cg]a[gu]gagcuuac	163.0	158.0	0.0	0.75	0.92	-			B1;B3_1	T1_3;T1	2
+yfbV.ackA.IGR	G7189.EG10027.IGR	igr	3	2	0	1	8				-		183.0	58.0	213.0	0.00	0.00	0.00		R3		T1_4;T1_5;T1_1;T1_2;T1	2
+rsfS.cobC.IGR	EG11255.G6349.IGR	igr	1	1	0	0	5				-		23.0	39.0	0.0	0.00	0.00	-				T1_1;T1	1
+galF.wcaM.IGR	G7093.G7094.IGR	igr	1	1	0	0	4				-		24.0	0.0	0.0	0.00	-	-				T1_2;T1	1
+yphH.glyA.IGR	G7344.EG10408.IGR	igr	1	0	0	1	4				-		11.0	0.0	0.0	0.00	-	-				T1	1
+yfcZ.fadL.IGR	G7214.EG10280.IGR	igr	1	1	0	0	6				-		0.0	0.0	12.0	-	-	0.00				T1_1;T1	1
+wcaK.wzxC.IGR	G7096.G7097.IGR	igr	1	0	0	1	4				-		7.0	0.0	0.0	0.00	-	-					0
+yqeA.yqeB.IGR	G7493.G7494.IGR	igr	2	1	1	0	4				-		0.0	0.0	24.0	-	-	0.29					0
+yjhU.yjhF.IGR	G7909.EG12548.IGR	igr	1	0	1	0	4				-		0.0	6.0	0.0	-	0.00	-					0
+yecT.flhE.IGR	G7026.G7027.IGR	igr	1	1	0	0	3				-		22.0	0.0	0.0	0.00	-	-					0
+cysK.ptsH.IGR	EG10192.EG10788.IGR	igr	1	0	0	1	6				-		0.0	0.0	11.0	-	-	0.00					0
+fklB.cycA.IGR	G7865.EG12504.IGR	igr	1	1	0	0	6				-		0.0	0.0	27.0	-	-	0.00					0
+ldtD.ycbK.IGR	EG11253.G6474.IGR	igr	1	1	0	0	3				-		0.0	0.0	65.0	-	-	0.00				T1_1;T1	1
+dacB.obgE.IGR	EG10202.G7656.IGR	igr	1	0	0	1	4				-		0.0	8.0	0.0	-	0.00	-				T1_4;T1_5;T1	1
+ompF.asnS.IGR	EG10671.EG10094.IGR	igr	1	1	0	0	5				-		0.0	42.0	0.0	-	0.00	-					0
+zupT.ribB.IGR	EG11167.EG10465.IGR	igr	1	1	0	0	4				-		6.0	9.0	12.0	0.00	0.00	0.00					0
+yhiI.yhiJ.IGR	EG12224.EG12225.IGR	igr	1	0	0	1	4				-		0.0	0.0	72.0	-	-	0.00		R2			1
+nlpE.yaeF.IGR	EG12137.EG12138.IGR	igr	1	0	1	0	4				-		6.0	0.0	0.0	1.00	-	-					0
+glmZ.hemY.IGR	G0-8873.EG10434.IGR	igr	6	0	5	0	7				-		19505.0	27648.0	7546.0	1.00	1.00	1.00		R1	B1		2
+ybiV.ybiW.IGR	G6425.G6426.IGR	igr	1	1	0	0	5				-		0.0	0.0	24.0	-	-	0.00					0
+gcvB.ygdI.IGR	G0-8867.G7453.IGR	igr	1	0	0	1	8				-		0.0	27.0	0.0	-	0.00	-		R1	B1	T1_4;T1_5;T1	3
+ychE.G0-10697.IGR	EG11342.G0-10697.IGR	igr	2	2	0	0	5				-		27.0	0.0	29.0	0.37	-	0.24			B2	T1_4;T1_5;T1	2
+gmhB.rrsH.IGR	EG11736.EG30090.IGR	igr	1	1	0	0	3				-		101.0	0.0	0.0	0.00	-	-					0
+yjiT.mcrC.IGR	G7938.EG10575.IGR	igr	1	1	0	0	5				-		0.0	0.0	14.0	-	-	0.00			B1	T1_3;T1	2
+yafU.yafV.IGR	G6102.G6103.IGR	igr	1	0	0	1	4				-		8.0	10.0	14.0	0.00	0.00	0.00					0
+thrS.yniD.IGR	EG11001.G0-10453.IGR	igr	1	1	0	0	5				-		14.0	0.0	8.0	0.00	-	0.00					0
+melR.melA.IGR	EG11230.EG10577.IGR	igr	1	1	0	0	5				-		37.0	17.0	0.0	0.00	0.00	-					0
+intZ.yffL.IGR	G7272.G7273.IGR	igr	1	1	0	0	4				-		19.0	143.0	0.0	0.00	0.00	-			B2		1
+gatY.fbaB.IGR	EG12419.G7129.IGR	igr	3	0	3	0	7				-		0.0	0.0	79.0	-	-	1.00					0
+ryjB.sgcQ.IGR	G0-10609.G7915.IGR	igr	6	0	6	0	5	9.60E+01	6.90E-01		-		238.0	22.0	225.0	1.00	1.00	1.00		R1			1
+dadX.cvrA.IGR	EG11408.G6620.IGR	igr	1	1	0	0	4				-		0.0	9.0	0.0	-	0.00	-					0
+fdoG.fdhD.IGR	EG11858.EG11859.IGR	igr	2	1	0	0	4				-		51.0	27.0	3384.0	0.00	0.00	0.00				T1_4;T1_5;T1_1;T1	1
+insA-7.yjhU.IGR	G7908.G7909.IGR	igr	1	1	0	0	4				-		16.0	0.0	0.0	0.00	-	-			B1		1
+bax.malS.IGR	EG11360.EG11316.IGR	igr	1	1	0	0	5				-		13.0	0.0	0.0	0.00	-	-					0
+yebE.yebF.IGR	EG11806.EG11807.IGR	igr	1	1	0	0	4				-		0.0	0.0	10.0	-	-	0.00					0
+htpX.prc.IGR	EG10462.EG10760.IGR	igr	1	1	0	0	4				-		0.0	0.0	5.0	-	-	0.00					0
+malP.malT.IGR	EG10560.EG10562.IGR	igr	1	1	0	0	4				-		14.0	0.0	60.0	0.00	-	0.00					0
+ycgI.minE.IGR	G6613.EG10598.IGR	igr	5	0	4	0	7	5.60E+01;3.70E+01	9.50E-01;9.60E-01		-		0.0	12.0	137.0	-	1.00	1.00					0
+sthA.fabR.IGR	EG11428.EG11394.IGR	igr	2	0	1	1	4				-		9.0	0.0	5.0	0.00	-	0.00				T1_1;T1_2;T1	1
+yeeN.asnW.IGR	G7068.G7069.IGR	igr	2	1	1	0	6				-		92.0	48.0	0.0	0.74	1.00	-					0
+tp2.aceE.IGR	G0-8894.EG10024.IGR	igr	2	0	0	2	5				-		30.0	0.0	27.0	0.00	-	0.00		R2;R3			1
+yjhV.fecE.IGR	G7907.EG10290.IGR	igr	1	0	1	0	4				-		9.0	0.0	0.0	1.00	-	-					0
+ompA.sulA.IGR	EG10669.EG10984.IGR	igr	1	0	1	0	7				-		98.0	43.0	47.0	0.00	0.00	0.00					0
+ynaE.uspF.IGR	G6698.G6699.IGR	igr	4	1	1	2	5				-		83.0	291.0	144.0	0.00	0.00	0.00		R2	B4_2	T1	3
+cydD.trxB.IGR	EG11405.EG11032.IGR	igr	1	1	0	0	5				-		0.0	0.0	8.0	-	-	0.00					0
+mcaS.smrA.IGR	G0-8899.G6672.IGR	igr	1	0	0	1	4				-		45.0	0.0	0.0	0.00	-	-		R1		T1_2;T1	2
+nrfG.gltP.IGR	EG11950.EG10405.IGR	igr	1	1	0	0	3				-		163.0	88.0	0.0	0.00	0.00	-				T1_1;T1_2;T1	1
+uspA.dtpB.IGR	EG11390.EG12232.IGR	igr	1	0	0	1	4				-		0.0	0.0	13.0	-	-	0.00					0
+mcrA.iraM.IGR	EG10573.G6600.IGR	igr	1	0	1	0	3				-		10.0	0.0	0.0	1.00	-	-					0
+mdh.argR.IGR	EG10576.EG10070.IGR	igr	1	0	0	1	5				-		0.0	0.0	14.0	-	-	0.00				T1_2;T1	1
+ynbG.insD-2.IGR	G0-10646.G6723.IGR	igr	1	0	1	0	4				-		10.0	0.0	0.0	0.00	-	-					0
+narP.ccmH.IGR	EG11527.EG12052.IGR	igr	6	0	4	1	7	2.80E+01;1.20E+01	1.30E+00;1.30E+00		-		86.0	46.0	373.0	1.00	1.00	1.00				T1_4;T1_5;T1	1
+ybdK.hokE.IGR	G6326.G0-9582.IGR	igr	3	0	3	0	3				-		6.0	10.0	54.0	0.00	1.00	0.00				T1_4;T1_5;T1	1
+cspB.cspF.IGR	EG12203.EG12205.IGR	igr	1	1	0	0	6				-		0.0	185.0	0.0	-	0.00	-	L1			T1_4;T1_5;T1_1;T1_2;T1	2
+rcsB.rcsC.IGR	EG10821.EG10822.IGR	igr	1	0	0	0	3				-		0.0	0.0	21.0	-	-	0.00				T1_4;T1_5;T1	1
+asd.yhgN.IGR	EG10088.G7753.IGR	igr	1	1	0	0	7				-		0.0	0.0	17.0	-	-	0.00					0
+metK.galP.IGR	EG10589.EG12148.IGR	igr	1	1	0	0	5				-		0.0	72.0	0.0	-	0.00	-					0
+insI-2.ydbC.IGR	G6725.EG11309.IGR	igr	2	2	0	0	4				-		136.0	73.0	53.0	0.00	0.00	0.00				T1_3;T1	1
+ytfJ.ytfK.IGR	G7871.G7872.IGR	igr	4	1	0	2	4				-		119.0	31.0	45.0	0.00	0.00	0.00			B4_2	T1_1;T1_2;T1	2
+symR.hsdS.IGR	G0-10610.EG10460.IGR	igr	1	1	0	0	6				-		44.0	0.0	0.0	1.00	-	-				T1_4;T1_5;T1	1
+yhjY.tag.IGR	EG12269.EG10986.IGR	igr	1	1	0	0	8				-		17.0	19.0	15.0	0.00	0.00	0.00				T1_4;T1_5;T1_1;T1_2;T1	1
+yfeW.yfeX.IGR	G7265.G7266.IGR	igr	1	1	0	0	4				-		18.0	0.0	0.0	0.00	-	-					0
+polA.spf.IGR	EG10746.EG30098.IGR	igr	1	0	0	0	6				-		0.0	0.0	26.0	-	-	0.38				T1_3;T1_2;T1	1
+yfjW.yfjX.IGR	G7377.G7378.IGR	igr	1	1	0	0	3				-		0.0	0.0	20.0	-	-	0.00				T1_4;T1_5;T1	1
+ykfC.insH-1.IGR	G6133.G6134.IGR	igr	2	0	2	0	3				-		30.0	37.0	25.0	0.00	0.00	0.24					0
+yodB.serU.IGR	G7062.EG30094.IGR	igr	11	1	8	1	6	7.00E+01;5.30E+01	3.80E-01;5.00E-01		-		276.0	0.0	42.0	0.98	-	1.00	L1			T1_4;T1_5;T1	2
+pspG.qor.IGR	EG11933.EG11492.IGR	igr	1	1	0	0	4				-		63.0	286.0	40.0	1.00	0.72	0.78			B2	T1_4;T1_5;T1	2
+rfbB.galF.IGR	EG12412.G7093.IGR	igr	1	0	0	1	5				-		5.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+bioD.uvrB.IGR	EG10120.EG11062.IGR	igr	1	0	0	1	4				-		0.0	0.0	10.0	-	-	0.00					0
+yghD.yghF.IGR	G7535.G7537.IGR	igr	2	0	1	1	6				-		72.0	21.0	27.0	0.00	0.00	0.00			B2	T1_4;T1_5;T1	2
+elbB.arcZ.IGR	EG11383.G0-8871.IGR	igr	1	1	0	0	5				-		0.0	0.0	29.0	-	-	0.00					0
+yjiH.kptA.IGR	G7927.G7928.IGR	igr	1	0	0	1	5				-		7.0	0.0	0.0	0.00	-	-					0
+cspI.ydfP.IGR	G6825.G6826.IGR	igr	1	0	1	0	5				-		0.0	0.0	54.0	-	-	1.00					0
+metY.argG.IGR	EG30061.EG10068.IGR	igr	1	0	1	0	6				-		8.0	0.0	0.0	1.00	-	-				T1_1;T1	1
+cspD.clpS.IGR	EG11111.G6463.IGR	igr	1	0	0	1	3				-		0.0	0.0	31.0	-	-	0.00	L2;L1				1
+purA.nsrR.IGR	EG10790.EG11212.IGR	igr	1	0	0	1	3				-		0.0	0.0	6.0	-	-	0.00		R3			1
+ybiC.ybiJ.IGR	EG11581.EG12422.IGR	igr	26	0	20	4	8	1.50E+03;4.20E+02;6.90E+01;6.80E+00	7.30E-01;1.70E+00;5.90E-01;1.50E+00		-		1491.0	295.0	542.0	0.99	1.00	0.98			B1;B3_1		1
+sseA.C0614.IGR	EG11600.G0-8907.IGR	igr	1	0	1	0	4				-		0.0	0.0	10.0	-	-	0.00				T1	1
+psuK.fruA.IGR	EG11646.EG10336.IGR	igr	1	1	0	0	6				-		0.0	0.0	42.0	-	-	0.00					0
+yecA.leuZ.IGR	EG11139.EG30054.IGR	igr	12	3	6	2	7	4.70E+01;6.90E+00;5.80E-01;5.20E-01	1.80E+00;1.10E+00;4.00E-01;1.20E-01		-		5736.0	123.0	64.0	0.79	0.80	0.92				T1_3;T1_1;T1_2;T1	1
+asnS.pncB.IGR	EG10094.EG10742.IGR	igr	1	0	0	1	7				-		0.0	8.0	0.0	-	0.00	-					0
+phoR.brnQ.IGR	EG10733.EG12168.IGR	igr	1	1	0	0	5				-		7.0	16.0	0.0	0.00	0.00	-			B2		1
+kilR.sieB.IGR	EG12155.EG12154.IGR	igr	3	0	1	1	7				-		12.0	18.0	235.0	1.00	1.00	1.00					0
+yafP.pepD.IGR	G6118.EG10695.IGR	igr	1	0	0	1	7				-		15.0	0.0	0.0	0.00	-	-					0
+nuoA.lrhA.IGR	EG12082.EG12123.IGR	igr	3	1	1	1	7				-		126.0	0.0	0.0	0.75	-	-				T1	1
+fre.fadA.IGR	EG10334.EG10278.IGR	igr	15	0	13	1	7	1.10E+01;5.70E+00;2.50E+00;1.20E+00	2.90E-01;4.80E-01;4.70E-02;3.80E-01		-		144.0	49.0	254.0	0.93	1.00	0.98					0
+metT.asnB.IGR	EG30058.EG10092.IGR	igr	1	0	0	0	8				-		16.0	14.0	25.0	1.00	1.00	1.00				T1_4;T1_5;T1	1
+appA.etk.IGR	EG10049.EG11826.IGR	igr	4	0	4	0	6				-		15.0	0.0	86.0	1.00	-	1.00				T1_3;T1	1
+yfcE	G7192	mrna	2	2	0	0	6				-		296.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1_2;T1	1
+yibT	G0-10468	mrna	1	0	1	0	7				-		0.0	0.0	31.0	-	-	0.00				T1_4;T1_5;T1_3;T1	1
+fhuB	EG10303	mrna	2	2	0	0	5				-		30.0	0.0	0.0	0.00	-	-					0
+mscS	EG11160	mrna	1	1	0	0	4				-		0.0	0.0	14.0	-	-	0.00				T1_3;T1	1
+tdcB	EG10990	mrna	4	3	0	1	4				-		139.0	204.0	0.0	0.00	0.00	-			B1	T1_3;T1	2
+moaA	EG11595	mrna	1	1	0	0	4				-		29.0	71.0	31.0	0.00	0.55	0.35					0
+ygfF	G7514	mrna	1	1	0	0	4				-		0.0	0.0	14.0	-	-	0.00					0
+potE	EG10753	mrna	1	1	0	0	4				-		21.0	0.0	31.0	0.00	-	0.00				T1_3;T1_1;T1	1
+dnaK	EG10241	mrna	2	2	0	0	3				-		34.0	0.0	121.0	0.00	-	0.00					0
+hdeB	EG11399	mrna	2	1	0	0	5				-		0.0	0.0	88.0	-	-	0.00				T1_1;T1	1
+rplC	EG10866	mrna	2	0	1	1	3				-		158.0	118.0	0.0	0.00	0.00	-					0
+yobF	G7000	mrna	1	0	1	0	4				-		5.0	0.0	0.0	0.00	-	-					0
+parC	EG10686	mrna	1	1	0	0	3				-		20.0	0.0	0.0	0.00	-	-					0
+yoaC	G6994	mrna	4	2	0	1	5				-		0.0	0.0	252.0	-	-	0.00					0
+erpA	EG12332	mrna	1	1	0	0	4				-		215.0	0.0	0.0	0.34	-	-				T1_3;T1_1;T1_2;T1	1
+dapA	EG10205	mrna	1	0	0	0	3				-		0.0	0.0	15.0	-	-	0.00					0
+ilvM	EG10501	mrna	1	1	0	0	3				-		264.0	334.0	26.0	0.00	0.00	0.00			B1;B3_2	T1_3;T1_1;T1	2
+ymcE	G6512	mrna	1	1	0	0	6				-		14.0	0.0	0.0	0.00	-	-				T1_3;T1_2;T1	1
+yibF	EG11762	mrna	1	0	0	1	5				-		0.0	11.0	0.0	-	0.00	-					0
+damX	EG11183	mrna	2	2	0	0	4				-		0.0	0.0	64.0	-	-	0.00					0
+ynfC	G6843	mrna	1	1	0	0	3				-		14.0	0.0	10.0	0.00	-	0.00					0
+gmr	G6639	mrna	2	1	0	0	4				-		0.0	0.0	89.0	-	-	0.00					0
+pntB	EG10745	mrna	1	1	0	0	3				-		21.0	29.0	0.0	0.00	0.00	-				T1_3;T1	1
+puuR	EG12431	mrna	1	1	0	0	4				-		0.0	0.0	13.0	-	-	0.00				T1_3;T1	1
+yadD	EG11748	mrna	2	1	0	1	4				-		58.0	28.0	179.0	0.00	0.00	0.00			B1;B3_1	T1_3;T1	2
+pspB	EG10777	mrna	1	1	0	0	5				-		0.0	6.0	11.0	-	0.00	0.00					0
+aroC	EG10075	mrna	1	0	1	0	5				-		0.0	0.0	7.0	-	-	0.00					0
+wbbI	EG11983	mrna	2	1	0	1	4				-		35.0	0.0	75.0	0.00	-	0.00				T1_3;T1_1;T1_2;T1	1
+bamB	G7320	mrna	1	0	0	1	3				-		0.0	0.0	21.0	-	-	0.00				T1_3;T1	1
+lptD	EG11569	mrna	1	0	0	1	2				-		0.0	0.0	30.0	-	-	0.00					0
+malG	EG10556	mrna	2	1	1	0	7	1.70E-01	2.00E-01		-		424.0	174.0	178.0	0.16	0.00	0.00					0
+pnuC	EG11700	mrna	1	1	0	0	7				-		0.0	0.0	14.0	-	-	0.00				T1_3;T1_1;T1	1
+menF	EG12362	mrna	1	1	0	0	8				-		20.0	22.0	0.0	0.00	0.00	-				T1_1;T1	1
+amyA	EG11387	mrna	4	1	2	1	5				-		78.0	73.0	46.0	0.00	0.18	0.00				T1_3;T1	1
+fliS	EG11388	mrna	1	0	0	1	3				-		8.0	0.0	0.0	0.00	-	-					0
+entC	EG10261	mrna	1	0	0	1	5				-		8.0	0.0	0.0	0.00	-	-					0
+tnaB	EG11006	mrna	5	3	1	1	6				-		361.0	335.0	94.0	0.00	0.00	0.00				T1_3;T1	1
+ykgF	G6177	mrna	1	1	0	0	4				-		35.0	0.0	0.0	0.00	-	-			B1		1
+yiaJ	EG12278	mrna	1	0	0	1	4				-		0.0	0.0	15.0	-	-	0.00					0
+dut	EG10251	mrna	1	1	0	0	5				-		18.0	0.0	0.0	0.00	-	-					0
+cysU	EG10197	mrna	1	1	0	0	5				-		0.0	0.0	10.0	-	-	0.00					0
+feaR	G6706	mrna	1	0	0	1	4				-		0.0	0.0	8.0	-	-	0.00					0
+htrL	EG11188	mrna	5	4	0	1	7	5.10E-02;5.10E-02	1.00E+00;1.00E+00		-		92.0	54.0	68.0	0.00	0.00	0.00				T1_3;T1	1
+rplL	EG10873	mrna	2	2	0	0	5				-		954.0	0.0	60.0	0.12	-	0.00				T1_1;T1	1
+sucB	EG10980	mrna	1	1	0	0	3				-		0.0	133.0	0.0	-	1.00	-					0
+ydbH	G6703	mrna	1	0	0	1	5				-		0.0	0.0	16.0	-	-	0.00				T1_3;T1_1;T1	1
+aegA	EG12409	mrna	1	1	0	0	5				-		48.0	259.0	76.0	0.00	0.13	0.00			B1		1
+sdhA	EG10931	mrna	2	1	0	0	4				-		0.0	0.0	63.0	-	-	0.00					0
+insA-2	G6139	mrna	1	1	0	0	4				-		66.0	48.0	52.0	0.00	0.00	0.00					0
+minD	EG10597	mrna	3	2	0	1	5				-		276.0	177.0	120.0	0.00	0.00	0.00				T1_3;T1	1
+gutQ	EG10973	mrna	1	1	0	0	4				-		13.0	0.0	0.0	0.00	-	-					0
+yfbT	G7187	mrna	1	0	0	1	6				-		0.0	10.0	0.0	-	1.00	-			B1		1
+ydfG	EG12345	mrna	1	1	0	0	4				-		48.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1_3;T1_1;T1	1
+ygeV	G7488	mrna	1	1	0	0	3				-		111.0	0.0	0.0	0.00	-	-			B1	T1_3;T1	2
+ygiQ	G7568	mrna	1	1	0	0	7				-		85.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+yfgJ	G7318	mrna	1	0	1	0	7				-		0.0	11.0	0.0	-	1.00	-					0
+rlmD	EG11247	mrna	1	1	0	0	4				-		0.0	0.0	15.0	-	-	0.00					0
+fabD	EG11317	mrna	1	1	0	0	4				-		1680.0	0.0	0.0	0.00	-	-					0
+glmS	EG10382	mrna	1	0	0	1	4				-		0.0	60.0	16.0	-	0.00	0.00					0
+evgS	EG11610	mrna	1	1	0	0	6				-		0.0	0.0	9.0	-	-	0.00					0
+yicL	EG11688	mrna	2	1	0	1	7				-		73.0	72.0	49.0	0.00	0.00	0.00					0
+ppk	EG11510	mrna	1	1	0	0	4				-		12.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+rho	EG10845	mrna	1	0	1	0	2				-		0.0	0.0	22.0	-	-	0.00					0
+fliI	G377	mrna	1	0	1	0	5				-		29.0	21.0	0.0	0.00	0.00	-					0
+yqeB	G7494	mrna	2	0	0	2	4				-		10.0	19.0	83.0	0.00	0.00	0.00			B1		1
+nagZ	G6567	mrna	3	0	1	2	4				-		0.0	6.0	46.0	-	0.00	0.00				T1_3;T1_1;T1	1
+prfB	EG10762	mrna	1	1	0	0	4				-		0.0	0.0	25.0	-	-	0.00					0
+atpI	EG10106	mrna	3	2	0	1	4				-		185.0	133.0	172.0	0.00	0.00	0.00					0
+gsk	EG11102	mrna	2	1	1	0	5				-		68.0	0.0	19.0	0.19	-	0.00					0
+pfkA	EG10699	mrna	1	1	0	0	3				-		26.0	70.0	0.0	0.00	0.00	-				T1_3;T1	1
+fadI	G7213	mrna	1	0	0	1	7				-		0.0	0.0	45.0	-	-	0.00					0
+mlaF	EG12801	mrna	2	1	1	0	4				-		91.0	22.0	61.0	0.00	0.00	0.00					0
+yajG	EG12182	mrna	1	1	0	0	3				-		17.0	25.0	0.0	0.00	0.00	-					0
+hrpA	G6732	mrna	2	2	0	0	5				-		0.0	0.0	67.0	-	-	0.00				T1_3;T1	1
+asd	EG10088	mrna	1	1	0	0	5				-		126.0	0.0	123.0	0.00	-	0.00				T1_1;T1	1
+xseA	EG11072	mrna	2	0	2	0	4				-		0.0	8.0	7.0	-	0.00	0.00					0
+acpT	EG12221	mrna	1	0	0	1	4				-		0.0	0.0	30.0	-	-	0.00				T1_1;T1	1
+rplT	EG10881	mrna	2	1	0	1	5				-		47.0	15.0	8.0	0.00	0.00	0.00					0
+tag	EG10986	mrna	1	1	0	0	3				-		17.0	0.0	0.0	0.00	-	-					0
+yegP	G7117	mrna	1	1	0	0	4				-		0.0	0.0	27.0	-	-	0.00					0
+obgE	G7656	mrna	1	0	0	1	3				-		8.0	0.0	13.0	0.00	-	0.00				T1_3;T1	1
+cra	EG10338	mrna	1	1	0	0	5				-		169.0	0.0	0.0	0.00	-	-					0
+ydcZ	G6758	mrna	1	1	0	0	4				-		0.0	14.0	0.0	-	0.00	-					0
+nuoC	EG12084	mrna	2	2	0	0	5				-		1172.0	6.0	0.0	0.00	0.00	-					0
+nmpC	EG10659	mrna	8	2	1	4	6	9.20E+01;9.10E+01;3.50E+01;1.70E+01;1.30E+01;7.60E+00;5.50E+00	1.50E+00;1.70E-01;1.60E+00;2.00E+00;3.80E-01;5.70E-01;6.00E-01		-		1039.0	651.0	489.0	0.47	0.67	0.60				T1_3;T1_1;T1_2;T1	1
+hypE	EG10487	mrna	1	1	0	0	4				-		227.0	157.0	387.0	0.00	0.00	0.00			B1	T1_3;T1_1;T1_2;T1	2
+xylF	EG20252	mrna	1	1	0	0	3				-		0.0	0.0	23.0	-	-	0.00					0
+mdh	EG10576	mrna	2	2	0	0	5				-		184.0	33.0	16.0	0.26	0.00	0.00					0
+ydgD	G6856	mrna	1	0	0	1	4				-		0.0	0.0	10.0	-	-	0.00					0
+malK	EG10558	mrna	4	2	0	1	3				-		838.0	340.0	10.0	0.04	0.00	0.00				T1_3;T1_1;T1	1
+dcrB	G7767	mrna	2	1	1	0	3				-		24.0	53.0	10.0	1.00	1.00	1.00					0
+acpP	EG50003	mrna	1	1	0	0	5				-		548.0	290.0	464.0	0.22	0.25	0.17				T1_1;T1	1
+msyB	EG11338	mrna	2	2	0	0	6				-		61.0	0.0	42.0	0.00	-	0.00					0
+yebO	G7001	mrna	3	1	0	1	6				-		5510.0	3759.0	1762.0	0.00	0.00	0.00			B1	T1_1;T1_2;T1	2
+msrB	EG12394	mrna	1	1	0	0	4				-		45.0	0.0	0.0	1.00	-	-					0
+ymfK	G6589	mrna	1	0	0	1	4				-		0.0	0.0	25.0	-	-	0.00					0
+rayT	G6112	mrna	1	0	0	1	5				-		14.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+pheT	EG10710	mrna	5	0	3	2	5	2.20E+01	1.30E+00		-		212.0	130.0	2634.0	0.00	0.08	0.01				T1_3;T1_1;T1	1
+pncB	EG10742	mrna	1	0	1	0	7				-		9.0	0.0	16.0	1.00	-	1.00				T1_2;T1	1
+fhuD	EG10305	mrna	2	1	0	1	4				-		25.0	0.0	0.0	0.00	-	-					0
+fecA	EG10286	mrna	7	3	3	1	5	1.70E+01;1.70E+01;8.10E+00;8.10E+00	1.70E+00;1.70E+00;2.50E-01;2.50E-01		-		875.0	5.0	0.0	0.21	0.00	-				T1_3;T1	1
+flgJ	G366	mrna	1	0	1	0	3				-		18.0	0.0	0.0	0.00	-	-					0
+lpxP	G7241	mrna	1	1	0	0	6				-		21.0	0.0	9.0	1.00	-	1.00			B1	T1_3;T1	2
+ymdF	G0-10443	mrna	1	1	0	0	4				-		0.0	0.0	41.0	-	-	0.00				T1_3;T1_1;T1	1
+yjtD	EG12309	mrna	2	0	1	1	5				-		123.0	94.0	11.0	0.38	0.46	0.00			B1		1
+yigA	EG11201	mrna	1	1	0	0	6				-		17.0	0.0	19.0	0.00	-	0.00					0
+rpsP	EG10915	mrna	1	0	0	1	3				-		0.0	55.0	0.0	-	0.00	-					0
+map	EG10570	mrna	1	1	0	0	3				-		35.0	21.0	0.0	0.00	0.00	-				T1_1;T1	1
+rpsB	EG10901	mrna	3	0	1	2	4				-		66.0	32.0	0.0	0.00	0.19	-		R1			1
+nlpA	EG10657	mrna	1	1	0	0	6				-		80.0	81.0	0.0	1.00	1.00	-				T1_1;T1	1
+waaO	EG11352	mrna	3	3	0	0	6				-		88.0	0.0	31.0	0.00	-	0.00					0
+fhuF	G7949	mrna	1	1	0	0	3				-		27.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+nrfA	EG11781	mrna	5	3	0	2	6	7.40E+00	2.30E-01		-		0.0	140.0	11.0	-	0.09	0.00			B1		1
+yjiA	EG10021	mrna	2	2	0	0	6				-		34.0	31.0	0.0	0.68	1.00	-					0
+fbp	EG10283	mrna	1	0	0	1	4				-		0.0	0.0	18.0	-	-	0.00					0
+gdhA	EG10372	mrna	4	1	0	3	7				-		134.0	313.0	83.0	0.00	0.00	0.43				T1_1;T1	1
+nemA	G6890	mrna	1	0	1	0	6				-		13.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+ylaB	G6252	mrna	1	1	0	0	4				-		0.0	0.0	15.0	-	-	0.00					0
+sohB	EG10956	mrna	2	2	0	0	5				-		15.0	0.0	26.0	0.00	-	0.00					0
+secD	EG10938	mrna	1	1	0	0	2				-		243.0	28.0	183.0	0.00	0.00	0.00					0
+nagC	EG10636	mrna	1	0	1	0	3				-		0.0	9.0	0.0	-	0.00	-					0
+rihC	EG11082	mrna	1	1	0	0	6				-		128.0	101.0	18.0	0.00	0.00	0.00				T1_1;T1	1
+artP	EG11624	mrna	1	0	0	1	3				-		0.0	0.0	8.0	-	-	0.00					0
+ompC	EG10670	mrna	13	5	2	5	6	2.50E-08	3.80E-02	recip	-	[gu][cag][cga][gc]g[gc][cga]u[uc]uuuuu	2072.0	231.0	2476.0	0.05	0.00	0.00				T1_1;T1	1
+motB	EG10602	mrna	3	2	0	1	3				-		538.0	246.0	0.0	0.36	0.00	-					0
+tnaC	EG11276	mrna	3	1	2	0	7				-		253.0	35.0	10.0	0.19	0.00	1.00				T1_1;T1	1
+flgD	G360	mrna	1	1	0	0	3				-		18.0	0.0	0.0	0.00	-	-					0
+yajR	G6241	mrna	1	1	0	0	5				-		14.0	0.0	31.0	0.00	-	0.00					0
+waaA	EG10520	mrna	2	0	1	1	4				-		6.0	11.0	0.0	0.00	0.00	-				T1_3;T1_1;T1	1
+csgD	G6546	mrna	1	1	0	0	4				-		0.0	0.0	32.0	-	-	0.00					0
+ydaN	G6674	mrna	1	1	0	0	6				-		29.0	17.0	18.0	0.00	0.00	0.00					0
+glpK	EG10398	mrna	6	2	2	2	4	6.30E+01;6.30E+01;3.00E-01;3.00E-01;1.90E-02;1.90E-02	3.20E-01;3.20E-01;6.80E-01;6.80E-01;8.80E-01;8.80E-01		-		823.0	306.0	3006.0	0.04	0.00	0.04					0
+cyoB	EG10179	mrna	1	1	0	0	3				-		205.0	51.0	132.0	0.00	0.00	0.00				T1_3;T1	1
+yfgO	G7310	mrna	1	1	0	0	5				-		0.0	0.0	29.0	-	-	0.00					0
+aldA	EG10035	mrna	3	3	0	0	6				-		12.0	7.0	90.0	0.00	1.00	0.10				T1_1;T1	1
+manX	EG10567	mrna	2	1	0	1	6				-		450.0	641.0	0.0	0.07	0.08	-				T1_3;T1_1;T1	1
+dmsD	G6849	mrna	1	1	0	0	5				-		0.0	0.0	12.0	-	-	0.00					0
+trxA	EG11031	mrna	2	2	0	0	4				-		90.0	0.0	31.0	0.00	-	0.00		R2			1
+frsA	EG11091	mrna	1	0	0	1	5				-		17.0	0.0	0.0	1.00	-	-				T1_1;T1	1
+osmB	EG10679	mrna	1	0	1	0	2				-		0.0	0.0	16.0	-	-	0.00					0
+ribE	EG11322	mrna	1	0	0	0	3				-		12.0	35.0	0.0	0.00	0.00	-					0
+fadM	G6244	mrna	1	1	0	0	6				-		0.0	0.0	14.0	-	-	0.00					0
+tdcG	G7624	mrna	4	0	3	0	8				-		79.0	78.0	47.0	1.00	1.00	1.00			B1;B3_1		1
+uvrB	EG11062	mrna	1	1	0	0	7				-		0.0	0.0	16.0	-	-	0.00				T1_1;T1	1
+fhuA	EG10302	mrna	4	1	1	2	4				-		71.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+msbA	EG10613	mrna	1	0	0	1	3				-		0.0	0.0	17.0	-	-	0.00				T1_3;T1_1;T1	1
+cysJ	EG10191	mrna	2	2	0	0	5				-		18.0	0.0	27.0	0.00	-	0.00					0
+flgE	G361	mrna	2	1	0	1	4				-		92.0	67.0	0.0	0.00	0.00	-					0
+bhsA	G6570	mrna	3	1	2	0	7				-		94.0	44.0	246.0	1.00	1.00	1.00				T1_3;T1	1
+gcvP	EG11810	mrna	1	1	0	0	3				-		0.0	0.0	20.0	-	-	0.00					0
+dedA	EG10216	mrna	1	1	0	0	5				-		43.0	0.0	18.0	0.00	-	0.00					0
+sdhC	EG10933	mrna	2	1	0	0	6				-		442.0	6.0	55.0	0.18	0.00	0.33					0
+mutS	EG10625	mrna	1	1	0	0	2				-		0.0	0.0	15.0	-	-	0.00					0
+mqsR	G7572	mrna	4	1	0	2	5				-		80.0	0.0	1036.0	0.00	-	0.00				T1_3;T1_1;T1_2;T1	1
+ydgA	G6865	mrna	2	0	1	1	4				-		9.0	0.0	35.0	0.00	-	0.00					0
+aspA	EG10095	mrna	3	3	0	0	6				-		5921.0	287.0	560.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+narW	EG10645	mrna	1	1	0	0	7				-		0.0	0.0	20.0	-	-	0.00					0
+ptsP	EG12188	mrna	2	1	0	1	4				-		53.0	7.0	15.0	0.00	0.00	0.00					0
+ompA	EG10669	mrna	10	4	3	3	4	1.80E+00;3.40E-01;2.00E-01;2.00E-01	1.10E+00;1.60E+00;5.60E-01;5.60E-01		-		909.0	152.0	1095.0	0.01	0.00	0.00				T1_3;T1	1
+insI-1	G6131	mrna	2	2	0	0	6				-		30.0	55.0	0.0	0.00	0.00	-				T1_1;T1	1
+glgA	EG10377	mrna	2	0	0	2	4				-		12.0	0.0	5.0	0.00	-	0.00					0
+cydA	EG10173	mrna	1	0	1	0	3				-		8.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+yqaE	G7396	mrna	3	1	1	0	5				-		0.0	0.0	59.0	-	-	0.12					0
+yieP	EG11733	mrna	5	3	0	1	6	4.00E+00	1.70E+00		-		138.0	35.0	131.0	0.14	0.00	0.00			B1	T1_3;T1	2
+typA	EG11837	mrna	1	1	0	0	5				-		97.0	0.0	0.0	0.00	-	-		R3		T1_2;T1	2
+mltC	G7533	mrna	1	1	0	0	4				-		78.0	0.0	0.0	0.00	-	-			B1		1
+gatA	EG12414	mrna	3	1	1	1	4				-		26.0	40.0	374.0	0.00	1.00	0.34					0
+yeaE	G6967	mrna	1	1	0	0	4				-		0.0	0.0	26.0	-	-	0.00				T1_3;T1	1
+pitA	EG12230	mrna	2	2	0	0	5				-		719.0	302.0	115.0	0.12	0.10	0.07				T1_3;T1_1;T1	1
+rbsA	EG10814	mrna	1	0	0	1	2				-		0.0	0.0	8.0	-	-	0.00					0
+zapB	EG11878	mrna	4	3	1	0	5				-		1251.0	190.0	91.0	0.03	0.00	0.00					0
+fliF	EG11347	mrna	5	3	2	0	4	3.20E-01;3.20E-01;3.20E-01;3.20E-01	1.00E+00;1.00E+00;1.00E+00;1.00E+00		-		1562.0	126.0	61.0	0.00	0.00	0.00					0
+rplK	EG10872	mrna	1	0	1	0	3				-		0.0	0.0	5.0	-	-	1.00					0
+yfcD	G7191	mrna	3	1	0	2	3				-		8.0	0.0	186.0	0.00	-	0.00				T1_1;T1	1
+nuoM	EG11773	mrna	1	1	0	0	4				-		82.0	23.0	48.0	0.00	0.00	0.00					0
+rpsK	EG10910	mrna	1	1	0	0	3				-		284.0	191.0	225.0	0.00	0.00	0.00					0
+wrbA	EG11540	mrna	3	2	0	0	5				-		0.0	0.0	46.0	-	-	0.00					0
+mglA	EG10592	mrna	2	1	0	1	4				-		74.0	0.0	25.0	0.00	-	0.00				T1_3;T1	1
+glpC	EG10393	mrna	2	2	0	0	3				-		0.0	475.0	0.0	-	0.00	-					0
+ffh	EG10300	mrna	1	0	0	0	2				-		0.0	0.0	8.0	-	-	0.00					0
+dksA	EG10230	mrna	1	1	0	0	2				-		101.0	0.0	0.0	0.00	-	-					0
+pqqL	EG11744	mrna	2	1	1	0	4				-		81.0	0.0	0.0	0.17	-	-					0
+tcdA	G7456	mrna	2	1	0	1	5				-		192.0	100.0	111.0	0.00	0.00	0.00				T1_3;T1	1
+setA	EG11754	mrna	1	1	0	0	5				-		21.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+ydbD	EG11310	mrna	1	0	1	0	7				-		0.0	7.0	0.0	-	0.00	-					0
+yqiB	G7580	mrna	9	2	6	1	5	7.70E+01;9.70E+00	5.00E-01;4.80E-01		-		835.0	0.0	60.0	0.29	-	0.00				T1_3;T1_1;T1_2;T1	1
+yqjH	G7593	mrna	1	1	0	0	4				-		22.0	0.0	0.0	0.00	-	-					0
+atpC	EG10100	mrna	1	0	0	1	3				-		0.0	0.0	26.0	-	-	0.00					0
+nuoF	EG11774	mrna	1	1	0	0	4				-		2233.0	0.0	8.0	0.00	-	0.00					0
+narX	EG10646	mrna	1	1	0	0	3				-		12.0	31.0	0.0	0.00	0.00	-					0
+ycaO	G6468	mrna	1	1	0	0	4				-		0.0	19.0	0.0	-	0.00	-				T1_1;T1	1
+panD	EG11747	mrna	3	2	1	0	4				-		60.0	0.0	47.0	0.88	-	0.36					0
+yeiP	EG12035	mrna	1	0	1	0	5				-		17.0	0.0	0.0	0.00	-	-					0
+rraB	G7885	mrna	2	1	0	1	3				-		184.0	0.0	0.0	0.03	-	-				T1_1;T1	1
+rpiB	EG11827	mrna	1	1	0	0	5				-		12.0	13.0	0.0	0.00	0.00	-			B1		1
+tktA	EG11427	mrna	3	1	0	2	6				-		0.0	9.0	20.0	-	0.00	0.00				T1_3;T1	1
+rsgA	G7841	mrna	1	1	0	0	4				-		122.0	36.0	24.0	0.00	0.00	0.00				T1_4;T1_5;T1_1;T1	1
+ydcH	EG12865	mrna	2	2	0	0	6				-		111.0	97.0	1314.0	0.00	0.00	0.00				T1_3;T1_1;T1_2;T1	1
+yggN	EG12705	mrna	1	1	0	0	6				-		0.0	0.0	10.0	-	-	0.00			B1	T1_3;T1	2
+waaY	EG11425	mrna	2	1	1	0	4				-		51.0	0.0	7.0	0.00	-	1.00					0
+yecA	EG11139	mrna	1	0	0	1	4				-		0.0	0.0	37.0	-	-	0.00					0
+valS	EG11067	mrna	1	1	0	0	3				-		23.0	11.0	17.0	0.00	0.00	0.00					0
+yidF	EG11694	mrna	1	1	0	0	3				-		0.0	86.0	0.0	-	0.00	-					0
+yfjJ	G7361	mrna	1	0	1	0	6				-		0.0	0.0	57.0	-	-	0.23		R3		T1_3;T1	2
+tnaA	EG11005	mrna	5	2	0	2	5	8.20E+00;8.20E+00;5.00E+00;5.00E+00	1.70E+00;1.70E+00;1.70E+00;1.70E+00		-		1034.0	447.0	338.0	0.05	0.17	0.13				T1_3;T1	1
+ssb	EG10976	mrna	1	0	1	0	3				-		5.0	0.0	0.0	0.00	-	-					0
+yhgN	G7753	mrna	1	1	0	0	5				-		0.0	0.0	11.0	-	-	0.00				T1_3;T1	1
+kefB	EG20110	mrna	3	2	0	1	4				-		36.0	0.0	35.0	0.00	-	0.00					0
+alaS	EG10034	mrna	1	0	0	1	3				-		0.0	10.0	24.0	-	0.00	0.00					0
+yceF	EG11438	mrna	1	1	0	0	6				-		0.0	0.0	15.0	-	-	0.00				T1_3;T1	1
+ucpA	EG12133	mrna	4	3	0	1	4				-		184.0	171.0	80.0	0.00	0.00	0.42					0
+fiu	G6414	mrna	4	3	1	0	4				-		502.0	0.0	0.0	0.02	-	-					0
+nlpE	EG12137	mrna	1	0	0	1	5				-		0.0	0.0	29.0	-	-	0.00				T1_3;T1	1
+lysP	EG11337	mrna	1	1	0	0	3				-		25.0	0.0	26.0	0.00	-	0.00					0
+yrdD	G7699	mrna	2	2	0	0	4				-		83.0	475.0	20.0	1.00	1.00	1.00			B1	T1_3;T1_2;T1	2
+fnr	EG10325	mrna	1	1	0	0	3				-		0.0	122.0	0.0	-	0.00	-					0
+ydcD	EG11760	mrna	2	1	0	1	5				-		32.0	0.0	66.0	0.00	-	0.00			B1	T1_1;T1	2
+fhuE	EG10306	mrna	2	2	0	0	4				-		92.0	0.0	0.0	0.78	-	-					0
+acrZ	G6396	mrna	2	1	0	0	6				-		61.0	0.0	34.0	0.15	-	0.00				T1_1;T1	1
+yjcO	EG11951	mrna	1	1	0	0	4				-		0.0	0.0	8.0	-	-	0.00					0
+gntU	EG12631	mrna	2	1	0	1	6				-		540.0	1123.0	214.0	0.00	0.00	0.00			B1		1
+cmk	EG11265	mrna	1	1	0	0	3				-		12.0	0.0	0.0	0.00	-	-					0
+ilvX	G0-10641	mrna	1	0	0	1	8				-		0.0	26.0	114.0	-	0.00	0.00			B1		1
+dusC	EG12022	mrna	1	1	0	0	3				-		0.0	0.0	11.0	-	-	0.00				T1_3;T1	1
+rsuA	EG12044	mrna	1	1	0	0	5				-		66.0	16.0	58.0	0.00	0.00	0.00					0
+yebW	G7010	mrna	2	1	0	1	5				-		30.0	0.0	69.0	0.00	-	0.00				T1_4;T1_5;T1_3;T1_2;T1	1
+cheB	EG10147	mrna	1	0	1	0	5				-		0.0	13.0	0.0	-	1.00	-					0
+thrB	EG10999	mrna	1	1	0	0	6				-		48.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+flgC	G359	mrna	1	0	1	0	5				-		0.0	14.0	0.0	-	0.00	-					0
+ybdK	G6326	mrna	1	1	0	0	4				-		0.0	0.0	16.0	-	-	0.00					0
+yghJ	G7541	mrna	2	2	0	0	4				-		105.0	74.0	21.0	0.00	0.00	0.00					0
+gyrA	EG10423	mrna	3	2	1	0	3				-		59.0	20.0	51.0	0.00	0.00	0.10				T1_3;T1	1
+yjbB	EG11919	mrna	2	0	0	1	7				-		10.0	0.0	23.0	0.00	-	0.00			B4_1	T1_2;T1	2
+fliZ	EG11356	mrna	2	2	0	0	6				-		51.0	15.0	0.0	0.00	0.00	-					0
+cdsA	EG10139	mrna	1	1	0	0	4				-		55.0	19.0	0.0	0.00	0.00	-					0
+yhbU	G7652	mrna	1	1	0	0	5				-		0.0	114.0	0.0	-	0.44	-			B1		1
+cobS	EG12150	mrna	1	1	0	0	4				-		56.0	27.0	24.0	0.00	0.00	0.00			B1	T1_3;T1	2
+rcsF	EG11502	mrna	1	0	0	1	5				-		48.0	21.0	36.0	0.00	0.00	0.00				T1_1;T1	1
+purH	EG10795	mrna	1	1	0	0	3				-		0.0	29.0	0.0	-	0.00	-					0
+yhgE	G7745	mrna	1	0	0	1	4				-		0.0	0.0	28.0	-	-	0.00				T1_3;T1	1
+rssA	EG12120	mrna	4	3	0	0	4				-		18.0	0.0	235.0	0.00	-	0.00			B4_1	T1_4;T1_5;T1_1;T1	2
+infB	EG10505	mrna	1	1	0	0	2				-		120.0	0.0	0.0	0.36	-	-					0
+mtfA	G7063	mrna	1	1	0	0	4				-		42.0	0.0	157.0	0.00	-	0.00				T1_4;T1_5;T1_1;T1	1
+cydX	G0-10441	mrna	1	1	0	0	3				-		0.0	0.0	65.0	-	-	0.00					0
+yaaJ	EG11555	mrna	1	0	0	0	6				-		0.0	8.0	0.0	-	0.00	-			B1		1
+hslV	EG11676	mrna	1	0	0	1	3				-		0.0	0.0	14.0	-	-	0.00					0
+dosC	G6784	mrna	1	0	0	1	5				-		9.0	0.0	31.0	0.00	-	0.00					0
+fruA	EG10336	mrna	1	1	0	0	4				-		13.0	11.0	0.0	0.00	0.00	-			B1		1
+hofM	G7739	mrna	1	1	0	0	5				-		56.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+cheZ	EG10151	mrna	1	1	0	0	4				-		18.0	0.0	0.0	0.00	-	-					0
+glnP	EG10388	mrna	1	1	0	0	4				-		0.0	5.0	0.0	-	0.00	-					0
+ybaT	G6262	mrna	1	0	0	1	3				-		0.0	0.0	9.0	-	-	0.00					0
+pcm	EG10689	mrna	2	0	0	1	5				-		11.0	14.0	37.0	0.00	0.00	0.00			B1	T1_3;T1_1;T1_2;T1	2
+arfB	EG12354	mrna	1	0	0	1	4				-		23.0	21.0	214.0	0.00	0.00	0.00				T1_3;T1_1;T1_2;T1	1
+yihO	EG11841	mrna	1	0	1	0	5				-		0.0	0.0	13.0	-	-	1.00			B1;B3_1		1
+cytR	EG10200	mrna	1	0	1	0	3				-		11.0	0.0	0.0	1.00	-	-					0
+cydB	EG10174	mrna	2	1	1	0	3				-		137.0	179.0	120.0	0.00	0.00	0.00					0
+xanQ	G7501	mrna	1	0	0	1	4				-		0.0	0.0	18.0	-	-	0.00				T1_3;T1_1;T1_2;T1	1
+malT	EG10562	mrna	2	1	0	1	6				-		31.0	5.0	0.0	0.00	0.00	-					0
+lpcA	G6106	mrna	1	1	0	0	5				-		12.0	0.0	0.0	0.00	-	-					0
+sufE	G6905	mrna	1	1	0	0	6				-		20.0	0.0	0.0	0.00	-	-					0
+rhsC	EG10848	mrna	1	1	0	0	4				-		17.0	0.0	0.0	0.00	-	-					0
+yccU	G6499	mrna	1	0	0	1	4				-		0.0	0.0	27.0	-	-	0.00					0
+nlpI	EG12371	mrna	2	0	0	2	5				-		28.0	0.0	22.0	0.00	-	0.00				T1_3;T1	1
+yobA	G7014	mrna	2	1	1	0	5				-		464.0	699.0	266.0	0.82	1.00	0.73			B4_1		1
+entE	EG10263	mrna	1	1	0	0	3				-		21.0	0.0	0.0	0.00	-	-					0
+rpoC	EG10895	mrna	1	1	0	0	4				-		20.0	0.0	0.0	0.00	-	-					0
+yhjY	EG12269	mrna	2	2	0	0	6				-		0.0	0.0	58.0	-	-	0.19					0
+ubiJ	EG11474	mrna	1	1	0	0	3				-		42.0	0.0	0.0	0.00	-	-					0
+ligB	EG11334	mrna	1	1	0	0	3				-		81.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+dppA	EG10248	mrna	3	1	1	0	3				-		0.0	0.0	166.0	-	-	0.00			B1		1
+fdoG	EG11858	mrna	4	1	1	1	5				-		3413.0	2538.0	10355.0	0.28	0.37	0.18				T1;T1_4;T1_5;T1_1;T1_2;T1_3	1
+cydD	EG11405	mrna	1	1	0	0	3				-		19.0	0.0	102.0	0.00	-	0.00					0
+dnaA	EG10235	mrna	3	1	2	0	4				-		0.0	32.0	20.0	-	0.00	0.00					0
+relB	EG10836	mrna	1	1	0	0	2				-		0.0	0.0	23.0	-	-	0.00					0
+ybiC	EG11581	mrna	2	1	0	1	4				-		16.0	0.0	9.0	1.00	-	0.00					0
+secM	EG11087	mrna	1	0	0	1	4				-		20.0	28.0	109.0	0.00	0.00	0.00				T1_1;T1	1
+rapZ	EG12146	mrna	1	0	0	1	5				-		0.0	13.0	0.0	-	0.00	-					0
+wzzB	G7090	mrna	5	1	0	2	7	1.10E+01;1.10E+01	5.70E-01;5.70E-01		-		30.0	19.0	165.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+ompF	EG10671	mrna	19	7	3	7	8	3.00E-04;2.90E-05;2.70E-07;1.60E-08;1.60E-08;1.50E-08;1.60E-09;5.10E-10	1.00E-01;1.50E+00;1.70E-01;1.10E+00;7.40E-01;7.70E-01;1.00E+00;2.60E-01		-		9883.0	3527.0	2147.0	0.05	0.16	0.05				T1_3;T1_1;T1_2;T1	1
+rnhB	EG10861	mrna	1	1	0	0	3				-		8.0	0.0	0.0	0.00	-	-					0
+nusA	EG10665	mrna	1	0	0	0	4				-		0.0	0.0	5.0	-	-	0.00					0
+cysE	EG10187	mrna	2	1	1	0	5				-		25.0	25.0	0.0	0.00	0.00	-				T1_3;T1	1
+fliP	EG11975	mrna	2	1	0	1	6				-		15.0	14.0	0.0	0.00	0.00	-					0
+hybE	EG11803	mrna	1	0	1	0	3				-		6.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+kdsD	G7662	mrna	1	0	0	1	3				-		0.0	6.0	0.0	-	0.00	-				T1_3;T1	1
+srlA	G8210	mrna	2	0	0	2	4				-		81.0	178.0	0.0	0.00	0.00	-			B4_1	T1_1;T1	2
+aceF	EG10025	mrna	5	0	0	5	6				-		64.0	160.0	12.0	0.00	0.00	0.00					0
+ybfQ	G0-10440	mrna	1	1	0	0	6				-		0.0	0.0	9.0	-	-	0.00					0
+chbC	EG10141	mrna	1	1	0	0	7				-		64.0	0.0	0.0	0.39	-	-					0
+dppF	EG12628	mrna	1	1	0	0	3				-		0.0	0.0	66.0	-	-	0.00					0
+yqeG	G7465	mrna	2	1	1	0	6				-		13.0	0.0	35.0	0.00	-	0.00				T1_3;T1	1
+ygfB	EG11323	mrna	1	1	0	0	3				-		15.0	0.0	0.0	0.00	-	-					0
+fadL	EG10280	mrna	1	1	0	0	4				-		51.0	30.0	38.0	0.71	1.00	0.71					0
+ydiK	G6914	mrna	1	1	0	0	5				-		35.0	11.0	8.0	0.43	0.00	1.00					0
+rplM	EG10874	mrna	1	0	1	0	2				-		5.0	0.0	0.0	1.00	-	-					0
+sucC	EG10981	mrna	1	1	0	0	4				-		0.0	0.0	33.0	-	-	0.00					0
+ydiU	G6924	mrna	1	1	0	0	4				-		14.0	0.0	0.0	0.00	-	-					0
+yehS	EG12005	mrna	1	0	0	1	4				-		87.0	19.0	100.0	0.00	0.00	0.00					0
+yeaG	G6969	mrna	1	1	0	0	3				-		0.0	0.0	10.0	-	-	0.00					0
+metN	EG11621	mrna	1	1	0	0	5				-		42.0	0.0	22.0	0.00	-	0.00				T1_3;T1_1;T1	1
+cirA	EG10155	mrna	2	0	0	1	4				-		45.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+ymgE	G6624	mrna	1	1	0	0	5				-		0.0	0.0	71.0	-	-	0.00				T1_1;T1	1
+waaU	EG11423	mrna	4	2	0	1	6				-		473.0	7.0	47.0	0.03	0.00	0.00				T1_3;T1	1
+ynfK	G6851	mrna	2	2	0	0	4				-		217.0	223.0	336.0	0.00	0.00	0.00			B1	T1_1;T1	2
+flgN	G6562	mrna	5	3	1	1	3				-		1124.0	197.0	0.0	0.00	0.00	-					0
+ypfJ	G7298	mrna	1	0	0	1	4				-		0.0	0.0	40.0	-	-	0.23					0
+ruvC	EG10925	mrna	1	0	1	0	3				-		9.0	0.0	0.0	1.00	-	-					0
+nadR	EG11335	mrna	1	0	0	1	6				-		0.0	0.0	16.0	-	-	0.00					0
+sbcB	EG10926	mrna	2	1	0	0	6				-		16.0	0.0	7.0	0.00	-	0.00				T1_3;T1	1
+fliG	EG11654	mrna	1	1	0	0	2				-		47.0	0.0	0.0	1.00	-	-					0
+waaS	EG11350	mrna	4	3	0	1	6				-		175.0	0.0	72.0	0.10	-	0.00					0
+rfbB	EG12412	mrna	2	1	0	1	5				-		40.0	12.0	75.0	0.00	0.00	0.00				T1_3;T1_2;T1	1
+tufB	EG11037	mrna	1	1	0	0	5				-		17.0	0.0	0.0	1.00	-	-					0
+serA	EG10944	mrna	2	1	0	1	4				-		0.0	0.0	34.0	-	-	0.00			B4_1	T1_3;T1	2
+gapA	EG10367	mrna	2	1	1	0	3				-		469.0	199.0	168.0	0.01	0.00	0.00					0
+rihA	G6358	mrna	1	1	0	0	2				-		155.0	85.0	14.0	1.00	1.00	1.00					0
+gloB	G6099	mrna	2	1	0	1	7				-		41.0	72.0	18.0	0.00	0.00	0.00				T1_3;T1_2;T1	1
+yliI	G6437	mrna	1	1	0	0	5				-		0.0	0.0	12.0	-	-	0.00				T1_3;T1	1
+sufB	G6909	mrna	1	1	0	0	3				-		192.0	0.0	0.0	0.00	-	-					0
+rodZ	EG10015	mrna	4	3	0	1	5				-		56.0	0.0	53.0	0.00	-	0.00					0
+ykfB	G6125	mrna	1	1	0	0	3				-		19.0	0.0	0.0	1.00	-	-			B1		1
+ampD	EG10041	mrna	1	0	0	0	3				-		0.0	0.0	12.0	-	-	0.00					0
+plsB	EG10740	mrna	2	1	0	0	3				-		34.0	0.0	37.0	0.00	-	0.00					0
+ldtC	G6571	mrna	1	1	0	0	6				-		0.0	0.0	43.0	-	-	0.00					0
+wbbK	EG11985	mrna	3	2	0	1	4				-		44.0	5.0	0.0	0.00	0.00	-					0
+rhtA	EG12134	mrna	1	1	0	0	6				-		53.0	47.0	78.0	0.00	0.00	0.00					0
+kch	EG11606	mrna	1	0	0	0	5				-		0.0	0.0	6.0	-	-	1.00					0
+yjcZ	G7823	mrna	3	0	1	1	5				-		6.0	21.0	0.0	0.00	0.00	-					0
+yagU	G6158	mrna	1	1	0	0	3				-		24.0	0.0	0.0	1.00	-	-					0
+fieF	EG11873	mrna	2	2	0	0	8				-		90.0	73.0	70.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+fecC	EG10288	mrna	1	0	0	1	3				-		38.0	7.0	0.0	0.00	0.00	-					0
+purU	EG11819	mrna	1	1	0	0	5				-		184.0	265.0	0.0	1.00	0.34	-					0
+tyrR	EG11042	mrna	1	1	0	0	6				-		25.0	16.0	0.0	0.00	0.00	-					0
+mutL	EG11281	mrna	1	1	0	0	3				-		0.0	0.0	12.0	-	-	0.00					0
+lpxT	G7146	mrna	1	0	0	0	3				-		7.0	0.0	0.0	0.00	-	-					0
+zapD	EG12313	mrna	2	0	1	1	4				-		26.0	17.0	0.0	0.27	0.00	-					0
+ydiH	G6911	mrna	1	1	0	0	5				-		0.0	0.0	20.0	-	-	0.00					0
+cheA	EG10146	mrna	1	1	0	0	6				-		61.0	31.0	0.0	0.00	0.00	-					0
+cysQ	EG10043	mrna	1	1	0	0	4				-		15.0	0.0	21.0	0.00	-	0.00				T1_2;T1	1
+yodC	G7050	mrna	1	1	0	0	4				-		0.0	0.0	12.0	-	-	0.00				T1_3;T1_1;T1_2;T1	1
+yjjU	G7951	mrna	1	1	0	0	4				-		39.0	40.0	184.0	0.00	0.00	0.00					0
+uspE	EG11246	mrna	5	1	1	2	5				-		207.0	223.0	1017.0	0.00	0.00	0.00					0
+yfbV	G7189	mrna	1	1	0	0	7				-		0.0	0.0	103.0	-	-	0.29					0
+yddB	EG11743	mrna	5	4	0	1	7	1.50E+01;1.50E+01;1.50E+01;1.50E+01	1.80E+00;1.80E+00;1.80E+00;1.80E+00		-		384.0	0.0	0.0	0.00	-	-					0
+greB	EG11578	mrna	1	1	0	0	6				-		22.0	8.0	0.0	0.00	0.00	-				T1_3;T1_2;T1	1
+wbbH	EG11982	mrna	3	3	0	0	6				-		193.0	43.0	101.0	0.00	0.00	0.00				T1_3;T1	1
+yccJ	EG12703	mrna	2	1	1	0	6				-		0.0	0.0	89.0	-	-	0.19					0
+yfcA	EG11144	mrna	2	2	0	0	3				-		10.0	0.0	11.0	0.00	-	0.00					0
+paaJ	G6718	mrna	5	3	1	1	4	1.10E-01;1.10E-01	1.80E+00;1.80E+00		-		223.0	36.0	75.0	0.00	0.00	0.00				T1_3;T1	1
+sppA	EG10968	mrna	1	1	0	0	3				-		23.0	0.0	39.0	0.00	-	0.00					0
+ybeL	EG12851	mrna	1	1	0	0	5				-		0.0	8.0	26.0	-	0.00	0.00				T1_3;T1	1
+fliA	EG11355	mrna	3	2	0	1	3				-		2817.0	31.0	0.0	0.00	0.00	-				T1_1;T1_2;T1	1
+crr	EG10165	mrna	2	1	1	0	3				-		0.0	0.0	50.0	-	-	0.00				T1_3;T1	1
+yjcE	EG11940	mrna	2	1	0	1	5				-		11.0	0.0	30.0	0.00	-	0.00				T1_3;T1_1;T1	1
+nohB	EG11635	mrna	1	1	0	0	4				-		0.0	0.0	8.0	-	-	0.00					0
+ydjN	G6934	mrna	1	0	0	1	5				-		10.0	0.0	235.0	0.00	-	0.00				T1_3;T1_1;T1	1
+yceI	EG11820	mrna	1	1	0	0	3				-		0.0	8.0	0.0	-	0.00	-					0
+yejO	EG12051	mrna	2	2	0	0	3				-		72.0	112.0	70.0	0.00	0.00	0.00				T1_3;T1	1
+osmY	EG11391	mrna	2	1	0	1	4				-		0.0	0.0	97.0	-	-	0.00				T1_1;T1	1
+def	EG11440	mrna	1	0	1	0	3				-		13.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+yciW	G6640	mrna	1	1	0	0	3				-		0.0	0.0	8.0	-	-	0.00					0
+yheT	G7718	mrna	1	1	0	0	5				-		36.0	0.0	0.0	0.00	-	-					0
+gnsB	G6823	mrna	2	1	0	1	5				-		1152.0	127.0	471.0	0.00	0.00	0.00				T1_1;T1	1
+adrA	EG11257	mrna	1	1	0	0	3				-		0.0	0.0	16.0	-	-	0.00					0
+sufS	G6906	mrna	1	0	0	1	3				-		7.0	0.0	7.0	0.00	-	0.00					0
+yebZ	G7013	mrna	2	1	0	1	5				-		248.0	278.0	92.0	0.03	0.00	0.00					0
+ascB	EG10085	mrna	1	1	0	0	6				-		12.0	14.0	0.0	0.00	0.00	-					0
+exuT	EG12738	mrna	1	1	0	0	2				-		0.0	11.0	0.0	-	0.00	-					0
+rluF	EG11921	mrna	1	0	0	1	6				-		0.0	0.0	10.0	-	-	0.00					0
+ydcF	EG12110	mrna	1	1	0	0	6				-		49.0	34.0	64.0	0.00	0.00	0.00					0
+ptsI	EG10789	mrna	3	2	0	1	4				-		235.0	166.0	144.0	0.00	0.07	0.00				T1_3;T1_1;T1	1
+uspD	EG11877	mrna	2	0	1	1	3				-		24.0	15.0	0.0	0.00	0.00	-					0
+pepD	EG10695	mrna	1	0	0	1	5				-		20.0	0.0	0.0	0.00	-	-					0
+yfeH	EG12376	mrna	2	2	0	0	4				-		1030.0	21.0	0.0	0.00	0.00	-				T1_3;T1	1
+ftsY	EG10346	mrna	1	1	0	0	3				-		89.0	95.0	66.0	0.00	0.00	0.00					0
+insAB-1	G0-10535	mrna	4	3	1	0	5				-		2629.0	3165.0	2120.0	0.00	0.00	0.00				T1_2;T1	1
+yigF	EG11464	mrna	1	1	0	0	3				-		6.0	0.0	7.0	0.00	-	0.00				T1_3;T1	1
+pykA	EG10803	mrna	3	2	0	1	4				-		20.0	0.0	82.0	0.00	-	0.00					0
+mnmA	EG11344	mrna	2	0	1	1	4				-		13.0	0.0	17.0	0.00	-	0.00				T1_1;T1	1
+ygaZ	G7405	mrna	1	1	0	0	5				-		49.0	61.0	0.0	0.00	0.00	-					0
+amtB	EG11821	mrna	1	1	0	0	4				-		0.0	14.0	0.0	-	0.00	-					0
+rcdA	G6444	mrna	1	0	0	1	4				-		0.0	0.0	21.0	-	-	0.00					0
+mdtK	EG12400	mrna	2	2	0	0	6				-		66.0	70.0	178.0	0.00	0.00	0.00				T1_3;T1	1
+smg	EG11605	mrna	2	1	0	1	4				-		60.0	0.0	378.0	0.00	-	0.00				T1_3;T1_1;T1	1
+mglC	EG10594	mrna	2	2	0	0	5				-		44.0	0.0	18.0	0.00	-	0.00					0
+rdgC	EG12158	mrna	1	1	0	0	3				-		0.0	0.0	15.0	-	-	0.00					0
+lamB	EG10528	mrna	2	1	0	1	3				-		53.0	7.0	18.0	0.00	0.00	0.00				T1_3;T1	1
+malZ	EG10565	mrna	1	0	0	1	3				-		14.0	0.0	0.0	0.00	-	-					0
+holA	EG11412	mrna	1	0	1	0	4				-		0.0	5.0	0.0	-	0.00	-				T1_3;T1	1
+ycjD	G6641	mrna	1	1	0	0	4				-		39.0	0.0	14.0	0.36	-	0.00			B1	T1_3;T1	2
+ycgI	G6613	mrna	1	0	0	1	4				-		0.0	0.0	12.0	-	-	0.00		R3		T1	2
+phoP	EG10731	mrna	3	2	0	1	4				-		64.0	0.0	48.0	0.86	-	0.23					0
+arnD	G7169	mrna	1	0	0	1	7				-		0.0	0.0	15.0	-	-	0.00					0
+msrC	G7005	mrna	2	1	1	0	4				-		120.0	17.0	128.0	0.00	0.00	0.00				T1_4;T1_5;T1_1;T1	1
+lpxA	EG10545	mrna	1	0	0	1	5				-		128.0	47.0	115.0	0.00	0.00	0.00				T1_3;T1	1
+cysB	EG10184	mrna	3	2	0	1	6				-		84.0	52.0	77.0	0.00	0.00	0.00				T1_3;T1	1
+thrC	EG11000	mrna	1	1	0	0	4				-		0.0	0.0	12.0	-	-	0.00				T1_3;T1	1
+dtpB	EG12232	mrna	5	3	0	2	6	8.40E-01;3.00E-02	1.70E+00;1.70E+00		-		68.0	270.0	112.0	0.00	0.22	0.00			B4_1	T1_3;T1_2;T1	2
+hybB	EG11800	mrna	1	1	0	0	3				-		0.0	35.0	0.0	-	0.00	-			B1		1
+yhaV	G7629	mrna	1	0	0	1	4				-		0.0	0.0	88.0	-	-	0.00				T1_3;T1	1
+fliT	EG11389	mrna	1	0	1	0	3				-		0.0	13.0	0.0	-	0.00	-					0
+glpT	EG10401	mrna	7	4	0	2	5	4.00E-01;4.00E-01;6.40E-04;6.40E-04	1.90E+00;1.90E+00;1.80E+00;1.80E+00		-		1185.0	1151.0	1863.0	0.09	0.25	0.03				T1_3;T1_1;T1	1
+ygdH	EG12373	mrna	1	1	0	0	6				-		31.0	28.0	0.0	0.00	0.00	-				T1_1;T1	1
+hdeD	EG11495	mrna	3	2	0	0	5				-		0.0	0.0	520.0	-	-	0.00		R2		T1_3;T1_1;T1	2
+pmrD	G7172	mrna	2	1	0	1	4				-		146.0	0.0	10.0	0.47	-	0.00					0
+prlC	EG11441	mrna	1	1	0	0	4				-		25.0	9.0	62.0	0.00	0.00	0.00					0
+dpiB	G6345	mrna	1	1	0	0	5				-		24.0	0.0	16.0	0.00	-	0.00				T1_3;T1	1
+yjgR	G7890	mrna	1	1	0	0	5				-		0.0	0.0	17.0	-	-	0.00					0
+narK	EG10642	mrna	4	1	1	0	7				-		297.0	58.0	0.0	0.00	0.00	-			B1;B3_1	T1_3;T1	2
+yjhC	G7901	mrna	1	1	0	0	6				-		35.0	0.0	0.0	0.29	-	-					0
+aqpZ	EG13270	mrna	1	1	0	0	6				-		10.0	0.0	0.0	0.00	-	-					0
+rsmB	EG12163	mrna	1	0	0	1	3				-		0.0	0.0	11.0	-	-	0.00					0
+cspG	G6511	mrna	1	1	0	0	4				-		70.0	0.0	0.0	0.00	-	-			B1		1
+ackA	EG10027	mrna	2	0	1	1	7				-		258.0	0.0	90.0	0.30	-	0.00		R3		T1_2;T1	2
+rplN	EG10875	mrna	1	0	0	1	5				-		9.0	0.0	28.0	0.00	-	0.00					0
+glmM	EG11553	mrna	1	1	0	0	4				-		0.0	0.0	7.0	-	-	1.00					0
+ubiE	EG11473	mrna	5	2	0	3	6	7.10E+00;7.10E+00	1.40E-01;1.40E-01		-		199.0	40.0	23.0	0.00	0.00	0.00				T1_3;T1	1
+hisQ	EG12125	mrna	1	0	0	1	4				-		9.0	0.0	34.0	1.00	-	1.00					0
+rfbD	EG12411	mrna	1	0	0	1	4				-		0.0	0.0	25.0	-	-	0.00					0
+accD	EG10217	mrna	3	2	1	0	4				-		114.0	0.0	0.0	0.25	-	-					0
+yqaA	G7407	mrna	1	0	0	1	8				-		8.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+ghrA	G6539	mrna	2	2	0	0	7				-		26.0	119.0	13.0	1.00	0.33	0.00				T1_1;T1	1
+yjhB	EG12544	mrna	1	1	0	0	8				-		38.0	0.0	0.0	0.00	-	-					0
+lptC	G7664	mrna	1	1	0	0	3				-		16.0	0.0	0.0	0.00	-	-					0
+kbl	EG10512	mrna	1	0	0	0	4				-		7.0	0.0	0.0	1.00	-	-					0
+zwf	EG11221	mrna	2	2	0	0	5				-		42.0	40.0	111.0	0.00	1.00	0.00				T1_3;T1	1
+yjfY	G7861	mrna	1	1	0	0	4				-		0.0	0.0	70.0	-	-	0.00				T1_3;T1	1
+ybaY	G6250	mrna	1	0	0	1	3				-		5.0	0.0	0.0	0.00	-	-					0
+ybiA	EG11579	mrna	1	1	0	0	5				-		0.0	0.0	19.0	-	-	0.00			B1	T1_4;T1_5;T1_3;T1_1;T1	2
+hemX	EG10433	mrna	2	1	0	0	4				-		40.0	0.0	61.0	0.00	-	0.00					0
+guaB	EG10421	mrna	1	0	0	1	4				-		0.0	8.0	0.0	-	0.00	-					0
+tpx	G6660	mrna	4	3	0	1	4				-		82.0	0.0	47.0	0.32	-	0.00				T1_4;T1_5;T1_1;T1	1
+luxS	EG12712	mrna	1	1	0	0	5				-		0.0	0.0	93.0	-	-	0.00	L2;L1				1
+purA	EG10790	mrna	4	2	1	1	5				-		111.0	0.0	19.0	0.49	-	1.00				T1_1;T1_2;T1	1
+ynfF	G6846	mrna	1	1	0	0	4				-		0.0	0.0	19.0	-	-	0.00			B1		1
+mntH	G7254	mrna	1	1	0	0	4				-		51.0	0.0	39.0	0.00	-	0.00					0
+grxC	EG12294	mrna	1	1	0	0	5				-		0.0	0.0	57.0	-	-	0.00				T1_3;T1_1;T1_2;T1	1
+gltJ	EG12661	mrna	1	1	0	0	7				-		0.0	0.0	26.0	-	-	0.00					0
+flgL	EG11545	mrna	3	0	1	2	7				-		142.0	0.0	0.0	0.48	-	-					0
+gadC	G6786	mrna	4	3	0	1	4				-		0.0	0.0	191.0	-	-	0.17				T1_3;T1	1
+mepS	G7147	mrna	2	2	0	0	6				-		94.0	0.0	0.0	0.00	-	-					0
+bamC	EG10658	mrna	1	1	0	0	4				-		50.0	37.0	0.0	0.00	0.00	-					0
+apt	EG10051	mrna	1	1	0	0	4				-		0.0	15.0	0.0	-	0.00	-				T1_1;T1	1
+tsr	EG11034	mrna	1	1	0	0	2				-		32.0	0.0	0.0	0.00	-	-					0
+rpoB	EG10894	mrna	2	2	0	0	2				-		9.0	0.0	23.0	0.00	-	0.00					0
+rpsS	EG10918	mrna	1	0	0	1	3				-		199.0	91.0	12.0	0.00	0.00	0.00					0
+aceK	EG10026	mrna	14	0	9	4	6	3.90E+01;3.90E+00	1.10E-02;8.90E-01		-		26.0	0.0	1501.0	1.00	-	0.88				T1_3;T1	1
+chaB	EG12402	mrna	1	0	0	1	2				-		0.0	0.0	19.0	-	-	0.00					0
+rsmG	EG10376	mrna	1	1	0	0	3				-		6.0	0.0	0.0	0.00	-	-					0
+ybaB	EG11100	mrna	1	1	0	0	3				-		80.0	0.0	0.0	0.00	-	-					0
+ygiM	EG12434	mrna	1	1	0	0	3				-		76.0	23.0	157.0	0.00	0.00	0.00					0
+ydeK	EG11780	mrna	1	1	0	0	3				-		0.0	0.0	17.0	-	-	0.00			B1		1
+bamE	EG10952	mrna	3	2	1	0	6				-		197.0	93.0	498.0	0.14	0.19	0.08				T1_1;T1_2;T1	1
+ybbY	G6282	mrna	1	1	0	0	6				-		13.0	14.0	34.0	0.00	0.00	0.00					0
+waaJ	EG11353	mrna	1	1	0	0	3				-		19.0	0.0	0.0	1.00	-	-					0
+preT	G7145	mrna	1	1	0	0	4				-		0.0	0.0	88.0	-	-	0.00				T1_3;T1	1
+flgG	G363	mrna	1	1	0	0	5				-		126.0	107.0	0.0	0.00	0.00	-					0
+ysaA	EG12277	mrna	2	1	0	1	4				-		27.0	139.0	0.0	0.00	0.00	-			B1	T1_1;T1	2
+oppA	EG10674	mrna	9	5	1	3	4	3.50E-05	1.10E-02	recip	-	g[cau][cgu][gc][gc]g[cg][uc]u[ua]uuuuu	1182.0	1505.0	2588.0	0.85	0.98	0.28			B4_2;B4_1		1
+yeaP	G6980	mrna	1	0	1	0	3				-		0.0	0.0	5.0	-	-	0.00					0
+mraY	EG10604	mrna	1	1	0	0	3				-		23.0	21.0	0.0	0.00	0.00	-					0
+deoB	EG10220	mrna	1	1	0	0	3				-		24.0	0.0	0.0	0.00	-	-					0
+malP	EG10560	mrna	1	0	1	0	5				-		17.0	0.0	0.0	1.00	-	-					0
+dcuC	G6347	mrna	2	1	0	1	6				-		108.0	814.0	22.0	0.00	0.00	0.00			B1	T1_4;T1_5;T1_3;T1_1;T1	2
+yfiE	EG11785	mrna	1	1	0	0	5				-		0.0	0.0	14.0	-	-	0.00				T1_2;T1	1
+ydbK	G6701	mrna	2	1	0	1	5				-		14.0	10.0	0.0	0.00	0.00	-				T1_3;T1	1
+truA	EG10454	mrna	2	0	0	2	5				-		324.0	134.0	575.0	0.00	0.00	0.00			B1	T1_3;T1	2
+rssB	EG12121	mrna	1	1	0	0	3				-		0.0	0.0	10.0	-	-	0.00					0
+entB	EG10260	mrna	1	1	0	0	4				-		27.0	0.0	0.0	1.00	-	-					0
+fumC	EG10358	mrna	2	1	0	1	7				-		0.0	0.0	48.0	-	-	0.23				T1_1;T1_2;T1	1
+fliC	EG10321	mrna	19	5	6	6	5	8.70E-07	2.70E-02	recip	-	cg[gc]g[cg]uuuuuuuuug	12352.0	8962.0	203.0	0.01	0.00	0.00			B4_2;B1;B3_1	T1_3;T1_1;T1	2
+rimL	EG10853	mrna	1	1	0	0	6				-		10.0	0.0	11.0	0.00	-	0.00				T1_3;T1	1
+gltA	EG10402	mrna	1	1	0	0	4				-		18.0	50.0	54.0	1.00	1.00	0.41				T1_3;T1	1
+yeaQ	G6981	mrna	1	1	0	0	5				-		8.0	0.0	133.0	0.00	-	0.00					0
+yciX	G0-10513	mrna	1	1	0	0	5				-		0.0	0.0	50.0	-	-	0.00					0
+queE	G7443	mrna	2	2	0	0	5				-		29.0	0.0	45.0	0.00	-	0.00			B1	T1_1;T1	2
+ampG	EG12183	mrna	1	0	0	0	5				-		17.0	0.0	0.0	1.00	-	-					0
+yhhT	EG12220	mrna	2	1	0	1	5				-		0.0	0.0	22.0	-	-	0.00					0
+yaeP	G372	mrna	1	1	0	0	4				-		114.0	30.0	109.0	0.00	0.00	0.00					0
+focA	EG11258	mrna	6	2	1	2	5	1.70E-03;1.70E-03	1.30E+00;1.30E+00		-		197.0	106.0	99.0	0.00	0.00	0.00					0
+ytfK	G7872	mrna	8	2	5	1	4	9.70E+01;7.80E+01;6.00E+01;5.40E+01	7.90E-01;1.60E+00;8.50E-01;1.20E+00		-		4341.0	10604.0	7628.0	0.15	0.06	0.07			B4_2	T1_4;T1_5;T1_1;T1_2;T1	2
+chiP	G6370	mrna	1	1	0	0	4				-		80.0	0.0	0.0	1.00	-	-			B1		1
+ygaH	G7406	mrna	2	1	1	0	5				-		32.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+tmcA	G7297	mrna	2	2	0	0	6				-		478.0	0.0	84.0	0.00	-	0.00				T1_3;T1_1;T1	1
+rffC	EG11455	mrna	1	0	0	0	3				-		0.0	0.0	10.0	-	-	0.00					0
+icd	EG10489	mrna	3	2	0	1	3				-		426.0	137.0	63.0	0.63	1.00	0.68				T1_3;T1	1
+oppB	EG10675	mrna	1	0	0	1	5				-		0.0	0.0	17.0	-	-	1.00					0
+yjiT	G7938	mrna	2	1	0	1	5				-		9.0	37.0	8.0	0.00	0.00	0.00				T1_3;T1	1
+elaB	G7173	mrna	2	0	0	1	8				-		0.0	0.0	98.0	-	-	0.00					0
+yohP	G0-10652	mrna	1	0	0	0	6				-		0.0	0.0	10.0	-	-	0.00				T1_1;T1	1
+hdhA	EG10425	mrna	2	2	0	0	6				-		0.0	0.0	45.0	-	-	0.51					0
+galU	EG11319	mrna	3	1	1	1	4				-		59.0	14.0	0.0	0.00	0.00	-				T1_3;T1	1
+roxA	EG11430	mrna	1	0	0	1	5				-		16.0	0.0	0.0	0.00	-	-					0
+yjdC	EG12176	mrna	4	3	0	1	6				-		0.0	0.0	171.0	-	-	0.00					0
+pka	G7350	mrna	1	1	0	0	3				-		0.0	0.0	10.0	-	-	0.00					0
+glf	EG11981	mrna	5	4	1	0	5	2.30E-01	8.30E-02		-		194.0	216.0	102.0	0.05	0.00	0.00					0
+trpC	EG11026	mrna	1	1	0	0	5				-		59.0	0.0	0.0	0.00	-	-					0
+mdlA	G6248	mrna	1	1	0	0	4				-		15.0	11.0	0.0	0.00	0.00	-					0
+argP	EG10490	mrna	1	1	0	0	5				-		0.0	0.0	84.0	-	-	0.00					0
+hfq	EG10438	mrna	1	1	0	0	6				-		31.0	0.0	0.0	0.00	-	-					0
+sugE	EG11616	mrna	1	1	0	0	4				-		100.0	0.0	0.0	0.00	-	-			B1		1
+yagE	G6140	mrna	1	1	0	0	5				-		128.0	64.0	373.0	0.00	0.00	0.00					0
+uspB	EG12231	mrna	4	3	0	1	6				-		0.0	14.0	155.0	-	0.00	0.00				T1_3;T1	1
+dsbA	EG11297	mrna	2	1	0	1	3				-		17.0	0.0	61.0	0.00	-	0.00					0
+ydhC	EG12141	mrna	3	2	0	1	7				-		37.0	0.0	32.0	0.00	-	0.00				T1_3;T1	1
+yqfA	G7512	mrna	1	0	0	1	4				-		0.0	0.0	60.0	-	-	0.00				T1_1;T1_2;T1	1
+tsx	EG11035	mrna	4	1	1	2	5				-		338.0	380.0	43.0	0.15	0.01	0.00				T1_3;T1	1
+atpE	EG10102	mrna	1	0	0	0	4				-		0.0	0.0	46.0	-	-	0.00					0
+rbsC	EG10816	mrna	3	2	0	0	4				-		528.0	415.0	353.0	0.04	0.00	0.07				T1_3;T1_1;T1	1
+yeiH	EG12027	mrna	1	1	0	0	5				-		1914.0	1026.0	286.0	0.00	0.00	0.00				T1_4;T1_5;T1_3;T1_1;T1	1
+ybhQ	G6408	mrna	2	1	0	1	4				-		13.0	0.0	76.0	0.00	-	0.00					0
+gltK	EG12662	mrna	1	1	0	0	3				-		0.0	0.0	24.0	-	-	0.00					0
+pyrG	EG10810	mrna	1	0	1	0	3				-		0.0	17.0	0.0	-	0.00	-				T1_3;T1	1
+nrdE	EG20257	mrna	2	1	1	0	4				-		499.0	7.0	15.0	0.00	0.00	0.00					0
+fecR	EG10292	mrna	1	0	1	0	3				-		81.0	0.0	0.0	0.64	-	-				T1_3;T1	1
+ybaQ	G6259	mrna	1	1	0	0	5				-		0.0	0.0	13.0	-	-	0.00				T1_3;T1	1
+gltP	EG10405	mrna	1	1	0	0	3				-		50.0	21.0	25.0	0.00	0.00	0.00				T1_3;T1	1
+hslR	G7743	mrna	1	1	0	0	5				-		11.0	0.0	20.0	0.00	-	0.00					0
+rne	EG10859	mrna	1	0	1	0	3				-		0.0	13.0	0.0	-	0.00	-					0
+flhC	EG10319	mrna	3	1	2	0	8				-		241.0	128.0	0.0	0.03	0.17	-			B1;B3_2		1
+bax	EG11360	mrna	3	2	0	0	5				-		11.0	10.0	78.0	0.00	0.00	0.00				T1_1;T1_2;T1	1
+cspA	EG10166	mrna	1	1	0	0	2				-		56.0	0.0	0.0	0.00	-	-			B1		1
+ypdK	G0-10647	mrna	1	0	0	1	4				-		0.0	0.0	7.0	-	-	0.00				T1_4;T1_5;T1_3;T1	1
+nudF	EG12633	mrna	1	1	0	0	7				-		29.0	0.0	32.0	0.00	-	0.00				T1_3;T1	1
+dnaJ	EG10240	mrna	2	0	0	0	5				-		0.0	0.0	29.0	-	-	0.38					0
+ispA	EG10508	mrna	5	3	1	1	4				-		330.0	20.0	13.0	0.05	0.00	1.00				T1_3;T1	1
+kgtP	EG10522	mrna	12	4	1	5	5	1.30E-04;1.30E-04;3.40E-05;3.40E-05	6.30E-01;6.30E-01;7.50E-01;7.50E-01		-		1348.0	86.0	4853.0	0.16	0.00	0.00				T1_4;T1_5;T1	1
+hupA	EG10466	mrna	1	0	0	1	4				-		16.0	0.0	27.0	0.00	-	0.00				T1_3;T1_1;T1	1
+fdnG	EG11227	mrna	2	1	0	1	6				-		0.0	83.0	25.0	-	1.00	0.00			B1		1
+yciT	G6638	mrna	2	1	0	1	7				-		90.0	0.0	110.0	0.00	-	0.00					0
+rfe	EG10840	mrna	1	1	0	0	7				-		0.0	20.0	0.0	-	0.00	-					0
+mcrA	EG10573	mrna	1	0	0	1	5				-		0.0	0.0	25.0	-	-	0.00					0
+aphA	EG11934	mrna	3	2	0	1	6				-		41.0	0.0	128.0	0.00	-	0.00					0
+tonB	EG11012	mrna	2	1	0	1	3				-		66.0	0.0	0.0	0.00	-	-					0
+ybfA	EG11521	mrna	2	2	0	0	5				-		0.0	28.0	117.0	-	1.00	0.00					0
+ftsZ	EG10347	mrna	2	1	1	0	5				-		100.0	61.0	51.0	0.00	0.00	0.51				T1_3;T1	1
+ybiB	EG11580	mrna	1	1	0	0	4				-		0.0	0.0	12.0	-	-	0.00				T1_3;T1	1
+trkG	EG11020	mrna	2	2	0	0	7				-		40.0	33.0	119.0	0.00	0.00	0.00				T1_3;T1_1;T1_2;T1	1
+bamA	G6093	mrna	4	2	1	1	4				-		9.0	10.0	65.0	0.00	0.00	0.00					0
+lsrC	G6801	mrna	1	1	0	0	5				-		0.0	0.0	23.0	-	-	0.00				T1_3;T1_1;T1	1
+dacA	EG10201	mrna	1	0	0	1	3				-		9.0	0.0	0.0	0.00	-	-					0
+ribB	EG10465	mrna	2	1	0	1	7				-		26.0	10.0	0.0	0.00	0.00	-				T1_3;T1	1
+ycgB	EG11516	mrna	1	1	0	0	5				-		0.0	0.0	18.0	-	-	0.00					0
+lrp	EG10547	mrna	4	4	0	0	3				-		17.0	21.0	161.0	0.00	0.00	0.11				T1_3;T1_2;T1	1
+yfgM	G7321	mrna	4	2	0	2	6				-		100.0	70.0	94.0	0.00	0.00	0.00				T1_3;T1	1
+garD	EG12522	mrna	1	1	0	0	4				-		0.0	20.0	0.0	-	1.00	-					0
+feoB	EG12102	mrna	1	1	0	0	3				-		53.0	0.0	0.0	0.00	-	-			B1		1
+gabD	EG11329	mrna	1	1	0	0	3				-		0.0	0.0	23.0	-	-	0.00					0
+ribF	EG11079	mrna	4	3	0	1	5				-		208.0	14.0	20.0	0.00	0.00	0.00				T1_3;T1	1
+yidC	EG11197	mrna	1	1	0	0	4				-		34.0	0.0	29.0	0.00	-	0.00				T1_3;T1_1;T1	1
+yhjA	EG12244	mrna	1	1	0	0	3				-		0.0	16.0	0.0	-	0.00	-					0
+pitB	EG12883	mrna	1	1	0	0	5				-		0.0	0.0	20.0	-	-	0.00					0
+yicH	EG11684	mrna	1	1	0	0	4				-		16.0	9.0	14.0	0.00	0.00	0.00					0
+agp	EG10033	mrna	2	1	0	1	4				-		14.0	0.0	75.0	0.00	-	0.00					0
+marB	EG11599	mrna	1	1	0	0	3				-		0.0	62.0	6.0	-	1.00	1.00					0
+csrA	EG11447	mrna	2	1	0	1	5				-		35.0	0.0	24.0	0.00	-	0.00					0
+dapB	EG10206	mrna	1	0	0	1	5				-		0.0	0.0	18.0	-	-	0.00				T1_3;T1	1
+hscB	EG12131	mrna	1	1	0	0	5				-		155.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+artM	EG11627	mrna	1	0	0	1	3				-		0.0	0.0	15.0	-	-	0.00					0
+yphB	G7338	mrna	1	1	0	0	3				-		0.0	0.0	12.0	-	-	0.00					0
+dmsA	EG10232	mrna	4	2	1	0	4				-		178.0	188.0	42.0	0.00	0.66	0.00			B1		1
+gabP	EG11330	mrna	2	0	1	1	5				-		0.0	0.0	18.0	-	-	0.00					0
+pdxK	G7259	mrna	1	1	0	0	4				-		16.0	0.0	0.0	0.00	-	-					0
+mcrB	EG10574	mrna	1	1	0	0	3				-		119.0	109.0	0.0	0.00	0.00	-			B4_1	T1_1;T1	2
+ygiW	G7574	mrna	1	1	0	0	5				-		0.0	0.0	27.0	-	-	0.00					0
+yhjH	EG12252	mrna	1	0	1	0	5				-		93.0	84.0	0.0	0.58	0.51	-				T1_1;T1	1
+gcvT	EG11442	mrna	3	3	0	0	3				-		333.0	799.0	325.0	0.00	0.08	0.10		R3			1
+ygaM	G7400	mrna	2	1	1	0	5				-		0.0	0.0	114.0	-	-	0.15		R2		T1_3;T1	2
+bglX	EG12013	mrna	1	0	0	1	4				-		5.0	0.0	0.0	0.00	-	-					0
+yqaB	G7408	mrna	2	2	0	0	5				-		29.0	45.0	13.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+artI	EG11625	mrna	1	1	0	0	4				-		0.0	0.0	106.0	-	-	0.00					0
+ymdB	G6550	mrna	1	0	0	1	2				-		6.0	0.0	0.0	0.00	-	-					0
+crp	EG10164	mrna	1	1	0	0	4				-		337.0	91.0	485.0	0.09	0.00	0.06					0
+ytfQ	EG12517	mrna	1	1	0	0	3				-		0.0	0.0	20.0	-	-	1.00					0
+yjjZ	G0-10474	mrna	2	2	0	0	7				-		1067.0	32.0	14.0	0.00	0.00	0.00					0
+feaB	G7961	mrna	1	0	0	1	3				-		0.0	0.0	12.0	-	-	0.00					0
+glpB	EG10392	mrna	2	1	1	0	7				-		96.0	0.0	0.0	0.05	-	-					0
+pheL	EG11271	mrna	1	1	0	0	6				-		36.0	29.0	0.0	1.00	1.00	-					0
+yjbJ	EG11928	mrna	2	1	0	1	5				-		0.0	0.0	1085.0	-	-	0.05				T1_3;T1_1;T1	1
+blr	G0-9561	mrna	1	1	0	0	4				-		106.0	62.0	33.0	0.31	0.42	0.00			B1	T1_1;T1	2
+rpsO	EG10914	mrna	2	1	0	0	6				-		658.0	0.0	27.0	0.00	-	0.00				T1_3;T1	1
+folA	EG10326	mrna	1	1	0	0	8				-		37.0	0.0	12.0	0.00	-	0.00				T1_1;T1	1
+ycjG	G6661	mrna	1	1	0	0	5				-		0.0	0.0	15.0	-	-	0.00					0
+glpF	EG10396	mrna	5	4	0	0	5	5.10E+01;5.00E+00	1.80E+00;1.40E+00		-		467.0	368.0	259.0	0.06	0.08	0.58					0
+ybaL	EG12623	mrna	1	1	0	0	3				-		0.0	0.0	23.0	-	-	0.00					0
+hinT	EG12172	mrna	1	1	0	0	3				-		0.0	0.0	11.0	-	-	1.00					0
+ampH	EG12867	mrna	2	1	0	1	5				-		33.0	0.0	68.0	0.00	-	0.00					0
+ysaB	G0-10467	mrna	1	1	0	0	6				-		0.0	0.0	17.0	-	-	0.00				T1_3;T1_2;T1	1
+insA-4	G0-10430	mrna	1	1	0	0	5				-		0.0	0.0	37.0	-	-	0.00				T1_4;T1_5;T1_1;T1	1
+gatB	EG12415	mrna	5	2	0	3	6	8.60E-02;8.60E-02;8.60E-02;8.60E-02	5.90E-01;5.90E-01;5.90E-01;5.90E-01		-		214.0	88.0	1311.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+gpp	EG10413	mrna	2	0	1	1	4				-		41.0	21.0	0.0	0.59	1.00	-				T1_1;T1	1
+glpX	EG11517	mrna	1	0	0	1	4				-		0.0	25.0	0.0	-	0.00	-			B1	T1_1;T1	2
+ychE	EG11342	mrna	1	0	0	1	6				-		12.0	0.0	0.0	0.00	-	-			B1		1
+pal	EG10684	mrna	1	0	0	1	3				-		45.0	0.0	0.0	0.00	-	-					0
+ubiF	G6365	mrna	1	1	0	0	3				-		0.0	0.0	9.0	-	-	0.00					0
+ybiO	G6417	mrna	1	1	0	0	5				-		0.0	0.0	40.0	-	-	0.00				T1_3;T1	1
+skp	EG10455	mrna	1	0	0	1	3				-		19.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+napH	EG12062	mrna	1	1	0	0	5				-		76.0	483.0	0.0	0.00	0.07	-			B1		1
+ytfB	G7864	mrna	1	1	0	0	4				-		0.0	12.0	0.0	-	0.00	-				T1_1;T1	1
+rcnR	G7137	mrna	1	1	0	0	4				-		0.0	0.0	23.0	-	-	0.00					0
+ynaE	G6698	mrna	4	3	0	1	5				-		508.0	129.0	1103.0	0.00	0.00	0.00		R2	B4_2		2
+yehU	EG12007	mrna	1	1	0	0	7				-		17.0	10.0	0.0	0.00	0.00	-				T1_1;T1	1
+hemA	EG10427	mrna	1	0	0	1	4				-		12.0	10.0	20.0	0.00	0.00	0.00					0
+gatR_1	G8207	mrna	1	0	1	0	4				-		0.0	0.0	30.0	-	-	0.00				T1_3;T1	1
+ypfM	G0-8888	mrna	2	2	0	0	6				-		3343.0	2831.0	1226.0	0.08	0.31	0.09					0
+chbB	EG10140	mrna	1	1	0	0	4				-		126.0	0.0	0.0	0.00	-	-					0
+yihG	EG11833	mrna	1	0	0	1	6				-		0.0	0.0	12.0	-	-	0.00				T1_3;T1_1;T1	1
+ydcV	G6754	mrna	1	1	0	0	2				-		0.0	0.0	32.0	-	-	0.00					0
+fdx	EG11328	mrna	1	1	0	0	4				-		46.0	0.0	0.0	0.00	-	-					0
+umpG	EG11817	mrna	1	1	0	0	4				-		35.0	0.0	0.0	0.00	-	-					0
+yniA	G6930	mrna	2	2	0	0	4				-		0.0	0.0	45.0	-	-	0.00					0
+tdh	EG10993	mrna	2	0	0	1	3				-		14.0	0.0	0.0	0.00	-	-					0
+acrB	EG11704	mrna	1	0	0	0	3				-		0.0	0.0	26.0	-	-	0.00					0
+insL-1	G6083	mrna	1	1	0	0	2				-		350.0	0.0	0.0	0.00	-	-					0
+ypfG	G7295	mrna	2	1	1	0	8				-		47.0	7.0	126.0	1.00	1.00	1.00			B1	T1_1;T1_2;T1	2
+acs	EG11448	mrna	2	2	0	0	3				-		0.0	0.0	48.0	-	-	0.00				T1_1;T1	1
+lrhA	EG12123	mrna	3	1	1	1	6				-		126.0	56.0	13.0	0.00	0.00	0.00				T1_3;T1_1;T1_2;T1	1
+ybdZ	G0-10437	mrna	1	0	0	1	4				-		12.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+rcsD	EG12385	mrna	2	1	0	1	3				-		0.0	0.0	60.0	-	-	0.00					0
+yniC	G6932	mrna	2	1	0	1	5				-		27.0	0.0	15.0	0.00	-	0.00					0
+yajC	EG11096	mrna	1	1	0	0	4				-		0.0	0.0	95.0	-	-	0.00					0
+ycbJ	G6473	mrna	3	2	0	1	4				-		26.0	19.0	140.0	0.00	0.00	0.00			B1	T1_1;T1	2
+flgK	EG11967	mrna	1	0	1	0	4				-		18.0	0.0	0.0	1.00	-	-					0
+putP	EG10802	mrna	3	1	0	2	6				-		0.0	0.0	182.0	-	-	0.00				T1_3;T1	1
+yebE	EG11806	mrna	2	0	0	2	4				-		0.0	0.0	42.0	-	-	0.00				T1_3;T1	1
+gcvH	EG10371	mrna	11	5	3	2	6	5.60E-01;5.60E-01;1.40E-01;1.40E-01;1.40E-05;5.00E-06	1.20E-01;1.20E-01;4.10E-01;4.10E-01;4.00E-01;4.00E-01		-		1717.0	584.0	325.0	0.06	0.04	0.00					0
+mioC	EG11199	mrna	1	0	0	1	4				-		30.0	18.0	39.0	0.00	0.00	0.00				T1_1;T1	1
+atpB	EG10099	mrna	1	0	0	0	4				-		0.0	0.0	25.0	-	-	0.00					0
+maeA	EG10948	mrna	5	3	1	1	5	1.80E+01	2.40E-01		-		795.0	429.0	211.0	0.16	0.16	0.09				T1_1;T1	1
+yiaG	EG12624	mrna	1	0	1	0	4				-		0.0	0.0	8.0	-	-	1.00					0
+inaA	EG11422	mrna	1	1	0	0	4				-		56.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+entD	EG10262	mrna	1	1	0	0	6				-		64.0	0.0	10.0	0.00	-	0.00			B1	T1	2
+acpH	EG11095	mrna	1	1	0	0	4				-		0.0	0.0	16.0	-	-	0.00					0
+modE	G6395	mrna	1	0	0	1	4				-		13.0	0.0	0.0	0.00	-	-					0
+ahpF	EG11385	mrna	4	1	3	0	6				-		205.0	573.0	477.0	1.00	1.00	1.00				T1_3;T1	1
+cpxP	G7816	mrna	2	0	2	0	8				-		0.0	0.0	22.0	-	-	0.41			B1		1
+nagB	EG10633	mrna	1	1	0	0	4				-		24.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+helD	EG10426	mrna	2	2	0	0	5				-		76.0	48.0	96.0	0.00	0.00	0.00					0
+ydcI	G6737	mrna	1	1	0	0	5				-		11.0	8.0	125.0	0.00	0.00	0.00					0
+ftsW	EG10344	mrna	1	1	0	0	5				-		30.0	40.0	55.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+znuC	G7018	mrna	2	2	0	0	6				-		0.0	0.0	76.0	-	-	0.00					0
+smpB	EG11782	mrna	3	1	1	1	4				-		418.0	94.0	697.0	0.14	0.00	0.11				T1_4;T1_5;T1_3;T1_1;T1	1
+lpd	EG10543	mrna	4	4	0	0	4				-		135.0	55.0	33.0	0.62	0.71	0.00					0
+yajL	G198	mrna	1	0	0	1	3				-		0.0	0.0	10.0	-	-	0.00					0
+ftsX	EG10345	mrna	2	2	0	0	4				-		84.0	44.0	93.0	0.15	0.00	0.15					0
+yciG	EG11127	mrna	1	1	0	0	4				-		0.0	0.0	15.0	-	-	1.00					0
+ubiA	EG11370	mrna	1	1	0	0	5				-		0.0	0.0	16.0	-	-	0.00				T1_3;T1	1
+amiA	EG11823	mrna	1	0	0	1	4				-		57.0	0.0	0.0	0.00	-	-			B4_1	T1_3;T1_1;T1	2
+hpt	EG20098	mrna	1	1	0	0	5				-		57.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+bacA	EG11665	mrna	2	1	0	1	4				-		0.0	0.0	73.0	-	-	0.00				T1_3;T1_1;T1_2;T1	1
+ybgE	EG12395	mrna	1	0	0	1	6				-		25.0	26.0	272.0	0.00	0.00	0.00					0
+narP	EG11527	mrna	1	1	0	0	5				-		0.0	0.0	18.0	-	-	0.00			B1	T1_1;T1_2;T1	2
+fusA	EG10360	mrna	1	1	0	0	2				-		32.0	0.0	80.0	0.00	-	0.00				T1_3;T1_1;T1_2;T1	1
+ybbO	G6269	mrna	1	0	0	0	5				-		0.0	6.0	0.0	-	0.00	-					0
+ygfZ	G7511	mrna	2	2	0	0	4				-		178.0	58.0	54.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+recB	EG10824	mrna	1	1	0	0	4				-		9.0	11.0	21.0	0.00	0.00	0.00					0
+fliY	G7039	mrna	4	2	1	1	5				-		105.0	0.0	376.0	0.00	-	0.00			B4_2	T1_1;T1_2;T1	2
+emrD	EG11693	mrna	1	1	0	0	5				-		0.0	0.0	73.0	-	-	0.00					0
+fabZ	EG11284	mrna	5	3	0	1	4	8.30E-01;8.30E-01	2.20E-01;2.20E-01		-		859.0	0.0	185.0	0.00	-	0.00				T1_1;T1	1
+yqeF	G7464	mrna	1	1	0	0	6				-		0.0	0.0	11.0	-	-	0.00				T1_1;T1	1
+fabI	EG11528	mrna	2	1	0	1	4				-		0.0	31.0	14.0	-	0.00	0.00					0
+degQ	G7682	mrna	1	1	0	0	2				-		0.0	0.0	10.0	-	-	0.00					0
+rimP	EG11179	mrna	1	1	0	0	7				-		69.0	0.0	187.0	0.00	-	0.00					0
+bssS	G6557	mrna	2	1	0	1	3				-		41.0	5.0	0.0	0.00	0.00	-					0
+aceB	EG10023	mrna	3	1	0	2	4				-		0.0	0.0	70.0	-	-	0.00					0
+rfbX	EG11980	mrna	6	3	2	1	5	1.40E-01	5.70E-01		-		84.0	0.0	91.0	0.00	-	0.57				T1_3;T1	1
+ydjM	G6933	mrna	1	1	0	0	4				-		26.0	15.0	0.0	0.00	0.00	-				T1_3;T1_1;T1_2;T1	1
+yfiP	G7349	mrna	1	0	0	1	6				-		37.0	28.0	0.0	0.00	0.00	-				T1_1;T1	1
+gatZ	G7128	mrna	3	3	0	0	4				-		451.0	61.0	311.0	0.00	0.00	0.00					0
+ychH	EG11533	mrna	3	2	0	1	4				-		25.0	37.0	212.0	0.00	0.00	0.00					0
+guaA	EG10420	mrna	1	1	0	0	3				-		0.0	0.0	10.0	-	-	0.00					0
+hisJ	EG12124	mrna	1	1	0	0	4				-		0.0	0.0	53.0	-	-	0.57					0
+mepM	EG10013	mrna	1	1	0	0	3				-		26.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+ydaM	G6673	mrna	3	3	0	0	6				-		0.0	0.0	110.0	-	-	0.11					0
+hsdR	EG10459	mrna	2	1	1	0	4				-		24.0	13.0	24.0	0.00	0.00	0.00				T1_3;T1	1
+rseA	EG12341	mrna	1	1	0	0	3				-		39.0	0.0	0.0	0.00	-	-					0
+gshA	EG10418	mrna	1	1	0	0	3				-		0.0	0.0	19.0	-	-	0.00					0
+ubiC	EG11369	mrna	2	1	0	1	4				-		92.0	68.0	151.0	0.00	0.00	0.00					0
+glpR	EG10400	mrna	1	1	0	0	4				-		80.0	0.0	0.0	0.68	-	-					0
+yqeC	G7495	mrna	1	1	0	0	4				-		51.0	261.0	121.0	0.00	0.00	0.00			B1		1
+evgA	EG11609	mrna	2	1	0	1	5				-		0.0	0.0	130.0	-	-	0.00					0
+yjeI	G7834	mrna	1	0	0	1	5				-		17.0	0.0	49.0	0.00	-	0.00				T1_1;T1	1
+gltB	EG10403	mrna	2	2	0	0	6				-		74.0	0.0	0.0	0.00	-	-					0
+hybC	EG11801	mrna	1	1	0	0	3				-		0.0	31.0	0.0	-	0.00	-					0
+minE	EG10598	mrna	1	1	0	0	3				-		80.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+bamD	G7352	mrna	1	1	0	0	7				-		44.0	32.0	0.0	1.00	1.00	-					0
+smtA	EG12167	mrna	1	1	0	0	3				-		32.0	12.0	51.0	0.00	0.00	0.00					0
+ftsK	G6464	mrna	2	2	0	0	4				-		102.0	87.0	77.0	0.00	0.00	0.00				T1_3;T1	1
+recA	EG10823	mrna	2	2	0	0	3				-		55.0	52.0	48.0	0.00	0.00	0.42					0
+raiA	EG11151	mrna	34	2	26	4	7	5.80E+02;2.50E+01;1.70E+01;2.20E-01;2.30E-03	1.40E-01;1.10E+00;1.40E-01;4.90E-02;6.70E-01		-		3104.0	4274.0	1464.0	0.31	0.33	0.95			B1;B3_1	T1_1;T1_2;T1	2
+insG	G7900	mrna	2	2	0	0	7				-		14.0	0.0	6.0	0.00	-	0.00					0
+cobU	EG13238	mrna	1	1	0	0	4				-		18.0	0.0	0.0	0.00	-	-					0
+dicA	EG10226	mrna	2	1	0	0	5				-		62.0	0.0	6.0	0.00	-	1.00			B1		1
+tehA	EG11883	mrna	1	0	0	1	4				-		27.0	10.0	72.0	0.00	0.00	0.00			B4_1	T1_3;T1	2
+nrfD	EG11947	mrna	1	1	0	0	6				-		0.0	103.0	23.0	-	0.00	0.00			B1	T1_3;T1_1;T1	2
+patD	G6755	mrna	2	2	0	0	4				-		0.0	0.0	253.0	-	-	0.00					0
+tsaC	G7698	mrna	2	1	1	0	6				-		128.0	319.0	29.0	0.35	0.50	0.00			B1	T1_3;T1_1;T1_2;T1	2
+yeeE	EG11895	mrna	1	1	0	0	5				-		8.0	0.0	89.0	0.00	-	0.00				T1_1;T1	1
+ldcA	G6621	mrna	1	1	0	0	3				-		358.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1_1;T1_2;T1	1
+yjaH	EG11917	mrna	1	0	1	0	4				-		0.0	7.0	0.0	-	1.00	-					0
+tmk	EG12302	mrna	2	2	0	0	4				-		23.0	0.0	9.0	0.00	-	0.00					0
+pgpC	EG11371	mrna	1	1	0	0	4				-		0.0	0.0	25.0	-	-	0.00					0
+yejE	EG12040	mrna	1	1	0	0	4				-		11.0	0.0	0.0	0.00	-	-					0
+metI	EG11737	mrna	2	2	0	0	4				-		105.0	0.0	12.0	0.00	-	0.00				T1_3;T1_1;T1	1
+yadE	EG11749	mrna	1	1	0	0	6				-		14.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+minC	EG10596	mrna	2	1	0	1	5				-		360.0	0.0	36.0	0.00	-	0.00				T1_3;T1_1;T1_2;T1	1
+greA	EG10415	mrna	1	1	0	0	4				-		0.0	0.0	24.0	-	-	0.00		R3		T1_3;T1	2
+opgE	G6418	mrna	1	1	0	0	6				-		38.0	50.0	25.0	0.00	0.00	0.00				T1_3;T1	1
+ydcS	G6751	mrna	2	1	0	1	5				-		0.0	0.0	100.0	-	-	0.10				T1_1;T1	1
+purT	EG11809	mrna	1	1	0	0	3				-		11.0	0.0	51.0	0.00	-	0.00					0
+flhB	G7028	mrna	2	1	1	0	6				-		62.0	0.0	0.0	0.00	-	-					0
+yphC	G7339	mrna	1	1	0	0	3				-		0.0	0.0	23.0	-	-	0.00					0
+ygfT	G7506	mrna	1	1	0	0	3				-		0.0	0.0	14.0	-	-	0.00					0
+yoaF	G6979	mrna	1	1	0	0	4				-		17.0	0.0	0.0	0.00	-	-					0
+secB	EG10937	mrna	3	1	1	1	5				-		171.0	0.0	126.0	0.00	-	0.00				T1_3;T1_1;T1_2;T1	1
+ydhF	G6887	mrna	1	0	0	1	4				-		16.0	0.0	0.0	0.00	-	-					0
+aroD	EG10076	mrna	1	1	0	0	4				-		0.0	0.0	8.0	-	-	0.00					0
+uup	G6489	mrna	1	1	0	0	5				-		97.0	17.0	92.0	0.24	0.00	0.00				T1_3;T1	1
+araJ	EG10060	mrna	1	0	0	1	4				-		15.0	17.0	149.0	0.00	0.00	0.00				T1_3;T1	1
+gnd	EG10411	mrna	1	0	0	1	3				-		0.0	7.0	0.0	-	0.00	-					0
+ddlB	EG10214	mrna	2	1	1	0	4				-		0.0	0.0	25.0	-	-	0.00					0
+insN-1	G6130	mrna	1	1	0	0	6				-		63.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+tehB	EG11884	mrna	1	1	0	0	4				-		40.0	0.0	0.0	0.00	-	-					0
+yodD	G7046	mrna	1	1	0	0	7				-		0.0	0.0	473.0	-	-	0.00				T1_1;T1	1
+lptF	G7888	mrna	1	1	0	0	3				-		62.0	16.0	49.0	0.00	0.00	0.00					0
+rppH	G7459	mrna	3	2	0	0	3				-		398.0	192.0	550.0	0.19	0.00	0.00			B1	T1_3;T1	2
+murG	EG10623	mrna	1	1	0	0	3				-		17.0	16.0	27.0	0.00	0.00	0.00					0
+malI	EG10557	mrna	1	1	0	0	4				-		11.0	0.0	0.0	1.00	-	-			B1		1
+aroE	EG10077	mrna	1	1	0	0	3				-		0.0	0.0	9.0	-	-	0.00					0
+fliK	G379	mrna	1	1	0	0	2				-		86.0	0.0	0.0	0.00	-	-					0
+yidD	G0-10470	mrna	1	1	0	0	4				-		57.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+dbpA	EG10210	mrna	1	0	0	0	5				-		0.0	0.0	10.0	-	-	1.00					0
+yqeI	G7467	mrna	1	1	0	0	5				-		32.0	0.0	10.0	0.00	-	0.00			B1	T1_3;T1_1;T1	2
+tolC	EG11009	mrna	2	0	2	0	5				-		19.0	0.0	19.0	1.00	-	0.00				T1_4;T1_5;T1_2;T1	1
+flhD	EG10320	mrna	2	1	1	0	6				-		39.0	26.0	0.0	0.00	0.00	-			B4_1		1
+yjbR	EG11936	mrna	1	1	0	0	3				-		0.0	0.0	22.0	-	-	0.00				T1_3;T1	1
+yhaJ	G7619	mrna	1	1	0	0	5				-		29.0	0.0	0.0	0.00	-	-					0
+kdsC	G7663	mrna	1	1	0	0	3				-		92.0	37.0	45.0	0.00	0.00	0.00					0
+ibpB	EG11535	mrna	4	1	3	0	7				-		337.0	78.0	34.0	1.00	1.00	1.00					0
+yncD	G6762	mrna	2	1	0	1	6				-		14.0	0.0	10.0	0.00	-	0.00					0
+dctA	EG20044	mrna	5	2	1	1	5	5.30E-03;5.30E-03	1.50E+00;1.50E+00		-		57.0	49.0	134.0	0.00	0.00	0.00				T1_3;T1	1
+yncL	G0-8887	mrna	4	2	1	1	4				-		655.0	303.0	3993.0	0.00	0.00	0.19				T1_1;T1_2;T1	1
+kdgR	G7003	mrna	1	1	0	0	5				-		0.0	0.0	15.0	-	-	0.00					0
+mgsA	G6497	mrna	1	0	1	0	3				-		6.0	0.0	0.0	0.00	-	-					0
+csiR	EG12386	mrna	1	0	1	0	5				-		0.0	0.0	11.0	-	-	1.00					0
+yecH	G7036	mrna	1	1	0	0	7				-		320.0	736.0	335.0	0.00	0.00	0.00			B1	T1_4;T1_5;T1_3;T1_1;T1	2
+dinI	G6558	mrna	2	0	1	1	8				-		104.0	43.0	47.0	1.00	1.00	1.00					0
+yjeM	EG12475	mrna	1	1	0	0	5				-		0.0	0.0	13.0	-	-	0.00					0
+yieE	EG11722	mrna	2	1	0	0	4				-		0.0	21.0	0.0	-	0.00	-			B4_1		1
+alsE	EG11957	mrna	1	1	0	0	3				-		43.0	0.0	47.0	0.00	-	0.00				T1_3;T1_1;T1	1
+lhgO	EG12387	mrna	2	1	0	1	3				-		0.0	0.0	66.0	-	-	0.00					0
+malE	EG10554	mrna	7	5	1	1	4	2.20E-02;2.20E-02;1.40E-03;1.40E-03	1.00E-01;1.00E-01;1.20E-01;1.20E-01		-		651.0	10.0	40.0	0.00	0.00	0.00				T1_3;T1	1
+rfbC	EG11979	mrna	1	0	0	1	5				-		20.0	15.0	69.0	0.00	0.00	0.00					0
+envC	EG12297	mrna	1	1	0	0	2				-		43.0	0.0	0.0	1.00	-	-					0
+macB	G6462	mrna	1	0	1	0	4				-		0.0	0.0	5.0	-	-	1.00					0
+ydiJ	G6913	mrna	4	3	0	1	6				-		325.0	12.0	78.0	0.00	0.00	0.24					0
+yeeZ	G7089	mrna	2	1	0	1	5				-		0.0	0.0	62.0	-	-	0.00				T1_1;T1_2;T1	1
+yobH	G0-10454	mrna	1	1	0	0	6				-		14.0	0.0	7.0	0.00	-	0.00				T1_3;T1	1
+elbB	EG11383	mrna	1	0	0	1	3				-		9.0	0.0	0.0	0.00	-	-					0
+anmK	G6880	mrna	1	0	0	1	5				-		0.0	0.0	16.0	-	-	0.00				T1_1;T1	1
+entF	EG10264	mrna	2	1	0	1	4				-		93.0	0.0	0.0	0.00	-	-					0
+nuoL	EG12092	mrna	2	2	0	0	4				-		72.0	42.0	38.0	0.32	0.00	0.00					0
+ibpA	EG11534	mrna	1	1	0	0	4				-		30.0	11.0	56.0	0.00	0.00	0.00					0
+oxyR	EG10681	mrna	1	1	0	0	4				-		0.0	0.0	22.0	-	-	0.00					0
+kptA	G7928	mrna	3	1	0	1	5				-		19.0	0.0	116.0	0.00	-	0.00				T1_3;T1	1
+cysM	EG10193	mrna	1	1	0	0	2				-		9.0	0.0	8.0	1.00	-	1.00					0
+ratA	G7358	mrna	1	1	0	0	4				-		0.0	0.0	12.0	-	-	0.00					0
+lysR	EG10551	mrna	1	1	0	0	3				-		25.0	40.0	35.0	0.00	0.00	0.00					0
+moaC	EG11666	mrna	1	0	1	0	3				-		0.0	10.0	0.0	-	0.00	-					0
+yjiH	G7927	mrna	5	4	0	1	7	1.90E+00;1.90E+00;1.90E+00;1.90E+00	1.40E+00;1.40E+00;1.40E+00;1.40E+00		-		0.0	0.0	325.0	-	-	0.15			B1		1
+ycdT	G6532	mrna	1	1	0	0	4				-		12.0	13.0	9.0	0.00	0.00	0.00					0
+gatC	EG12416	mrna	5	2	0	3	6	3.60E+00;3.60E+00	1.70E+00;1.70E+00		-		65.0	12.0	278.0	0.00	0.00	0.00					0
+lacZ	EG10527	mrna	1	1	0	0	3				-		13.0	0.0	0.0	0.00	-	-					0
+rpoE	EG11897	mrna	2	2	0	0	5				-		0.0	0.0	104.0	-	-	0.00				T1_3;T1_1;T1_2;T1	1
+murF	EG10622	mrna	1	1	0	0	4				-		10.0	0.0	0.0	0.00	-	-					0
+rpsJ	EG10909	mrna	7	0	2	2	4	2.60E-03;2.60E-03;2.60E-03;2.60E-03	6.30E-01;6.30E-01;6.30E-01;6.30E-01		-		560.0	296.0	74.0	0.00	0.00	0.00		R2			1
+cspB	EG12203	mrna	1	0	0	1	5				-		38.0	0.0	0.0	0.00	-	-		R2	B1	T1	3
+otsB	EG11752	mrna	2	1	0	1	6				-		0.0	0.0	212.0	-	-	0.00					0
+sdaC	EG12142	mrna	3	2	0	1	5				-		186.0	21.0	87.0	0.00	0.00	0.00				T1_1;T1	1
+ygdQ	G7460	mrna	2	2	0	0	7				-		1176.0	725.0	537.0	0.12	0.04	0.10				T1_3;T1_1;T1	1
+dacC	EG10203	mrna	1	1	0	0	5				-		44.0	20.0	27.0	0.00	0.00	0.00					0
+clpX	EG10159	mrna	2	0	0	1	3				-		0.0	0.0	18.0	-	-	0.33				T1_3;T1_2;T1	1
+bfr	EG10113	mrna	2	1	0	1	6				-		0.0	0.0	55.0	-	-	0.00				T1_3;T1_1;T1	1
+iscR	G7326	mrna	4	3	1	0	4				-		17.0	0.0	77.0	0.00	-	0.48			B4_1	T1_1;T1	2
+ybiT	G6423	mrna	1	0	0	1	4				-		13.0	6.0	0.0	0.00	0.00	-					0
+waaB	EG11351	mrna	1	1	0	0	4				-		0.0	0.0	20.0	-	-	0.00					0
+nanM	G7920	mrna	1	1	0	0	4				-		9.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+lepB	EG10530	mrna	1	0	0	1	4				-		0.0	0.0	33.0	-	-	0.00					0
+upp	EG11332	mrna	1	1	0	0	3				-		22.0	0.0	11.0	0.00	-	0.00					0
+ftsI	EG10341	mrna	1	1	0	0	4				-		368.0	96.0	342.0	1.00	1.00	0.72					0
+caiC	EG11558	mrna	1	1	0	0	3				-		0.0	0.0	7.0	-	-	0.00					0
+sbmA	EG10928	mrna	3	1	0	2	6				-		93.0	45.0	33.0	0.00	0.00	0.00					0
+marA	EG11434	mrna	1	1	0	0	5				-		143.0	106.0	0.0	1.00	1.00	-					0
+dtd	EG11852	mrna	2	2	0	0	4				-		221.0	25.0	134.0	0.00	0.00	0.00				T1_3;T1	1
+gshB	EG10419	mrna	2	1	0	1	6				-		102.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+ydcU	G6753	mrna	1	0	0	1	5				-		0.0	0.0	20.0	-	-	0.00				T1_3;T1	1
+yihX	EG11850	mrna	4	4	0	0	4				-		84.0	50.0	46.0	0.00	0.00	0.00			B4_1	T1_1;T1	2
+rdoA	EG11831	mrna	2	2	0	0	5				-		19.0	21.0	62.0	0.00	0.00	0.00				T1_1;T1_2;T1	1
+cysN	EG10194	mrna	1	0	0	1	2				-		0.0	0.0	5.0	-	-	1.00					0
+nudI	G7164	mrna	1	1	0	0	5				-		11.0	0.0	0.0	0.00	-	-					0
+mreC	EG10609	mrna	1	1	0	0	5				-		252.0	0.0	0.0	1.00	-	-					0
+ampE	EG10042	mrna	1	1	0	0	5				-		76.0	100.0	62.0	0.00	0.00	0.00					0
+ldrA	G0-9602	mrna	1	1	0	0	6				-		0.0	0.0	43.0	-	-	0.00				T1_4;T1_5;T1_3;T1	1
+yeiG	EG12026	mrna	1	1	0	0	4				-		96.0	0.0	83.0	1.00	-	1.00			B1		1
+yaaX	G6081	mrna	1	0	0	1	3				-		0.0	0.0	16.0	-	-	0.00					0
+nusG	EG10667	mrna	1	1	0	0	4				-		45.0	0.0	23.0	0.00	-	0.00					0
+sfsA	EG10949	mrna	3	1	1	1	6				-		92.0	45.0	73.0	0.00	0.00	0.00				T1_3;T1	1
+yeiS	G7144	mrna	1	1	0	0	7				-		10.0	0.0	0.0	0.00	-	-			B1		1
+bssR	G6436	mrna	5	1	1	0	6	3.10E+01;3.10E+01;3.10E+01;3.10E+01	1.60E+00;1.60E+00;1.60E+00;1.60E+00		-		0.0	0.0	142.0	-	-	0.00				T1_1;T1	1
+fabH	EG10277	mrna	1	1	0	0	3				-		13.0	0.0	0.0	1.00	-	-					0
+zapC	G6486	mrna	2	2	0	0	4				-		0.0	0.0	85.0	-	-	0.00			B4_1	T1_3;T1_1;T1	2
+proP	EG11612	mrna	3	1	0	2	7				-		161.0	7.0	58.0	0.00	0.00	0.00		R2			1
+hybO	G7554	mrna	5	3	0	1	4	2.40E-02;2.40E-02	1.00E+00;1.00E+00		-		126.0	79.0	36.0	0.00	0.00	0.00			B1	T1_2;T1	2
+hcaT	G7330	mrna	1	0	1	0	6				-		18.0	14.0	13.0	1.00	1.00	1.00					0
+cyoA	EG10178	mrna	1	0	0	0	3				-		0.0	0.0	38.0	-	-	0.00				T1_1;T1	1
+fhuC	EG10304	mrna	1	1	0	0	4				-		109.0	0.0	0.0	0.00	-	-					0
+lpxM	EG10614	mrna	2	2	0	0	7				-		136.0	37.0	17.0	0.00	0.00	0.00			B4_1		1
+yejL	EG12043	mrna	1	0	1	0	4				-		48.0	48.0	6.0	0.00	0.00	0.00				T1_2;T1	1
+folP	EG50011	mrna	1	0	0	1	3				-		0.0	0.0	25.0	-	-	0.00					0
+aceA	EG10022	mrna	4	2	0	1	4				-		0.0	0.0	584.0	-	-	0.63				T1_3;T1_1;T1	1
+fumA	EG10356	mrna	5	3	1	1	4	1.30E+00;1.30E+00	3.80E-01;3.80E-01		-		43.0	0.0	127.0	0.00	-	0.00				T1_3;T1	1
+sra	EG11508	mrna	1	0	0	1	3				-		0.0	0.0	32.0	-	-	0.00					0
+nfrA	EG11740	mrna	2	2	0	0	3				-		21.0	0.0	27.0	0.00	-	0.00				T1_3;T1	1
+nudB	EG11138	mrna	1	1	0	0	6				-		13.0	0.0	0.0	0.00	-	-					0
+ccmA	EG12059	mrna	1	1	0	0	5				-		0.0	15.0	8.0	-	0.00	0.00					0
+ptrB	EG11004	mrna	1	1	0	0	3				-		0.0	0.0	12.0	-	-	0.00					0
+yfaZ	G7163	mrna	1	1	0	0	7				-		50.0	14.0	0.0	0.00	0.00	-				T1_1;T1	1
+flhA	G370	mrna	1	0	1	0	3				-		16.0	0.0	0.0	0.00	-	-					0
+zipA	G7258	mrna	1	0	1	0	3				-		16.0	0.0	0.0	0.00	-	-					0
+xerC	EG11069	mrna	1	1	0	0	5				-		0.0	8.0	0.0	-	0.00	-				T1_3;T1	1
+aldB	EG12292	mrna	1	0	0	1	3				-		0.0	0.0	5.0	-	-	0.00					0
+ndh	EG10649	mrna	1	1	0	0	3				-		0.0	0.0	23.0	-	-	0.00					0
+tabA	G7883	mrna	1	1	0	0	5				-		19.0	0.0	27.0	0.00	-	0.00					0
+dfp	EG10004	mrna	2	1	1	0	4				-		84.0	0.0	5.0	0.57	-	0.00				T1_3;T1_1;T1	1
+sodB	EG10954	mrna	2	0	0	1	4				-		0.0	0.0	34.0	-	-	0.00				T1_3;T1	1
+nhaA	EG10652	mrna	1	1	0	0	4				-		70.0	48.0	866.0	0.00	0.00	0.15				T1_3;T1_1;T1	1
+ymgA	G6605	mrna	1	1	0	0	5				-		0.0	0.0	21.0	-	-	0.00					0
+trpL	EG11274	mrna	1	1	0	0	4				-		0.0	0.0	8.0	-	-	0.00					0
+gntP	EG12563	mrna	2	2	0	0	5				-		47.0	18.0	14.0	0.00	0.00	0.00				T1_3;T1	1
+livK	EG10540	mrna	1	1	0	0	5				-		25.0	0.0	0.0	0.00	-	-					0
+pldB	EG10739	mrna	1	1	0	0	6				-		57.0	37.0	9.0	0.00	0.00	0.00					0
+yhaO	EG12754	mrna	1	1	0	0	4				-		28.0	0.0	0.0	0.00	-	-			B1		1
+astC	G6944	mrna	1	1	0	0	5				-		0.0	0.0	24.0	-	-	0.00					0
+ypdA	G7243	mrna	3	2	1	0	3				-		24.0	9.0	0.0	0.00	0.00	-				T1_1;T1	1
+kdgK	EG12253	mrna	1	0	0	1	4				-		36.0	9.0	0.0	0.00	1.00	-					0
+oppD	EG10677	mrna	1	1	0	0	5				-		28.0	0.0	106.0	0.00	-	0.00					0
+ftsA	EG10339	mrna	1	1	0	0	3				-		0.0	75.0	33.0	-	0.00	0.00					0
+eda	EG10256	mrna	1	1	0	0	3				-		0.0	0.0	17.0	-	-	0.00					0
+ychN	EG12404	mrna	3	2	0	1	4				-		0.0	0.0	70.0	-	-	0.00				T1_3;T1_1;T1_2;T1	1
+crcB	EG12209	mrna	2	2	0	0	5				-		43.0	0.0	44.0	0.00	-	0.00					0
+rpsF	EG10905	mrna	2	1	1	0	4				-		408.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1_2;T1	1
+cdd	EG10137	mrna	1	1	0	0	4				-		0.0	28.0	0.0	-	0.00	-					0
+soxS	EG10958	mrna	4	2	1	1	5				-		392.0	41.0	697.0	0.00	0.00	0.00					0
+folC	EG10327	mrna	2	0	1	0	5				-		5.0	0.0	70.0	1.00	-	0.00					0
+dinD	EG11193	mrna	2	1	0	1	7				-		16.0	0.0	15.0	0.00	-	0.00			B1		1
+yaiZ	G6229	mrna	1	1	0	0	5				-		51.0	0.0	95.0	0.00	-	0.00					0
+kdsB	EG10519	mrna	1	1	0	0	4				-		0.0	0.0	9.0	-	-	0.00					0
+talB	EG11556	mrna	4	3	1	0	3				-		198.0	31.0	15.0	0.35	0.00	0.00					0
+pykF	EG10804	mrna	1	0	0	1	4				-		0.0	5.0	0.0	-	0.00	-					0
+yahD	G6183	mrna	1	1	0	0	4				-		0.0	0.0	8.0	-	-	0.00					0
+yrbN	G0-10651	mrna	1	0	0	1	6				-		24.0	0.0	35.0	0.00	-	0.00					0
+flxA	G6833	mrna	4	4	0	0	7				-		1136.0	1517.0	0.0	0.04	0.09	-				T1_1;T1	1
+glgC	EG10379	mrna	1	1	0	0	5				-		0.0	0.0	26.0	-	-	0.00					0
+lysC	EG10550	mrna	1	1	0	0	7				-		25.0	17.0	0.0	0.00	0.00	-					0
+ydgJ	G6868	mrna	1	0	0	1	4				-		0.0	5.0	0.0	-	0.00	-					0
+yqjA	G7609	mrna	1	1	0	0	5				-		31.0	39.0	44.0	0.00	0.00	0.00					0
+flgB	G358	mrna	1	0	1	0	5				-		50.0	0.0	0.0	0.00	-	-					0
+yffR	G7279	mrna	1	1	0	0	5				-		46.0	0.0	0.0	0.00	-	-					0
+rhoL	EG12428	mrna	2	0	1	1	4				-		31.0	22.0	46.0	0.00	0.00	0.00		R2			1
+yedI	EG12709	mrna	1	0	0	1	5				-		0.0	0.0	18.0	-	-	0.00			B4_1	T1_1;T1	2
+yfeK	G7260	mrna	1	1	0	0	3				-		6.0	0.0	0.0	0.00	-	-					0
+hcaR	G7331	mrna	2	0	0	1	6				-		0.0	5.0	24.0	-	0.00	0.00				T1_4;T1_5;T1_3;T1_1;T1	1
+gltS	EG10406	mrna	1	1	0	0	3				-		0.0	0.0	19.0	-	-	0.00					0
+ilvB	EG10494	mrna	1	1	0	0	3				-		39.0	0.0	35.0	0.00	-	0.00			B1		1
+napA	EG12067	mrna	1	1	0	0	3				-		0.0	10.0	0.0	-	1.00	-			B1;B3_2		1
+actP	EG11942	mrna	2	2	0	0	4				-		0.0	0.0	34.0	-	-	0.00					0
+asmA	EG11361	mrna	1	0	0	1	3				-		9.0	0.0	18.0	0.00	-	0.00					0
+arcA	EG10061	mrna	1	0	0	1	4				-		8.0	0.0	17.0	0.00	-	1.00				T1_4;T1_5;T1_1;T1	1
+yoaJ	G0-10648	mrna	1	0	0	1	2				-		0.0	0.0	21.0	-	-	0.00					0
+thrS	EG11001	mrna	4	2	1	1	4				-		43.0	0.0	169.0	0.12	-	0.00				T1_3;T1_1;T1	1
+diaA	EG12780	mrna	1	1	0	0	4				-		11.0	0.0	14.0	0.00	-	0.00					0
+rpoN	EG10898	mrna	1	1	0	0	3				-		17.0	0.0	30.0	0.00	-	0.00					0
+ylaC	G6253	mrna	1	0	1	0	4				-		0.0	0.0	7.0	-	-	0.00					0
+nfrB	EG11739	mrna	1	1	0	0	5				-		6.0	6.0	0.0	0.00	0.00	-					0
+fliD	EG10841	mrna	3	0	2	1	6				-		97.0	0.0	0.0	0.68	-	-					0
+ybgC	EG11110	mrna	1	0	0	1	5				-		21.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+ycaC	EG11241	mrna	2	1	1	0	4				-		0.0	0.0	697.0	-	-	0.12				T1_1;T1	1
+tusE	EG12876	mrna	1	1	0	0	5				-		19.0	0.0	0.0	0.00	-	-					0
+ispG	EG10370	mrna	1	1	0	0	2				-		30.0	0.0	0.0	0.00	-	-					0
+tas	G7462	mrna	1	1	0	0	4				-		0.0	0.0	10.0	-	-	0.00					0
+hupB	EG10467	mrna	5	1	2	2	7	8.20E+00	2.70E-01		-		3146.0	1318.0	5797.0	0.30	0.22	0.25			B1	T1_1;T1_2;T1	2
+ybbB	EG11768	mrna	1	1	0	0	3				-		16.0	0.0	0.0	0.00	-	-					0
+allR	G6276	mrna	6	0	5	0	7	1.10E+00;2.50E-01	8.90E-01;4.00E-01		-		12.0	16.0	407.0	1.00	1.00	0.94				T1_3;T1_1;T1	1
+alaE	G7399	mrna	3	1	0	1	4				-		0.0	0.0	165.0	-	-	0.13					0
+rbsD	EG10817	mrna	8	3	3	2	4	4.00E+01;1.90E+01;1.10E+01;9.00E+00;5.10E+00;5.10E+00	4.30E-01;4.70E-02;4.70E-02;1.60E-01;1.30E+00;1.30E+00		-		8457.0	10962.0	6083.0	0.01	0.01	0.01				T1_3;T1_1;T1_2;T1	1
+ftsP	EG11376	mrna	1	0	1	0	5				-		17.0	0.0	0.0	0.00	-	-					0
+cspE	EG12179	mrna	7	0	2	3	8	1.60E+01	3.80E-01		-		108.0	145.0	120.0	1.00	0.93	0.34				T1_4;T1_5;T1_3;T1	1
+grpE	EG10416	mrna	1	0	1	0	2				-		5.0	0.0	0.0	0.00	-	-					0
+flgM	G369	mrna	4	1	2	1	2				-		133.0	94.0	0.0	0.00	0.00	-				T1_1;T1_2;T1	1
+hisL	EG11269	mrna	1	0	1	0	4				-		0.0	0.0	5.0	-	-	1.00					0
+yhcF	G7673	mrna	1	1	0	0	3				-		7.0	0.0	14.0	0.00	-	0.00					0
+ylcI	G0-10585	mrna	1	1	0	0	4				-		91.0	60.0	0.0	0.00	0.00	-			B1		1
+amiC	G7458	mrna	1	0	1	0	2				-		0.0	0.0	5.0	-	-	0.00					0
+uhpT	EG11054	mrna	56	0	48	3	7	2.10E-10	1.30E-02	recip	-	u[gu][ca]ug[gc]c[ga][cg][uc][gu][cau][ua][gc][ac]	1305.0	1211.0	116.0	0.96	0.85	1.00				T1_3;T1	1
+lgoR	G7944	mrna	1	1	0	0	6				-		26.0	0.0	0.0	0.00	-	-					0
+yhiD	EG11400	mrna	1	0	0	1	5				-		0.0	0.0	23.0	-	-	0.00				T1_1;T1	1
+rsmA	EG10523	mrna	1	1	0	0	4				-		19.0	0.0	78.0	0.00	-	0.37				T1_3;T1_1;T1	1
+yacL	EG12605	mrna	2	1	0	1	5				-		169.0	104.0	326.0	0.00	0.00	0.00			B4_1	T1_1;T1	2
+nemR	G6889	mrna	1	1	0	0	3				-		9.0	0.0	0.0	1.00	-	-					0
+mglB	EG10593	mrna	5	2	1	2	4	2.00E-02;2.00E-02;2.00E-02;2.00E-02	2.90E-01;2.90E-01;2.90E-01;2.90E-01		-		208.0	192.0	30.0	0.00	0.00	0.00					0
+dadA	EG11407	mrna	1	1	0	0	3				-		0.0	0.0	31.0	-	-	0.00					0
+lpxC	EG10265	mrna	2	1	1	0	3				-		74.0	0.0	537.0	0.00	-	0.00				T1_1;T1	1
+ycfJ	EG12444	mrna	1	1	0	0	7				-		60.0	55.0	82.0	1.00	1.00	1.00					0
+ybhP	G6407	mrna	3	2	0	0	5				-		0.0	0.0	160.0	-	-	0.54				T1_1;T1_2;T1	1
+gatD	EG12417	mrna	4	4	0	0	5				-		62.0	20.0	186.0	0.00	0.00	0.11				T1_3;T1	1
+lptA	G7665	mrna	1	0	0	1	3				-		15.0	0.0	0.0	0.00	-	-					0
+nanA	EG10637	mrna	2	2	0	0	4				-		586.0	108.0	0.0	0.12	0.00	-				T1_3;T1	1
+phoA	EG10727	mrna	1	0	0	1	3				-		0.0	0.0	11.0	-	-	0.00					0
+glyQ	EG10409	mrna	1	1	0	0	6				-		41.0	0.0	53.0	0.00	-	0.00				T1_3;T1_1;T1_2;T1	1
+ycbZ	G6493	mrna	4	4	0	0	4				-		201.0	100.0	114.0	0.06	0.12	0.08				T1_3;T1_1;T1	1
+xdhD	G7500	mrna	1	0	1	0	4				-		0.0	0.0	29.0	-	-	1.00					0
+udp	EG11045	mrna	2	1	1	0	5				-		21.0	108.0	0.0	0.00	0.00	-				T1_3;T1	1
+idi	G7508	mrna	1	1	0	0	4				-		0.0	0.0	8.0	-	-	0.00					0
+yifB	EG11260	mrna	1	0	1	0	2				-		0.0	0.0	5.0	-	-	0.00				T1_1;T1	1
+lptB	EG11680	mrna	1	1	0	0	3				-		88.0	48.0	64.0	0.00	0.00	0.00					0
+ccmF	EG12054	mrna	1	1	0	0	4				-		0.0	0.0	10.0	-	-	0.00					0
+tdcE	G7627	mrna	1	1	0	0	3				-		26.0	62.0	0.0	0.00	0.23	-					0
+rsmH	EG11085	mrna	5	3	0	2	4	1.50E-03;1.50E-03	1.10E+00;1.10E+00		-		159.0	40.0	257.0	0.00	0.00	0.00					0
+gpmM	EG12296	mrna	1	1	0	0	5				-		0.0	69.0	0.0	-	0.00	-					0
+nagE	EG10635	mrna	4	1	0	2	6				-		284.0	93.0	0.0	0.00	0.00	-				T1_3;T1_1;T1	1
+yidE	EG11536	mrna	2	1	0	1	4				-		23.0	41.0	8.0	0.00	0.00	0.00					0
+mltD	EG10246	mrna	1	1	0	0	7				-		0.0	0.0	19.0	-	-	0.00				T1_1;T1_2;T1	1
+yohD	EG12017	mrna	1	1	0	0	5				-		15.0	32.0	37.0	0.00	0.00	0.00					0
+dps	EG11415	mrna	5	2	1	2	3	2.80E+00;2.80E+00	1.10E-01;1.10E-01		-		0.0	0.0	493.0	-	-	0.09				T1_1;T1	1
+ftsN	EG11529	mrna	2	1	1	0	3				-		35.0	12.0	10.0	0.00	0.00	0.00				T1_3;T1_2;T1	1
+thyA	EG11002	mrna	1	0	0	1	5				-		31.0	0.0	0.0	0.00	-	-					0
+alr	EG10001	mrna	1	1	0	0	4				-		42.0	26.0	38.0	0.00	0.00	0.00				T1_3;T1	1
+lspA	EG10548	mrna	1	1	0	0	3				-		22.0	0.0	0.0	0.00	-	-					0
+rpsG	EG10906	mrna	3	1	1	1	4				-		153.0	180.0	16.0	0.00	0.00	0.00					0
+poxB	EG10754	mrna	1	1	0	0	3				-		0.0	0.0	6.0	-	-	0.00					0
+nth	EG10662	mrna	1	1	0	0	4				-		0.0	0.0	6.0	-	-	0.00					0
+der	G7319	mrna	3	2	1	0	3				-		39.0	11.0	31.0	0.00	0.00	0.00					0
+dsdC	EG13161	mrna	1	1	0	0	3				-		31.0	43.0	23.0	0.00	0.00	0.00					0
+waaP	EG11340	mrna	3	1	0	1	5				-		78.0	78.0	29.0	1.00	1.00	0.00				T1_3;T1	1
+rfbA	EG11978	mrna	4	3	0	1	5				-		242.0	243.0	298.0	0.22	0.22	0.26					0
+ynfE	G6845	mrna	1	1	0	0	3				-		0.0	0.0	16.0	-	-	0.00			B1	T1_3;T1	2
+nirC	EG10654	mrna	2	1	0	1	3				-		15.0	12.0	0.0	0.00	0.00	-			B1		1
+nrdF	EG12381	mrna	1	1	0	0	3				-		19.0	0.0	0.0	1.00	-	-					0
+yggX	G7532	mrna	1	1	0	0	6				-		33.0	16.0	8.0	0.00	0.00	0.00					0
+clcA	EG12331	mrna	2	2	0	0	5				-		66.0	39.0	133.0	0.00	0.00	0.00				T1_3;T1_2;T1	1
+zitB	G6393	mrna	2	1	0	1	5				-		67.0	54.0	21.0	0.00	0.00	0.00					0
+yeeN	G7068	mrna	1	0	0	0	4				-		0.0	0.0	20.0	-	-	0.00					0
+yihY	EG11851	mrna	2	1	0	1	5				-		136.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+infC	EG10506	mrna	1	0	0	1	3				-		0.0	0.0	35.0	-	-	0.00				T1_3;T1	1
+tyrS	EG11043	mrna	1	1	0	0	5				-		502.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+yciA	EG11121	mrna	1	1	0	0	4				-		17.0	0.0	0.0	1.00	-	-					0
+ivy	G6104	mrna	2	0	0	2	3				-		0.0	0.0	52.0	-	-	0.00					0
+cas3	EG12634	mrna	1	1	0	0	5				-		11.0	0.0	0.0	0.00	-	-			B1	T1_3;T1	2
+yoaB	G6993	mrna	1	1	0	0	3				-		54.0	0.0	0.0	1.00	-	-					0
+dtpA	G6877	mrna	1	1	0	0	6				-		340.0	47.0	0.0	0.46	1.00	-					0
+dxr	EG12715	mrna	1	1	0	0	5				-		13.0	0.0	0.0	0.00	-	-			B1		1
+pepB	EG12310	mrna	1	0	0	1	4				-		0.0	0.0	17.0	-	-	0.00				T1_3;T1	1
+ynaJ	G6668	mrna	1	0	0	1	5				-		33.0	23.0	17.0	0.00	0.00	0.00					0
+rcnB	G7139	mrna	3	3	0	0	5				-		185.0	32.0	197.0	0.44	0.34	0.27				T1_1;T1_2;T1	1
+hypB	EG10484	mrna	1	1	0	0	3				-		41.0	0.0	0.0	0.00	-	-			B1;B3_2		1
+rpsA	EG10900	mrna	1	1	0	0	4				-		49.0	0.0	23.0	0.00	-	0.00					0
+selD	EG10943	mrna	1	1	0	0	3				-		0.0	0.0	19.0	-	-	0.00					0
+cspC	EG12204	mrna	2	1	1	0	5				-		7.0	0.0	22.0	0.00	-	0.00					0
+cobB	G6577	mrna	1	0	0	1	7				-		0.0	0.0	19.0	-	-	0.00					0
+fepA	EG10293	mrna	4	2	1	1	4				-		179.0	0.0	0.0	0.00	-	-			B1		1
+betT	EG10112	mrna	1	1	0	0	4				-		18.0	0.0	47.0	0.00	-	0.00					0
+asnA	EG10091	mrna	1	1	0	0	5				-		43.0	0.0	29.0	1.00	-	0.00			B1	T1_3;T1	2
+yhcB	G7681	mrna	2	2	0	0	4				-		0.0	0.0	90.0	-	-	0.00				T1_3;T1_1;T1	1
+lepA	EG10529	mrna	1	1	0	0	3				-		0.0	0.0	10.0	-	-	0.00				T1_3;T1_1;T1	1
+rpmE	EG10889	mrna	1	1	0	0	4				-		27.0	0.0	0.0	0.00	-	-					0
+mqo	EG12069	mrna	1	1	0	0	3				-		19.0	14.0	0.0	0.00	0.00	-					0
+glpA	EG10391	mrna	2	0	1	1	4				-		0.0	0.0	80.0	-	-	0.16					0
+galT	EG10366	mrna	1	1	0	0	4				-		9.0	18.0	0.0	0.00	0.00	-			B1;B3_2		1
+ppiA	EG10757	mrna	1	0	0	0	7				-		0.0	0.0	14.0	-	-	0.00					0
+tamB	G7875	mrna	1	0	0	1	4				-		0.0	0.0	19.0	-	-	0.00					0
+yhcN	G7683	mrna	3	1	2	0	8				-		117.0	33.0	42.0	0.76	1.00	1.00				T1_1;T1	1
+lysS	EG10552	mrna	2	2	0	0	3				-		31.0	0.0	16.0	0.00	-	0.00					0
+mnmE	EG10997	mrna	1	1	0	0	4				-		0.0	0.0	58.0	-	-	0.00					0
+cyaA	EG10170	mrna	1	0	0	0	6				-		0.0	0.0	329.0	-	-	0.00				T1_1;T1	1
+cof	G6246	mrna	3	0	2	1	8				-		230.0	97.0	66.0	0.87	0.89	1.00			B1;B3_1	T1_3;T1_2;T1	2
+ydjF	G6957	mrna	1	0	0	1	5				-		0.0	0.0	16.0	-	-	0.00				T1_3;T1	1
+ddlA	EG10213	mrna	2	1	0	1	5				-		56.0	46.0	56.0	0.00	0.00	0.00				T1_3;T1	1
+sucA	EG10979	mrna	4	2	1	1	5				-		67.0	0.0	295.0	0.00	-	0.16				T1_3;T1	1
+dapD	EG10207	mrna	1	0	0	1	4				-		17.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+yqjC	G7611	mrna	1	0	0	1	3				-		21.0	40.0	24.0	0.00	0.00	0.00				T1_1;T1	1
+mqsA	G7571	mrna	1	1	0	0	4				-		190.0	63.0	0.0	0.00	0.00	-				T1_3;T1_2;T1	1
+pnp	EG10743	mrna	2	0	1	1	4				-		0.0	26.0	0.0	-	0.00	-					0
+smrB	G7202	mrna	1	1	0	0	5				-		0.0	0.0	59.0	-	-	0.00			B1		1
+rstB	EG11233	mrna	1	1	0	0	4				-		77.0	0.0	0.0	0.00	-	-					0
+modA	EG12427	mrna	2	1	0	1	3				-		63.0	138.0	0.0	0.00	0.00	-					0
+ydiZ	G6929	mrna	2	1	0	1	6				-		0.0	0.0	34.0	-	-	0.00				T1_2;T1	1
+yciZ	G0-10591	mrna	1	1	0	0	7				-		17.0	22.0	30.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+tar	EG10988	mrna	2	1	0	1	7				-		1530.0	858.0	203.0	0.00	0.00	0.00					0
+yjgA	EG11410	mrna	2	2	0	0	7				-		67.0	0.0	131.0	0.00	-	0.00				T1_4;T1_5;T1_2;T1	1
+abgB	G6669	mrna	1	1	0	0	3				-		17.0	0.0	0.0	0.00	-	-					0
+borD	G6312	mrna	1	1	0	0	4				-		300.0	0.0	0.0	0.00	-	-					0
+folX	G7195	mrna	2	2	0	0	3				-		113.0	125.0	16.0	0.23	0.20	0.00			B4_1	T1_1;T1	2
+gatY	EG12419	mrna	2	1	1	0	5				-		1581.0	1559.0	796.0	0.71	0.53	0.49					0
+yfeS	G7261	mrna	1	0	0	1	4				-		0.0	0.0	13.0	-	-	0.00				T1_3;T1	1
+ftsL	EG11086	mrna	1	0	0	1	4				-		19.0	0.0	23.0	0.00	-	0.00					0
+dnaB	EG10236	mrna	1	1	0	0	4				-		17.0	0.0	0.0	0.00	-	-					0
+yceD	EG11119	mrna	3	1	0	0	3				-		40.0	0.0	12.0	0.00	-	0.00					0
+waaF	EG12210	mrna	1	1	0	0	5				-		31.0	26.0	36.0	0.00	0.00	0.00					0
+insCD-1	G0-10541	mrna	1	0	0	1	5				-		0.0	0.0	26.0	-	-	0.00				T1_3;T1_1;T1	1
+ybaN	EG12843	mrna	1	1	0	0	4				-		24.0	0.0	0.0	0.00	-	-				T1_4;T1_5;T1_1;T1	1
+yfaY	G7162	mrna	3	1	0	2	6				-		118.0	78.0	106.0	0.00	0.00	0.00				T1_1;T1	1
+btuE	EG10129	mrna	1	0	0	1	5				-		0.0	0.0	11.0	-	-	0.00				T1_3;T1_1;T1	1
+yciC	EG11123	mrna	1	1	0	0	5				-		16.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+lacA	EG10524	mrna	1	1	0	0	4				-		0.0	21.0	0.0	-	0.00	-				T1_3;T1	1
+cheY	EG10150	mrna	2	1	1	0	5				-		118.0	23.0	0.0	0.14	0.00	-					0
+fur	EG10359	mrna	3	2	1	0	4				-		59.0	0.0	55.0	0.00	-	0.00					0
+rnlA	G7365	mrna	1	0	0	1	6				-		0.0	0.0	38.0	-	-	0.00			B4_1	T1_3;T1	2
+glmU	EG11198	mrna	2	1	0	1	3				-		39.0	0.0	88.0	0.00	-	0.00					0
+ychJ	EG12119	mrna	2	2	0	0	5				-		671.0	99.0	162.0	0.00	0.00	0.00				T1_3;T1	1
+mtgA	G7668	mrna	1	1	0	0	3				-		0.0	14.0	0.0	-	0.00	-					0
+trpE	EG11028	mrna	1	1	0	0	8				-		0.0	0.0	106.0	-	-	0.25					0
+yidI	EG11697	mrna	1	1	0	0	6				-		258.0	255.0	101.0	0.00	0.00	0.00					0
+yfdI	G7221	mrna	2	2	0	0	7				-		81.0	0.0	0.0	0.00	-	-		R2			1
+chaA	EG11753	mrna	1	1	0	0	6				-		0.0	14.0	0.0	-	1.00	-					0
+fadD	EG11530	mrna	1	1	0	0	4				-		0.0	0.0	45.0	-	-	0.00					0
+mrp	EG10611	mrna	2	2	0	0	4				-		1035.0	0.0	41.0	0.03	-	0.00				T1_1;T1	1
+frdD	EG10333	mrna	1	1	0	0	4				-		0.0	114.0	13.0	-	0.00	0.00				T1_3;T1_1;T1	1
+hflX	EG10437	mrna	4	3	0	1	7				-		675.0	250.0	2097.0	0.00	0.00	0.05				T1_1;T1	1
+gpsA	EG20091	mrna	4	2	2	0	5				-		809.0	133.0	708.0	0.08	0.00	0.00				T1_3;T1	1
+ybaO	G6247	mrna	1	1	0	0	4				-		28.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+ycaM	G6466	mrna	1	0	0	1	4				-		16.0	28.0	13.0	0.00	0.00	0.00				T1_1;T1	1
+ypjA	G7382	mrna	1	1	0	0	3				-		0.0	0.0	14.0	-	-	0.00					0
+yfjW	G7377	mrna	2	2	0	0	6				-		24.0	15.0	21.0	0.00	0.00	0.00					0
+rpsR	EG10917	mrna	1	0	1	0	4				-		0.0	23.0	0.0	-	0.00	-				T1_3;T1_1;T1_2;T1	1
+ytfR	EG12518	mrna	1	1	0	0	3				-		0.0	0.0	12.0	-	-	0.00					0
+paaX	G6720	mrna	4	2	0	2	5				-		99.0	10.0	214.0	0.00	0.00	0.00			B4_1	T1_3;T1_1;T1_2;T1	2
+yfdH	G7220	mrna	1	1	0	0	4				-		70.0	0.0	0.0	0.21	-	-					0
+bluR	G6602	mrna	2	2	0	0	4				-		45.0	0.0	9.0	0.00	-	0.00				T1_2;T1	1
+nudL	EG12693	mrna	1	1	0	0	6				-		19.0	50.0	0.0	0.00	0.00	-					0
+loiP	EG11291	mrna	1	0	0	0	5				-		40.0	0.0	0.0	0.35	-	-				T1_3;T1_1;T1	1
+fabR	EG11394	mrna	2	1	0	1	5				-		191.0	73.0	110.0	0.00	0.00	0.00				T1_1;T1	1
+yshB	G0-10657	mrna	3	1	0	2	4				-		121.0	5.0	8.0	0.00	0.00	0.00					0
+zapE	G7680	mrna	1	1	0	0	7				-		159.0	97.0	0.0	0.00	0.00	-			B4_1	T1_2;T1	2
+rcsC	EG10822	mrna	1	1	0	0	3				-		0.0	0.0	12.0	-	-	0.00					0
+lsrR	G6799	mrna	1	0	0	1	6				-		0.0	0.0	36.0	-	-	0.00			B1		1
+asr	G6855	mrna	1	1	0	0	4				-		0.0	0.0	24.0	-	-	0.00					0
+ratB	G7357	mrna	2	1	1	0	4				-		26.0	0.0	10.0	0.00	-	0.00					0
+rbsK	EG10818	mrna	1	1	0	0	4				-		43.0	0.0	23.0	0.00	-	0.00					0
+malM	EG10559	mrna	2	0	1	1	4				-		18.0	0.0	45.0	0.00	-	1.00					0
+rnr	EG11259	mrna	1	0	1	0	2				-		0.0	0.0	5.0	-	-	1.00					0
+ftsQ	EG10342	mrna	1	1	0	0	4				-		54.0	0.0	0.0	0.00	-	-					0
+fes	EG10299	mrna	2	0	0	2	4				-		152.0	0.0	0.0	0.00	-	-					0
+putA	EG10801	mrna	1	0	0	1	4				-		0.0	0.0	19.0	-	-	0.00					0
+cspD	EG11111	mrna	5	2	1	2	5	2.90E+00;2.90E+00	1.20E+00;1.20E+00		-		116.0	21.0	1291.0	0.00	0.00	0.00					0
+yghD	G7535	mrna	1	0	0	1	3				-		0.0	0.0	8.0	-	-	0.00					0
+amn	EG10039	mrna	1	1	0	0	3				-		104.0	58.0	35.0	0.00	0.00	0.00					0
+csiE	G7329	mrna	1	1	0	0	2				-		0.0	0.0	15.0	-	-	1.00			B1		1
+nanC	G7921	mrna	5	2	1	2	4	1.70E+00;1.70E+00	1.60E+00;1.60E+00		-		323.0	196.0	0.0	0.00	0.00	-				T1_3;T1_1;T1	1
+gltX	EG10407	mrna	1	1	0	0	4				-		44.0	19.0	68.0	0.00	0.00	0.00					0
+rng	EG11299	mrna	1	0	0	1	4				-		0.0	0.0	30.0	-	-	0.00				T1_3;T1	1
+entS	EG11104	mrna	1	0	0	1	6				-		55.0	0.0	0.0	0.00	-	-					0
+dmlR	G6985	mrna	2	1	1	0	4				-		44.0	0.0	32.0	0.20	-	0.00			B1	T1_4;T1_5;T1_1;T1	2
+phoQ	EG10732	mrna	1	1	0	0	7				-		0.0	0.0	16.0	-	-	1.00					0
+hemD	EG10430	mrna	1	0	0	1	5				-		20.0	11.0	0.0	0.00	0.00	-					0
+yedY	G7059	mrna	1	0	0	1	3				-		0.0	0.0	7.0	-	-	0.00					0
+gltI	G6359	mrna	1	0	1	0	3				-		0.0	0.0	21.0	-	-	1.00			B1		1
+glnH	EG10386	mrna	2	1	1	0	3				-		16.0	0.0	51.0	0.00	-	0.00					0
+trpD	EG11027	mrna	1	1	0	0	4				-		0.0	35.0	0.0	-	0.00	-					0
+flhE	G7027	mrna	1	1	0	0	4				-		21.0	0.0	0.0	0.00	-	-					0
+lpp	EG10544	mrna	10	4	0	4	8	1.80E-02;2.30E-03;9.60E-06;3.50E-06;2.30E-06;4.50E-07	1.80E+00;1.30E+00;1.30E+00;1.90E+00;1.90E+00;1.90E+00		-		4468.0	1359.0	2784.0	0.01	0.02	0.02				T1_1;T1_2;T1	1
+grxA	EG10417	mrna	1	1	0	0	6				-		8.0	0.0	0.0	0.00	-	-					0
+lon	EG10542	mrna	1	0	1	0	3				-		11.0	0.0	0.0	1.00	-	-					0
+ushA	EG11060	mrna	1	0	0	1	5				-		15.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+napD	EG12143	mrna	2	1	0	1	3				-		0.0	107.0	0.0	-	0.00	-			B1;B3_2		1
+yjjI	EG12171	mrna	1	0	0	1	4				-		14.0	35.0	0.0	0.00	0.00	-			B1	T1_1;T1	2
+tus	EG11038	mrna	1	1	0	0	3				-		0.0	0.0	14.0	-	-	0.00					0
+rpoS	EG10510	mrna	6	3	2	1	5	9.00E+00;9.00E+00;7.30E+00;7.30E+00	1.00E+00;1.00E+00;1.60E+00;1.60E+00		-		133.0	88.0	1130.0	0.00	0.00	0.00			B1;B3_2		1
+marR	EG11435	mrna	1	1	0	0	4				-		46.0	67.0	16.0	0.00	0.00	1.00					0
+tktB	EG12100	mrna	1	1	0	0	4				-		0.0	0.0	48.0	-	-	0.00					0
+yhfA	EG11182	mrna	1	1	0	0	4				-		18.0	0.0	0.0	0.00	-	-					0
+ygiA	EG11163	mrna	1	0	1	0	5				-		30.0	30.0	0.0	0.00	0.00	-				T1_1;T1_2;T1	1
+nirB	EG10653	mrna	1	1	0	0	4				-		109.0	0.0	0.0	0.81	-	-			B1		1
+rraA	EG11879	mrna	1	1	0	0	3				-		0.0	49.0	0.0	-	0.00	-				T1_3;T1	1
+fre	EG10334	mrna	2	1	0	1	4				-		117.0	20.0	0.0	0.00	0.00	-					0
+insH-1	G6134	mrna	9	1	3	3	4	4.60E+01;3.10E+01;2.70E+01;2.90E+00;3.10E-01;2.10E-02	7.10E-01;5.60E-01;3.90E-01;3.90E-01;1.20E+00;6.70E-01		-		1436.0	731.0	1383.0	0.64	0.56	0.79				T1_3;T1	1
+opgC	G6552	mrna	2	0	2	0	6				-		15.0	0.0	0.0	1.00	-	-				T1_4;T1_5;T1	1
+yifK	EG11459	mrna	4	3	0	1	5				-		180.0	96.0	109.0	0.94	1.00	0.35			B4_1	T1_3;T1_1;T1_2;T1	2
+pspA	EG10776	mrna	1	1	0	0	3				-		22.0	0.0	0.0	0.00	-	-					0
+gadB	EG11490	mrna	4	1	1	0	6				-		0.0	0.0	208.0	-	-	0.00				T1_1;T1	1
+clpP	EG10158	mrna	1	1	0	0	5				-		22.0	0.0	0.0	0.00	-	-					0
+ansB	EG10046	mrna	2	2	0	0	5				-		40.0	143.0	112.0	0.00	0.00	0.00			B1	T1_1;T1	2
+yeaC	G6964	mrna	1	1	0	0	5				-		0.0	0.0	223.0	-	-	0.00				T1_3;T1	1
+dcuA	EG11225	mrna	6	4	0	1	4	4.40E-01;4.40E-01	1.90E+00;1.90E+00		-		47.0	74.0	174.0	0.00	0.00	0.00					0
+glpD	EG10394	mrna	3	2	0	1	4				-		1355.0	623.0	1835.0	0.02	0.00	0.00					0
+rutG	G6517	mrna	1	1	0	0	4				-		37.0	23.0	27.0	0.00	0.00	0.00					0
+mngR	EG11109	mrna	1	1	0	0	5				-		0.0	0.0	6.0	-	-	0.00					0
+thrL	EG11277	mrna	1	1	0	0	9				-		1011.0	174.0	952.0	1.00	0.00	1.00			B4_2	T1_1;T1_2;T1	2
+artQ	EG11626	mrna	1	0	0	1	5				-		0.0	0.0	41.0	-	-	0.00					0
+mazF	EG11249	mrna	2	2	0	0	4				-		43.0	12.0	16.0	0.00	0.00	0.00					0
+katG	EG10511	mrna	2	1	1	0	3				-		0.0	0.0	38.0	-	-	0.47			B4_1		1
+yfhM	G7323	mrna	2	1	0	1	4				-		121.0	28.0	154.0	0.50	1.00	0.00				T1_1;T1	1
+sdhE	G7510	mrna	1	0	0	0	5				-		0.0	0.0	12.0	-	-	0.00				T1_1;T1	1
+slyA	G6882	mrna	1	1	0	0	4				-		78.0	0.0	0.0	0.00	-	-					0
+ygeR	G7484	mrna	1	1	0	0	6				-		16.0	0.0	0.0	1.00	-	-				T1_1;T1	1
+osmC	EG10680	mrna	2	1	0	1	5				-		0.0	0.0	106.0	-	-	0.00				T1_1;T1	1
+yghZ	G7558	mrna	1	1	0	0	7				-		46.0	57.0	134.0	0.00	0.00	0.00					0
+rpmG	EG10891	mrna	1	0	0	1	5				-		72.0	24.0	0.0	0.00	0.00	-					0
+mazG	EG10572	mrna	2	1	0	1	6				-		0.0	0.0	62.0	-	-	0.00					0
+trmJ	G7327	mrna	4	1	1	1	5				-		270.0	1486.0	256.0	0.71	0.99	0.59	L1			T1_4;T1_5;T1_1;T1	2
+exbB	EG10271	mrna	4	3	0	1	4				-		264.0	0.0	0.0	0.14	-	-				T1_3;T1	1
+grxD	EG12181	mrna	1	1	0	0	3				-		15.0	0.0	0.0	1.00	-	-					0
+rpsQ	EG10916	mrna	2	1	0	1	6				-		94.0	346.0	0.0	0.00	0.00	-				T1_2;T1	1
+ymdA	G6549	mrna	2	1	0	1	6				-		234.0	0.0	0.0	0.00	-	-					0
+ivbL	EG11275	mrna	1	1	0	0	5				-		928.0	0.0	199.0	0.42	-	0.00			B1	T1_3;T1_1;T1	2
+rpmD	EG10888	mrna	1	1	0	0	3				-		89.0	0.0	0.0	0.00	-	-					0
+envZ	EG10269	mrna	1	1	0	0	3				-		11.0	0.0	0.0	0.00	-	-					0
+ompX	EG12117	mrna	3	2	0	1	5				-		3736.0	2019.0	5632.0	0.01	0.00	0.00				T1_4;T1_5;T1_2;T1	1
+yabI	EG11571	mrna	1	0	1	0	3				-		0.0	0.0	5.0	-	-	1.00					0
+ybcM	G6302	mrna	4	2	1	0	4				-		31.0	22.0	73.0	0.00	0.00	0.00				T1_3;T1_1;T1_2;T1	1
+rplY	EG10885	mrna	1	0	1	0	4				-		28.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+emrA	EG11354	mrna	2	1	0	1	5				-		102.0	41.0	112.0	0.00	0.00	0.00				T1_3;T1	1
+xylE	EG11076	mrna	4	0	2	1	5				-		6.0	6.0	34.0	1.00	1.00	0.44			B1;B3_1		1
+arcB	EG10062	mrna	2	1	0	1	4				-		9.0	25.0	0.0	0.00	0.00	-					0
+ygaU	G7395	mrna	1	0	1	0	3				-		0.0	0.0	19.0	-	-	1.00					0
+yjdM	EG10711	mrna	2	0	0	2	6				-		117.0	93.0	140.0	0.00	0.00	0.00				T1_1;T1	1
+gpmA	EG11699	mrna	4	3	0	1	4				-		812.0	0.0	141.0	0.00	-	0.00				T1_3;T1	1
+maeB	G7293	mrna	1	1	0	0	3				-		0.0	0.0	30.0	-	-	0.00					0
+btuB	EG10126	mrna	2	0	0	1	4				-		14.0	15.0	0.0	0.00	0.00	-				T1_2;T1	1
+ecnB	G0-9562	mrna	5	2	1	2	6	1.10E+00;1.10E+00;1.10E+00;1.10E+00	1.30E+00;1.30E+00;1.30E+00;1.30E+00		-		0.0	0.0	466.0	-	-	0.20				T1_2;T1	1
+adhE	EG10031	mrna	2	2	0	0	3				-		70.0	52.0	44.0	0.00	0.00	0.00				T1_3;T1	1
+hdeA	EG11398	mrna	4	2	0	0	4				-		0.0	0.0	183.0	-	-	0.00				T1_1;T1	1
+cstA	EG10167	mrna	4	3	0	1	3				-		158.0	78.0	871.0	0.00	0.00	0.04				T1_3;T1_1;T1_2;T1	1
+flgA	G357	mrna	2	1	0	1	6				-		1199.0	0.0	0.0	0.14	-	-					0
+yhjG	EG12251	mrna	1	0	1	0	5				-		93.0	84.0	0.0	0.42	0.49	-					0
+dadX	EG11408	mrna	1	0	0	1	4				-		0.0	0.0	19.0	-	-	0.00					0
+garP	EG12760	mrna	4	2	1	1	5				-		215.0	0.0	0.0	0.00	-	-					0
+betI	EG10111	mrna	1	1	0	0	4				-		23.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+ccmC	EG12057	mrna	1	1	0	0	5				-		0.0	58.0	0.0	-	0.00	-					0
+leuS	EG10532	mrna	2	2	0	0	3				-		0.0	0.0	24.0	-	-	0.00					0
+mscL	EG11180	mrna	2	1	0	1	4				-		26.0	0.0	80.0	0.00	-	0.00				T1_1;T1_2;T1	1
+ves	G6938	mrna	1	1	0	0	5				-		40.0	0.0	0.0	0.00	-	-					0
+yejA	EG12037	mrna	1	1	0	0	4				-		24.0	0.0	0.0	0.00	-	-					0
+tamA	G7874	mrna	2	2	0	0	5				-		16.0	0.0	57.0	0.00	-	0.00				T1_3;T1	1
+rcsB	EG10821	mrna	2	1	1	0	3				-		17.0	14.0	32.0	0.00	0.00	0.00					0
+lexA	EG10533	mrna	2	1	0	1	3				-		38.0	0.0	25.0	0.00	-	0.00				T1_3;T1	1
+rlmE	EG11507	mrna	1	1	0	0	4				-		0.0	0.0	25.0	-	-	0.00				T1_3;T1	1
+glgB	EG10378	mrna	3	2	1	0	6				-		11.0	25.0	167.0	0.00	0.00	0.00				T1_1;T1	1
+yrbL	G7667	mrna	1	1	0	0	4				-		51.0	20.0	40.0	0.00	0.00	0.00				T1_1;T1	1
+pflB	EG10701	mrna	1	1	0	0	4				-		82.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+rsd	EG11738	mrna	1	0	0	1	5				-		0.0	0.0	6.0	-	-	0.00					0
+yifE	EG11450	mrna	1	1	0	0	3				-		12.0	0.0	0.0	0.00	-	-					0
+arsB	EG12236	mrna	1	1	0	0	4				-		0.0	0.0	14.0	-	-	0.00					0
+nuoE	EG12086	mrna	1	1	0	0	3				-		57.0	0.0	62.0	0.00	-	0.00					0
+plaP	EG11896	mrna	1	1	0	0	4				-		44.0	42.0	0.0	0.00	0.00	-				T1_3;T1	1
+frdA	EG10330	mrna	1	0	1	0	3				-		0.0	26.0	0.0	-	0.69	-					0
+yeeO	G7070	mrna	1	0	0	1	4				-		0.0	0.0	9.0	-	-	0.00				T1_3;T1	1
+pgi	EG10702	mrna	1	1	0	0	3				-		91.0	40.0	344.0	0.00	0.00	0.00				T1_3;T1	1
+nanT	G436	mrna	2	1	0	1	6				-		286.0	321.0	0.0	0.00	0.00	-					0
+rsmI	G7641	mrna	1	1	0	0	6				-		0.0	0.0	13.0	-	-	0.00					0
+yedQ	G7049	mrna	1	1	0	0	6				-		29.0	0.0	120.0	0.00	-	0.00				T1_3;T1_1;T1_2;T1	1
+secG	EG12095	mrna	1	1	0	0	4				-		0.0	66.0	12.0	-	0.00	0.00				T1_1;T1	1
+hsdS	EG10460	mrna	1	1	0	0	4				-		21.0	0.0	19.0	0.00	-	0.00					0
+tatE	EG11305	mrna	1	0	0	1	5				-		0.0	0.0	14.0	-	-	0.00					0
+ydeE	EG11640	mrna	1	1	0	0	5				-		0.0	35.0	22.0	-	0.00	0.00				T1_1;T1	1
+clpB	EG10157	mrna	2	2	0	0	3				-		0.0	0.0	60.0	-	-	0.00				T1_3;T1	1
+ymbA	G6492	mrna	4	3	0	1	3				-		55.0	16.0	109.0	0.20	0.00	0.00				T1_3;T1	1
+preA	EG11289	mrna	1	1	0	0	3				-		0.0	0.0	19.0	-	-	0.00					0
+yqcA	G7448	mrna	1	1	0	0	5				-		31.0	0.0	31.0	0.00	-	0.00				T1_3;T1	1
+fldA	EG10318	mrna	1	1	0	0	5				-		73.0	0.0	0.0	0.00	-	-					0
+nikB	EG12076	mrna	1	1	0	0	5				-		0.0	49.0	0.0	-	0.00	-			B1		1
+yahO	G6194	mrna	2	1	0	1	3				-		0.0	0.0	98.0	-	-	0.00					0
+polA	EG10746	mrna	3	3	0	0	6				-		18.0	30.0	57.0	0.00	0.00	0.00				T1_3;T1_2;T1	1
+spoT	EG10966	mrna	1	1	0	0	3				-		15.0	0.0	0.0	0.00	-	-					0
+rtcA	G7750	mrna	1	1	0	0	6				-		15.0	10.0	13.0	0.00	0.00	0.00					0
+ycgV	G6629	mrna	1	1	0	0	3				-		0.0	0.0	12.0	-	-	0.00					0
+rmf	EG50004	mrna	12	3	5	3	7	3.20E+01;2.40E+01;2.20E-01;3.20E-02	7.30E-01;5.40E-01;1.10E+00;5.00E-01		-		327.0	47.0	4773.0	0.20	0.00	0.12				T1_4;T1_5;T1_1;T1	1
+slyB	G6881	mrna	2	1	1	0	5				-		294.0	189.0	348.0	0.00	0.00	0.09					0
+proQ	EG12866	mrna	1	1	0	0	4				-		3104.0	0.0	1156.0	0.00	-	0.00				T1_1;T1	1
+folD	EG10328	mrna	1	0	1	0	2				-		0.0	7.0	0.0	-	1.00	-					0
+fabG	EG11318	mrna	2	1	0	1	3				-		237.0	160.0	156.0	0.00	0.00	0.00					0
+ycaQ	G6471	mrna	1	1	0	0	4				-		0.0	0.0	26.0	-	-	0.00					0
+ybeD	EG11592	mrna	2	2	0	0	4				-		22.0	0.0	17.0	0.00	-	0.00					0
+yigZ	EG11484	mrna	1	1	0	0	3				-		14.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+glpQ	EG10399	mrna	4	1	1	1	5				-		83.0	0.0	184.0	0.00	-	0.00				T1_3;T1	1
+ydfT	G6830	mrna	1	1	0	0	5				-		0.0	17.0	0.0	-	0.00	-				T1_3;T1	1
+yadH	EG12321	mrna	1	1	0	0	4				-		0.0	0.0	25.0	-	-	0.00					0
+mpl	EG12440	mrna	1	1	0	0	4				-		22.0	0.0	0.0	0.00	-	-					0
+yfdY	G7240	mrna	2	1	0	1	6				-		346.0	615.0	837.0	0.00	0.00	0.00			B1	T1_3;T1_1;T1	2
+ubiD	EG11396	mrna	2	1	0	1	5				-		123.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+ytjA	G0-10475	mrna	1	0	0	1	4				-		0.0	0.0	233.0	-	-	0.00					0
+eptB	EG12267	mrna	2	2	0	0	6				-		99.0	0.0	21.0	0.88	-	0.00			B4_1		1
+ftsE	EG10340	mrna	1	1	0	0	4				-		0.0	0.0	38.0	-	-	0.00					0
+pheA	EG10707	mrna	1	1	0	0	6				-		0.0	0.0	16.0	-	-	0.00					0
+flgF	G362	mrna	1	0	0	1	4				-		9.0	6.0	0.0	0.00	0.00	-					0
+ligA	EG10534	mrna	1	1	0	0	5				-		108.0	51.0	123.0	0.00	0.00	0.00					0
+ygdI	G7453	mrna	1	0	0	0	4				-		0.0	0.0	18.0	-	-	0.00				T1_3;T1	1
+yaiL	G6207	mrna	3	2	1	0	5				-		68.0	19.0	81.0	0.00	0.00	0.00			B4_1	T1_3;T1	2
+hflK	EG10436	mrna	2	2	0	0	3				-		42.0	0.0	27.0	0.00	-	1.00					0
+acnB	EG12316	mrna	2	1	0	1	3				-		51.0	0.0	0.0	0.71	-	-					0
+clpA	EG10156	mrna	1	1	0	0	4				-		64.0	0.0	0.0	0.00	-	-					0
+djlA	EG11570	mrna	1	1	0	0	4				-		0.0	0.0	16.0	-	-	0.00					0
+crl	EG11092	mrna	4	1	1	1	5				-		30.0	21.0	88.0	0.23	0.00	0.51				T1_1;T1	1
+murA	EG11358	mrna	1	1	0	0	5				-		13.0	0.0	0.0	1.00	-	-					0
+ompW	EG11124	mrna	7	2	4	1	6	5.50E+01;5.50E+01;4.10E+01;4.10E+01	4.80E-01;4.80E-01;1.20E+00;1.20E+00		-		0.0	0.0	693.0	-	-	0.15			B1	T1_3;T1_1;T1	2
+insA-7	G7908	mrna	2	2	0	0	4				-		167.0	185.0	53.0	0.00	0.00	0.00			B1	T1_2;T1	2
+yrbG	EG12802	mrna	1	1	0	0	3				-		14.0	23.0	0.0	0.00	0.00	-					0
+agaA	EG12766	mrna	1	0	1	0	5				-		0.0	0.0	6.0	-	-	1.00					0
+yfgD	G7312	mrna	2	2	0	0	3				-		35.0	0.0	35.0	0.00	-	0.00				T1_3;T1	1
+leuE	G6984	mrna	1	0	1	0	5				-		11.0	0.0	0.0	1.00	-	-					0
+mrr	EG10612	mrna	1	0	0	1	4				-		0.0	0.0	13.0	-	-	0.00				T1_3;T1	1
+fabF	EG12606	mrna	3	2	1	0	4				-		37.0	22.0	33.0	0.00	0.00	0.00				T1_3;T1	1
+yffS	G7280	mrna	2	1	0	1	3				-		0.0	0.0	40.0	-	-	0.00			B1	T1_3;T1	2
+ompT	EG10673	mrna	8	5	1	2	4	4.40E-04;4.40E-04;2.40E-04;2.40E-04	4.50E-01;4.50E-01;5.10E-01;5.10E-01		-		614.0	106.0	117.0	0.15	0.21	0.00				T1_1;T1_2;T1	1
+yegT	G7130	mrna	1	1	0	0	7				-		14.0	10.0	10.0	0.00	0.00	0.00					0
+hmp	EG10456	mrna	1	1	0	0	4				-		14.0	26.0	0.0	1.00	1.00	-					0
+dgt	EG10225	mrna	2	2	0	0	5				-		68.0	0.0	10.0	0.00	-	0.00				T1_3;T1	1
+cbpM	EG12194	mrna	1	1	0	0	4				-		0.0	0.0	58.0	-	-	0.00					0
+nlpD	EG12111	mrna	10	5	1	3	5	3.70E-05;2.60E-05;4.50E-07;1.60E-07;1.10E-08;1.10E-08;8.50E-09;8.50E-09	1.50E+00;1.50E+00;4.20E-01;4.00E-01;4.70E-01;4.70E-01;4.70E-01;4.70E-01		-		9980.0	2677.0	29136.0	0.02	0.01	0.01			B1;B3_2	T1_3;T1_2;T1	2
+recO	EG10832	mrna	1	1	0	0	7				-		5.0	0.0	0.0	0.00	-	-					0
+sdhB	EG10932	mrna	1	1	0	0	3				-		19.0	0.0	0.0	0.00	-	-					0
+hda	G7313	mrna	1	1	0	0	3				-		0.0	0.0	10.0	-	-	1.00					0
+yhjE	EG12249	mrna	1	1	0	0	4				-		75.0	42.0	21.0	0.00	0.00	0.00				T1_1;T1	1
+tap	EG10987	mrna	1	0	1	0	5				-		16.0	0.0	0.0	1.00	-	-					0
+mtr	EG10617	mrna	3	3	0	0	4				-		0.0	0.0	348.0	-	-	0.00				T1_3;T1	1
+waaL	EG11424	mrna	3	3	0	0	6				-		55.0	33.0	8.0	0.40	1.00	0.00					0
+ykgR	G0-10654	mrna	1	0	0	1	6				-		7.0	0.0	0.0	0.00	-	-					0
+pepP	EG10697	mrna	1	1	0	0	5				-		0.0	0.0	33.0	-	-	0.00					0
+sthA	EG11428	mrna	3	2	0	0	4				-		35.0	21.0	38.0	0.00	0.00	0.16					0
+mraZ	EG11084	mrna	1	0	1	0	3				-		0.0	8.0	0.0	-	0.00	-					0
+fecI	EG10291	mrna	1	0	1	0	6				-		154.0	0.0	0.0	0.42	-	-				T1_1;T1	1
+ung	EG11058	mrna	1	1	0	0	5				-		0.0	0.0	15.0	-	-	0.00					0
+fbaB	G7129	mrna	1	0	0	1	4				-		0.0	0.0	33.0	-	-	0.00					0
+trpS	EG11030	mrna	1	0	0	0	5				-		5.0	0.0	9.0	0.00	-	0.00					0
+ydhL	G6888	mrna	1	1	0	0	4				-		12.0	0.0	63.0	0.00	-	0.00				T1_4;T1_5;T1_1;T1	1
+mntS	G0-10715	mrna	1	0	1	0	3				-		0.0	0.0	5.0	-	-	1.00		R1			1
+ybjD	G6459	mrna	2	1	1	0	6				-		46.0	0.0	0.0	0.22	-	-		R3		T1_3;T1_2;T1	2
+yjcH	EG11943	mrna	1	1	0	0	4				-		5.0	0.0	90.0	0.00	-	0.00					0
+flgH	G364	mrna	1	0	0	1	5				-		68.0	48.0	0.0	0.00	0.00	-					0
+secF	EG10940	mrna	1	0	1	0	8				-		5.0	0.0	0.0	1.00	-	-					0
+mokB	G6736	mrna	1	0	0	1	2				-		0.0	0.0	21.0	-	-	0.00				T1_3;T1	1
+rhlB	EG10844	mrna	2	2	0	0	4				-		254.0	0.0	33.0	0.23	-	0.00					0
+ybcY	G6316	mrna	1	1	0	0	4				-		10.0	25.0	0.0	0.00	0.00	-			B1	T1_3;T1	2
+nsrR	EG11212	mrna	1	0	0	1	4				-		21.0	27.0	0.0	0.00	0.00	-			B1		1
+yiaD	EG12271	mrna	1	0	0	0	3				-		5.0	0.0	0.0	0.00	-	-					0
+fabA	EG10273	mrna	3	2	1	0	3				-		156.0	0.0	44.0	0.50	-	0.30				T1_1;T1	1
+bolA	EG10125	mrna	1	1	0	0	4				-		0.0	0.0	195.0	-	-	0.00				T1_3;T1	1
+tolB	EG11008	mrna	4	3	0	1	4				-		1778.0	659.0	1596.0	0.52	0.61	0.31					0
+glgS	EG11381	mrna	3	1	0	1	4				-		0.0	0.0	41.0	-	-	0.00					0
+yfdG	G7219	mrna	1	1	0	0	5				-		14.0	13.0	0.0	0.00	0.00	-					0
+uspA	EG11390	mrna	3	3	0	0	3				-		648.0	177.0	375.0	0.00	0.00	0.00				T1_3;T1_1;T1_2;T1	1
+ldtE	G6904	mrna	1	1	0	0	4				-		0.0	0.0	20.0	-	-	0.00					0
+yeeX	G7087	mrna	2	1	0	0	4				-		331.0	0.0	0.0	0.02	-	-				T1_1;T1	1
+iscS	G7325	mrna	1	1	0	0	4				-		23.0	0.0	12.0	1.00	-	1.00					0
+cysA	EG10183	mrna	1	1	0	0	5				-		0.0	0.0	69.0	-	-	0.00					0
+fadJ	G7212	mrna	1	1	0	0	4				-		26.0	0.0	0.0	0.00	-	-				T1_3;T1	1
+mlaA	G7216	mrna	3	2	0	1	5				-		46.0	0.0	111.0	0.30	-	0.00					0
+nuoH	EG12088	mrna	1	0	1	0	4				-		11.0	0.0	0.0	0.00	-	-					0
+trpB	EG11025	mrna	1	1	0	0	4				-		0.0	0.0	23.0	-	-	0.00					0
+deoD	EG10222	mrna	3	0	2	1	5				-		95.0	0.0	17.0	0.28	-	0.00				T1_3;T1_1;T1	1
+priB	EG10764	mrna	1	1	0	0	4				-		0.0	0.0	201.0	-	-	0.00				T1_3;T1_1;T1_2;T1	1
+ebgR	EG10254	mrna	1	1	0	0	3				-		85.0	141.0	0.0	1.00	0.81	-			B1	T1_1;T1	2
+mhpT	G6206	mrna	1	0	0	1	4				-		0.0	0.0	15.0	-	-	0.00			B4_1		1
+accA	EG11647	mrna	1	1	0	0	4				-		36.0	0.0	0.0	0.00	-	-					0
+ymfH	G6586	mrna	11	0	7	2	6	8.80E-04	3.20E-02	recip	-	cacagca	147.0	93.0	124.0	1.00	1.00	1.00				T1_1;T1	1
+ytfP	G7876	mrna	1	0	0	1	3				-		0.0	0.0	19.0	-	-	0.00					0
+tdcC	EG10991	mrna	3	2	0	1	4				-		285.0	35.0	0.0	0.00	0.00	-			B1		1
+arnT	G7170	mrna	1	1	0	0	6				-		0.0	0.0	9.0	-	-	0.00				T1_3;T1_1;T1	1
+znuA	G7017	mrna	1	1	0	0	3				-		0.0	0.0	16.0	-	-	0.00					0
+menI	G6912	mrna	1	1	0	0	3				-		29.0	0.0	51.0	0.00	-	0.00					0
+yiiD	EG11853	mrna	1	1	0	0	5				-		24.0	0.0	0.0	0.00	-	-					0
+yhcO	G7684	mrna	2	1	0	1	6				-		0.0	0.0	116.0	-	-	0.00					0
+nanK	G7676	mrna	2	2	0	0	4				-		49.0	55.0	0.0	0.00	0.00	-					0
+ydbJ	G0-10450	mrna	2	0	0	1	4				-		0.0	0.0	50.0	-	-	0.22				T1_4;T1_5;T1_1;T1	1
+yjhI	G7912	mrna	1	0	0	1	6				-		0.0	0.0	26.0	-	-	0.00					0
+shiA	G7067	mrna	2	1	0	1	6				-		28.0	0.0	52.0	0.00	-	0.00				T1_3;T1	1
+epmB	G7836	mrna	1	1	0	0	5				-		27.0	0.0	0.0	0.00	-	-					0
+sucD	EG10982	mrna	8	1	6	1	6	1.90E+02;2.50E+01	1.10E+00;1.10E+00		-		293.0	91.0	807.0	0.30	0.51	0.33					0
+rlmI	G6501	mrna	1	1	0	0	4				-		67.0	40.0	188.0	0.00	0.00	0.00					0
+clpS	G6463	mrna	4	2	0	2	4				-		249.0	178.0	654.0	0.14	0.13	0.11				T1_3;T1_1;T1_2;T1	1
+dnaT	EG10244	mrna	1	1	0	0	3				-		0.0	0.0	17.0	-	-	0.00					0
+rpsT	EG10919	mrna	3	2	0	0	3				-		593.0	253.0	285.0	0.10	0.00	0.00					0
+emrE	EG10629	mrna	1	1	0	0	5				-		42.0	0.0	0.0	0.00	-	-					0
+ytfJ	G7871	mrna	1	1	0	0	3				-		23.0	0.0	38.0	1.00	-	1.00					0
+hns	EG10457	mrna	4	2	1	1	6				-		2762.0	185.0	239.0	0.17	0.44	0.21					0
+gsiB	G6430	mrna	1	1	0	0	4				-		16.0	0.0	23.0	0.00	-	0.00				T1_3;T1	1
+ysgA	G7804	mrna	1	1	0	0	5				-		0.0	0.0	178.0	-	-	1.00			B1		1
+napF	EG12068	mrna	2	2	0	0	4				-		973.0	5431.0	305.0	0.00	0.03	0.00			B1;B3_2	T1_4;T1_5;T1_2;T1	2
+tdcA	EG10989	mrna	9	5	3	1	5	6.10E-01;4.10E-01;1.40E-01;1.70E-04	6.90E-01;6.20E-01;8.30E-02;5.30E-01		-		2108.0	133.0	0.0	0.00	0.17	-			B1;B3_2	T1_3;T1_1;T1	2
+ptsG	EG10787	mrna	1	1	0	0	6				-		852.0	1378.0	203.0	0.00	0.00	0.00				T1_4;T1_5;T1_3;T1	1
+cas2	EG12845	mrna	1	0	0	1	6				-		0.0	0.0	14.0	-	-	0.00		R3			1
+htpX	EG10462	mrna	3	2	0	1	4				-		19.0	16.0	320.0	0.00	0.00	0.00				T1_1;T1	1
+ybfL	G6377	mrna	3	2	0	1	4				-		23.0	0.0	31.0	0.00	-	0.00					0
+pgpB	EG10705	mrna	1	1	0	0	5				-		65.0	48.0	100.0	0.00	0.00	0.00				T1_3;T1	1
+nuoA	EG12082	mrna	1	1	0	0	5				-		250.0	0.0	0.0	1.00	-	-					0
+trg	EG11018	mrna	2	1	0	1	6				-		41.0	0.0	0.0	0.00	-	-					0
+G0-10700	G0-10700	other-ncrna	2	2	0	0	3				-		0.0	53.0	198.0	-	0.00	0.00		R4	B4_1		2
+isrB	G0-8904	other-ncrna	1	1	0	0	7				-		48.0	0.0	125.0	0.00	-	0.00		R1		T1_3;T1_1;T1	2
+sroD	G0-9384	other-ncrna	1	0	1	0	8				-		20.0	0.0	31.0	1.00	-	1.00		R1			1
+csrB	G0-8785	other-ncrna	1	0	1	0	7				-		0.0	0.0	41.0	-	-	1.00		R1			1
+ryfD	G0-10600	other-ncrna	4	0	2	1	4				-		133.0	0.0	346.0	0.74	-	0.77		R1		T1_3;T1_1;T1	2
+sroC	G0-9383	other-ncrna	4	1	2	1	7				-		1175.0	291.0	67805.0	0.00	0.00	0.48			B1;B3_1	T1_3;T1	2
+agrA	G0-10751	other-ncrna	2	0	2	0	3				-		21.0	0.0	0.0	0.00	-	-				T1	1
+G0-10699	G0-10699	other-ncrna	5	0	5	0	6	1.70E+01	8.60E-01		-		57.0	0.0	8.0	1.00	-	1.00		R4;R3			1
+G0-10698	G0-10698	other-ncrna	8	3	3	2	5	8.70E-01;1.30E-01;8.50E-02;7.40E-02	7.70E-01;7.20E-01;4.30E-01;7.10E-01		-		93.0	50.0	449.0	0.26	0.36	0.09		R4;R3	B2	T1	3
+ryeA	G0-8865	other-ncrna	7	2	3	2	7	3.80E+00;1.90E+00;9.80E-01;9.00E-01	1.50E+00;1.50E+00;1.10E+00;7.30E-01		-		130.0	0.0	351.0	0.06	-	0.03		R1		T1_4;T1_5;T1_1;T1	2
+isrC	G0-8905	other-ncrna	1	1	0	0	4				-		0.0	0.0	12.0	-	-	0.00		R1			1
+G0-10697	G0-10697	other-ncrna	9	2	5	2	4	2.60E+00;1.70E-02;2.80E-04;2.20E-04;1.10E-05;5.50E-06;2.90E-06	1.30E+00;1.60E+00;4.70E-01;2.00E+00;6.70E-01;5.70E-01;6.70E-01		-		922.0	532.0	1409.0	0.20	0.36	0.13		R4	B4_2;B4_1	T1_1;T1	3
+rybA	G0-8881	other-ncrna	1	1	0	0	4				-		0.0	0.0	21.0	-	-	0.00		R1		T1_1;T1	2
+ryjB	G0-10609	other-ncrna	4	0	4	0	4				-		11.0	0.0	589.0	1.00	-	0.02		R1			1
+sraB	G0-8862	other-ncrna	2	1	0	0	5				-		33.0	0.0	0.0	1.00	-	-		R1			1
+cyaR	G0-8878	srna	313	1	285	14	6	7.50E-27	2.60E-02	recip	no	[cg]ugg[uc][gu][gc][uc]gg[uc]	42491.0	31973.0	54178.0	1.00	1.00	0.85		R1	B1	T1_3;T1_1;T1_2;T1	3
+rydC	G0-10592	srna	4	0	4	0	4				-		204.0	56.0	74.0	1.00	1.00	1.00		R1	B1		2
+micF	EG30063	srna	16	0	13	1	8	4.70E+01;4.70E+01;9.10E+00	1.50E+00;1.90E+00;1.70E+00		-		6454.0	1569.0	4983.0	0.97	0.97	0.90		R1	B1	T1_1;T1	3
+oxyS	EG31116	srna	40	0	34	2	8	6.30E+03;6.00E+02;5.40E+02	2.40E-01;1.20E-02;1.60E+00		-		1247.0	1104.0	70.0	0.96	0.95	1.00		R1	B1	T1_4;T1_5;T1_1;T1	3
+rybB	G0-8880	srna	16	0	12	1	7	7.90E-03;7.60E-03;1.90E-03;6.50E-04;6.40E-04;2.20E-05;1.50E-05;1.10E-06	1.90E+00;9.50E-01;1.80E+00;1.10E+00;1.00E+00;5.70E-02;1.00E+00;1.70E-01		-		1079.0	509.0	1549.0	0.16	0.16	0.24		R1	B1	T1_4;T1_5;T1_1;T1	3
+gcvB	G0-8867	srna	143	1	121	10	8	1.30E-08	9.50E-05	recip	yes	a[ac][ac][ac][ag][ac][ca]a[au]cacaa[ca]	77503.0	50052.0	95643.0	0.84	0.83	0.57		R1	B1	T1_4;T1_5;T1_1;T1	3
+sgrS	G0-9941	srna	11	0	9	1	8	3.50E+01;2.30E-01;8.70E-02	2.70E-01;9.90E-01;1.50E-01		-		840.0	1062.0	88.0	0.84	0.84	0.86		R1	B1	T1_4;T1_5;T1_3;T1_1;T1	3
+glmZ	G0-8873	srna	2	0	1	0	7				-		893.0	1120.0	493.0	0.17	0.03	0.00		R1	B1	T1_1;T1	3
+rprA	G0-8863	srna	76	0	63	9	8	3.70E-09	1.70E-04	recip	yes	[cu][ag]cacagcaa	930.0	769.0	12313.0	1.00	1.00	0.99		R1		T1_1;T1	2
+mcaS	G0-8899	srna	37	1	29	5	7	4.70E-01;1.40E-01;1.00E-01;5.30E-03	9.20E-03;9.20E-03;9.20E-03;5.70E-01		-		4429.0	1777.0	5244.0	0.90	0.91	0.78		R1	B1	T1_1;T1_2;T1	3
+ryhB	G0-8872	srna	180	0	165	9	9	3.80E-49	1.60E-04	recip	yes	[ua][ga]cugg[ac][ag][ga][ac]a	72888.0	3772.0	149.0	0.88	0.98	0.96		R1	B1	T1_1;T1	3
+fnrS	G0-10677	srna	77	0	60	8	8	2.90E-03	1.50E-06	recip	yes	a[ag][ga][ag]ag[gu]aaga[ca]a[au][uag]	12722.0	21620.0	10126.0	0.69	0.67	0.84		R1	B1	T1_1;T1	3
+micL	G0-16601	srna	19	0	17	0	7	8.40E+00;1.10E-01;8.60E-03;2.70E-06	5.70E-02;3.60E-01;3.10E-01;2.10E-01		-		1347.0	1003.0	1415.0	0.88	0.90	0.91			B1;B3_1	T1_3;T1	2
+sdsR	G0-8883	srna	98	0	81	10	5	1.30E-05	8.40E-05	recip	yes	[ua]gcgc[ua][ga][ag][ac][au][gau]	73.0	0.0	6268.0	1.00	-	1.00		R1	B1	T1;T1_4;T1_5;T1_1;T1_2;T1_3	3
+ryjA	G0-8875	srna	2	0	0	1	4				-		0.0	0.0	27.0	-	-	0.59		R1		T1_1;T1	2
+dicF	EG31115	srna	19	0	16	2	5	5.20E+01;9.80E-01;4.00E-01;2.40E-01	6.40E-04;1.70E+00;1.10E-03;2.00E-01		-		410.0	158.0	282.0	1.00	1.00	1.00		R1;R2		T1_1;T1	2
+chiX	G0-9382	srna	36	0	16	3	7	4.70E+01;7.60E-22;2.20E-28	9.20E-03;1.70E+00;1.50E+00		-		111932.0	47461.0	40316.0	1.00	1.00	1.00		R1	B1	T1_4;T1_5;T1_1;T1_2;T1	3
+omrA	G0-8868	srna	24	0	21	2	8	3.60E+02;1.80E+02;2.60E+01	4.10E-01;2.90E-03;5.70E-03		-		117.0	0.0	1542.0	0.93	-	1.00		R1	B1	T1_1;T1	3
+spf	EG30098	srna	79	0	62	7	6	2.00E+02;3.10E+01;2.20E+01;1.20E+01;4.60E+00;9.90E-01;3.40E-01;1.10E-03	3.50E-01;1.90E+00;1.40E-01;1.30E+00;7.50E-01;7.60E-01;1.70E+00;1.20E+00		-		5181.0	4165.0	572.0	0.73	0.75	0.66		R1	B1	T1_3;T1_1;T1_2;T1	3
+omrB	G0-8882	srna	95	1	81	6	8	4.80E-18	1.10E-04	recip	yes	[ua]accucug[gc][ga]	4302.0	666.0	2520.0	0.76	0.95	0.48		R1	B1	T1_1;T1_2;T1	3
+mgrR	G0-10671	srna	142	1	117	12	8	3.40E-13	6.60E-05	recip	-	[cgu]uugca[ug]g[ga]a[aug][au][ag]	20666.0	14896.0	12179.0	0.93	0.96	0.92		R1	B1	T1_1;T1_2;T1	3
+rseX	G0-10574	srna	1	0	1	0	8				-		11.0	0.0	0.0	1.00	-	-					0
+dsrA	G7047	srna	13	0	9	2	7	2.60E+01;1.60E+01;1.00E+01;5.80E+00	3.20E-03;3.70E-07;7.80E-01;8.30E-01		-		7965.0	2364.0	10192.0	0.95	0.95	0.98		R1	B1	T1_4;T1_5;T1_3;T1	3
+micA	G0-8866	srna	100	0	84	4	7	1.10E-20	2.70E-07	recip	yes	[au][ac]a[au][au]ugcgcg[uc][cu]uu	12925.0	4493.0	18323.0	0.74	0.59	0.85		R1	B1	T1_4;T1_5;T1_1;T1_2;T1	3
+arcZ	G0-8871	srna	350	1	272	38	6	6.60E-121	4.50E-05	recip	yes	[cu][ag]ccagggaa[au]	42591.0	28292.0	64237.0	0.98	0.93	0.99		R1	B1	T1_1;T1_2;T1	3
+serT	EG30093	trna	2	1	1	0	3				-		0.0	6.0	326.0	-	0.00	0.00				T1_1;T1	1
+lysQ	G6392	trna	1	1	0	0	6				-		34.0	0.0	117.0	0.00	-	0.00					0
+argX	EG30017	trna	1	1	0	0	3				-		489.0	146.0	0.0	0.24	0.00	-				T1_1;T1	1
+argQ	EG30013	trna	1	1	0	0	4				-		0.0	0.0	926.0	-	-	0.00					0
+asnW	G7069	trna	1	0	1	0	3				-		6.0	0.0	0.0	0.00	-	-					0
+tyrV	EG30108	trna	2	0	1	0	3				-		0.0	76.0	15.0	-	0.74	0.00				T1_3;T1_2;T1	1
+metU	EG30059	trna	2	1	0	1	2				-		16.0	14.0	1139.0	0.00	0.00	0.00				T1_3;T1_2;T1	1
+lysT	EG30055	trna	1	1	0	0	4				-		0.0	0.0	3042.0	-	-	0.00				T1_3;T1_1;T1	1
+leuT	EG30049	trna	1	1	0	0	4				-		0.0	0.0	1014.0	-	-	0.00				T1_1;T1	1
+asnT	EG30020	trna	2	1	1	0	6				-		4174.0	0.0	14297.0	0.00	-	0.00				T1_1;T1_2;T1	1
+leuX	EG30053	trna	1	0	0	0	4				-		30.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+argU	EG30014	trna	1	0	0	0	2				-		0.0	0.0	8.0	-	-	0.00					0
+alaX	EG30012	trna	2	2	0	0	6				-		237.0	110.0	545.0	0.52	0.40	0.63				T1_3;T1_1;T1	1
+aspU	EG30024	trna	1	1	0	0	8				-		0.0	0.0	10300.0	-	-	0.00				T1_3;T1_1;T1	1
+pheV	EG30065	trna	1	1	0	0	3				-		0.0	0.0	421.0	-	-	0.00					0
+metY	EG30061	trna	1	1	0	0	6				-		0.0	0.0	142.0	-	-	0.00				T1_1;T1_2;T1	1
+gltW	EG30035	trna	2	1	0	0	4				-		16.0	0.0	2634.0	1.00	-	0.00				T1_3;T1_1;T1	1
+leuZ	EG30054	trna	1	1	0	0	3				-		0.0	0.0	612.0	-	-	0.00					0
+valW	EG30112	trna	1	1	0	0	4				-		0.0	0.0	241.0	-	-	0.00			B1	T1_1;T1	2
+thrU	EG30102	trna	3	1	1	1	6				-		205.0	473.0	1497.0	0.00	0.22	0.00				T1_3;T1_1;T1_2;T1	1
+tyrU	EG30107	trna	2	0	1	0	3				-		108.0	141.0	15.0	0.00	0.14	1.00				T1_3;T1_1;T1_2;T1	1
+murA.ibaG.TU	EG11358.G7657.TU	tu	1	1	0	0	4				-		19.0	0.0	0.0	0.00	-	-					0
+sucB.sucC.TU	EG10980.EG10981.TU	tu	2	2	0	0	5				-		182.0	220.0	91.0	0.00	0.00	0.00					0
+lpxD.fabZ.TU	EG10316.EG11284.TU	tu	1	0	0	1	4				-		22.0	15.0	0.0	0.00	0.00	-				T1_1;T1	1
+metQ.metI.TU	EG11504.EG11737.TU	tu	1	1	0	0	3				-		57.0	0.0	0.0	1.00	-	-					0
+groS.groL.TU	EG10600.EG10599.TU	tu	1	0	0	1	3				-		20.0	0.0	0.0	0.00	-	-					0
+tdcC.tdcB.TU	EG10991.EG10990.TU	tu	1	1	0	0	3				-		0.0	15.0	0.0	-	0.00	-			B1		1
+yciO.yciQ.TU	G6635.G6636.TU	tu	1	0	0	1	4				-		0.0	0.0	14.0	-	-	0.00					0
+rfbA.rfbD.TU	EG11978.EG12411.TU	tu	1	1	0	0	5				-		0.0	0.0	15.0	-	-	1.00					0
+treC.treB.TU	EG11402.EG12127.TU	tu	2	1	0	1	4				-		176.0	85.0	0.0	0.00	0.00	-					0
+gltU.rrlC.TU	EG30033.EG30079.TU	tu	1	0	0	0	4				-		0.0	0.0	5.0	-	-	0.00					0
+rrlD.alaU.TU	EG30080.EG30009.TU	tu	1	0	1	0	4				-		12.0	0.0	0.0	0.00	-	-					0
+pgk.epd.TU	EG10703.EG10368.TU	tu	1	0	0	1	4				-		0.0	0.0	7.0	-	-	0.00					0
+rpsG.rpsL.TU	EG10906.EG10911.TU	tu	1	0	1	0	4				-		37.0	0.0	0.0	0.00	-	-					0
+yciE.yciF.TU	EG11125.EG11126.TU	tu	1	1	0	0	4				-		0.0	0.0	39.0	-	-	0.00					0
+nirD.nirC.TU	EG10655.EG10654.TU	tu	1	0	0	1	6				-		39.0	121.0	0.0	0.00	0.10	-			B1	T1_3;T1	2
+lnt.ybeX.TU	EG10168.G6361.TU	tu	1	1	0	0	4				-		10.0	0.0	0.0	0.00	-	-					0
+ychF.pth.TU	EG11404.EG10785.TU	tu	1	1	0	0	5				-		35.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+yebC.nudB.TU	EG11137.EG11138.TU	tu	1	0	0	0	5				-		0.0	0.0	6.0	-	-	1.00					0
+btuE.btuC.TU	EG10129.EG10127.TU	tu	1	1	0	0	5				-		78.0	20.0	48.0	0.00	0.00	0.00				T1_1;T1	1
+lapB.pyrF.TU	EG12691.EG10809.TU	tu	1	1	0	0	6				-		96.0	35.0	33.0	0.30	0.00	0.00					0
+fliY.fliZ.TU	G7039.EG11356.TU	tu	2	2	0	0	5				-		4961.0	5005.0	100.0	0.15	0.16	0.18			B4_2	T1_1;T1_2;T1	2
+rimP.metY.TU	EG11179.EG30061.TU	tu	2	1	0	0	7				-		178.0	180.0	8.0	0.00	0.00	1.00					0
+rnr.rlmB.TU	EG11259.G7845.TU	tu	1	1	0	0	3				-		0.0	0.0	9.0	-	-	1.00					0
+ilvL.ilvX.TU	EG11270.G0-10641.TU	tu	3	0	2	1	8				-		38.0	47.0	0.0	0.32	1.00	-			B1		1
+tyrV.tyrT.TU	EG30108.EG30106.TU	tu	1	1	0	0	3				-		27.0	0.0	0.0	0.00	-	-				T1_3;T1_1;T1	1
+rpmI.infC.TU	EG11231.EG10506.TU	tu	3	0	2	1	3				-		348.0	148.0	12.0	0.00	0.00	0.00					0
+chbC.chbB.TU	EG10141.EG10140.TU	tu	1	1	0	0	5				-		1437.0	0.0	139.0	0.00	-	0.00					0
+pheL.pheA.TU	EG11271.EG10707.TU	tu	1	1	0	0	6				-		79.0	0.0	0.0	0.00	-	-				T1_1;T1	1
+nuoG.nuoF.TU	EG12087.EG11774.TU	tu	2	1	0	1	4				-		232.0	0.0	0.0	0.47	-	-					0
+yqjC.yqjD.TU	G7611.G7612.TU	tu	1	0	0	1	2				-		0.0	0.0	34.0	-	-	0.00					0
+nanE.nanT.TU	G7677.G436.TU	tu	1	1	0	0	3				-		133.0	0.0	0.0	0.17	-	-					0
+aceA.aceK.TU	EG10022.EG10026.TU	tu	1	0	1	0	4				-		0.0	0.0	19.0	-	-	1.00					0
+fusA.rpsG.TU	EG10360.EG10906.TU	tu	2	0	1	1	4				-		15.0	13.0	0.0	0.00	0.00	-					0
+araD.araA.TU	EG10055.EG10052.TU	tu	1	0	0	1	4				-		0.0	6.0	0.0	-	0.00	-					0
+hisQ.hisJ.TU	EG12125.EG12124.TU	tu	2	2	0	0	4				-		484.0	66.0	441.0	0.00	0.00	0.22					0
+xylB.xylA.TU	EG11075.EG11074.TU	tu	15	0	15	0	7	9.80E+00;8.40E-01;1.40E-02	2.80E-01;1.30E+00;2.70E-01		-		59.0	63.0	207.0	1.00	1.00	1.00					0
+hflX.hflK.TU	EG10437.EG10436.TU	tu	3	3	0	0	5				-		172.0	0.0	221.0	0.61	-	0.00					0
+fumB.dcuB.TU	EG10357.EG10006.TU	tu	1	1	0	0	4				-		15.0	0.0	0.0	0.00	-	-			B1;B3_2		1
+rpoS.nlpD.TU	EG10510.EG12111.TU	tu	1	1	0	0	4				-		0.0	0.0	284.0	-	-	0.00			B1;B3_2		1
+guaA.guaB.TU	EG10420.EG10421.TU	tu	2	2	0	0	3				-		75.0	0.0	35.0	0.00	-	0.00					0
+rbsB.rbsK.TU	EG10815.EG10818.TU	tu	4	1	3	0	4				-		436.0	266.0	615.0	1.00	1.00	1.00				T1_3;T1_1;T1	1
+gcvH.gcvT.TU	EG10371.EG11442.TU	tu	1	1	0	0	6				-		0.0	36.0	0.0	-	0.00	-					0
+lspA.fkpB.TU	EG10548.EG11080.TU	tu	1	1	0	0	3				-		15.0	20.0	0.0	0.00	0.00	-					0
+aceF.lpd.TU	EG10025.EG10543.TU	tu	3	2	0	0	4				-		88.0	0.0	48.0	0.00	-	0.00					0
+pheS.pheM.TU	EG10709.EG11272.TU	tu	1	1	0	0	7				-		15.0	0.0	28.0	0.00	-	0.00				T1_1;T1	1
+tnaA.tnaB.TU	EG11005.EG11006.TU	tu	2	2	0	0	4				-		209.0	0.0	27.0	0.59	-	1.00					0
+ilvE.ilvD.TU	EG10497.EG10496.TU	tu	1	1	0	0	3				-		46.0	0.0	0.0	1.00	-	-			B1	T1_3;T1	2
+alaV.rrlH.TU	EG30010.EG30083.TU	tu	2	0	2	0	4				-		36.0	9.0	0.0	0.39	0.00	-					0
+glnP.glnH.TU	EG10388.EG10386.TU	tu	1	1	0	0	2				-		0.0	0.0	46.0	-	-	0.00					0
+dksA.sfsA.TU	EG10230.EG10949.TU	tu	2	1	0	0	5				-		132.0	42.0	191.0	0.00	0.00	0.00				T1_1;T1_2;T1	1
+deoB.deoD.TU	EG10220.EG10222.TU	tu	2	0	0	2	4				-		41.0	34.0	0.0	0.00	0.00	-				T1_3;T1_1;T1	1
+pspA.pspB.TU	EG10776.EG10777.TU	tu	1	1	0	0	3				-		15.0	0.0	0.0	1.00	-	-					0
+ytfQ.ytfR.TU	EG12517.EG12518.TU	tu	1	1	0	0	5				-		702.0	322.0	12824.0	0.00	0.00	0.01					0
+yaiA.aroM.TU	EG11093.EG10083.TU	tu	1	0	0	1	5				-		11.0	0.0	0.0	0.00	-	-					0
+waaZ.waaY.TU	EG11426.EG11425.TU	tu	1	1	0	0	4				-		0.0	0.0	38.0	-	-	0.00					0
+lacY.lacZ.TU	EG10526.EG10527.TU	tu	1	0	0	1	4				-		0.0	21.0	0.0	-	0.00	-					0
+rplA.rplJ.TU	EG10864.EG10871.TU	tu	2	0	1	1	4				-		27.0	0.0	15.0	0.00	-	0.00				T1	1
+manX.manY.TU	EG10567.EG10568.TU	tu	1	1	0	0	4				-		8.0	0.0	0.0	0.00	-	-					0
+ilvB.ivbL.TU	EG10494.EG11275.TU	tu	1	1	0	0	5				-		0.0	559.0	177.0	-	1.00	1.00			B1		1
+fhuA.fhuC.TU	EG10302.EG10304.TU	tu	2	1	0	1	4				-		128.0	18.0	7.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+hpf.ptsN.TU	EG11681.EG11682.TU	tu	1	1	0	0	3				-		22.0	0.0	0.0	0.00	-	-					0
+fimA.fimI.TU	EG10308.EG11974.TU	tu	1	0	1	0	2				-		5.0	0.0	0.0	1.00	-	-					0
+glmS.glmU.TU	EG10382.EG11198.TU	tu	2	1	0	1	3				-		20217.0	28603.0	7894.0	0.04	0.04	0.06					0
+fbaA.pgk.TU	EG10282.EG10703.TU	tu	1	0	0	1	5				-		61.0	0.0	0.0	0.66	-	-					0
+damX.aroB.TU	EG11183.EG10074.TU	tu	2	1	0	1	4				-		26.0	0.0	0.0	0.00	-	-					0
+yeaG.yeaH.TU	G6969.G6970.TU	tu	1	1	0	0	6				-		0.0	0.0	9.0	-	-	0.00				T1_3;T1_1;T1	1
+mgtL.mgtA.TU	G0-10689.EG12525.TU	tu	1	0	0	1	4				-		222.0	177.0	19.0	0.00	0.00	0.00					0
+acpP.fabF.TU	EG50003.EG12606.TU	tu	1	1	0	0	6				-		46.0	0.0	0.0	0.00	-	-					0
+rpsB.tsf.TU	EG10901.EG11033.TU	tu	1	1	0	0	3				-		16.0	0.0	0.0	0.00	-	-					0
+gcvP.gcvH.TU	EG11810.EG10371.TU	tu	1	0	1	0	3				-		9.0	12.0	20.0	0.00	0.00	0.00					0
+nanT.nanA.TU	G436.EG10637.TU	tu	4	1	2	0	4				-		726.0	322.0	0.0	0.98	1.00	-				T1_3;T1_1;T1	1
+yggX.mltC.TU	G7532.G7533.TU	tu	1	1	0	0	3				-		1040.0	879.0	33.0	0.32	0.38	0.00			B1		1
+sra.bdm.TU	EG11508.G6776.TU	tu	1	1	0	0	3				-		0.0	0.0	39.0	-	-	0.00				T1_1;T1	1
+ftsA.ftsZ.TU	EG10339.EG10347.TU	tu	4	1	1	1	5				-		88.0	57.0	381.0	0.00	0.00	0.00				T1_3;T1_1;T1	1
+gntK.gntR.TU	EG12629.EG12630.TU	tu	1	1	0	0	3				-		7.0	0.0	0.0	0.00	-	-					0
+rseA.rpoE.TU	EG12341.EG11897.TU	tu	1	1	0	0	3				-		0.0	0.0	23.0	-	-	0.00				T1_2;T1	1
+tnaC.tnaA.TU	EG11276.EG11005.TU	tu	6	3	1	2	7	1.70E+00;1.40E+00;3.70E-01;1.40E-01	9.80E-01;9.80E-01;7.10E-01;7.30E-01		-		4954.0	2957.0	1785.0	0.03	0.02	0.01				T1_1;T1	1
+argQ.argZ.TU	EG30013.EG30019.TU	tu	1	1	0	0	3				-		125.0	63.0	0.0	0.00	0.00	-					0
+brnQ.proY.TU	EG12168.G6233.TU	tu	1	1	0	0	6				-		18.0	0.0	0.0	0.00	-	-					0
+gadE.mdtE.TU	EG11544.EG12240.TU	tu	25	0	23	1	8	5.80E-06;5.80E-06	1.90E+00;1.90E+00		-		0.0	0.0	759.0	-	-	1.00					0
+rrlH.rrfH.TU	EG30083.EG30076.TU	tu	2	0	1	0	4				-		55.0	0.0	0.0	1.00	-	-					0
+ahpC.ahpF.TU	EG11384.EG11385.TU	tu	1	0	0	0	4				-		0.0	0.0	9.0	-	-	1.00					0
+uraA.upp.TU	EG12129.EG11332.TU	tu	1	1	0	0	8				-		27.0	223.0	23.0	1.00	1.00	1.00					0
+miaA.hfq.TU	EG10595.EG10438.TU	tu	4	2	0	2	7				-		6718.0	5210.0	7613.0	0.00	0.00	0.00				T1_1;T1	1
+eda.edd.TU	EG10256.EG10257.TU	tu	1	1	0	0	5				-		28.0	0.0	0.0	0.00	-	-					0
+yjcH.acs.TU	EG11943.EG11448.TU	tu	1	1	0	0	4				-		0.0	0.0	81.0	-	-	0.42					0
+gadC.gadB.TU	G6786.EG11490.TU	tu	2	1	0	0	4				-		0.0	0.0	40.0	-	-	0.00					0
+ariR.ymgC.TU	G6606.G6607.TU	tu	10	1	5	2	5	4.40E-02;8.80E-03	9.50E-01;2.40E-01		-		106.0	161.0	2410.0	0.00	0.00	0.06				T1_3;T1	1
+atpC.atpD.TU	EG10100.EG10101.TU	tu	1	0	0	1	3				-		20.0	8.0	0.0	0.00	0.00	-					0
+waaU.waaZ.TU	EG11423.EG11426.TU	tu	1	1	0	0	4				-		22.0	0.0	0.0	0.00	-	-					0
+yjiA.yjiX.TU	EG10021.G7941.TU	tu	1	1	0	0	6				-		0.0	10.0	0.0	-	0.00	-					0
+gatB.gatA.TU	EG12415.EG12414.TU	tu	2	0	2	0	4				-		0.0	0.0	52.0	-	-	0.54					0
+yajO.dxs.TU	G6236.G6237.TU	tu	2	0	1	1	3				-		24.0	14.0	0.0	0.58	1.00	-					0
+ccmC.ccmB.TU	EG12057.EG12058.TU	tu	1	0	0	1	5				-		0.0	5.0	0.0	-	0.00	-					0
+rrfG.rrlG.TU	EG30075.EG30082.TU	tu	2	0	2	0	4				-		20.0	0.0	0.0	1.00	-	-					0
+gabT.gabP.TU	EG10361.EG11330.TU	tu	1	0	0	1	3				-		0.0	0.0	25.0	-	-	0.00					0
+bamA.skp.TU	G6093.EG10455.TU	tu	1	0	0	1	3				-		586.0	100.0	897.0	0.12	0.16	0.07				T1_3;T1_1;T1	1
+marA.marB.TU	EG11434.EG11599.TU	tu	1	1	0	0	4				-		45.0	0.0	0.0	1.00	-	-				T1_4;T1_5;T1_3;T1	1
+frmB.frmA.TU	G6208.EG50010.TU	tu	1	0	1	0	4				-		6.0	0.0	0.0	1.00	-	-					0
+pflB.focA.TU	EG10701.EG11258.TU	tu	1	0	0	1	5				-		0.0	0.0	7.0	-	-	0.00					0
+ynfK.mlc.TU	G6851.G6852.TU	tu	1	0	1	0	6				-		0.0	14.0	0.0	-	0.00	-					0
+tdcB.tdcA.TU	EG10990.EG10989.TU	tu	3	2	0	1	5				-		125.0	511.0	0.0	0.08	0.28	-			B1;B3_2		1
+hycB.hycA.TU	EG10475.EG10474.TU	tu	1	0	0	1	4				-		38.0	66.0	21.0	0.00	0.00	0.00			B1		1
+iscS.iscR.TU	G7325.G7326.TU	tu	1	1	0	0	3				-		42.0	0.0	0.0	0.00	-	-					0
+sdhB.sucA.TU	EG10932.EG10979.TU	tu	2	0	0	2	5				-		974.0	170.0	449.0	0.00	0.00	0.00					0
+cysM.cysA.TU	EG10193.EG10183.TU	tu	1	1	0	0	5				-		28.0	6.0	45.0	0.00	1.00	0.00				T1_1;T1	1
+entD.fepA.TU	EG10262.EG10293.TU	tu	2	1	0	1	4				-		131.0	0.0	0.0	0.21	-	-			B1	T1_1;T1_2;T1	2
+aceB.aceA.TU	EG10023.EG10022.TU	tu	1	1	0	0	2				-		0.0	58.0	0.0	-	1.00	-					0
+glpX.glpK.TU	EG11517.EG10398.TU	tu	2	0	1	1	4				-		72.0	22.0	51.0	0.49	1.00	0.00			B1	T1_1;T1	2
+gapA.yeaD.TU	EG10367.G6966.TU	tu	1	1	0	0	8				-		14.0	0.0	0.0	0.00	-	-					0
+nuoC.nuoB.TU	EG12084.EG12083.TU	tu	2	0	1	1	5				-		45.0	29.0	0.0	0.00	0.00	-					0
+aroC.prmB.TU	EG10075.EG12449.TU	tu	1	1	0	0	5				-		1594.0	1044.0	185.0	0.20	0.22	0.34				T1_3;T1_1;T1_2;T1	1
+rplL.rpoB.TU	EG10873.EG10894.TU	tu	1	1	0	0	5				-		58.0	0.0	0.0	1.00	-	-				T1_1;T1	1
+slp.dctR.TU	EG11890.EG11889.TU	tu	1	1	0	0	3				-		0.0	0.0	74.0	-	-	0.00					0
+malK.lamB.TU	EG10558.EG10528.TU	tu	1	1	0	0	3				-		0.0	0.0	23.0	-	-	0.00				T1_3;T1	1

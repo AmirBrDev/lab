@@ -1,0 +1,71 @@
+name	label
+//srna
+ryhB	1
+micA	1
+sdsR	1
+spf	1
+fnrS	1
+rprA	1
+oxyS	1
+chiX	1
+omrA	1
+micL	1
+dicF	1
+micF	1
+rybB	1
+dsrA	1
+sgrS	1
+rydC	1
+glmZ	1
+ryjA	1
+rseX	1
+arcZ	1
+cyaR	1
+gcvB	1
+mgrR	1
+omrB	1
+mcaS	1
+//2 tbs targets
+raiA	-1
+ompA.5UTR	-1
+fecA.5UTR	-1
+cspD	-1
+nanC	-1
+ecnB	-1
+nadE.5UTR	-1
+rpoH.5UTR	-1
+//3 tbs targets
+yecA.leuZ.IGR	-1
+rmf	-1
+cfa.5UTR	-1
+rbsD	-1
+//1 tbs targets
+ompC.5UTR	-1
+ariR.ymgC.TU	-1
+insH-1	-1
+crl	-1
+sroC	-1
+rbsB.rbsK.TU	-1
+nanT.nanA.TU	-1
+ftsA.ftsZ.TU	-1
+dinI.EST3UTR	-1
+ygaM.EST3UTR	-1
+dcyD.5UTR	-1
+ispU.5UTR	-1
+malE.5UTR	-1
+ydhZ.EST5UTR	-1
+glnH.5UTR	-1
+hemN.5UTR	-1
+argT.5UTR	-1
+yjbB.5UTR	-1
+//5 tbs targets
+fliC	-1
+ompC	-1
+gcvH	-1
+nlpD	-1
+oppA	-1
+tdcA	-1
+ompT	-1
+malE	-1
+//7 tbs targets
+ompF	-1

@@ -14,7 +14,8 @@ def run(base_genome_file,
 		candidate_list_file, 
 		workdir, 
 		genome_list_file,
-		project_to_taxamonies_file):
+		project_to_taxamonies_file,
+		tree_file):
 
 	seq_list = get_seq_list(base_genome_file, candidate_list_file)
 	conv_table = build_project_id_to_tax_id_dictionary(project_to_taxamonies_file)
@@ -69,7 +70,8 @@ def run(base_genome_file,
 
 		# Run Rate4Site
 		rate_runner = Rate4Site("%s/emma.aln" % workdir, 
-								"%s/emma.dnd" % workdir)
+								tree_file,
+								"./rate4site64")
 
 		rate_runner.runRate(outname="results/%s.rate" % seq[0])
 
@@ -84,16 +86,21 @@ if __name__ == "__main__":
 	GENOME_LIST_FILE = "./genome_list_exist.table"
 #	GENOME_LIST_FILE = "./genome_list_partial.table"
 	PROJ_TO_TAXAMONIES_FILE = "./microbial/lproks_1.txt.gz"
+	TREE_FILE = "speciesTree.cgi"
 
 	run(BASE_GENOME_FILE,
 		CANDIDATE_LIST_FILE,
 		WORK_DIR,
 		GENOME_LIST_FILE,
-		PROJ_TO_TAXAMONIES_FILE)
-	rate_runner = Rate4Site("%s/emma.aln" % WORK_DIR, 
-							"%s/emma.dnd" % WORK_DIR)
+		PROJ_TO_TAXAMONIES_FILE,
+		TREE_FILE)
 
-	print rate_runner.runRate()
+
+#	rate_runner = Rate4Site("%s/emma.aln" % WORK_DIR, 
+#							TREE_FILE,
+#							"./rate4site64")
+#
+#	print rate_runner.runRate()
 
 
 

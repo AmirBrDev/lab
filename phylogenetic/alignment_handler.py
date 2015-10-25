@@ -13,7 +13,9 @@ import numpy
 import pylab
 
 def run_local_alignment(seq_file, genome_list, workdir):
-
+	
+	SCORE_INDEX = 1
+	
 	genome_table = Table(genome_list)
 	result = []
 
@@ -27,24 +29,29 @@ def run_local_alignment(seq_file, genome_list, workdir):
 				genome_file = "./microbial/%s/%s" % (genome_name, file_name)
 
 		# Run on both strands
-		result.append(directed_local_alignment(genome_file,
-											   seq_file,
-											   genome_name,
-											   True,
-											   workdir))
+		first = directed_local_alignment(genome_file,
+										 seq_file,
+										 genome_name,
+										 True,
+										 workdir)
 
-		result.append(directed_local_alignment(genome_file,
-											   seq_file,
-											   genome_name,
-											   False,
-											   workdir))
+		second = directed_local_alignment(genome_file,
+										  seq_file,
+										  genome_name,
+										  False,
+										  workdir)
+
+		if (first[SCORE_INDEX] > second[SCORE_INDEX]):
+			result.append(first)
+		else:
+			result.append(second)
 
 	os.remove("./tmp/curr_genome.fasta")
 
 	return result
 
 def directed_local_alignment(genome_file, seq_file, genome_name, is_positive, workdir):
-
+	
 	if is_positive:
 		name_extension = "positive"
 
@@ -198,10 +205,7 @@ def get_id_by_name(name, proj_id_to_tax_id_dict):
 	project_id = name[name.find("uid") + 3:]
 
 	try:
-		if appendix == "positive":
-			return proj_id_to_tax_id_dict[project_id]
-		else:
-			return "%s_neg" % proj_id_to_tax_id_dict[project_id]
+		return proj_id_to_tax_id_dict[project_id]
 
 	except KeyError:
 		return None
@@ -213,6 +217,10 @@ def is_score_segnificant(score, median, std):
 
 
 def run_multiple_sequence_alignment(records, aln_path, dnd_path, workdir):
+
+	print "#" * 100
+	print records
+	print "#" * 100
 
 	SeqIO.write(records, "%s/emma.fasta" % workdir, "fasta")
 

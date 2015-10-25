@@ -78,16 +78,15 @@ def test():
 	for i in test_set_1:
 		print i, predict(numpy.array(theta_1), i), odds(numpy.array(theta_1), i)
 
-from training_loader import retrieve_training_set
+from training_loader import retrieve_training_set, load_file
 
-X, y, val_x, val_y = retrieve_training_set()
+print "*" * 100
+print """Running logistic regression"""
+print "*" * 100
+
+X, y, val_x, val_y, training_names, validation_names= retrieve_training_set()
 
 X_norm = (X - X.mean(axis=0)) / X.max(axis=0)
-
-#print X
-print "*" * 50
-print X_norm
-
 
 X_1 = numpy.append( numpy.ones((X_norm.shape[0], 1)), X_norm, axis=1)
 
@@ -97,5 +96,27 @@ theta_1 = opt.fmin_bfgs(cost, theta, fprime=grad, args=(X_1, y))
 val_x_norm = (val_x - X.mean(axis=0)) / X.max(axis=0)
 val_x_1 = numpy.append( numpy.ones((val_x_norm.shape[0], 1)), val_x_norm, axis=1)
 
-for i in val_x_1:
-	print i, predict(numpy.array(theta_1), i), odds(numpy.array(theta_1), i)
+print "#" * 80
+print "Running validation"
+
+for i, name in zip(val_x_1, validation_names):
+	print name, predict(numpy.array(theta_1), i), odds(numpy.array(theta_1), i)
+
+print "theta:", theta_1
+print "Validation Finished"
+
+print "#" * 80
+print "Analyze data:"
+names, vectors = load_file("./table_s6_range_0.csv")
+
+vectors_norm = (vectors - X.mean(axis=0)) / X.max(axis=0)
+vectors_padded = numpy.append( numpy.ones((vectors_norm.shape[0], 1)), vectors_norm, axis=1)
+
+with open("results.txt", "wb") as fl:
+
+	for name, vector in zip(names, vectors_padded):
+		fl.write("%s\t%s\t%s\n" % (name, predict(numpy.array(theta_1), vector), odds(numpy.array(theta_1), vector)))
+
+	fl.close()
+
+print "*" * 100

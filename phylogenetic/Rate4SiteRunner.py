@@ -23,6 +23,7 @@ def narrow_tree(tree,aln):
 #		   tree2=dendropy.treemanip.prune_subtree(tree,n)
 		if n.is_leaf() and (n.taxon is not None) and (str(n.taxon).replace("'", "") not in nodes):
 			tree.prune_subtree(n)
+
 	return tree
 
 class Rate4Site(object):
@@ -61,7 +62,9 @@ class Rate4Site(object):
 		self.treefile = tempfile.NamedTemporaryFile()
 #		self.tree.write(self.treefile,'newick',internal_labels=False)
 #		self.treefile.write(self.tree.as_string('newick',internal_labels=False)[5:])
-		self.treefile.write(self.tree.as_string('newick',suppress_internal_taxon_labels=False)[5:])
+		self.treefile.write(self.tree.as_string('newick',
+												suppress_internal_taxon_labels=True, 
+												suppress_internal_node_labels=True))
 		self.treefile.flush()
 		self.cmd=cmd
 
@@ -74,18 +77,12 @@ class Rate4Site(object):
 		if refseq:
 			runcmd+=' -a '+refseq
 #			sys.stderr.write(refseq+'\n')
-		pipe = Popen("./%s" % runcmd,shell=True, stdout=PIPE, stderr=PIPE).stdout
+		pipe = Popen("%s" % runcmd,shell=True, stdout=PIPE, stderr=PIPE).stdout
 		rates=[]
 		for line in pipe:
-#			sys.stderr.write(line)
+			sys.stderr.write(line)
 			if 'rate of pos:' in line:
 				rates.append(float(line.strip().split()[-1]))
 		return rates
 				
-
-		
-		
-		
-	
-
 

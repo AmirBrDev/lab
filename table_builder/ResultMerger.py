@@ -22,7 +22,7 @@ their_tables = [("raghavan_s5", "mev >= 1"),
                 ("bilusic_s3_1", "1=1"),
                 ("bilusic_s3_2", "1=1"),
                 ("bilusic_s4_1", "1=1"),
-                ("bilusic_s4_2", "1=1"),
+                ("bilusic_s4_2", "1="),
                 # "zhang_s3_2013_sheet2008",
                 # "zhang_s3_2013_sheet2009",
                 # "zhang_s4_2013_sheet2008",
@@ -973,17 +973,29 @@ def get_consistency_as_first(table_name_list, name, cursor):
 
     return total, unique_first, percentage
 
+def get_condition_by_header_name(field, conditions, conditions_beauty_names):
+    
+    for index, name in enumerate(conditions_beauty_names):
+        if field.endswith(name):
+            return conditions[index]
+
+    return None
+
 def format_final_table(path, our_tables):
 
-    sets = {"raghavan": ["raghavan_s5", "raghavan_s6", "raghavan_s7", "raghavan_2"],
-            "lybecker": ["lybecker_s1", "lybecker_s2"],
-            "bilusic": ["bilusic_s1", "bilusic_s2", "bilusic_s3_1", "bilusic_s3_2", "bilusic_s4_1", "bilusic_s4_2"],
+    sets = {"Raghavan et al 2011": ["raghavan_s5", "raghavan_s6", "raghavan_s7", "raghavan_2"],
+            "Lybecker et al 2014": ["lybecker_s1", "lybecker_s2"],
+            "Bilusic et al 2014": ["bilusic_s1", "bilusic_s2", "bilusic_s3_1", "bilusic_s3_2", "bilusic_s4_1", "bilusic_s4_2"],
             # "zhang": ["zhang_s3_2013_sheet2008", "zhang_s3_2013_sheet2009", "zhang_s4_2013_sheet2008", "zhang_s4_2013_sheet2009"],
-            "thomason": ["thomason", "thomason_primary", "thomason_secondary", "thomason_internal", "thomason_antisense", "thomason_putative_asrna"]}
+            "Thomason et al 2015": ["thomason", "thomason_primary", "thomason_secondary", "thomason_internal", "thomason_antisense", "thomason_putative_asrna"]}
 
     conditions = ["signif_chimeras_of_iron_limitation_cl",
                   "signif_chimeras_of_log_phase_cl",
                   "signif_chimeras_of_stationary_cl"]
+
+    conditions_beauty_names = ["Iron limitation",
+                               "Log",
+                               "Stationary"]
 
     short_name = {"raghavan_s5": "R1",
                   "raghavan_s6": "R2",
@@ -1009,44 +1021,55 @@ def format_final_table(path, our_tables):
                   "thomason_antisense": "T1_4",
                   "thomason_putative_asrna": "T1_5"}
 
+    beauty_type_names = {"3utr": "3UTR",
+                         "5utr": "5UTR",
+                         "as": "AS",
+                         "cis_as_with_trans_t": "cASt",
+                         "igr": "IGR",
+                         "mrna": "CDS",
+                         "other-ncrna": "oRNA",
+                         "srna": "TB-sRNA",
+                         "trna": "tRNA",
+                         "tu": "IGT"}
+
     loader = TableLoader()
     results = loader.load(path)
 
-    header = ["name",
-              "ecocyc_id",
-              "type",
-              "total_interactions",
-              "tb_srna_targets",
-              "mrna_5utr_targets",
-              "igr_3utr_targets",
-              "max_poly_u_length",
-              "meme",
-              "mast",
-              "meme_result",
-              "binding_site_state",
-              "motif"]
+    header = ["Name",
+              "EcoCyc id",
+              "Type",
+              "Total UI",
+              "TB-sRNA UI",
+              "CDS & 5'UTR UI",
+              "3'UTR & IGR UI"]
 
     start_of_total_interactions = len(header)
-    for cond_name in conditions:
-        header.append("%s.total_interactions" % cond_name)
+    for cond_name in conditions_beauty_names:
+        header.append("TNR %s" % cond_name)
 
     end_of_total_interactions = len(header)
 
     start_of_interactions = end_of_total_interactions
 
-    for cond_name in conditions:
-        header.append("%s.as_rna2_percentage" % cond_name)
+    for cond_name in conditions_beauty_names:
+        header.append("Fraction as RNA2 %s" % cond_name)
 
     end_of_interactions = len(header)
 
-    start_of_tables = end_of_interactions
+    header.extend(["Longest poly U",
+                   "MEME E-value",
+                   "MAST E-value",
+                   "Meme motif",
+                   "Overlaps known binding site"])
+
+    start_of_tables = len(header)
 
     for set_name in sets:
         header.append(set_name)
 
     end_of_tables = len(header)
 
-    header.append("total_articles")
+    header.append("Paper number")
 
     final_rows = []
 
@@ -1058,26 +1081,20 @@ def format_final_table(path, our_tables):
                       row["total_targets"],
                       row["tb_srna_targets"],
                       row["mrna_5utr_targets"],
-                      row["igr_3utr_targets"],
-                      row["max_poly_u_length"],
-                      row["meme"].upper(),
-                      row["mast"].upper(),
-                      row["meme_results"],
-                      row["binding_site_state"],
-                      row["motif"]]
+                      row["igr_3utr_targets"]]
 
         # Total interactions
-        for field in header[start_of_interactions: end_of_interactions]:
-            cond_name = field.split(".")[0]
+        for field in header[start_of_total_interactions: end_of_total_interactions]:
+            cond_name = get_condition_by_header_name(field, conditions, conditions_beauty_names)
 
-            first_count = float(row["%s_first_interactions" % cond_name])
-            second_count = float(row["%s_second_interactions" % cond_name])
+            first_count = int(row["%s_first_interactions" % cond_name])
+            second_count = int(row["%s_second_interactions" % cond_name])
 
             row_values.append(first_count + second_count)
 
         # interactions percentage
         for field in header[start_of_interactions: end_of_interactions]:
-            cond_name = field.split(".")[0]
+            cond_name = get_condition_by_header_name(field, conditions, conditions_beauty_names)
 
             first_count = float(row["%s_first_interactions" % cond_name])
             second_count = float(row["%s_second_interactions" % cond_name])
@@ -1090,6 +1107,12 @@ def format_final_table(path, our_tables):
                 res = "%.2f" % res
 
             row_values.append(res)
+
+        row_values.extend([row["max_poly_u_length"],
+                           row["meme"].upper(),
+                           row["mast"].upper(),
+                           row["motif"],
+                           row["binding_site_state"]])
 
         total_articles = 0
 
@@ -1116,16 +1139,23 @@ def format_final_table(path, our_tables):
 
         final_rows.append(row_values)
 
-    # go over the rows and fix name and id notation
+    # go over the rows and fix name, id, type notations
     names = get_name_dictionary(our_tables)
     ecocyc_ids = get_ecocyc_id_dictionary(our_tables)
 
     for row in final_rows:
         row[0] = names[row[0]]
         row[1] = ecocyc_ids[row[1]]
+        row[2] = beauty_type_names[row[2]]
 
         if row[1].split(".")[-1].isdigit():
             row[1] = ".".join(row[1].split(".")[:-1])
+
+        if ".TU" in row[0]:
+            row[0] = row[0].replace(".TU", ".IGT")
+
+        if ".TU" in row[1]:
+            row[1] = row[1].replace(".TU", ".IGT")
 
     fl = open("formatted_test.csv", "wb")
 
@@ -1134,5 +1164,5 @@ def format_final_table(path, our_tables):
     for row in final_rows:
         fl.write("%s\n" % "\t".join(str(val) for val in row))
 
-test_merge_results(0)
+#test_merge_results(0)
 format_final_table("test.csv", our_file_list)

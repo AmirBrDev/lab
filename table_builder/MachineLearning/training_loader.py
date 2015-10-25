@@ -22,34 +22,44 @@ def retrieve_data(data_pool, subset):
 
 		if row["name"] in subset:
 
+			present_count = 0.
+			second_precentage = 0.
 			il_percentage = row["signif_chimeras_of_iron_limitation_cl.as_rna2_percentage"]
 
-			if il_percentage == "-":
-				il_percentage = 0
+			if il_percentage != "-":
+				present_count += 1
+				second_precentage += float(il_percentage)
 
 			log_percentage = row["signif_chimeras_of_log_phase_cl.as_rna2_percentage"]
 
-			if log_percentage == "-":
-				log_percentage = 0
+			if log_percentage != "-":
+				present_count += 1
+				second_precentage += float(log_percentage)
 
 			stat_percentage = row["signif_chimeras_of_stationary_cl.as_rna2_percentage"]
 
-			if stat_percentage == "-":
-				stat_percentage = 0
+			if stat_percentage != "-":
+				present_count += 1
+				second_precentage += float(stat_percentage)
 
 			vector = np.array([float(row["total_interactions"]),
 							   float(row["tb_srna_targets"]),
 							   float(row["mrna_5utr_targets"]),
 							   float(row["max_poly_u_length"]),
-							   il_percentage,
-							   log_percentage,
-	 						   stat_percentage])
+							   second_precentage / present_count])
 
 			vector = np.array([float(vector[i]) for i in range(vector.shape[0])])
 
 			vectors.append(vector)
 
 	return vectors
+
+def load_file(file_path):
+	data_pool = Table(file_path)	
+
+	names = [row["name"] for row in data_pool]
+
+	return names, retrieve_data(data_pool, names)
 
 
 def retrieve_training_set():
@@ -59,7 +69,7 @@ def retrieve_training_set():
 	positive_training_pool = []
 	negative_training_pool = []
 
-	training_fraction = 0.75
+	training_fraction = 0.7
 
 	for row in training_pool:
 		if int(row["label"]) < 0:
@@ -97,7 +107,10 @@ def retrieve_training_set():
 	validation_set = np.array(validation_set)
 	validation_labels = np.array(validation_labels)
 
-	return training_set, training_labels, validation_set, validation_labels
+	training_names = positive_training_names + negative_training_names
+	validation_names = positive_validation_names + negative_validation_names
+
+	return training_set, training_labels, validation_set, validation_labels, training_names, validation_names
 	
 if __name__ == "__main__":
 

@@ -62,6 +62,12 @@ class DBHandler(object):
         return names, ecocyc_ids, types
 
     def get_tf_names(self):
+        """
+        Get a list containing the names of all the transcription factors
+
+        :return: list of strings containing the names
+        """
+
         query = """SELECT tf_name
                 FROM regulon_tf_gene"""
 
@@ -80,6 +86,12 @@ class DBHandler(object):
         return names
 
     def get_ppi_genes_names(self):
+        """
+        Get a list containing the names of all the genes which make the proteins in a protein protein interactions
+
+        :return: list of strings containing the names
+        """
+
          query = """SELECT gene_1
                 FROM ppi_interactions_as_genes
                 UNION
@@ -150,6 +162,12 @@ class DBHandler(object):
         return names_to_targets
 
     def find_our_targets(self, name):
+        """
+        Retrieve a list of all the targets names of our data gene name
+
+        :param name: the gene name to find it's targets
+        :return: a list containing the names
+        """
 
         union_statement = ""
 
@@ -214,6 +232,13 @@ class DBHandler(object):
         return targets
 
     def find_ppi_genes_targets(self, ppi_gene_name):
+        """
+        Retrieve a list of all the genes which are targeted by a given gene by protein protein interactions
+
+        :param ppi_gene_name: the regulating gene name
+        :return: a list of all the targets names
+        """
+
         query = """SELECT gene_1
                 FROM ppi_interactions_as_genes
                 WHERE gene_2 = '%(ppi_gene_name)s'
@@ -271,6 +296,12 @@ class Runner(object):
                         self.filtered_targets[filtered_name] = self.filter_targets(target_list)
 
     def filter_genes(self, names):
+        """
+        Filters a list of gene names
+        :param names: the gene names
+        :return: a list of the filtered gene names
+        """
+
         result = []
 
         for name in names:
@@ -279,6 +310,12 @@ class Runner(object):
         return set(result)
 
     def filter_targets(self, targets_names):
+        """
+        Filters a list of targets names
+        :param targets_names: the targets names
+        :return: a list of the filtered targets names
+        """
+
         result = []
 
         for name in targets_names:
@@ -287,6 +324,13 @@ class Runner(object):
         return set(result)
 
     def filter_name(self, name, keep_cds=False):
+        """
+        Removes our notation from a name
+        :param name: the name of the gene
+        :param keep_cds: whether to ignore cds/5utr
+        :return: a list containing the names (maybe more than one in case of igr/tu)
+        """
+
         NAME_DELIMITER = "."
         result = []
 
@@ -320,7 +364,7 @@ class Runner(object):
         :param interaction_name_list: the group we want to compare with
         :param interaction_target_retrieve_func: function to retrieve the targets of our compared group
         :return: 0 on success anything else on failure.
-        """       
+        """
 
         # filtered_gene_name_set = self.filter_genes(candidate_name_list)
         # print filtered_gene_name_set

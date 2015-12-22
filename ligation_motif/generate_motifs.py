@@ -26,12 +26,14 @@ def format_file_input(path_to_file):
     FRAG_2_SEQ_INDEX = 8
 
     fragment_as_seq_list = []
+    positive_pos_score_list = []
+    negative_pos_scorl_list = []
 
     with open(path_to_file, "rb") as csvfile:
         reader = csv.reader(csvfile, delimiter='\t', quotechar='|')
 
-        for row in reader:
-            fragment_as_seq_list((Seq(FRAG_1_SEQ_INDEX, ALPHABET), Seq(row[FRAG_2_SEQ_INDEX], ALPHABET)))
+        for row in reader:	
+            fragment_as_seq_list.append((Seq(row[FRAG_1_SEQ_INDEX], ALPHABET), Seq(row[FRAG_2_SEQ_INDEX], ALPHABET)))
 
     return fragment_as_seq_list
 

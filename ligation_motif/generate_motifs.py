@@ -33,6 +33,8 @@ def format_file_input(path_to_file):
         for row in reader:
             fragment_as_seq_list((Seq(FRAG_1_SEQ_INDEX, ALPHABET), Seq(row[FRAG_2_SEQ_INDEX], ALPHABET)))
 
+    return fragment_as_seq_list
+
 
 def get_max_len_in_chimera(fragment_as_seq_list):
 

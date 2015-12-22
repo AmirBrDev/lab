@@ -4,6 +4,7 @@ import os
 from Bio.Seq import Seq
 from Bio import motifs
 from Bio.Alphabet import Gapped, IUPAC
+import csv
 
 GAP = "-"
 ALPHABET = Gapped(IUPAC.unambiguous_dna)
@@ -19,7 +20,19 @@ def format_input(chimera_frags_list):
     return  result
 
 
-def format_file_input(path_to_file)
+def format_file_input(path_to_file):
+
+    FRAG_1_SEQ_INDEX = 6
+    FRAG_2_SEQ_INDEX = 8
+
+    fragment_as_seq_list = []
+
+    with open(path_to_file, "rb") as csvfile:
+        reader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+
+        for row in reader:
+            fragment_as_seq_list((Seq(FRAG_1_SEQ_INDEX, ALPHABET), Seq(row[FRAG_2_SEQ_INDEX], ALPHABET)))
+
 
 def get_max_len_in_chimera(fragment_as_seq_list):
 
@@ -64,7 +77,8 @@ def create_sequnce_file(filename, sequence_list):
 
 def run(chimera_frags_list):
 
-    fragment_as_seq_list = format_input(chimera_frags_list)
+    # fragment_as_seq_list = format_input(chimera_frags_list)
+    fragment_as_seq_list = format_file_input("reads_fusion.txt")
 
     padded_fragments_list = pad_sequences(fragment_as_seq_list)
 

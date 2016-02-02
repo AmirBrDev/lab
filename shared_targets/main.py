@@ -91,26 +91,25 @@ class DBHandler(object):
 
         :return: list of strings containing the names
         """
-
-         query = """SELECT gene_1
+        query = """SELECT gene_1
                 FROM ppi_interactions_as_genes
                 UNION
                 SELECT gene_2
                 FROM ppi_interactions_as_genes"""
 
-         self.cursor.execute(query)
+        self.cursor.execute(query)
 
-         row = self.cursor.fetchone()
+        row = self.cursor.fetchone()
 
-         names = []
+        names = []
 
-         while row is not None:
+        while row is not None:
             if row["gene_1"] not in names:
                 names.append(row["gene_1"])
 
             row = self.cursor.fetchone()
 
-         return names
+        return names
 
     def find_targets(self, names):
         """
@@ -372,7 +371,8 @@ class Runner(object):
         for our_name in candidate_name_list:
             for interaction_name in interaction_name_list:
 
-                if interaction_name in self.filter_name(our_name, True):
+                if interaction_name in self.filter_name(our_name, False):
+                # if interaction_name in self.filter_name(our_name, True):
                     interaction_targets = interaction_target_retrieve_func(interaction_name)
                     candidate_targets = self.filter_targets(candidate_target_retrieve_func(our_name))
 
@@ -407,16 +407,16 @@ if __name__ == "__main__":
     candidate_name_list=["1.3utr", "2.4.tu"]
     their_names = ["2", "1"]
 
-    # exit(runner.run(runner.total_names,
-    #                 runner.db.find_our_targets,
-    #                 runner.total_ppi_names,
-    #                 runner.db.find_ppi_genes_targets))
+    exit(runner.run(runner.total_names,
+                    runner.db.find_our_targets,
+                    runner.total_ppi_names,
+                    runner.db.find_ppi_genes_targets))
     # exit(runner.run(runner.total_names,
     #                 runner.db.find_our_targets,
     #                 runner.total_tf_names,
     #                 runner.db.find_tf_targets))
 
-    exit(runner.run(candidate_name_list,
-                    our_targets_finder,
-                    their_names,
-                    their_targets_finder))
+    # exit(runner.run(candidate_name_list,
+    #                 our_targets_finder,
+    #                 their_names,
+    #                 their_targets_finder))

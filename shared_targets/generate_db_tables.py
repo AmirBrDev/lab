@@ -34,7 +34,7 @@ def handle_tf_operon_file():
     for row in rows:
         print row
 
-    db=MySQLdb.connect(host="localhost",user="amirbar",db="amir")
+    db=MySQLdb.connect(host="stone.md.huji.ac.il",user="amirbar",db="amir")
     cur = db.cursor(MySQLdb.cursors.DictCursor)
 
     fields = ", ".join("%s VARCHAR(200)" % key for key in header)
@@ -66,7 +66,7 @@ def handle_ppi_file():
     for row in rows:
         print row
 
-    db=MySQLdb.connect(host="localhost",user="amirbar",db="amir")
+    db=MySQLdb.connect(host="stone.md.huji.ac.il",user="amirbar",db="amir")
     cur = db.cursor(MySQLdb.cursors.DictCursor)
 
     fields = ", ".join("%s VARCHAR(200)" % key for key in header)

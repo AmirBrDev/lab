@@ -307,7 +307,7 @@ def generate_table(table_path, name, is_our_table=False):
 # generate_table("lybecker/final/updated_sd01.table", "lybecker_s1")
 # generate_table("lybecker/final/updated_lybecker_s2.table", "lybecker_s2")
 
-# generate_table("tss/final/JB.02096-14_zjb999093409sd1-3.table", "tss")
+# generate_table("tss/final/JB.02096-14_zjb999093409sd1-3_with_dup.table", "thomason_full")
 # generate_table("tss/final/thomason_primary.table", "thomason_primary")
 # generate_table("tss/final/thomason_secondary.table", "thomason_secondary")
 # generate_table("tss/final/thomason_internal.table", "thomason_internal")
@@ -343,7 +343,7 @@ def generate_gene_table(table_path, name):
     # for row in rows:
     #     print row
 
-    db=MySQLdb.connect(host="localhost",user="amirbar",db="amir")
+    db = MySQLdb.connect(host="localhost",user="amirbar",db="amir")
     cur = db.cursor(MySQLdb.cursors.DictCursor)
 
     key_list = ["unique_id",
@@ -809,4 +809,123 @@ def test_srna_combos_2nd():
     for first, second in combos:
         print "\t".join([first, second])
 
-test_srna_combos_2nd()
+#test_srna_combos_2nd()
+
+def fix_thomason_csv_cols():
+    result = []
+
+    with open("tss/csv/JB.02096-14_zjb999093409sd1-3.csv", "rb") as fl:
+
+        header = fl.readline().lower().replace("\n", "").split(Table.TABLE_DELIMITER)
+
+        name_list = []
+
+        for key in header:
+
+            if key == "Sequence -50 nt upstream + TSS (51nt)".lower():
+                name_list.append("_sequence")
+
+            elif key == "primary":
+                name_list.append("_primary")
+
+            elif key == "secondary":
+                name_list.append("_secondary")
+
+            elif key == "condition":
+                name_list.append("_condition")
+
+            elif key == "putative srna":
+                name_list.append("putative_srna")
+
+            elif key == "putative asrna":
+                name_list.append("putative_asrna")
+
+            elif key == "Overlap with RegulonDB".lower():
+                name_list.append("overlap_with_regulondb")
+
+            else:
+                name_list.append(key)
+
+        for line in fl.readlines():
+
+            line = line.lower()
+
+            dct = {}
+
+            value_list = line.split(Table.TABLE_DELIMITER)
+
+            if (len(name_list) != len(value_list)):
+                raise BaseException("Unmatched arguments count in table.")
+
+            for key, val in zip(name_list, value_list):
+                dct[key.replace("\n", "")] = val.replace("\n", "")
+
+            result.append(dct)
+
+    with open("tss/csv/JB.02096-14_zjb999093409sd1-3_fixed_cols.csv", "wb") as fl:
+        header = ["start_1", "end_1", "strand_1", "start_2", "end_2", "strand_2"]
+        header += name_list[2:]
+        fl.write("\t".join(key for key in header) + "\n")
+
+        for row in result:
+            value_list = [row["pos"],
+                          row["pos"],
+                          row["strand"],
+                          row["pos"],
+                          row["pos"],
+                          row["strand"]]
+
+            for key in name_list[2:]:
+                value_list.append(row[key])
+
+            fl.write("\t".join(val for val in value_list) + "\n")
+
+fix_thomason_csv_cols()
+
+def upload_thomason_full_table():
+
+    TABLE_NAME = "thomason_full"
+    result = []
+
+
+    with open("tss/csv/JB.02096-14_zjb999093409sd1-3_fixed_cols.csv", "rb") as fl:
+
+        name_list = fl.readline().lower().replace("\n", "").split(Table.TABLE_DELIMITER)
+
+        for line in fl.readlines():
+
+            line = line.lower()
+
+            dct = {}
+
+            value_list = line.split(Table.TABLE_DELIMITER)
+
+            if (len(name_list) != len(value_list)):
+                raise BaseException("Unmatched arguments count in table.")
+
+            for key, val in zip(name_list, value_list):
+                dct[key.replace("\n", "")] = val.replace("\n", "")
+
+            result.append(dct)
+
+    db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+
+
+    # Remove the current table
+    query="""DROP TABLE IF EXISTS %s""" % TABLE_NAME
+    cursor.execute(query)
+
+    # Recreate it with the new fields
+    fields = ", ".join("%s VARCHAR(200)" % key for key in name_list)
+    print "CREATE TABLE %s (%s)" % (TABLE_NAME, fields)
+    cursor.execute("CREATE TABLE %s (%s)" % (TABLE_NAME, fields))
+
+    # Recreate it with the new fields
+    for row in result:
+        values = ",".join("%s" % db.literal(str(row[key])) for key in name_list)
+        cursor.execute("INSERT INTO %s VALUES (%s)" % (TABLE_NAME, values))
+
+    db.commit()
+
+upload_thomason_full_table()

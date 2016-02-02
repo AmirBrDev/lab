@@ -94,7 +94,7 @@ def upload_table(table_file, table_name):
             result.append(dct)
 
 
-    db = MySQLdb.connect(host="localhost", user="amirbar", db="RILseq_seperated_annotations")
+    db = MySQLdb.connect(host="stone.md.huji.ac.il", user="amirbar", db="RILseq_seperated_annotations")
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
 
@@ -129,88 +129,384 @@ def upload_table(table_file, table_name):
 
 def upload_tables():
 
-    table_list = [("our_files/refactor/MG_hfq-FLAG101_A_T1_7m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "101_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG101_A_T1_7m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "101_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG102_A_T1_15m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "102_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG102_A_T1_15m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "102_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG103_A_T1_5m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "103_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG103_A_T1_5m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "103_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG104_A_T1_3m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "104_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG104_A_T1_3m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "104_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG107_TAP_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "107_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG107_TAP_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "107_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG108_IP_50ul_Beads_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "108_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG108_IP_50ul_Beads_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "108_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG109_lysed_by_MM400_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "109_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG109_lysed_by_MM400_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "109_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG207_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "207_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG207_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "207_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG208_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "208_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG208_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "208_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG209_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "209_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG209_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "209_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG210_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "210_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG210_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "210_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "305_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "305_only_singles"),
-                  ("our_files/refactor/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "312_all_interactions"),
-                  ("our_files/refactor/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "312_only_singles")]
-                  
-
-#    table_list = [("our_files/refactor/Total_MG-hfq-FLAG101-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "101_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG101-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "101_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG102-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "102_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG102-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "102_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG103-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "103_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG103-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "103_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG104-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "104_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG104-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "104_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG107-CL-Log-TAP_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "107_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG107-CL-Log-TAP_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "107_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG108-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "108_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG108-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "108_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG109-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "109_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG109-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "109_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG207-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "207_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG207-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "207_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG208-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "208_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG208-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "208_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG211-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "211_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG211-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "211_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG212-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "212_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG212-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "212_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG305-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "305_total_all_interactions"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG305-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "305_total_only_singles"),
-#                  ("our_files/refactor/Total_MG-hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "312_total_all_interactions"),
-                  #("our_files/refactor/Total_MG-hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "312_total_only_singles")]
+    table_list = [("our_files/refactor/myflip/MG_hfq-FLAG101_A_T1_7m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "101_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG101_A_T1_7m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "101_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG102_A_T1_15m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "102_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG102_A_T1_15m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "102_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG103_A_T1_5m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "103_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG103_A_T1_5m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "103_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG104_A_T1_3m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "104_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG104_A_T1_3m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "104_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG107_TAP_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "107_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG107_TAP_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "107_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG108_IP_50ul_Beads_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "108_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG108_IP_50ul_Beads_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "108_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG109_lysed_by_MM400_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "109_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG109_lysed_by_MM400_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "109_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG207_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "207_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG207_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "207_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG208_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "208_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG208_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "208_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG209_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "209_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG209_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "209_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG210_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "210_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG210_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "210_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "305_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "305_only_singles"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "312_all_interactions"),
+                  ("our_files/refactor/myflip/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt", "312_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG101-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "101_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG101-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "101_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG102-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "102_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG102-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "102_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG103-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "103_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG103-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "103_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG104-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "104_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG104-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "104_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG107-CL-Log-TAP_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "107_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG107-CL-Log-TAP_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "107_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG108-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "108_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG108-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "108_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG109-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "109_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG109-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "109_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG207-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "207_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG207-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "207_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG208-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "208_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG208-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "208_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG211-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "211_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG211-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "211_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG212-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "212_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG212-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "212_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG305-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "305_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG305-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "305_total_only_singles"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt", "312_total_all_interactions"),
+                  ("our_files/refactor/myflip/Total_MG-hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt", "312_total_only_singles")]
 
     for our_file, table_name in table_list:
         print "*" * 100
         print our_file
         upload_table(our_file, table_name)
 
-upload_tables()
+# upload_tables()
+
+
+def flip_files_igr():
+
+    workdir = "/home/users/amirbar/lab/table_builder/our_files/refactor"
+    file_list = ["MG_hfq-FLAG101_A_T1_7m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG101-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG101_A_T1_7m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG101-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG102_A_T1_15m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG102-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG102_A_T1_15m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG102-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG103_A_T1_5m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG103-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG103_A_T1_5m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG103-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG104_A_T1_3m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG104-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG104_A_T1_3m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG104-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG107_TAP_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG107-CL-Log-TAP_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG107_TAP_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG107-CL-Log-TAP_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG108_IP_50ul_Beads_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG108-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG108_IP_50ul_Beads_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG108-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG109_lysed_by_MM400_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG109-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG109_lysed_by_MM400_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG109-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG207_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG207-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG207_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG207-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG208_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG208-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG208_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG208-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG209_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG211-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG209_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG211-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG210_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG212-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG210_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG212-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG305-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG305-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "Total_MG-hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "Total_MG-hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt"]
+
+    for file_path in file_list:
+        print file_path
+        print "*" * 100
+
+        with open("/".join([workdir, file_path]), "rb") as in_file:
+            reader = csv.reader(in_file, delimiter='\t', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+
+            with open("/".join([workdir, "myflip", file_path]), "wb") as out_file:
+                writer = csv.writer(out_file, delimiter='\t', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+
+                for row in reader:
+                    rna1_ecocyc_id = row[0]
+                    rna2_ecocyc_id = row[1]
+                    rna1_name = row[2]
+                    rna2_name = row[3]
+                    strand_1 = row[9]
+                    strand_2 = row[13]
+
+                    if ".igr" in rna1_name.lower() and strand_1 == "-":
+                        name_parts = rna1_name.split(".")
+                        row[2] = ".".join([name_parts[1], name_parts[0], name_parts[2]])
+
+                        id_parts = rna1_ecocyc_id.split(".")
+                        row[0] = ".".join([id_parts[1], id_parts[0], id_parts[2]])
+
+                    if ".igr" in rna2_name.lower() and strand_2 == "-":
+                        name_parts = rna2_name.split(".")
+                        row[3] = ".".join([name_parts[1], name_parts[0], name_parts[2]])
+
+                        id_parts = rna2_ecocyc_id.split(".")
+                        row[1] = ".".join([id_parts[1], id_parts[0], id_parts[2]])
+
+                    writer.writerow(row)
+
+# flip_files_igr()
+
+
+def reverse_negative_igr():
+
+    table_list = ["101_all_interactions",
+                  "101_only_singles",
+                  "102_all_interactions",
+                  "102_only_singles",
+                  "103_all_interactions",
+                  "103_only_singles",
+                  "104_all_interactions",
+                  "104_only_singles",
+                  "107_all_interactions",
+                  "107_only_singles",
+                  "108_all_interactions",
+                  "108_only_singles",
+                  "109_all_interactions",
+                  "109_only_singles",
+                  "207_all_interactions",
+                  "207_only_singles",
+                  "208_all_interactions",
+                  "208_only_singles",
+                  "209_all_interactions",
+                  "209_only_singles",
+                  "210_all_interactions",
+                  "210_only_singles",
+                  "305_all_interactions",
+                  "305_only_singles",
+                  "312_all_interactions",
+                  "312_only_singles",
+                  "101_total_all_interactions",
+                  "101_total_only_singles",
+                  "102_total_all_interactions",
+                  "102_total_only_singles",
+                  "103_total_all_interactions",
+                  "103_total_only_singles",
+                  "104_total_all_interactions",
+                  "104_total_only_singles",
+                  "107_total_all_interactions",
+                  "107_total_only_singles",
+                  "108_total_all_interactions",
+                  "108_total_only_singles",
+                  "109_total_all_interactions",
+                  "109_total_only_singles",
+                  "207_total_all_interactions",
+                  "207_total_only_singles",
+                  "208_total_all_interactions",
+                  "208_total_only_singles",
+                  "211_total_all_interactions",
+                  "211_total_only_singles",
+                  "212_total_all_interactions",
+                  "212_total_only_singles",
+                  "305_total_all_interactions",
+                  "305_total_only_singles",
+                  "312_total_all_interactions",
+                  "312_total_only_singles"]
+
+
+    db = MySQLdb.connect(host="stone.md.huji.ac.il", user="amirbar", db="RILseq_seperated_annotations")
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+    cursor = db.cursor(MySQLdb.cursors.DictCursor)
+
+    for table in table_list:
+        print "Processing table %s" % table
+        print "*" * 50
+
+        cursor.execute("SELECT rna1_name, strand_1, rna2_name, strand_2 FROM %s" % table)
+        row_list = cursor.fetchall()
+
+        for row in row_list:
+
+            if ".igr" in row["rna1_name"] and "-" == row["strand_1"]:
+
+                update_data = {}
+                update_data.update(row)
+                update_data["table_name"] = table
+                name_parts = row["rna1_name"].split(".")
+                update_data["new_name"] = ".".join([name_parts[1], name_parts[0], name_parts[2]])
+
+                query = """UPDATE %(table_name)s
+                SET rna1_name='%(new_name)s'
+                WHERE rna1_name='%(rna1_name)s' and
+                strand_1='%(strand_1)s' and
+                rna2_name='%(rna2_name)s' and
+                strand_2='%(strand_2)s'""" % update_data
+
+                cursor.execute(query)
+
+            if ".igr" in row["rna2_name"] and "-" == row["strand_2"]:
+
+                update_data = {}
+                update_data.update(row)
+                update_data["table_name"] = table
+                name_parts = row["rna2_name"].split(".")
+                update_data["new_name"] = ".".join([name_parts[1], name_parts[0], name_parts[2]])
+
+                query = """UPDATE %(table_name)s
+                SET rna2_name='%(new_name)s'
+                WHERE rna1_name='%(rna1_name)s' and
+                strand_1='%(strand_1)s' and
+                rna2_name='%(rna2_name)s' and
+                strand_2='%(strand_2)s'""" % update_data
+
+                cursor.execute(query)
+
+    db.commit()
+
+
+#reverse_negative_igr()
+
+
+def generate_beautiful_name_table(file_list):
+
+    lower_to_upper_names = {}
+
+    for file_name in file_list:
+
+        with open(file_name, "rb") as fl:
+            fl.readline()
+            for line in fl.readlines():
+                args = line.split("\t")
+                name_1, name_2 = args[2], args[3]
+
+                name_parts = set(name_1.split(".") + name_2.split("."))
+
+                for part in name_parts:
+                    if part.lower() not in lower_to_upper_names.keys():
+                        lower_to_upper_names[part.lower()] = part
+
+    return lower_to_upper_names
+
+
+def get_name_dictionary(our_file_list):
+    result = {}
+
+    for file_path in our_file_list:
+        fl = open(file_path, "rb")
+
+        fl.readline()
+        for line in fl.readlines():
+            args = line.split("\t")
+            name_1, name_2 = args[4], args[5]
+
+            if name_1.lower() not in result.keys():
+                result[name_1.lower()] = name_1
+
+            if name_2.lower() not in result.keys():
+                result[name_2.lower()] = name_2
+
+    return result
 
 def test():
 
-    conditions_tables = {101: ["101_total_all_interactions", "101_total_only_singles"],
-                         102: ["102_total_all_interactions", "102_total_only_singles"],
-                         103: ["103_total_all_interactions", "103_total_only_singles"],
-                         104: ["104_total_all_interactions", "104_total_only_singles"],
-                         107: ["107_total_all_interactions", "107_total_only_singles"],
-                         108: ["108_total_all_interactions", "108_total_only_singles"],
-                         109: ["109_total_all_interactions", "109_total_only_singles"],
-                         207: ["207_total_all_interactions", "207_total_only_singles"],
-                         208: ["208_total_all_interactions", "208_total_only_singles"],
+    file_list = ["our_files/refactor/MG_hfq-FLAG101_A_T1_7m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG101_A_T1_7m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG102_A_T1_15m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG102_A_T1_15m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG103_A_T1_5m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG103_A_T1_5m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG104_A_T1_3m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG104_A_T1_3m_22C_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG107_TAP_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG107_TAP_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG108_IP_50ul_Beads_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG108_IP_50ul_Beads_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG109_lysed_by_MM400_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG109_lysed_by_MM400_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG207_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG207_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG208_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG208_CL_Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG209_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG209_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG210_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG210_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG101-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG101-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG102-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG102-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG103-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG103-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG104-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG104-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG107-CL-Log-TAP_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG107-CL-Log-TAP_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG108-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG108-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG109-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG109-CL-Log_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG207-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG207-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG208-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG208-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG211-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG211-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG212-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG212-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG305-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG305-CL-Iron_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
+                 "our_files/refactor/Total_MG-hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_only_single.txt"]
+
+    conditions_tables = {101: ["101_total_all_interactions", "101_total_only_singles", "101_all_interactions", "101_only_singles"],
+                         102: ["102_total_all_interactions", "102_total_only_singles", "102_all_interactions", "102_only_singles"],
+                         103: ["103_total_all_interactions", "103_total_only_singles", "103_all_interactions", "103_only_singles"],
+                         104: ["104_total_all_interactions", "104_total_only_singles", "104_all_interactions", "104_only_singles"],
+                         107: ["107_total_all_interactions", "107_total_only_singles", "107_all_interactions", "107_only_singles"],
+                         108: ["108_total_all_interactions", "108_total_only_singles", "108_all_interactions", "108_only_singles"],
+                         109: ["109_total_all_interactions", "109_total_only_singles", "109_all_interactions", "109_only_singles"],
+                         207: ["207_total_all_interactions", "207_total_only_singles", "207_all_interactions", "207_only_singles"],
+                         208: ["208_total_all_interactions", "208_total_only_singles", "208_all_interactions", "208_only_singles"],
+			 209: ["209_all_interactions", "209_only_singles"],
+                         210: ["210_all_interactions", "210_only_singles"],
                          211: ["211_total_all_interactions", "211_total_only_singles"],
                          212: ["212_total_all_interactions", "212_total_only_singles"],
-                         305: ["305_total_all_interactions", "305_total_only_singles"],
-                         312: ["312_total_all_interactions", "312_total_only_singles"]}
+                         305: ["305_total_all_interactions", "305_total_only_singles", "305_all_interactions", "305_only_singles"],
+                         312: ["312_total_all_interactions", "312_total_only_singles", "312_all_interactions", "312_only_singles"]}
 
     our_tables = [table_name for table_list in conditions_tables.values() for table_name in table_list ]
 
 
-    db = MySQLdb.connect(host="localhost", user="amirbar", db="RILseq_seperated_annotations")
+    db = MySQLdb.connect(host="stone.md.huji.ac.il", user="amirbar", db="RILseq_seperated_annotations")
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
     name_list = get_names_from_tables(our_tables, cursor)
@@ -237,38 +533,127 @@ def test():
                     # print name, count
                     writer.writerow([name, count])
 
-    header = ["name",
-              "101_total_all_interactions", "101_total_only_singles",
-              "102_total_all_interactions", "102_total_only_singles",
-              "103_total_all_interactions", "103_total_only_singles",
-              "104_total_all_interactions", "104_total_only_singles",
-              "107_total_all_interactions", "107_total_only_singles",
-              "108_total_all_interactions", "108_total_only_singles",
-              "109_total_all_interactions", "109_total_only_singles",
-              "207_total_all_interactions", "207_total_only_singles",
-              "208_total_all_interactions", "208_total_only_singles",
-              "211_total_all_interactions", "211_total_only_singles",
-              "211_total_all_interactions", "212_total_only_singles",
-              "305_total_all_interactions", "305_total_only_singles",
-              "312_total_all_interactions", "312_total_only_singles"]
 
+
+    header = ["name",
+              "FLAG101",
+              "FLAG101_total",
+              "FLAG102",
+              "FLAG102_total",
+              "FLAG103",
+              "FLAG103_total",
+              "FLAG104",
+              "FLAG104_total",
+              "FLAG107",
+              "FLAG107_total",
+              "FLAG108",
+              "FLAG108_total",
+              "FLAG109",
+              "FLAG109_total",
+              "FLAG207",
+              "FLAG207_total",
+              "FLAG208",
+              "FLAG208_total",
+              "FLAG209",
+              "FLAG211_total",
+              "FLAG210",
+              "FLAG212_total",
+              "FLAG305",
+              "FLAG305_total",
+              "FLAG312",
+              "FLAG312_total"]
+
+    conditions_list = [("101_all_interactions", "101_only_singles"),
+                       ("101_total_all_interactions", "101_total_only_singles"),
+                       ("102_all_interactions", "102_only_singles"),
+                       ("102_total_all_interactions", "102_total_only_singles"),
+                       ("103_all_interactions", "103_only_singles"),
+                       ("103_total_all_interactions", "103_total_only_singles"),
+                       ("104_all_interactions", "104_only_singles"),
+                       ("104_total_all_interactions", "104_total_only_singles"),
+                       ("107_all_interactions", "107_only_singles"),
+                       ("107_total_all_interactions", "107_total_only_singles"),
+                       ("108_all_interactions", "108_only_singles"),
+                       ("108_total_all_interactions", "108_total_only_singles"),
+                       ("109_all_interactions", "109_only_singles"),
+                       ("109_total_all_interactions", "109_total_only_singles"),
+                       ("207_all_interactions", "207_only_singles"),
+                       ("207_total_all_interactions", "207_total_only_singles"),
+                       ("208_all_interactions", "208_only_singles"),
+                       ("208_total_all_interactions", "208_total_only_singles"),
+                       ("209_all_interactions", "209_only_singles"),
+                       ("211_total_all_interactions", "211_total_only_singles"),
+                       ("210_all_interactions", "210_only_singles"),
+                       ("212_total_all_interactions", "212_total_only_singles"),
+                       ("305_all_interactions", "305_only_singles"),
+                       ("305_total_all_interactions", "305_total_only_singles"),
+                       ("312_all_interactions", "312_only_singles"),
+                       ("312_total_all_interactions", "312_total_only_singles")]
+
+    print "-" * 50
+    print "Getting Beautiful name list..."
+
+    beautiful_name_convert = generate_beautiful_name_table(file_list)
+
+    print "done."
+
+    #row_list = [[".".join(beautiful_name_convert[part] for part in name.split("."))] for name in short_name_list]
     row_list = [[name] for name in short_name_list]
 
     # Fill the table condition by condition
-    for condition_name in header[1:]:
+    for condition_name_1, condition_name_2 in conditions_list:
+
+        print "-" * 50
+        print "Processing conditions %s, %s" % (condition_name_1, condition_name_2)
 
         # Fill according to the name order
         for row in row_list:
-            row.append(conditions_counts[int(condition_name[:3])][condition_name][row[0]])
+
+            # Sum both tables of the same condition, row[0] is the gene name
+            row.append(conditions_counts[int(condition_name_1[:3])][condition_name_1][row[0]] +
+                       conditions_counts[int(condition_name_2[:3])][condition_name_2][row[0]])
+
+        print "done."
+
+    print "-" * 50
+    print "Converting to fractions"
+
+    # Sum totals per column
+    col_totals = [sum([row[index + 1] for row in row_list]) for index in range(len(conditions_list))]
+
+    # Update each cell to be fraction of the column total
+    for index, val in enumerate(col_totals):
+        for row in row_list:
+            row[index + 1] = float(row[index + 1]) / val
+
+    for index in range(1, len(header), 2):
+
+        header.append("_".join([header[index], "fraction"]))
+
+        for row in row_list:
+            try:
+                row.append(row[index] / row[index + 1])
+
+            except ZeroDivisionError:
+                row.append("N/A")
 
 
-    with open("count_results/counts.csv", 'wb') as csvfile:
+
+    print "done."
+
+    print "-" * 50
+    print "Generating final table"
+
+    with open("count_results/fractions/counts.csv", 'wb') as csvfile:
         writer = csv.writer(csvfile, delimiter='\t', quotechar='|', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(header)
 
         for row in row_list:
+            row[0] = ".".join(beautiful_name_convert[part] for part in row[0].split("."))
             writer.writerow(row)
 
 
-# test()
+    print "finished!"
+
+test()
 

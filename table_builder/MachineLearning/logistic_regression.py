@@ -107,15 +107,20 @@ print "Validation Finished"
 
 print "#" * 80
 print "Analyze data:"
-names, vectors = load_file("./table_s6_range_0.csv")
+names, vectors, other_fields = load_file("./table_s6_range_0_above3_targets.csv")
 
 vectors_norm = (vectors - X.mean(axis=0)) / X.max(axis=0)
 vectors_padded = numpy.append( numpy.ones((vectors_norm.shape[0], 1)), vectors_norm, axis=1)
 
 with open("results.txt", "wb") as fl:
 
-	for name, vector in zip(names, vectors_padded):
-		fl.write("%s\t%s\t%s\n" % (name, predict(numpy.array(theta_1), vector), odds(numpy.array(theta_1), vector)))
+	for name, vector, other in zip(names, vectors_padded, other_fields):
+		fl.write("%s\t%s\t%s\t%s\t%s\n" % \
+			(name, 
+			 predict(numpy.array(theta_1), vector), 
+			 odds(numpy.array(theta_1), vector),
+			 other["total_interactions"],
+			 other["mrna_5utr_targets"]))
 
 	fl.close()
 

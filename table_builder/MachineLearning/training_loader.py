@@ -5,22 +5,29 @@ import numpy as np
 def random_names_for_training(pool, training_fraction):
 	result = []
 
+	tmp = [name for name in pool]
+
 	count  = int(len(pool) * training_fraction)
 
+	print count
 	while len(result) < count:
-		name = pool[randint(0, len(pool) - 1)]
-
-		if name not in result:
-			result.append(name)
+		#print len(result), len(tmp)
+		name = tmp[randint(0, len(tmp) - 1)]
+		result.append(name)
+		tmp.remove(name)
 
 	return result
 
 def retrieve_data(data_pool, subset):
 	vectors = []
 
-	for row in data_pool:
+	names_to_rows = {row["name"]: row for row in data_pool}
 
-		if row["name"] in subset:
+	for name in subset:
+
+		if name in names_to_rows.keys():
+
+			row = names_to_rows[name]
 
 			present_count = 0.
 			second_precentage = 0.
@@ -51,6 +58,8 @@ def retrieve_data(data_pool, subset):
 			vector = np.array([float(vector[i]) for i in range(vector.shape[0])])
 
 			vectors.append(vector)
+		else:
+			print name
 
 	return vectors
 
@@ -58,18 +67,28 @@ def load_file(file_path):
 	data_pool = Table(file_path)	
 
 	names = [row["name"] for row in data_pool]
+	other_fields = [row for row in data_pool]
 
-	return names, retrieve_data(data_pool, names)
+	return names, retrieve_data(data_pool, names), other_fields
 
 
 def retrieve_training_set():
 
-	training_pool = Table("training_pool.table")
+	training_pool = Table("training_pool_3_targets.table")
+
+	tmp = []
+	for name in [row["name"] for row in training_pool]:
+		if name in tmp:
+			print name
+		else:
+			tmp.append(name)
 
 	positive_training_pool = []
 	negative_training_pool = []
 
 	training_fraction = 0.7
+
+	print "<---", "cpxR" in [row["name"] for row in training_pool]
 
 	for row in training_pool:
 		if int(row["label"]) < 0:
@@ -109,6 +128,8 @@ def retrieve_training_set():
 
 	training_names = positive_training_names + negative_training_names
 	validation_names = positive_validation_names + negative_validation_names
+
+	print len(training_set), len(training_labels)
 
 	return training_set, training_labels, validation_set, validation_labels, training_names, validation_names
 	

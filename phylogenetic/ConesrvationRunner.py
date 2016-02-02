@@ -9,6 +9,7 @@ from alignment_handler import run_local_alignment, \
 from Rate4SiteRunner import Rate4Site
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
+import os
 
 def run(base_genome_file, 
 		candidate_list_file, 
@@ -17,6 +18,16 @@ def run(base_genome_file,
 		project_to_taxamonies_file,
 		tree_file):
 
+	os.system("mkdir -p %s" % workdir)
+	os.system("mkdir -p %s" % os.path.join(workdir, "logs"))
+	os.system("mkdir -p %s" % os.path.join(workdir, "aln"))
+	os.system("mkdir -p %s" % os.path.join(workdir, "stats"))
+	os.system("mkdir -p %s" % os.path.join(workdir, "results"))
+
+	candidates_path = os.path.join(workdir, "candiates")
+	os.system("mkdir -p %s" % candidates_path)
+
+
 	seq_list = get_seq_list(base_genome_file, candidate_list_file)
 	conv_table = build_project_id_to_tax_id_dictionary(project_to_taxamonies_file)
 	secondary_conv_table = \
@@ -24,10 +35,14 @@ def run(base_genome_file,
 
 	# seq_list holds tuples of (name, seq_obj)
 	for seq in seq_list:
+
+		candid_workdir = os.path.join(candidates_path, seq[0])
+		os.system("mkdir -p %s" % candid_workdir)
+
 		print seq
 
 		# Generate sequence file
-		seq_file_name = "%s/%s.fasta" % (workdir, seq[0])
+		seq_file_name = "%s/%s.fasta" % (candid_workdir, seq[0])
 		base_record = SeqRecord(seq[1], id=seq[0], name=seq[0])
 		SeqIO.write(base_record, seq_file_name, "fasta")
 
@@ -64,16 +79,16 @@ def run(base_genome_file,
 
 		# Run emma
 		run_multiple_sequence_alignment(records_for_emma,
-										"%s/emma.aln" % WORK_DIR,
-										"%s/emma.dnd" % WORK_DIR,
-										WORK_DIR)
+										"%s/emma.aln" % candid_workdir,
+										"%s/emma.dnd" % candid_workdir,
+										candid_workdir)
 
 		# Run Rate4Site
-		rate_runner = Rate4Site("%s/emma.aln" % workdir, 
+		rate_runner = Rate4Site("%s/emma.aln" % candid_workdir, 
 								tree_file,
 								"./rate4site64")
 
-		rate_runner.runRate(outname="results/%s.rate" % seq[0])
+		rate_runner.runRate(outname="%s/results/%s.rate" % (workdir, seq[0]))
 
 
 

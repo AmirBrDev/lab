@@ -9,6 +9,9 @@ def get_seq(genome_file, start, end, strand, file_format="fasta"):
 
 		genome_seq = Bio.SeqIO.read(fl, file_format).seq
 
+	return get_seq_from_genome_seq(genome_seq, start, end, strand)
+
+def get_seq_from_genome_seq(genome_seq, start, end, strand):
 	# Cut it to the specified coordinate
 	if strand == "+":
 		return genome_seq[start - 1 : end]

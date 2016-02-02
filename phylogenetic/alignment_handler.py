@@ -46,7 +46,7 @@ def run_local_alignment(seq_file, genome_list, workdir):
 		else:
 			result.append(second)
 
-	os.remove("./tmp/curr_genome.fasta")
+	os.remove("%s/curr_genome.fasta" % workdir)
 
 	return result
 
@@ -202,7 +202,7 @@ def build_secondary_project_id_to_tax_id_dictionary(file_path):
 def get_id_by_name(name, proj_id_to_tax_id_dict):
 	appendix = name[name.rfind("_") + 1:]
 	name = name.replace("_positive", "").replace("_negative", "")
-	project_id = name[name.find("uid") + 3:]
+	project_id = name[name.find("uid") + len("uid"):]
 
 	try:
 		return proj_id_to_tax_id_dict[project_id]

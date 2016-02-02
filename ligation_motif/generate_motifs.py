@@ -4,10 +4,57 @@ import os
 from Bio.Seq import Seq
 from Bio import motifs
 from Bio.Alphabet import Gapped, IUPAC
-import csv
+import matplotlib.pyplot as plt
+import optparse
+import sys
+import os
 
 GAP = "-"
 ALPHABET = Gapped(IUPAC.unambiguous_dna)
+
+def process_command_line(argv):
+    """
+    Return a 2-tuple: (settings object, args list).
+    `argv` is a list of arguments, or `None` for ``sys.argv[1:]``.
+    """
+    if argv is None:
+        argv = sys.argv[1:]
+
+    # initialize the parser object:
+    parser = optparse.OptionParser(
+        formatter=optparse.TitledHelpFormatter(width=100),
+        add_help_option=None)
+
+    parser.add_option(
+        "-r", "--reads_fusion",
+        help="the output file from Asaf's script 'detect_fusion_point.py'")
+
+    parser.add_option(
+        "-l", "--logo_file",
+        help="file name for the output logo file")
+
+    parser.add_option(
+        "-s", "--score_diagram",
+        help="file name for the output score diagram")
+
+    parser.add_option(
+        "-c", "--count_diagram",
+        help="file name for the output count diagram")
+
+    parser.add_option(      # customized description; put --help last
+        "-h", "--help", action="help",
+        help="Show this help message and exit.")
+
+    settings, args = parser.parse_args(argv)
+
+    # check number of arguments, verify values, etc.:
+    if args:
+        parser.error('program takes no command-line arguments; '
+                     '"%s" ignored.' % (args,))
+
+    # further process settings & args if necessary
+
+    return settings, args
 
 def format_input(chimera_frags_list):
 
@@ -30,22 +77,35 @@ def format_file_input(path_to_file):
     positive_pos_score_list = []
     negative_pos_score_list = []
 
-    with open(path_to_file, "rb") as csvfile:
-        reader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+    with open(path_to_file, "rb") as fl:
 
-        for row in reader:
-            FRAG_2_SCORE_START = FRAG_1_SCORE_START + len(row[FRAG_1_SEQ_INDEX])	
+        for line in fl:
+            row = line.replace("\n", "").split("\t")
+            FRAG_2_SCORE_START = FRAG_1_SCORE_START + len(row[FRAG_1_SEQ_INDEX])
+
+            if len(row[FRAG_1_SEQ_INDEX]) + len(row[FRAG_2_SEQ_INDEX]) != len(row[FRAG_1_SCORE_START:]):
+                print "-" * 100
+                print "skipped row"
+                print row[FRAG_1_SEQ_INDEX]
+                print row[FRAG_2_SEQ_INDEX]
+                print "-" * 100
+                continue
 
             # Get the fragments
             fragment_as_seq_list.append((Seq(row[FRAG_1_SEQ_INDEX], ALPHABET), Seq(row[FRAG_2_SEQ_INDEX], ALPHABET)))
 
             # Get negative scores
-            score = [row[index] for index in range(FRAG_2_SCORE_START - 1, FRAG_1_SCORE_START - 1, -1)]
-            negative_pos_score_list.append(float(score))
+            # print "*" * 50
+            # print "row length:", len(row)
+            # print "start-end:", FRAG_1_SCORE_START, FRAG_2_SCORE_START - 1
+            score = [float(row[index]) for index in range(FRAG_2_SCORE_START - 1, FRAG_1_SCORE_START - 1, -1)]
+            negative_pos_score_list.append(score)
 
             # Get positive scores
-            score = [row[index] for index in range(FRAG_2_SCORE_START, len(row[FRAG_2_SEQ_INDEX]))]
-            positive_pos_score_list.append(float(score))
+            # print FRAG_2_SCORE_START, len(row[FRAG_2_SEQ_INDEX]), len(row)
+            score = [float(row[index]) for index in range(FRAG_2_SCORE_START, FRAG_2_SCORE_START + len(row[FRAG_2_SEQ_INDEX]))]
+
+            positive_pos_score_list.append(score)
 
 
     return fragment_as_seq_list, negative_pos_score_list, positive_pos_score_list
@@ -97,10 +157,12 @@ def create_sequnce_file(filename, sequence_list):
 
 def get_position_statistics(fragment_as_seq_list, negative_pos_score_list, positive_pos_score_list):
 
-    max_first, max_second = get_max_len_in_chimera(chimera_frags_list)
+    max_first, max_second = get_max_len_in_chimera(fragment_as_seq_list)
 
-    pos_sum_dct = {index: 0 for index in range(-max_first, 0)}.extend({index: 0 for index in range(1, max_second + 1)})
-    pos_count_dct = {index: 0 for index in range(-max_first, 0)}.extend({index: 0 for index in range(1, max_second + 1)})
+    pos_sum_dct = {index: 0 for index in range(-max_first, 0)}
+    pos_sum_dct.update({index: 0 for index in range(1, max_second + 1)})
+    pos_count_dct = {index: 0 for index in range(-max_first, 0)}
+    pos_count_dct.update({index: 0 for index in range(1, max_second + 1)})
 
     # Sum over the negatives
     for score_list in negative_pos_score_list:
@@ -116,42 +178,75 @@ def get_position_statistics(fragment_as_seq_list, negative_pos_score_list, posit
             pos_sum_dct[index + 1] += score
             pos_count_dct[index + 1] += 1
 
-
-    return {position: float(pos_sum_dct[position]) / float(pos_count_dct[position]) for position in pos_sum_dct.keys()}
-
+    return pos_sum_dct, pos_count_dct
 
 
-def run(chimera_frags_list):
+def print_settings(settings):
 
-    # fragment_as_seq_list = format_input(chimera_frags_list)
-    fragment_as_seq_list, negative_pos_score_list, positive_pos_score_list = format_file_input("reads_fusion.txt")
+    print "-" * 100
+    print "| settings:"
+    print "-" * 100
 
-    padded_fragments_list = pad_sequences(fragment_as_seq_list)
+    for key, value in settings.items():
+        print "| %s = %s" % (key, value)
 
-    merged_fragments_list = merge_frgaments(padded_fragments_list)
+    print "-" * 100
 
-    chimera_motifs = motifs.create(merged_fragments_list, ALPHABET)
+def run(argv=None):
 
-    print chimera_motifs
-    print chimera_motifs.counts
+    settings, args = process_command_line(None)
 
-    create_sequnce_file("logo_data", merged_fragments_list)
+    fragment_as_seq_list, negative_pos_score_list, positive_pos_score_list = \
+        format_file_input(settings.reads_fusion)
 
-    os.system("~/.local/bin/weblogo --format PNG < logo_data  > logo.png")
+    if settings.logo_file != None:
+        padded_fragments_list = pad_sequences(fragment_as_seq_list)
 
-    for key, val in get_position_statistics(fragment_as_seq_list, negative_pos_score_list, positive_pos_score_list):
-        print key, val
+        merged_fragments_list = merge_frgaments(padded_fragments_list)
 
+        chimera_motifs = motifs.create(merged_fragments_list, ALPHABET)
 
+        print chimera_motifs
+        print chimera_motifs.counts
 
+        create_sequnce_file("logo_data", merged_fragments_list)
 
+        os.system("/home/users/amirbar/.local/bin/weblogo -A dna -c classic -s large --format PNG < logo_data  > %(logo_file)s" % \
+                  {"logo_file": settings.logo_file})
 
+    if settings.score_diagram != None:
+        pos_sum_dct, pos_count_dct = get_position_statistics(fragment_as_seq_list,
+                                                             negative_pos_score_list,
+                                                             positive_pos_score_list)
 
+        stats_dict = {position: float(pos_sum_dct[position]) / float(pos_count_dct[position])
+                      for position in pos_sum_dct.keys()}
 
-sequences = [("TACAAA", "TACGC"),
-             ("TACAC", "TACCC"),
-             ("TACCC", "TACCC"),
-             ("TACCC", "AATGC"),
-             ("AATGC", "AATGCA")]
+        # Generate average base score plot
+        points = [[i, stats_dict[i]] for i in range (min(stats_dict.keys()), 0)] + \
+                 [[i, stats_dict[i]] for i in range (1, max(stats_dict.keys()) + 1)]
 
-run(sequences)
+        plt.xlim(min(stats_dict.keys()) - 1, max(stats_dict.keys()) + 1)
+        plt.ylim(0, 1)
+        plt.hold(True)
+
+        for pt in points:
+            plt.plot([pt[0], pt[0]], [0,pt[1]], "b")
+
+        plt.savefig(settings.score_diagram)
+
+    if settings.count_diagram != None:
+        # Generate count per position plot
+        points = [[i, pos_count_dct[i]] for i in range (min(pos_count_dct.keys()), 0)] + \
+                 [[i, pos_count_dct[i]] for i in range (1, max(pos_count_dct.keys()) + 1)]
+
+        plt.xlim(min(pos_count_dct.keys()) - 1, max(pos_count_dct.keys()) + 1)
+        plt.ylim(0, max(pos_count_dct.values()))
+        plt.hold(True)
+
+        for pt in points:
+            plt.plot([pt[0], pt[0]], [0,pt[1]], "r")
+
+        plt.savefig(settings.count_diagram)
+
+run()

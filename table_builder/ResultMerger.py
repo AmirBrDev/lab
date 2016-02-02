@@ -1,7 +1,7 @@
 __author__ = 'amirbar'
 
 import MySQLdb
-from DBCrosser import select_cross, select_defenetive_cross
+from DBCrosser import select_cross, select_defenetive_cross, select_thomason_cross
 from TableLoader import TableLoader
 
 our_tables = ["signif_chimeras_of_iron_limitation_cl",
@@ -22,17 +22,25 @@ their_tables = [("raghavan_s5", "mev >= 1"),
                 ("bilusic_s3_1", "1=1"),
                 ("bilusic_s3_2", "1=1"),
                 ("bilusic_s4_1", "1=1"),
-                ("bilusic_s4_2", "1="),
+                ("bilusic_s4_2", "1=1")
                 # "zhang_s3_2013_sheet2008",
                 # "zhang_s3_2013_sheet2009",
                 # "zhang_s4_2013_sheet2008",
                 # "zhang_s4_2013_sheet2009",
-                ("thomason", "1=1"),
-                ("thomason_primary", "1=1"),
-                ("thomason_secondary", "1=1"),
-                ("thomason_internal", "1=1"),
-                ("thomason_antisense", "1=1"),
-                ("thomason_putative_asrna", "1=1")]
+                # ("thomason", "1=1"),
+                # ("thomason_primary", "1=1"),
+                # ("thomason_secondary", "1=1"),
+                # ("thomason_internal", "1=1"),
+                # ("thomason_antisense", "1=1"),
+                # ("thomason_putative_asrna", "1=1")
+                ]
+
+thomason_tables = [("thomason_cross", "thomason", "1=1"),
+                   ("thomason_cross", "thomason_primary", "_primary=1"),
+                   ("thomason_cross", "thomason_secondary", "_secondary=1"),
+                   ("thomason_cross", "thomason_internal", "internal=1"),
+                   ("thomason_cross", "thomason_antisense", "antisense=1"),
+                   ("thomason_cross", "thomason_putative_asrna", "putative_asrna=1")]
 
 our_file_list = ["our_files/assign-type-to-signif-chimeras-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_sig_interactions.with-type",
                  "our_files/assign-type-to-signif-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_sig_interactions.with-type",
@@ -176,7 +184,7 @@ def update_names_found(row, names_found):
             names_found[name] = True
 
 
-def merge_results(our_tables_list, their_tables_list, treshold):
+def merge_results(our_tables_list, their_tables_list, threshold):
 
     db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
@@ -200,8 +208,8 @@ def merge_results(our_tables_list, their_tables_list, treshold):
             names_found = {}
 
             # Change this to allow none strands (remove the comment from the first)
-            # select_cross(our_table, their_table, treshold, cursor)
-            select_defenetive_cross(our_table, their_table[0], treshold, cursor, their_table[1])
+            # select_cross(our_table, their_table, threshold, cursor)
+            select_defenetive_cross(our_table, their_table[0], threshold, cursor, their_table[1])
 
             # Go over the cross results and add the matched rows
             row = cursor.fetchone()
@@ -216,6 +224,33 @@ def merge_results(our_tables_list, their_tables_list, treshold):
                     values[index].append('+')
                 else:
                     values[index].append('-')
+
+    # Generate Thomason matching
+    for table_name, table_representing_name, select_condition in thomason_tables:
+        header.append(table_representing_name)
+
+        select_thomason_cross(table_name, cursor, select_condition)
+
+        thomason_matching = []
+
+        # Get all the names for the current table
+        row = cursor.fetchone()
+
+        while row is not None:
+            thomason_matching.append(row["name"])
+
+            row = cursor.fetchone()
+
+        # Add whether it was found for each condition or not
+        for value_row in values:
+
+            if value_row[0] in thomason_matching:
+                value_row.append("+")
+
+            else:
+                value_row.append("-")
+
+
 
     # Generate interactions count and polyU length
     interactions = count_interactions(our_tables, total_names, cursor)
@@ -862,8 +897,8 @@ def test_interactions(our_tables_list):
 
 # test_interactions(our_tables)
 
-def test_merge_results(treshold):
-    header, final_table = merge_results(our_tables, their_tables, treshold)
+def test_merge_results(threshold):
+    header, final_table = merge_results(our_tables, their_tables, threshold)
 
     fl = open("test.csv", "wb")
 
@@ -895,6 +930,8 @@ def get_name_dictionary(our_file_list):
 
             if name_2.lower() not in result.keys():
                 result[name_2.lower()] = name_2
+
+        fl.close()
 
     return result
 
@@ -987,7 +1024,9 @@ def format_final_table(path, our_tables):
             "Lybecker et al 2014": ["lybecker_s1", "lybecker_s2"],
             "Bilusic et al 2014": ["bilusic_s1", "bilusic_s2", "bilusic_s3_1", "bilusic_s3_2", "bilusic_s4_1", "bilusic_s4_2"],
             # "zhang": ["zhang_s3_2013_sheet2008", "zhang_s3_2013_sheet2009", "zhang_s4_2013_sheet2008", "zhang_s4_2013_sheet2009"],
-            "Thomason et al 2015": ["thomason", "thomason_primary", "thomason_secondary", "thomason_internal", "thomason_antisense", "thomason_putative_asrna"]}
+            }
+
+    thomason_set = {"Thomason et al 2015": ["thomason", "thomason_primary", "thomason_secondary", "thomason_internal", "thomason_antisense", "thomason_putative_asrna"]}
 
     conditions = ["signif_chimeras_of_iron_limitation_cl",
                   "signif_chimeras_of_log_phase_cl",
@@ -1062,9 +1101,14 @@ def format_final_table(path, our_tables):
                    "Meme motif",
                    "Overlaps known binding site"])
 
-    start_of_tables = len(header)
+    start_of_regular_tables = len(header)
 
     for set_name in sets:
+        header.append(set_name)
+
+    end_of_regular_tables = len(header)
+
+    for set_name in thomason_set:
         header.append(set_name)
 
     end_of_tables = len(header)
@@ -1117,7 +1161,7 @@ def format_final_table(path, our_tables):
         total_articles = 0
 
         # Go over the table hit fields and merge columns
-        for set_name in header[start_of_tables: end_of_tables]:
+        for set_name in header[start_of_regular_tables: end_of_regular_tables]:
 
             field_values = []
 
@@ -1129,6 +1173,24 @@ def format_final_table(path, our_tables):
                         continue
                     else:
                         print "[warning] invalid value for cell"
+
+            if len(field_values) > 0:
+                total_articles += 1
+
+            row_values.append(";".join(list(set(field_values))))
+
+        # Go over the table hit fields and merge columns - for thomason
+        for set_name in header[end_of_regular_tables:end_of_tables]:
+
+            field_values = []
+
+            for table in thomason_set[set_name]:
+                if row[table] == "+":
+                    field_values.append(short_name[table])
+                elif row[table] == "-":
+                    continue
+                else:
+                    print "[warning] invalid value for cell"
 
             if len(field_values) > 0:
                 total_articles += 1
@@ -1164,5 +1226,5 @@ def format_final_table(path, our_tables):
     for row in final_rows:
         fl.write("%s\n" % "\t".join(str(val) for val in row))
 
-#test_merge_results(0)
+# test_merge_results(0)
 format_final_table("test.csv", our_file_list)

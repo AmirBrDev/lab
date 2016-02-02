@@ -4,7 +4,7 @@ import MySQLdb
 from TableFormatter import TableFormatter
 
 
-def select_cross(our_table, their_table, treshold, cursor, specific_condition="1=1"):
+def select_cross(our_table, their_table, threshold, cursor, specific_condition="1=1"):
 
     match_first = """(((their.start_1 BETWEEN our.start_1 and our.end_1) OR
     (their.end_1 BETWEEN our.start_1 and our.end_1) OR
@@ -25,17 +25,17 @@ def select_cross(our_table, their_table, treshold, cursor, specific_condition="1
     closest_2 = """LEAST(ABS(our.start_2 - their.end_2), ABS(their.start_2 - our.end_2))"""
     closest = "LEAST(%s, %s)" % (closest_1, closest_2)
 
-    in_range_first = """(((their.start_1 BETWEEN (our.start_1 - %(treshold)s) and (our.end_1 + %(treshold)s)) OR
-    (their.end_1 BETWEEN (our.start_1 - %(treshold)s) and (our.end_1 + %(treshold)s)) OR
-    (our.start_1 BETWEEN (their.start_1 - %(treshold)s) and (their.end_1 + %(treshold)s)) OR
-    (our.end_1 BETWEEN (their.start_1 - %(treshold)s) and (their.end_1 + %(treshold)s))) AND
-    (their.strand_1=our.strand_1 OR their.strand_1='none' OR our.strand_1='none'))""" % {"treshold": treshold}
+    in_range_first = """(((their.start_1 BETWEEN (our.start_1 - %(threshold)s) and (our.end_1 + %(threshold)s)) OR
+    (their.end_1 BETWEEN (our.start_1 - %(threshold)s) and (our.end_1 + %(threshold)s)) OR
+    (our.start_1 BETWEEN (their.start_1 - %(threshold)s) and (their.end_1 + %(threshold)s)) OR
+    (our.end_1 BETWEEN (their.start_1 - %(threshold)s) and (their.end_1 + %(threshold)s))) AND
+    (their.strand_1=our.strand_1 OR their.strand_1='none' OR our.strand_1='none'))""" % {"threshold": threshold}
 
-    in_range_second = """(((their.start_2 BETWEEN (our.start_2 - %(treshold)s) and (our.end_2 + %(treshold)s)) OR
-    (their.end_2 BETWEEN (our.start_2 - %(treshold)s) and (our.end_2 + %(treshold)s)) OR
-    (our.start_2 BETWEEN (their.start_2 - %(treshold)s) and (their.end_2 + %(treshold)s)) OR
-    (our.end_2 BETWEEN (their.start_2 - %(treshold)s) and (their.end_2 + %(treshold)s))) AND
-    (their.strand_2=our.strand_2 OR their.strand_2='none' OR our.strand_2='none'))""" % {"treshold": treshold}
+    in_range_second = """(((their.start_2 BETWEEN (our.start_2 - %(threshold)s) and (our.end_2 + %(threshold)s)) OR
+    (their.end_2 BETWEEN (our.start_2 - %(threshold)s) and (our.end_2 + %(threshold)s)) OR
+    (our.start_2 BETWEEN (their.start_2 - %(threshold)s) and (their.end_2 + %(threshold)s)) OR
+    (our.end_2 BETWEEN (their.start_2 - %(threshold)s) and (their.end_2 + %(threshold)s))) AND
+    (their.strand_2=our.strand_2 OR their.strand_2='none' OR our.strand_2='none'))""" % {"threshold": threshold}
 
     query = """SELECT
     their.name, their.start_1, their.end_1, their.strand_1, our.rna1_name, our.start_1, our.end_1, our.strand_1,
@@ -48,7 +48,7 @@ def select_cross(our_table, their_table, treshold, cursor, specific_condition="1
     WHERE
     (%(in_range_first)s OR %(in_range_second)s) AND %(specific_condition)s;""" % {"our_table": our_table,
                                                                                   "their_table": their_table,
-                                                                                  "treshold": treshold,
+                                                                                  "threshold": threshold,
                                                                                   "match_first": match_first,
                                                                                   "match_second": match_second,
                                                                                   "in_range_first": in_range_first,
@@ -63,7 +63,7 @@ def select_cross(our_table, their_table, treshold, cursor, specific_condition="1
     cursor.execute(query)
 
 
-def select_defenetive_cross(our_table, their_table, treshold, cursor, specific_condition="1=1"):
+def select_defenetive_cross(our_table, their_table, threshold, cursor, specific_condition="1=1"):
 
     match_first = """(
     (
@@ -94,23 +94,23 @@ def select_defenetive_cross(our_table, their_table, treshold, cursor, specific_c
 
     in_range_first = """(
     (
-    (their.start_1 BETWEEN (our.start_1 - %(treshold)s) and (our.end_1 + %(treshold)s)) OR
-    (their.end_1 BETWEEN (our.start_1 - %(treshold)s) and (our.end_1 + %(treshold)s)) OR
-    (our.start_1 BETWEEN (their.start_1 - %(treshold)s) and (their.end_1 + %(treshold)s)) OR
-    (our.end_1 BETWEEN (their.start_1 - %(treshold)s) and (their.end_1 + %(treshold)s))
+    (their.start_1 BETWEEN (our.start_1 - %(threshold)s) and (our.end_1 + %(threshold)s)) OR
+    (their.end_1 BETWEEN (our.start_1 - %(threshold)s) and (our.end_1 + %(threshold)s)) OR
+    (our.start_1 BETWEEN (their.start_1 - %(threshold)s) and (their.end_1 + %(threshold)s)) OR
+    (our.end_1 BETWEEN (their.start_1 - %(threshold)s) and (their.end_1 + %(threshold)s))
     ) AND
     (their.strand_1=our.strand_1 AND their.strand_1!='none' AND our.strand_1!='none')
-    )""" % {"treshold": treshold}
+    )""" % {"threshold": threshold}
 
     in_range_second = """(
     (
-    (their.start_2 BETWEEN (our.start_2 - %(treshold)s) and (our.end_2 + %(treshold)s)) OR
-    (their.end_2 BETWEEN (our.start_2 - %(treshold)s) and (our.end_2 + %(treshold)s)) OR
-    (our.start_2 BETWEEN (their.start_2 - %(treshold)s) and (their.end_2 + %(treshold)s)) OR
-    (our.end_2 BETWEEN (their.start_2 - %(treshold)s) and (their.end_2 + %(treshold)s))
+    (their.start_2 BETWEEN (our.start_2 - %(threshold)s) and (our.end_2 + %(threshold)s)) OR
+    (their.end_2 BETWEEN (our.start_2 - %(threshold)s) and (our.end_2 + %(threshold)s)) OR
+    (our.start_2 BETWEEN (their.start_2 - %(threshold)s) and (their.end_2 + %(threshold)s)) OR
+    (our.end_2 BETWEEN (their.start_2 - %(threshold)s) and (their.end_2 + %(threshold)s))
     ) AND
     (their.strand_2=our.strand_2 AND their.strand_2!='none' AND our.strand_2!='none')
-    )""" % {"treshold": treshold}
+    )""" % {"threshold": threshold}
 
     query = """SELECT
     their.name, their.start_1, their.end_1, their.strand_1, our.rna1_name, our.start_1, our.end_1, our.strand_1,
@@ -123,7 +123,7 @@ def select_defenetive_cross(our_table, their_table, treshold, cursor, specific_c
     WHERE
     (%(in_range_first)s OR %(in_range_second)s) AND %(specific_condition)s;""" % {"our_table": our_table,
                                                                                   "their_table": their_table,
-                                                                                  "treshold": treshold,
+                                                                                  "threshold": threshold,
                                                                                   "match_first": match_first,
                                                                                   "match_second": match_second,
                                                                                   "in_range_first": in_range_first,
@@ -138,12 +138,23 @@ def select_defenetive_cross(our_table, their_table, treshold, cursor, specific_c
     cursor.execute(query)
 
 
-def cross_tables(our_table, their_table, format_func, treshold, output):
+def select_thomason_cross(table_name, cursor, condition="1=1"):
+
+    query = """SELECT DISTINCT name
+    FROM %(table_name)s
+    WHERE distance_from_start <= 0 and (%(condition)s)""" % {"table_name": table_name,
+                                                            "condition": condition}
+
+    cursor.execute(query)
+
+
+
+def cross_tables(our_table, their_table, format_func, threshold, output):
 
     db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
     cur = db.cursor(MySQLdb.cursors.DictCursor)
 
-    select_defenetive_cross(our_table, their_table[0], treshold, cur, specific_condition=their_table[1])
+    select_defenetive_cross(our_table, their_table[0], threshold, cur, specific_condition=their_table[1])
 
     format_func(cur, output)
 

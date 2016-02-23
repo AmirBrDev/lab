@@ -30,9 +30,10 @@ file_list = ["/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/MG_
 for file_name in file_list:
 	
 	with open(file_name, "rb") as fl:
+		line = fl.readline()
+
 		reader = csv.reader(fl, delimiter='\t', quotechar='|')
 		
-		line = reader.read()
 		with open(file_name + ".threshold_15", "wb") as flw: 
 			writer = csv.writer(flw, delimiter="\t", quotechar='|')
 			writer.write(line)

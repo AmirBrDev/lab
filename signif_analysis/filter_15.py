@@ -52,5 +52,5 @@ for file_name in file_list:
 			writer.writerow(line[:-1].split("\t"))
 
 			for line in reader:
-				if int(line[14]) >= 15:
+				if int(line[16]) >= 15:
 					writer.writerow(line)

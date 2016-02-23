@@ -39,7 +39,7 @@ for file_name in file_list:
 		
 		with open(file_name + ".threshold_15", "wb") as flw: 
 			writer = csv.writer(flw, delimiter="\t", quotechar='|')
-			writer.writerow(line)
+			writer.writerow(line.split("\t"))
 
 			for line in reader:
 				if int(line[14]) >= 15:

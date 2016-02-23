@@ -25,7 +25,10 @@ file_list = ["/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/MG_
 "/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
 "/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/MG_hfq-FLAG305-CL-Iron_limitation_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
 "/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_all_interactions.txt",
-"/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt]"]
+"/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/MG_hfq-FLAG312-CL-Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.txt",
+"/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/with-iron-no-unified-count-libs-assign-type-to-all-interactions-of-Iron_limitation_CL_FLAG207_208_305_all_fragments_l25.txt_all_interactions.txt.with-known",
+"/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/with-log-no-unified-count-libs-assign-type-to-all-interactions-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_all_interactions.txt.with-known",
+"/home/users/amirbar/lab/table_builder/our_files/refactor/set_1/with-stat-no-unified-count-libs-assign-type-to-all-interactions-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_all_interactions.txt.with-known"]
 
 for file_name in file_list:
 	

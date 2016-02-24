@@ -373,6 +373,9 @@ class UnifiedLibHandler(RowHandler):
 	def handle(self, row):
 		name = row[CODE_NAME_INDEX]
 
+		if name in self.dct:
+			print "-->", name
+
 		# Add the code name if we didn't have
 		if  name not in self.name_to_libs_dictionary:
 			self.dct[name] = 0
@@ -539,7 +542,6 @@ def run():
 					writer.writerow(["libs", "known", "unknown"])
 
 					libs_max = max(set([int(val) for key, val in names_to_libs.items()]))
-					print len(names_to_libs)
 
 					for i in range(libs_max + 1):
 						writer.writerow([i,

@@ -536,9 +536,10 @@ def run():
 				with open("output/unified_%s_%s.table" % (interaction_type, condition_name), "wb") as fl:
 
 					writer = csv.writer(fl, delimiter='\t', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-					writer.writerow(["libs", "unknown", "known"])
+					writer.writerow(["libs", "known", "unknown"])
 
 					libs_max = max(set([int(val) for key, val in names_to_libs.items()]))
+					print len(names_to_libs)
 
 					for i in range(libs_max + 1):
 						writer.writerow([i,

@@ -177,9 +177,13 @@ def run():
 	print "Unified counts"
 	print "*" * 50
 
-	unified_log_names = get_table_code_names("unified_all_interactions_log", threshold, cursor)
-	unified_iron_names = get_table_code_names("unified_all_interactions_iron", threshold, cursor)
-	unified_stationary_names = get_table_code_names("unified_all_interactions_stationary", threshold, cursor)
+	# unified_log_names = get_table_code_names("unified_all_interactions_log", threshold, cursor)
+	# unified_iron_names = get_table_code_names("unified_all_interactions_iron", threshold, cursor)
+	# unified_stationary_names = get_table_code_names("unified_all_interactions_stationary", threshold, cursor)
+
+	unified_log_names = get_table_code_names("unified_signif_log", threshold, cursor)
+	unified_iron_names = get_table_code_names("unified_signif_iron", threshold, cursor)
+	unified_stationary_names = get_table_code_names("unified_signif_stationary", threshold, cursor)
 
 	total_interactions_names = list(set(unified_log_names + 
 										unified_iron_names + 
@@ -197,7 +201,9 @@ def run():
 	print "Generating Table"
 	print "*" * 50
 
-	with open("output/names_to_counts_by_libs_%d" % threshold, "wb") as fl:
+	# with open("output/names_to_counts_by_libs_%d" % threshold, "wb") as fl:
+	with open("output/signif_names_to_counts_by_libs_%d" % threshold, "wb") as fl:
+
 
 		writer = csv.writer(fl, delimiter='\t', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
@@ -220,18 +226,31 @@ def run():
 						   iron_repr_tables_names + \
 						   stationary_repr_tables_names
 
-		table_repr_name_to_db_name = {"log_101": "all_interactions_log_101",
-									  "log_102": "all_interactions_log_102",
-									  "log_103": "all_interactions_log_103",
-									  "log_104": "all_interactions_log_104",
-									  "log_108": "all_interactions_log_108",
-									  "log_109": "all_interactions_log_109",
-									  "iron_207": "all_interactions_iron_207",
-									  "iron_208": "all_interactions_iron_208",
-									  "iron_305": "all_interactions_iron_305",
-									  "stationary_209": "all_interactions_stationary_209",
-									  "stationary_210": "all_interactions_stationary_210",
-									  "stationary_312": "all_interactions_stationary_312"}
+		# table_repr_name_to_db_name = {"log_101": "all_interactions_log_101",
+		# 							  "log_102": "all_interactions_log_102",
+		# 							  "log_103": "all_interactions_log_103",
+		# 							  "log_104": "all_interactions_log_104",
+		# 							  "log_108": "all_interactions_log_108",
+		# 							  "log_109": "all_interactions_log_109",
+		# 							  "iron_207": "all_interactions_iron_207",
+		# 							  "iron_208": "all_interactions_iron_208",
+		# 							  "iron_305": "all_interactions_iron_305",
+		# 							  "stationary_209": "all_interactions_stationary_209",
+		# 							  "stationary_210": "all_interactions_stationary_210",
+		# 							  "stationary_312": "all_interactions_stationary_312"}
+
+		table_repr_name_to_db_name = {"log_101": "signif_log_101",
+									  "log_102": "signif_log_102",
+									  "log_103": "signif_log_103",
+									  "log_104": "signif_log_104",
+									  "log_108": "signif_log_108",
+									  "log_109": "signif_log_109",
+									  "iron_207": "signif_iron_207",
+									  "iron_208": "signif_iron_208",
+									  "iron_305": "signif_iron_305",
+									  "stationary_209": "signif_stationary_209",
+									  "stationary_210": "signif_stationary_210",
+									  "stationary_312": "signif_stationary_312"}
 
 		writer.writerow(["interaction"] + table_repr_names + ["log_libs", "iron_libs", "stationary_libs"])
 

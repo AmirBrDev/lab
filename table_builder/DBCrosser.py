@@ -147,7 +147,14 @@ def select_thomason_cross(table_name, cursor, condition="1=1"):
 
     cursor.execute(query)
 
+def select_mcdowell_cross(table_name, cursor, condition="1=1"):
 
+    query = """SELECT DISTINCT name
+    FROM %(table_name)s
+    WHERE distance_from_start <= 0 and (%(condition)s)""" % {"table_name": table_name,
+                                                            "condition": condition}
+
+    cursor.execute(query)
 
 def cross_tables(our_table, their_table, format_func, threshold, output):
 

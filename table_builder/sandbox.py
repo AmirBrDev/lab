@@ -257,7 +257,6 @@ def generate_table(table_path, name, is_our_table=False):
 			key_list.append(key)
 
 	fields = ", ".join("%s VARCHAR(200)" % key.replace(" ", "_").replace("/", "_").replace("-", "_").replace("'", "").replace("/", "") for key in key_list if (key != "" and key != 'sequence -50 nt upstream + tss (51nt)') )
-	print fields
 	cur.execute("CREATE TABLE %s (%s)" % (table.get_name(), fields))
 
 
@@ -278,8 +277,9 @@ def generate_table(table_path, name, is_our_table=False):
 	for row in table_as_list:
 
 		values = ",".join("%s" % db.literal(str(row[key])) for key in id_keys if (key != "" and key != 'sequence -50 nt upstream + tss (51nt)'))
-		# print "INSERT INTO %s VALUES (%s)" % (table.get_name(), values)
-		cur.execute("INSERT INTO %s VALUES (%s)" % (table.get_name(), values))
+		cmd = ("INSERT INTO %s VALUES (%s)" % (table.get_name(), values)).replace("\n", "").replace("\r", "").replace("\\r", "")
+		# print cmd
+		cur.execute(cmd)
 
 	db.commit()
 
@@ -484,7 +484,7 @@ def generate_csv_table(path, name):
 		else:
 			key_list.append(key)
 
-	fields = ", ".join("%s VARCHAR(200)" % key.replace(" ", "_").replace("-", "_").replace("?", "") for key in key_list)
+	fields = ", ".join("%s VARCHAR(200)" % key.replace(" ", "_").replace("-", "_").replace("?", "").replace("#", "number").replace("(", "").replace(")", "") for key in key_list)
 	print len(key_list)
 
 	print "CREATE TABLE %s (%s)" % (name, fields)
@@ -492,6 +492,7 @@ def generate_csv_table(path, name):
 
 	for row in fl.readlines():
 		values = ", ".join(db.literal(str(val)) for val in row.lower().replace("\n", "").split("\t"))
+		print "INSERT INTO %s VALUES (%s)" % (name, values)
 		cur.execute("INSERT INTO %s VALUES (%s)" % (name, values))
 
 	db.commit()
@@ -499,7 +500,7 @@ def generate_csv_table(path, name):
 	fl.close()
 
 
-# generate_csv_table("MEME_results.csv", "meme_results")
+# generate_csv_table("/home/hosts/disk19/amirbar/our_tables/24_3_2016/table_S4.txt", "meme_results")
 
 
 def add_type_to_meme_results():
@@ -563,17 +564,27 @@ def dump_our_to_sql():
 	# 		 ("assign-type-to-single-counts-of-MG_hfq-wt202_CL_Stationary_cutadapt_bwa.bam_all_fragments_l25.txt_single_counts.with-type", "single_of_mg_hfq_wt202_cl_stationary"),
 	# 		 ("assign-type-to-single-counts-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_single_counts.with-type", "single_of_stationary_cl")]
 
-	files = [("S2-Iron_Limitation-unified-final-RNAup-polyU-MG_hfq-FLAG207_208_305.csv", "signif_chimeras_of_iron_limitation_cl"),
-			 ("S2-log-unified-final-RNAup-polyU-MG_hfq-FLAG101-104_108_109.csv", "signif_chimeras_of_log_limitation_cl"),
-			 ("S2-stationary-unified-final-RNAup-polyU-MG_hfq-FLAG209_210_312.csv", "signif_chimeras_of_stat_limitation_cl")]
+	# files = [("S2-Iron_Limitation-unified-final-RNAup-polyU-MG_hfq-FLAG207_208_305.csv", "signif_chimeras_of_iron_limitation_cl"),
+	# 		 ("S2-log-unified-final-RNAup-polyU-MG_hfq-FLAG101-104_108_109.csv", "signif_chimeras_of_log_limitation_cl"),
+	# 		 ("S2-stationary-unified-final-RNAup-polyU-MG_hfq-FLAG209_210_312.csv", "signif_chimeras_of_stat_limitation_cl")]
+
+	# files = [("MG_hfq-FLAG101-104_108_109_unified_Log_bwa.bam_all_fragments_l25.txt_sig_interactions_min_int_0_pv_1000000000000_odds_ratio_0.txt_with_code.csv", "all_interactions_log"),
+	# 		 ("MG_hfq-FLAG207_208_305_unified_Iron_bwa.bam_all_fragments_l25.txt_sig_interactions_min_int_0_pv_1000000000000_odds_ratio_0.txt_with_code.csv", "all_interactions_iron"),
+	# 		 ("MG_hfq-FLAG209_210_312_bwa.bam_unified_Stationary_all_fragments_l25.txt_sig_interactions_min_int_0_pv_1000000000000_odds_ratio_0.txt_with_code.csv", "all_interactions_stat")]
+
+	files = [("assign-type-to-RNAup-unified-of-flipped-rnaup-MG_hfq-FLAG101-104_108_109_unified_Log_bwa.bam_all_fragments_l25.txt_all_interactions_with-total.txt.with-known_with_code.csv", "all_interactions_with_fold_log"),
+			 ("assign-type-to-RNAup-unified-of-flipped-rnaup-MG_hfq-FLAG207_208_305_unified_Iron_bwa.bam_all_fragments_l25.txt_all_interactions_with-total.txt.with-known_with_code.csv", "all_interactions_with_fold_iron"),
+			 ("assign-type-to-RNAup-unified-of-flipped-rnaup-MG_hfq-FLAG209_210_312_bwa.bam_unified_Stationary_all_fragments_l25.txt_all_interactions_with-total.txt.with-known_with_code.csv", "all_interactions_with_fold_stat")]
+
 
 	for file_name, table_name in files:
 		print table_name
 		print file_name
 		print "*" * 100
-		generate_table("/home/hosts/disk19/amirbar/our_tables/24_3_2016/%s" % file_name, table_name, is_our_table=True)
+		generate_table("/home/hosts/disk19/amirbar/our_tables/24_3_2016/all_interactions/%s" % file_name, table_name, is_our_table=True)
+		# generate_table("/home/hosts/disk19/amirbar/our_tables/24_3_2016/%s" % file_name, table_name, is_our_table=True)
 
-# dump_our_to_sql()
+dump_our_to_sql()
 
 def get_zhang_stats_by_name(name):
 

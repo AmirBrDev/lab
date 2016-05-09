@@ -324,6 +324,8 @@ def merge_results(our_tables_list, their_tables_list, threshold):
 	header.append("meme")
 	header.append("mast")
 	header.append("motif")
+	header.append("total_number_of_targets")
+	header.append("number_of_targets_with_motif")
 	header.append("meme_results")
 	header.append("binding_site_state")
 
@@ -332,21 +334,32 @@ def merge_results(our_tables_list, their_tables_list, threshold):
 		meme_result = ""
 		mast_result = ""
 		motif = ""
+		total_number_of_targets = ""
+		targets_with_motif = ""
 		binding_site = "-"
 
 		is_reciprocal = False
 
 		# Select best meme/mast values for each entry
-		for meme_val, mast_val, motif_val, binding_site_val in meme_mast_values[name]:
+		for meme_val, mast_val, motif_val, total_number_of_targets_val, targets_with_motif_val, binding_site_val in meme_mast_values[name]:
+
+			# above threshold
+			if mast_val == "nmh":
+				continue
+
+			mast_val = float(mast_val)
+
 			if meme_val is not None and \
 			   mast_val is not None and \
-			   meme_val <= 0.05 and mast_val <= 0.05:
+			   meme_val <= 10 and mast_val <= 0.01:
 
 				# Update first time
 				if not is_reciprocal:
 					meme_result = "%.2e" % meme_val
 					mast_result = "%.2e" % mast_val
 					motif = motif_val
+					total_number_of_targets = total_number_of_targets_val
+					targets_with_motif = targets_with_motif_val
 					binding_site = binding_site_val
 					is_reciprocal = True
 
@@ -357,6 +370,8 @@ def merge_results(our_tables_list, their_tables_list, threshold):
 						meme_result = "%.2e" % meme_val
 						mast_result = "%.2e" % mast_val
 						motif = motif_val
+						total_number_of_targets = total_number_of_targets_val
+						targets_with_motif = targets_with_motif_val
 						binding_site = binding_site_val
 
 					elif mast_val == float(mast_result) and \
@@ -365,6 +380,8 @@ def merge_results(our_tables_list, their_tables_list, threshold):
 						meme_result = "%.2e" % meme_val
 						mast_result = "%.2e" % mast_val
 						motif = motif_val
+						total_number_of_targets = total_number_of_targets_val
+						targets_with_motif = targets_with_motif_val
 						binding_site = binding_site_val
 
 				# Update if improves binding
@@ -374,6 +391,8 @@ def merge_results(our_tables_list, their_tables_list, threshold):
 					meme_result = "%.2e" % meme_val
 					mast_result = "%.2e" % mast_val
 					motif = motif_val
+					total_number_of_targets = total_number_of_targets_val
+					targets_with_motif = targets_with_motif_val
 					binding_site = binding_site_val
 
 
@@ -384,6 +403,8 @@ def merge_results(our_tables_list, their_tables_list, threshold):
 		row.append(meme_result)
 		row.append(mast_result)
 		row.append(motif)
+		row.append(total_number_of_targets)
+		row.append(targets_with_motif)
 
 		if is_reciprocal:
 			row.append("recip")
@@ -858,7 +879,7 @@ def test_counts(our_tables):
 
 def get_meme_mast_values(names, cursor):
 
-	query = """SELECT meme.gene_name, meme.meme_e_value, meme.mast_e_value, meme.meme_motif, meme.match_known_bs
+	query = """SELECT meme.gene_name, meme.meme_e_value, meme.mast_p_value, meme.meme_motif, meme.matches_known_bs, meme.total_number_of_targets, meme.number_of_targets_with_motif
 	FROM meme_results as meme, signif_chimeras
 	WHERE meme.gene_name = signif_chimeras.name and meme.number_of_targets >= 5"""
 
@@ -869,9 +890,11 @@ def get_meme_mast_values(names, cursor):
 
 	for row in result:
 		names_to_values[row["gene_name"]].append((row["meme_e_value"],
-												  row["mast_e_value"],
+												  row["mast_p_value"],
 												  row["meme_motif"],
-												  row["match_known_bs"]))
+												  row["total_number_of_targets"],
+												  row["number_of_targets_with_motif"],
+												  row["matches_known_bs"]))
 
 	return names_to_values
 
@@ -1057,7 +1080,7 @@ def format_final_table(path, our_tables):
 			# "zhang": ["zhang_s3_2013_sheet2008", "zhang_s3_2013_sheet2009", "zhang_s4_2013_sheet2008", "zhang_s4_2013_sheet2009"],
 			}
 
-	mcdowell_set = {"McDowell et al": ["mcdowell"]}
+	mcdowell_set = {"McDowall et al 2014": ["mcdowell"]}
 	thomason_set = {"Thomason et al 2015": ["thomason", "thomason_primary", "thomason_secondary", "thomason_internal", "thomason_antisense", "thomason_putative_asrna"]}
 
 	conditions = ["signif_chimeras_of_iron_limitation_cl",
@@ -1111,7 +1134,7 @@ def format_final_table(path, our_tables):
 			  "EcoCyc id",
 			  "Type",
 			  "Total UI",
-			  "TB-sRNA UI",
+			  "sRNA UI",
 			  "CDS & 5'UTR UI",
 			  "3'UTR & IGR UI"]
 
@@ -1128,10 +1151,12 @@ def format_final_table(path, our_tables):
 
 	end_of_interactions = len(header)
 
-	header.extend(["Longest poly U",
+	header.extend(["Longest U tract",
 				   "MEME E-value",
-				   "MAST E-value",
+				   "MAST P-value",
 				   "Meme motif",
+				   "Total number of targets",
+				   "Number of targets with motif",
 				   "Overlaps known binding site"])
 
 	start_of_regular_tables = len(header)
@@ -1151,7 +1176,7 @@ def format_final_table(path, our_tables):
 
 	end_of_tables = len(header)
 
-	header.append("Paper number")
+	header.append("# of supporting papers")
 
 	final_rows = []
 
@@ -1194,6 +1219,8 @@ def format_final_table(path, our_tables):
 						   row["meme"].upper(),
 						   row["mast"].upper(),
 						   row["motif"],
+						   row["total_number_of_targets"],
+						   row["number_of_targets_with_motif"],
 						   row["binding_site_state"]])
 
 		total_articles = 0

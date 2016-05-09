@@ -7,7 +7,7 @@ from Table import Table
 
 class SignifTableUpdater():
     def __init__(self, table_name_list):
-        self.db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
+        self.db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
         self.cursor = self.db.cursor(MySQLdb.cursors.DictCursor)
         self.table_name_list = table_name_list
 
@@ -116,7 +116,6 @@ class SignifTableUpdater():
         names_list = self.get_names_from_tables()[0]
 
         for name in names_list:
-            print name
             min_start, max_end, strand = self.get_min_start_max_end(name)
 
             query = """UPDATE signif_chimeras
@@ -136,11 +135,11 @@ def test_update_signif_table():
 
     SignifTableUpdater(our_tables).add_min_max_limits()
 
-#test_update_signif_table()
+# test_update_signif_table()
 
 def get_bounding_genes(name):
 
-    db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
+    db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
     query="""SELECT *
@@ -183,7 +182,7 @@ def get_bounding_genes(name):
 
 def get_locus_name(name):
 
-    db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
+    db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
     query="""SELECT name
@@ -194,7 +193,7 @@ def get_locus_name(name):
 
     row = cursor.fetchone()
 
-    if row is  None:
+    if row is None:
         if name == "orphan":
             return "orphan"
 
@@ -231,7 +230,7 @@ def upload_thomason_cross_table():
             result.append(dct)
 
 
-    db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
+    db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
 
@@ -266,7 +265,7 @@ def upload_thomason_cross_table():
 def test_cross_tss(threshold):
     print "running"
 
-    db = MySQLdb.connect(host="localhost", user="amirbar", db="amir")
+    db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
     cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
     query="""SELECT signif_chimeras.name, type, min_start, max_end, start_1, strand,
@@ -302,8 +301,8 @@ def test_cross_tss(threshold):
               "distance_from_start",
               "tss_locus",
               "tss_locus_name",
-              "bound_start",
-              "bound_end",
+              # "bound_start",
+              # "bound_end",
               "product"]
 
     with open(THOMASON_CROSS_TABLE, "wb") as fl:
@@ -330,12 +329,12 @@ def test_cross_tss(threshold):
             else:
                 values.append(int(row["max_end"]) - int(row["start_1"]))
 
-            bound_start, bound_end = get_bounding_genes(row["name"])
+            # bound_start, bound_end = get_bounding_genes(row["name"])
 
             values.append(row["tss_locus"])
             values.append(get_locus_name(row["tss_locus"]))
-            values.append(bound_start)
-            values.append(bound_end)
+            # values.append(bound_start)
+            # values.append(bound_end)
             values.append(row["product"])
 
             fl.write("\t".join(["%s" % val for val in values]) + "\n")

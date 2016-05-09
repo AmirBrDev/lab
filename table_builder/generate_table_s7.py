@@ -1,8 +1,14 @@
+#!/
+
 __author__ = 'amirbar'
 
 import MySQLdb
-from DBCrosser import select_cross, select_defenetive_cross, select_thomason_cross, select_mcdowell_cross
+import optparse
+import sys
+import os
+from DBCrosser import select_defenetive_cross, select_thomason_cross, select_mcdowell_cross
 from TableLoader import TableLoader
+from config_handler import read_config_file_as_table, ConfigException
 
 our_tables = ["signif_chimeras_of_iron_limitation_cl",
 			  "signif_chimeras_of_log_phase_cl",
@@ -48,19 +54,9 @@ mcdowell_tables = [("mcdowell_cross", "mcdowell", "1=1")]
 # 				 "our_files/assign-type-to-signif-chimeras-of-Log_phase_CL_FLAG101-104_108_109_all_fragments_l25.txt_sig_interactions.with-type",
 # 				 "our_files/assign-type-to-signif-chimeras-of-Stationary_CL_FLAG209_210_312_all_fragments_l25.txt_sig_interactions.with-type"]
 
-our_file_list = ["/home/hosts/disk19/amirbar/our_tables/24_3_2016/S2-Iron_Limitation-unified-final-RNAup-polyU-MG_hfq-FLAG207_208_305.csv",
-				 "/home/hosts/disk19/amirbar/our_tables/24_3_2016/S2-log-unified-final-RNAup-polyU-MG_hfq-FLAG101-104_108_109.csv",
-				 "/home/hosts/disk19/amirbar/our_tables/24_3_2016/S2-stationary-unified-final-RNAup-polyU-MG_hfq-FLAG209_210_312.csv"]
-
-
-class Counter():
-
-	first = 0
-	second = 0
-
-	def __init__(self):
-		pass
-
+# our_file_list = ["/home/hosts/disk19/amirbar/our_tables/24_3_2016/S2-Iron_Limitation-unified-final-RNAup-polyU-MG_hfq-FLAG207_208_305.csv",
+# 				 "/home/hosts/disk19/amirbar/our_tables/24_3_2016/S2-log-unified-final-RNAup-polyU-MG_hfq-FLAG101-104_108_109.csv",
+# 				 "/home/hosts/disk19/amirbar/our_tables/24_3_2016/S2-stationary-unified-final-RNAup-polyU-MG_hfq-FLAG209_210_312.csv"]
 
 def get_ecocyc_id_by_name(name_list, cursor):
 
@@ -190,9 +186,9 @@ def update_names_found(row, names_found):
 			names_found[name] = True
 
 
-def merge_results(our_tables_list, their_tables_list, threshold):
+def merge_results(our_tables_list, their_tables_list, threshold, database):
 
-	db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
+	db = MySQLdb.connect(host="stone.md.huji.ac.il", user="amirbar", db=database)
 	cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
 	total_names, ecocyc_ids, types = get_tables_names(our_tables_list, cursor)
@@ -516,7 +512,6 @@ def get_name_count(name, table, cursor):
 	result = len(all_entries)
 
 	if result != first_count:
-		Counter.first += 1
 		print "[warning] overlapped %d rows for %s first interaction under %s" % \
 			  (result - first_count, name, table), first_count
 
@@ -546,7 +541,6 @@ def get_name_count(name, table, cursor):
 	result = len(all_entries)
 
 	if result != second_count:
-		Counter.second += 1
 		print "[warning] overlapped %d rows for %s second interaction under %s" % \
 			  (result - second_count, name, table), second_count
 
@@ -827,9 +821,9 @@ def get_target_counts(names, table_name_list, cursor):
 	return conditions, conditions_combinations
 
 
-def test_counts(our_tables):
+def test_counts(our_tables, database):
 
-	db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
+	db = MySQLdb.connect(host="localhost", user="amirbar", db=database)
 	cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
 	conditions_counts, condtion_combinations = \
@@ -875,7 +869,7 @@ def test_counts(our_tables):
 	print buckets
 
 
-# test_counts(our_tables)
+# test_counts(our_tables, "article_refactor_24_3_2016")
 
 def get_meme_mast_values(names, cursor):
 
@@ -899,8 +893,9 @@ def get_meme_mast_values(names, cursor):
 	return names_to_values
 
 
-def test_meme_values():
-	db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
+def test_meme_values(database):
+
+	db = MySQLdb.connect(host="localhost", user="amirbar", db=database)
 	cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
 	our_tables = ["signif_chimeras_of_iron_limitation_cl",
@@ -915,7 +910,7 @@ def test_meme_values():
 		print name, values
 
 
-# test_meme_values()
+# test_meme_values("article_refactor_24_3_2016")
 
 def test_get_poly_u_by_name(name, tables_list, cursor):
 	print "%s poly u is %s" % (name, str(get_poly_u_for_name(name, tables_list, cursor)))
@@ -923,8 +918,8 @@ def test_get_poly_u_by_name(name, tables_list, cursor):
 
 # test_get_poly_u_by_name("yiep", our_tables, cursor)
 
-def test_interactions(our_tables_list):
-	db = MySQLdb.connect(host="localhost", user="amirbar", db="article_refactor_24_3_2016")
+def test_interactions(our_tables_list, database):
+	db = MySQLdb.connect(host="localhost", user="amirbar", db=database)
 	cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
 	names = get_tables_names(["signif_chimeras_of_iron_limitation_cl"], cursor)[0]
@@ -949,23 +944,7 @@ def test_interactions(our_tables_list):
 	print len(interactions)
 
 
-# test_interactions(our_tables)
-
-def test_merge_results(threshold):
-	header, final_table = merge_results(our_tables, their_tables, threshold)
-
-	fl = open("test.csv", "wb")
-
-	fl.write("%s\n" % "\t".join(header))
-
-	for row in final_table:
-		fl.write("%s\n" % "\t".join(str(val) for val in row))
-
-	fl.close()
-
-	print "*" * 100
-	print Counter.first
-	print Counter.second
+# test_interactions(our_tables, "article_refactor_24_3_2016")
 
 
 def get_name_dictionary(our_file_list):
@@ -1072,7 +1051,7 @@ def get_condition_by_header_name(field, conditions, conditions_beauty_names):
 
 	return None
 
-def format_final_table(path, our_tables):
+def format_final_table(path, our_tables, output_file):
 
 	sets = {"Raghavan et al 2011": ["raghavan_s5", "raghavan_s6", "raghavan_s7", "raghavan_2"],
 			"Lybecker et al 2014": ["lybecker_s1", "lybecker_s2"],
@@ -1302,12 +1281,113 @@ def format_final_table(path, our_tables):
 		if ".TU" in row[1]:
 			row[1] = row[1].replace(".TU", ".IGT")
 
-	fl = open("formatted_test.csv", "wb")
+	with open(output_file, "wb") as fl:
 
-	fl.write("%s\n" % "\t".join(header))
+		fl.write("%s\n" % "\t".join(header))
 
-	for row in final_rows:
-		fl.write("%s\n" % "\t".join(str(val) for val in row))
+		for row in final_rows:
+			fl.write("%s\n" % "\t".join(str(val) for val in row))
 
-test_merge_results(0)
-format_final_table("test.csv", our_file_list)
+
+def process_command_line(argv):
+	"""
+	Return a 2-tuple: (settings object, args list).
+	`argv` is a list of arguments, or `None` for ``sys.argv[1:]``.
+	"""
+	if argv is None:
+		argv = sys.argv[1:]
+
+	# initialize the parser object:
+	parser = optparse.OptionParser(
+		formatter=optparse.TitledHelpFormatter(width=78),
+		add_help_option=None)
+
+	parser.add_option(
+		'-d' , '--database',
+		help='name of the database to work with')
+
+	parser.add_option(
+		'-t' , '--threshold',
+		default=0, type="int",
+		help='the distance allowed to miss when crossing between our tables to other papers')
+
+	parser.add_option(
+		'-w' , '--workdir',
+		default=os.path.abspath("."),
+		help='name of the working directory - the script will create files there')
+
+	parser.add_option(
+		'-o' , '--output_file',
+		default="table_s7.csv",
+		help='the name for the output file, will be created under the working directory')
+
+	parser.add_option(
+		'-f' , '--format_config',
+		help='path to file containing a column named unified_path with rows '
+			 'containing the files names which loaded to the database. The file'
+			 'is used to format the names correctly (upper case etc)')
+
+	parser.add_option(	  # customized description; put --help last
+		'-h', '--help', action='help',
+		help='Show this help message and exit.')
+
+	settings, args = parser.parse_args(argv)
+
+	# check number of arguments, verify values, etc.:
+	if args:
+		parser.error('program takes no command-line arguments; '
+					 '"%s" ignored.' % (args,))
+
+	# further process settings & args if necessary
+	if not settings.database:
+		parser.error("Missing missing database name.")
+
+	return settings, args
+
+
+def main(argv=None):
+
+	# Parse command line
+	try:
+		settings, args = process_command_line(None)
+
+	except BaseException:
+		return 1
+
+	# Parse format config file
+	try:
+		rows = read_config_file_as_table(settings.format_config)
+
+		our_file_list = [row["unified_path"] for row  in rows]
+
+	except ConfigException as ex:
+		print ex.message
+		return 1
+
+	# Used database name "article_refactor_24_3_2016"
+	header, final_table = merge_results(our_tables,
+										their_tables,
+										settings.threshold,
+										settings.database)
+
+	# Generate non formatted table
+	output_path = os.path.join(settings.workdir, settings.output_file)
+	temp_file_path = output_path + "_unformmated"
+
+	with open(temp_file_path, "wb") as fl:
+
+		fl.write("%s\n" % "\t".join(header))
+
+		for row in final_table:
+			fl.write("%s\n" % "\t".join(str(val) for val in row))
+
+	# Format the temporary table
+	format_final_table(temp_file_path,
+					   our_file_list,
+					   output_path)
+
+	return 0
+
+
+if __name__ == "__main__":
+	exit(main())

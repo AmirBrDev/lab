@@ -156,9 +156,9 @@ def create_sequnce_file(filename, sequence_list, lower_bound, upper_bound, ligat
 
 		for sequence in sequence_list:
 			fl.write(">\n")
-			fl.write(str(sequence)[ligation_index + lower_bound:ligation_index] + \
+			fl.write(str(sequence)[ligation_index + lower_bound:ligation_index].replace("T", "U") + \
 					 "-" + \
-					 str(sequence)[ligation_index:ligation_index+upper_bound + 1] + \
+					 str(sequence)[ligation_index:ligation_index+upper_bound + 1].replace("T", "U") + \
 					 "\n")
 
 
@@ -227,6 +227,7 @@ def run(argv=None):
 	points = [[i, stats_dict[i]] for i in range (lower_bound, 0)] + \
 			 [[i, stats_dict[i]] for i in range (1, upper_bound + 1)]
 
+	plt.rcParams.update({"font.size": 18})
 	plt.xlim(lower_bound - 1, upper_bound + 1)
 	plt.ylim(0, 1)
 	plt.hold(True)
@@ -264,7 +265,7 @@ def run(argv=None):
 
 		create_sequnce_file("logo_data", merged_fragments_list, lower_bound, upper_bound, ligation_index)
 
-		os.system("/home/users/amirbar/.local/bin/weblogo -A dna -c classic --resolution 600 --errorbars NO -i %(start_index)s --format PNG < logo_data  > %(logo_file)s" % \
+		os.system("/home/users/amirbar/.local/bin/weblogo -A rna -c classic --resolution 600 --errorbars NO -i %(start_index)s --format PNG < logo_data  > %(logo_file)s" % \
 				  {"logo_file": settings.logo_file,
 				   "start_index": str(lower_bound)})
 run()
